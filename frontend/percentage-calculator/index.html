@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Percentage Calculator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .calc-row { background: white; padding: 16px; border-radius: 8px; border-left: 4px solid #2196f3; margin-top: 16px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 15px; }
+    .calc-row input { width: 90px; font-size: 15px; border: 1px solid #ddd; border-radius: 4px; padding: 8px; text-align: right; }
+    .calc-result { font-weight: bold; font-size: 18px; color: #2196f3; margin-left: auto; font-family: monospace; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Percentage Calculator</h1>
+    <p class="w3-text-grey w3-small">The three percentage questions people actually ask.</p>
+
+    <div class="calc-row">
+      <input id="a1" type="number" value="20" aria-label="Percent" />% of
+      <input id="b1" type="number" value="150" aria-label="Value" /> =
+      <span class="calc-result" id="r1"></span>
+    </div>
+
+    <div class="calc-row">
+      <input id="a2" type="number" value="30" aria-label="Part" /> is what % of
+      <input id="b2" type="number" value="150" aria-label="Whole" />?
+      <span class="calc-result" id="r2"></span>
+    </div>
+
+    <div class="calc-row">
+      From <input id="a3" type="number" value="100" aria-label="Old value" /> to
+      <input id="b3" type="number" value="125" aria-label="New value" /> is a change of
+      <span class="calc-result" id="r3"></span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>No Strings Tools</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+      min-height: 100vh;
+    }
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    @media (max-width: 600px) {
+      .app-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; }
+      .app-card { min-height: 120px; padding: 10px; }
+      .app-card h3 { font-size: 12px; }
+      .app-card p { font-size: 10px; }
+    }
+    .app-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 130px;
+      padding: 12px;
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .app-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .app-card h3 {
+      margin: 0 0 4px 0;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .app-card p {
+      margin: 0;
+      font-size: 11px;
+      color: #666;
+      flex-grow: 1;
+      line-height: 1.3;
+    }
+  </style>
+</head>
+<body>
+  <div class="w3-container w3-padding-large" style="max-width: 900px; margin: 0 auto;">
+    <h1 style="margin-bottom: 4px;">No Strings Tools</h1>
+    <p class="w3-text-grey" style="margin-top: 0;">Simple tools that solve one problem well. No strings attached.</p>
+
+    <input
+      id="search-input"
+      type="text"
+      class="w3-input w3-border w3-round"
+      placeholder="Search apps..."
+      autocomplete="off"
+      aria-label="Search apps by name or description"
+      style="margin-top: 20px; max-width: 400px;"
+    />
+
+    <div class="app-grid">
+      <a href="./ascii-table/index.html" class="app-card">
+        <div>
+          <h3>📝 ASCII Table</h3>
+          <p>Character codes.</p>
+        </div>
+      </a>
+
+      <a href="./aspect-ratio/index.html" class="app-card">
+        <div>
+          <h3>📐 Aspect Ratio</h3>
+          <p>Scale dimensions proportionally.</p>
+        </div>
+      </a>
+
+      <a href="./backup/index.html" class="app-card">
+        <div>
+          <h3>💾 Backup</h3>
+          <p>Export & restore all app data.</p>
+        </div>
+      </a>
+
+      <a href="./barcode-generator/index.html" class="app-card">
+        <div>
+          <h3>🏷️ Barcode Generator</h3>
+          <p>Make EAN, UPC & Code 128 codes.</p>
+        </div>
+      </a>
+
+      <a href="./barcode-scanner/index.html" class="app-card">
+        <div>
+          <h3>🔖 Barcode Scanner</h3>
+          <p>EAN, UPC, Code 128 & more.</p>
+        </div>
+      </a>
+
+      <a href="./base-converter/index.html" class="app-card">
+        <div>
+          <h3>🔢 Base Converter</h3>
+          <p>Binary, hex, octal, decimal.</p>
+        </div>
+      </a>
+
+      <a href="./base64/index.html" class="app-card">
+        <div>
+          <h3>📝 Base64</h3>
+          <p>Encode & decode base64.</p>
+        </div>
+      </a>
+
+      <a href="./bet-tracker/index.html" class="app-card">
+        <div>
+          <h3>🏇 Bet Tracker</h3>
+          <p>Parimutuel pool betting.</p>
+        </div>
+      </a>
+
+      <a href="./big-text/index.html" class="app-card">
+        <div>
+          <h3>📢 Big Text</h3>
+          <p>Huge message across the room.</p>
+        </div>
+      </a>
+
+      <a href="./bill-splitter/index.html" class="app-card">
+        <div>
+          <h3>💵 Bill Splitter</h3>
+          <p>Split bills by who ordered what.</p>
+        </div>
+      </a>
+
+      <a href="./breathing-pacer/index.html" class="app-card">
+        <div>
+          <h3>🫁 Breathing Pacer</h3>
+          <p>Box breathing to calm down.</p>
+        </div>
+      </a>
+
+      <a href="./capacitor-decoder/index.html" class="app-card">
+        <div>
+          <h3>🔩 Capacitor Decoder</h3>
+          <p>Decode capacitor color bands.</p>
+        </div>
+      </a>
+
+      <a href="./case-converter/index.html" class="app-card">
+        <div>
+          <h3>🔡 Case Converter</h3>
+          <p>camelCase, snake_case & more.</p>
+        </div>
+      </a>
+
+      <a href="./char-picker/index.html" class="app-card">
+        <div>
+          <h3>± Character Picker</h3>
+          <p>Copy em dashes, arrows & more.</p>
+        </div>
+      </a>
+
+      <a href="./chess-clock/index.html" class="app-card">
+        <div>
+          <h3>♟️ Chess Clock</h3>
+          <p>Two-player game timer.</p>
+        </div>
+      </a>
+
+      <a href="./chmod-calculator/index.html" class="app-card">
+        <div>
+          <h3>🔒 Chmod Calculator</h3>
+          <p>Unix permissions decoder.</p>
+        </div>
+      </a>
+
+      <a href="./chord-transposer/index.html" class="app-card">
+        <div>
+          <h3>🎸 Chord Transposer</h3>
+          <p>Shift a chord sheet to a new key.</p>
+        </div>
+      </a>
+
+      <a href="./color-palette/index.html" class="app-card">
+        <div>
+          <h3>🎨 Color Palette</h3>
+          <p>Generate random colors.</p>
+        </div>
+      </a>
+
+      <a href="./colorblind-simulator/index.html" class="app-card">
+        <div>
+          <h3>👓 Colorblind Simulator</h3>
+          <p>See images as colorblind users do.</p>
+        </div>
+      </a>
+
+      <a href="./compass/index.html" class="app-card">
+        <div>
+          <h3>🧭 Compass</h3>
+          <p>Device magnetometer.</p>
+        </div>
+      </a>
+
+      <a href="./vcard-qr/index.html" class="app-card">
+        <div>
+          <h3>👤 Contact QR</h3>
+          <p>Share contact details as a QR.</p>
+        </div>
+      </a>
+
+      <a href="./contrast-checker/index.html" class="app-card">
+        <div>
+          <h3>🌓 Contrast Checker</h3>
+          <p>WCAG color contrast ratios.</p>
+        </div>
+      </a>
+
+      <a href="./countdown/index.html" class="app-card">
+        <div>
+          <h3>⏲️ Countdown</h3>
+          <p>Count down to zero.</p>
+        </div>
+      </a>
+
+      <a href="./cron-explainer/index.html" class="app-card">
+        <div>
+          <h3>⏰ Cron Explainer</h3>
+          <p>Decode cron expressions.</p>
+        </div>
+      </a>
+
+      <a href="./csv-json/index.html" class="app-card">
+        <div>
+          <h3>📊 CSV ↔ JSON</h3>
+          <p>Convert both directions.</p>
+        </div>
+      </a>
+
+      <a href="./date-difference/index.html" class="app-card">
+        <div>
+          <h3>📅 Date Difference</h3>
+          <p>Days between dates, ages.</p>
+        </div>
+      </a>
+
+      <a href="./day-counter/index.html" class="app-card">
+        <div>
+          <h3>📆 Day Counter</h3>
+          <p>Days since & until saved dates.</p>
+        </div>
+      </a>
+
+      <a href="./dead-pixel/index.html" class="app-card">
+        <div>
+          <h3>🔲 Dead Pixel</h3>
+          <p>Fullscreen display check.</p>
+        </div>
+      </a>
+
+      <a href="./device-status/index.html" class="app-card">
+        <div>
+          <h3>📱 Device Status</h3>
+          <p>Battery, network, hardware.</p>
+        </div>
+      </a>
+
+      <a href="./dice-roller/index.html" class="app-card">
+        <div>
+          <h3>🎲 Dice Roller</h3>
+          <p>Roll D&D dice with history.</p>
+        </div>
+      </a>
+
+      <a href="./duration-adder/index.html" class="app-card">
+        <div>
+          <h3>⏱️ Duration Adder</h3>
+          <p>Sum up hours and minutes.</p>
+        </div>
+      </a>
+
+      <a href="./electricity-cost/index.html" class="app-card">
+        <div>
+          <h3>🔌 Electricity Cost</h3>
+          <p>What a device costs to run.</p>
+        </div>
+      </a>
+
+      <a href="./encrypt/index.html" class="app-card">
+        <div>
+          <h3>🔐 Encrypt/Decrypt</h3>
+          <p>AES encryption with password.</p>
+        </div>
+      </a>
+
+      <a href="./entropy-calculator/index.html" class="app-card">
+        <div>
+          <h3>🔐 Entropy Calculator</h3>
+          <p>Measure password strength.</p>
+        </div>
+      </a>
+
+      <a href="./exif-stripper/index.html" class="app-card">
+        <div>
+          <h3>🧹 EXIF Stripper</h3>
+          <p>Remove photo metadata & GPS.</p>
+        </div>
+      </a>
+
+      <a href="./eyedropper/index.html" class="app-card">
+        <div>
+          <h3>🎨 Eyedropper</h3>
+          <p>Pick colors from your screen.</p>
+        </div>
+      </a>
+
+      <a href="./favicon-generator/index.html" class="app-card">
+        <div>
+          <h3>⭐ Favicon Generator</h3>
+          <p>All favicon sizes from one image.</p>
+        </div>
+      </a>
+
+      <a href="./flashlight/index.html" class="app-card">
+        <div>
+          <h3>🔦 Flashlight</h3>
+          <p>Camera flash or bright screen.</p>
+        </div>
+      </a>
+
+      <a href="./gamepad-tester/index.html" class="app-card">
+        <div>
+          <h3>🎮 Gamepad Tester</h3>
+          <p>Test controller buttons & sticks.</p>
+        </div>
+      </a>
+
+      <a href="./gps-speedometer/index.html" class="app-card">
+        <div>
+          <h3>🚗 GPS Speedometer</h3>
+          <p>Speed from GPS.</p>
+        </div>
+      </a>
+
+      <a href="./gzip/index.html" class="app-card">
+        <div>
+          <h3>🗜️ Gzip</h3>
+          <p>Compress & decompress files.</p>
+        </div>
+      </a>
+
+      <a href="./hash-generator/index.html" class="app-card">
+        <div>
+          <h3>#️⃣ Hash Generator</h3>
+          <p>SHA hashes as you type.</p>
+        </div>
+      </a>
+
+      <a href="./html-entities/index.html" class="app-card">
+        <div>
+          <h3>🔣 HTML Entities</h3>
+          <p>Encode & decode &amp;amp; friends.</p>
+        </div>
+      </a>
+
+      <a href="./iban-validator/index.html" class="app-card">
+        <div>
+          <h3>🏦 IBAN Validator</h3>
+          <p>Check account numbers offline.</p>
+        </div>
+      </a>
+
+      <a href="./image-resizer/index.html" class="app-card">
+        <div>
+          <h3>🖼️ Image Resizer</h3>
+          <p>Shrink images, all on-device.</p>
+        </div>
+      </a>
+
+      <a href="./image-to-base64/index.html" class="app-card">
+        <div>
+          <h3>🖼️ Image to Base64</h3>
+          <p>Data URIs from any image.</p>
+        </div>
+      </a>
+
+      <a href="./instrument-tuner/index.html" class="app-card">
+        <div>
+          <h3>🎸 Instrument Tuner</h3>
+          <p>Mic pitch detection.</p>
+        </div>
+      </a>
+
+      <a href="./interval-timer/index.html" class="app-card">
+        <div>
+          <h3>🏋️ Interval Timer</h3>
+          <p>Work/rest rounds with beeps.</p>
+        </div>
+      </a>
+
+      <a href="./investment-calculator/index.html" class="app-card">
+        <div>
+          <h3>📈 Investment Calculator</h3>
+          <p>Project investment growth.</p>
+        </div>
+      </a>
+
+      <a href="./json-beautifier/index.html" class="app-card">
+        <div>
+          <h3>{ } JSON</h3>
+          <p>Format and validate JSON.</p>
+        </div>
+      </a>
+
+      <a href="./jwt-decoder/index.html" class="app-card">
+        <div>
+          <h3>🔐 JWT Decoder</h3>
+          <p>Decode JWT tokens.</p>
+        </div>
+      </a>
+
+      <a href="./keep-awake/index.html" class="app-card">
+        <div>
+          <h3>☕ Keep Awake</h3>
+          <p>Stop screen from sleeping.</p>
+        </div>
+      </a>
+
+      <a href="./keycode-viewer/index.html" class="app-card">
+        <div>
+          <h3>⌨️ Keycode Viewer</h3>
+          <p>See JS key event values.</p>
+        </div>
+      </a>
+
+      <a href="./knot-guide/index.html" class="app-card">
+        <div>
+          <h3>🪢 Knot Guide</h3>
+          <p>Essential knot reference.</p>
+        </div>
+      </a>
+
+      <a href="./led-resistor/index.html" class="app-card">
+        <div>
+          <h3>💡 LED Resistor</h3>
+          <p>Calculate LED resistor value.</p>
+        </div>
+      </a>
+
+      <a href="./light-detector/index.html" class="app-card">
+        <div>
+          <h3>💡 Light Detector</h3>
+          <p>Ambient light sensor.</p>
+        </div>
+      </a>
+
+      <a href="./line-tools/index.html" class="app-card">
+        <div>
+          <h3>📑 Line Tools</h3>
+          <p>Sort, dedupe & shuffle lines.</p>
+        </div>
+      </a>
+
+      <a href="./loan-calculator/index.html" class="app-card">
+        <div>
+          <h3>💳 Loan Calculator</h3>
+          <p>Calculate loan payments.</p>
+        </div>
+      </a>
+
+      <a href="./lorem-ipsum/index.html" class="app-card">
+        <div>
+          <h3>📃 Lorem Ipsum</h3>
+          <p>Placeholder text on demand.</p>
+        </div>
+      </a>
+
+      <a href="./meditation-timer/index.html" class="app-card">
+        <div>
+          <h3>🧘 Meditation Timer</h3>
+          <p>Mindfulness timer.</p>
+        </div>
+      </a>
+
+      <a href="./metronome/index.html" class="app-card">
+        <div>
+          <h3>🎵 Metronome</h3>
+          <p>Web Audio rhythm keeper.</p>
+        </div>
+      </a>
+
+      <a href="./mirror/index.html" class="app-card">
+        <div>
+          <h3>🪞 Mirror</h3>
+          <p>Front camera as a mirror.</p>
+        </div>
+      </a>
+
+      <a href="./moon-phase/index.html" class="app-card">
+        <div>
+          <h3>🌙 Moon Phase</h3>
+          <p>Today's moon and what's next.</p>
+        </div>
+      </a>
+
+      <a href="./morse-code/index.html" class="app-card">
+        <div>
+          <h3>📡 Morse Code</h3>
+          <p>Encode/decode morse.</p>
+        </div>
+      </a>
+
+      <a href="./nfc-tags/index.html" class="app-card">
+        <div>
+          <h3>🏷️ NFC Tags</h3>
+          <p>Read & write NFC tags.</p>
+        </div>
+      </a>
+
+      <a href="./noise-generator/index.html" class="app-card">
+        <div>
+          <h3>🌊 Noise Generator</h3>
+          <p>White, brown, pink noise.</p>
+        </div>
+      </a>
+
+      <a href="./note-taker/index.html" class="app-card">
+        <div>
+          <h3>📝 Note Taker</h3>
+          <p>Markdown notes with live preview, saved locally.</p>
+        </div>
+      </a>
+
+      <a href="./number-to-words/index.html" class="app-card">
+        <div>
+          <h3>🔟 Number to Words</h3>
+          <p>1234 in plain English.</p>
+        </div>
+      </a>
+
+      <a href="./p2p-chat/index.html" class="app-card">
+        <div>
+          <h3>💬 P2P Chat</h3>
+          <p>Temporary group chat & file sharing.</p>
+        </div>
+      </a>
+
+      <a href="./p2p-file-transfer/index.html" class="app-card">
+        <div>
+          <h3>📤 P2P File Transfer</h3>
+          <p>Send files device to device, no server.</p>
+        </div>
+      </a>
+
+      <a href="./pace-calculator/index.html" class="app-card">
+        <div>
+          <h3>🏃 Pace Calculator</h3>
+          <p>Distance, time & running pace.</p>
+        </div>
+      </a>
+
+      <a href="./parking-meter/index.html" class="app-card">
+        <div>
+          <h3>🅿️ Parking Meter</h3>
+          <p>Calculate parking costs.</p>
+        </div>
+      </a>
+
+      <a href="./password-generator/index.html" class="app-card">
+        <div>
+          <h3>🔑 Password Generator</h3>
+          <p>Stateless password generation.</p>
+        </div>
+      </a>
+
+      <a href="./pdf-merger/index.html" class="app-card">
+        <div>
+          <h3>📄 PDF Merger</h3>
+          <p>Combine PDFs, fully offline.</p>
+        </div>
+      </a>
+
+      <a href="./pedometer/index.html" class="app-card">
+        <div>
+          <h3>👟 Pedometer</h3>
+          <p>Step counter.</p>
+        </div>
+      </a>
+
+      <a href="./percentage-calculator/index.html" class="app-card">
+        <div>
+          <h3>％ Percentage</h3>
+          <p>The three % questions.</p>
+        </div>
+      </a>
+
+      <a href="./periodic-table/index.html" class="app-card">
+        <div>
+          <h3>⚛️ Periodic Table</h3>
+          <p>Element lookup & info.</p>
+        </div>
+      </a>
+
+      <a href="./phonetic-alphabet/index.html" class="app-card">
+        <div>
+          <h3>🎤 Phonetic Alphabet</h3>
+          <p>NATO phonetic codes.</p>
+        </div>
+      </a>
+
+      <a href="./physics-constants/index.html" class="app-card">
+        <div>
+          <h3>⚡ Physics Constants</h3>
+          <p>Key physics values.</p>
+        </div>
+      </a>
+
+      <a href="./planets/index.html" class="app-card">
+        <div>
+          <h3>🪐 Planets</h3>
+          <p>Solar system reference.</p>
+        </div>
+      </a>
+
+      <a href="./pomodoro/index.html" class="app-card">
+        <div>
+          <h3>🍅 Pomodoro</h3>
+          <p>25 min work + 5 min break.</p>
+        </div>
+      </a>
+
+      <a href="./qr-code/index.html" class="app-card">
+        <div>
+          <h3>⬜ QR Code</h3>
+          <p>Generate QR codes instantly.</p>
+        </div>
+      </a>
+
+      <a href="./qr-scanner/index.html" class="app-card">
+        <div>
+          <h3>📷 QR Scanner</h3>
+          <p>Scan QR codes with camera.</p>
+        </div>
+      </a>
+
+      <a href="./random-picker/index.html" class="app-card">
+        <div>
+          <h3>🎯 Random Picker</h3>
+          <p>Pick a name from a list.</p>
+        </div>
+      </a>
+
+      <a href="./reaction-time/index.html" class="app-card">
+        <div>
+          <h3>⚡ Reaction Time</h3>
+          <p>Test your reflexes.</p>
+        </div>
+      </a>
+
+      <a href="./recipe-scaler/index.html" class="app-card">
+        <div>
+          <h3>👨‍🍳 Recipe Scaler</h3>
+          <p>Scale ingredients by servings.</p>
+        </div>
+      </a>
+
+      <a href="./regex-tester/index.html" class="app-card">
+        <div>
+          <h3>🔍 Regex Tester</h3>
+          <p>Test regex patterns live.</p>
+        </div>
+      </a>
+
+      <a href="./resistor-decoder/index.html" class="app-card">
+        <div>
+          <h3>⚡ Resistor Decoder</h3>
+          <p>Decode resistor color bands.</p>
+        </div>
+      </a>
+
+      <a href="./roman-numerals/index.html" class="app-card">
+        <div>
+          <h3>🏛️ Roman Numerals</h3>
+          <p>MCMXC ⇄ 1990.</p>
+        </div>
+      </a>
+
+      <a href="./scoreboard/index.html" class="app-card">
+        <div>
+          <h3>🏆 Scoreboard</h3>
+          <p>Keep score on game night.</p>
+        </div>
+      </a>
+
+      <a href="./screen-recorder/index.html" class="app-card">
+        <div>
+          <h3>🎥 Screen Recorder</h3>
+          <p>Screencasts: screen, voice & webcam.</p>
+        </div>
+      </a>
+
+      <a href="./seismometer/index.html" class="app-card">
+        <div>
+          <h3>📈 Seismometer</h3>
+          <p>Vibration trace from sensors.</p>
+        </div>
+      </a>
+
+      <a href="./shopping-list/index.html" class="app-card">
+        <div>
+          <h3>🛒 Shopping List</h3>
+          <p>Track what you need to buy.</p>
+        </div>
+      </a>
+
+      <a href="./si-units/index.html" class="app-card">
+        <div>
+          <h3>📏 SI Units</h3>
+          <p>Units & prefixes.</p>
+        </div>
+      </a>
+
+      <a href="./signal-mirror/index.html" class="app-card">
+        <div>
+          <h3>🪞 Signal Mirror</h3>
+          <p>Emergency signaling.</p>
+        </div>
+      </a>
+
+      <a href="./size-converter/index.html" class="app-card">
+        <div>
+          <h3>👕 Size Converter</h3>
+          <p>EU, US & UK clothing sizes.</p>
+        </div>
+      </a>
+
+      <a href="./sketch-pad/index.html" class="app-card">
+        <div>
+          <h3>✍️ Sketch Pad</h3>
+          <p>Draw & sign, save as PNG.</p>
+        </div>
+      </a>
+
+      <a href="./sleep-calculator/index.html" class="app-card">
+        <div>
+          <h3>😴 Sleep Calculator</h3>
+          <p>Bedtimes by sleep cycles.</p>
+        </div>
+      </a>
+
+      <a href="./sound-meter/index.html" class="app-card">
+        <div>
+          <h3>🎚️ Sound Meter</h3>
+          <p>Live mic level in dB.</p>
+        </div>
+      </a>
+
+      <a href="./speaker-test/index.html" class="app-card">
+        <div>
+          <h3>🔊 Speaker Test</h3>
+          <p>Left, right & sweep.</p>
+        </div>
+      </a>
+
+      <a href="./speaking-clock/index.html" class="app-card">
+        <div>
+          <h3>⏰ Speaking Clock</h3>
+          <p>Browser announces time.</p>
+        </div>
+      </a>
+
+      <a href="./speech-to-text/index.html" class="app-card">
+        <div>
+          <h3>🎤 Speech to Text</h3>
+          <p>Browser transcribes your voice.</p>
+        </div>
+      </a>
+
+      <a href="./speed-reader/index.html" class="app-card">
+        <div>
+          <h3>👁️ Speed Reader</h3>
+          <p>Flash words at your reading pace.</p>
+        </div>
+      </a>
+
+      <a href="./spirit-level/index.html" class="app-card">
+        <div>
+          <h3>⚖️ Spirit Level</h3>
+          <p>Check if surface is level.</p>
+        </div>
+      </a>
+
+      <a href="./stopwatch/index.html" class="app-card">
+        <div>
+          <h3>⏱️ Stopwatch</h3>
+          <p>Simple timer that counts up.</p>
+        </div>
+      </a>
+
+      <a href="./subnet-calculator/index.html" class="app-card">
+        <div>
+          <h3>🌐 Subnet Calculator</h3>
+          <p>CIDR to ranges & masks.</p>
+        </div>
+      </a>
+
+      <a href="./sunrise-sunset/index.html" class="app-card">
+        <div>
+          <h3>🌅 Sunrise & Sunset</h3>
+          <p>Sun times and golden hour.</p>
+        </div>
+      </a>
+
+      <a href="./tally-counter/index.html" class="app-card">
+        <div>
+          <h3>🔢 Tally Counter</h3>
+          <p>Count anything, one tap at a time.</p>
+        </div>
+      </a>
+
+      <a href="./tap-bpm/index.html" class="app-card">
+        <div>
+          <h3>🥁 Tap BPM</h3>
+          <p>Tap along to find the tempo.</p>
+        </div>
+      </a>
+
+      <a href="./teleprompter/index.html" class="app-card">
+        <div>
+          <h3>📜 Teleprompter</h3>
+          <p>Auto-scrolling script reader.</p>
+        </div>
+      </a>
+
+      <a href="./text-diff/index.html" class="app-card">
+        <div>
+          <h3>🔀 Text Diff</h3>
+          <p>Compare two texts line by line.</p>
+        </div>
+      </a>
+
+      <a href="./text-to-speech/index.html" class="app-card">
+        <div>
+          <h3>🔊 Text to Speech</h3>
+          <p>Browser speaks your text.</p>
+        </div>
+      </a>
+
+      <a href="./timezone/index.html" class="app-card">
+        <div>
+          <h3>⏰ Timezone</h3>
+          <p>Convert times across timezones.</p>
+        </div>
+      </a>
+
+      <a href="./tone-generator/index.html" class="app-card">
+        <div>
+          <h3>🎼 Tone Generator</h3>
+          <p>Pure tones, any frequency.</p>
+        </div>
+      </a>
+
+      <a href="./totp/index.html" class="app-card">
+        <div>
+          <h3>🔐 TOTP Codes</h3>
+          <p>2FA codes from a secret, offline.</p>
+        </div>
+      </a>
+
+      <a href="./touch-tester/index.html" class="app-card">
+        <div>
+          <h3>👆 Touch Tester</h3>
+          <p>Multi-touch visualizer.</p>
+        </div>
+      </a>
+
+      <a href="./typing-test/index.html" class="app-card">
+        <div>
+          <h3>⌨️ Typing Test</h3>
+          <p>Measure your typing speed.</p>
+        </div>
+      </a>
+
+      <a href="./unicode-inspector/index.html" class="app-card">
+        <div>
+          <h3>🕵️ Unicode Inspector</h3>
+          <p>Reveal hidden characters in text.</p>
+        </div>
+      </a>
+
+      <a href="./unit-converter/index.html" class="app-card">
+        <div>
+          <h3>📏 Unit Converter</h3>
+          <p>Convert units instantly.</p>
+        </div>
+      </a>
+
+      <a href="./unit-price/index.html" class="app-card">
+        <div>
+          <h3>⚖️ Unit Price</h3>
+          <p>Which package is the better deal?</p>
+        </div>
+      </a>
+
+      <a href="./unix-timestamp/index.html" class="app-card">
+        <div>
+          <h3>⏱️ Unix Timestamp</h3>
+          <p>Timestamp ↔️ date converter.</p>
+        </div>
+      </a>
+
+      <a href="./url-parser/index.html" class="app-card">
+        <div>
+          <h3>🔗 URL Parser</h3>
+          <p>Break URLs into parts.</p>
+        </div>
+      </a>
+
+      <a href="./uuid-generator/index.html" class="app-card">
+        <div>
+          <h3>🔑 UUID Generator</h3>
+          <p>Generate unique IDs.</p>
+        </div>
+      </a>
+
+      <a href="./voice-recorder/index.html" class="app-card">
+        <div>
+          <h3>🎙️ Voice Recorder</h3>
+          <p>Record audio, download it.</p>
+        </div>
+      </a>
+
+      <a href="./voltage-divider/index.html" class="app-card">
+        <div>
+          <h3>⚡ Voltage Divider</h3>
+          <p>Calculate output voltage.</p>
+        </div>
+      </a>
+
+      <a href="./where-am-i/index.html" class="app-card">
+        <div>
+          <h3>📍 Where Am I</h3>
+          <p>Your GPS coordinates.</p>
+        </div>
+      </a>
+
+      <a href="./wifi-qr/index.html" class="app-card">
+        <div>
+          <h3>📶 Wi-Fi QR</h3>
+          <p>Share your Wi-Fi as a QR code.</p>
+        </div>
+      </a>
+
+      <a href="./word-counter/index.html" class="app-card">
+        <div>
+          <h3>🔤 Word Counter</h3>
+          <p>Words, chars, reading time.</p>
+        </div>
+      </a>
+
+      <a href="./world-clock/index.html" class="app-card">
+        <div>
+          <h3>🌍 World Clock</h3>
+          <p>See time across timezones.</p>
+        </div>
+      </a>
+
+      <a href="./yaml-json/index.html" class="app-card">
+        <div>
+          <h3>🔄 YAML ⇄ JSON</h3>
+          <p>Convert either way, instantly.</p>
+        </div>
+      </a>
+
+    </div>
+
+    <footer class="w3-center w3-padding w3-small w3-text-grey">
+      Free, offline-first, no tracking.
+      <a href="./about/index.html" class="w3-text-blue" style="text-decoration: none;">About</a> ·
+      <a href="https://github.com/tomsik68/no-strings-tools" class="w3-text-blue" style="text-decoration: none;">⑂ Fork me on GitHub</a> ·
+      <a href="https://github.com/sponsors/tomsik68" class="w3-text-blue" style="text-decoration: none;">❤️ Sponsor this project</a>
+      <br />
+      Built by <a href="https://jasku.xyz" class="w3-text-blue" style="text-decoration: none;">Tomáš Jašek</a>
+    </footer>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById("search-input");
+    const appCards = document.querySelectorAll(".app-card");
+
+    searchInput.focus();
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase().trim();
+      appCards.forEach((card) => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const description = card.querySelector("p").textContent.toLowerCase();
+        const matches = title.includes(query) || description.includes(query);
+        card.style.display = matches ? "" : "none";
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tap BPM</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .bpm-display {
+      font-size: 96px;
+      font-weight: bold;
+      text-align: center;
+      font-family: "Courier New", monospace;
+      margin: 16px 0 0 0;
+      color: #333;
+    }
+    .bpm-sub { text-align: center; color: #666; min-height: 24px; }
+    .tap-btn {
+      width: 100%;
+      padding: 56px 0;
+      font-size: 32px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      background: #2196f3;
+      color: white;
+      cursor: pointer;
+      margin-top: 16px;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .tap-btn:active { background: #1565c0; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Tap BPM</h1>
+    <p class="w3-text-grey">Tap along with the music — any key works too. Pause 2 seconds to start over.</p>
+
+    <div class="bpm-display" id="bpm" aria-live="polite">—</div>
+    <div class="bpm-sub" id="taps"></div>
+
+    <button id="tap-btn" class="tap-btn">TAP</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

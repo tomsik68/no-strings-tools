@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timezone Converter</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .timezone-select-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    .timezone-input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    .timezone-dropdown {
+      display: none;
+      position: absolute;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-top: none;
+      width: 100%;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 10;
+    }
+    .timezone-dropdown.active {
+      display: block;
+    }
+    .timezone-option {
+      padding: 8px;
+      cursor: pointer;
+    }
+    .timezone-option:hover {
+      background-color: #f0f0f0;
+    }
+    .timezone-option.selected {
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Timezone Converter</h1>
+
+    <div class="w3-margin-top">
+      <label for="time-input" class="w3-text-grey">Time</label>
+      <input
+        id="time-input"
+        type="time"
+        class="w3-input w3-border w3-round w3-margin-bottom"
+      />
+    </div>
+
+    <div class="w3-row">
+      <div class="w3-half w3-padding-small">
+        <label for="tz1-input" class="w3-text-grey">From Timezone</label>
+        <div class="timezone-select-wrapper">
+          <input
+            id="tz1-input"
+            type="text"
+            class="timezone-input w3-border w3-round w3-margin-bottom"
+            placeholder="Search timezone..."
+            autocomplete="off"
+          />
+          <div id="tz1-dropdown" class="timezone-dropdown"></div>
+        </div>
+        <div id="tz1-selected" class="w3-text-grey w3-small w3-margin-bottom"></div>
+      </div>
+
+      <div class="w3-half w3-padding-small">
+        <label for="tz2-input" class="w3-text-grey">To Timezone</label>
+        <div class="timezone-select-wrapper">
+          <input
+            id="tz2-input"
+            type="text"
+            class="timezone-input w3-border w3-round w3-margin-bottom"
+            placeholder="Search timezone..."
+            autocomplete="off"
+          />
+          <div id="tz2-dropdown" class="timezone-dropdown"></div>
+        </div>
+        <div id="tz2-selected" class="w3-text-grey w3-small w3-margin-bottom"></div>
+      </div>
+    </div>
+
+    <div class="w3-margin-top">
+      <p class="w3-text-grey w3-small">Converted Time</p>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <p id="to-time" class="w3-large" style="font-weight: bold; min-height: 32px; flex: 1; margin: 0; cursor: pointer; padding: 8px; border-radius: 4px; user-select: none;">--:--</p>
+        <button id="copy-btn" class="w3-button w3-blue w3-small w3-round" style="white-space: nowrap;">Copy</button>
+      </div>
+      <p id="copy-feedback" class="w3-text-grey w3-small" style="margin-top: 4px; min-height: 20px;"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

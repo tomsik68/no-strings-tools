@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tone Generator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .freq-display { text-align: center; font-size: 42px; font-weight: bold; font-family: monospace; margin: 20px 0; color: #333; }
+    .freq-display input { font-size: 42px; font-weight: bold; font-family: monospace; width: 220px; text-align: right; border: none; background: transparent; color: #333; }
+    input[type=range] { width: 100%; margin: 16px 0; }
+    .wave-buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+    .wave-btn { padding: 10px; border: 2px solid #ddd; background: white; border-radius: 6px; cursor: pointer; font-size: 13px; }
+    .wave-btn.active { border-color: #2196f3; background: #e3f2fd; font-weight: 600; }
+    .play-btn { width: 100%; padding: 14px; font-size: 18px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Tone Generator</h1>
+    <p class="w3-text-grey w3-small">Pure tones for tuning instruments and testing speakers.</p>
+
+    <div class="freq-display">
+      <input id="freq-input" type="number" min="20" max="20000" value="440" aria-label="Frequency in hertz" /> Hz
+    </div>
+
+    <input id="freq-slider" type="range" min="0" max="1000" value="437" aria-label="Frequency slider" />
+
+    <div class="wave-buttons">
+      <button class="wave-btn active" data-wave="sine">Sine</button>
+      <button class="wave-btn" data-wave="square">Square</button>
+      <button class="wave-btn" data-wave="triangle">Triangle</button>
+      <button class="wave-btn" data-wave="sawtooth">Sawtooth</button>
+    </div>
+
+    <button id="play-btn" class="w3-button w3-blue w3-round play-btn">▶ Play</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text to Speech</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      font-family: inherit;
+      resize: vertical;
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .btn-speak {
+      background-color: #4caf50;
+      color: white;
+    }
+    .btn-speak:hover {
+      background-color: #45a049;
+    }
+    .btn-stop {
+      background-color: #f44336;
+      color: white;
+    }
+    .btn-stop:hover {
+      background-color: #da190b;
+    }
+    .options {
+      margin-top: 20px;
+      padding: 16px;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+    }
+    .option-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .option-row:last-child {
+      margin-bottom: 0;
+    }
+    label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #333;
+    }
+    input[type="range"] {
+      flex: 1;
+      min-width: 100px;
+    }
+    .value-display {
+      min-width: 40px;
+      text-align: center;
+      font-weight: 600;
+    }
+    select {
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Text to Speech</h1>
+
+    <label for="text-input" class="w3-text-grey">Text to Speak</label>
+    <textarea id="text-input" class="w3-input w3-border w3-round w3-margin-bottom" placeholder="Enter text here...">The browser can speak! This is using the Web Speech API.</textarea>
+
+    <div class="controls">
+      <button id="speak-btn" class="w3-button w3-round btn-speak">🔊 Speak</button>
+      <button id="stop-btn" class="w3-button w3-round btn-stop">⏹️ Stop</button>
+    </div>
+
+    <div class="options">
+      <div class="option-row">
+        <label for="voice-select" style="min-width: 60px;">Voice:</label>
+        <select id="voice-select" style="flex: 1; min-width: 150px;"></select>
+      </div>
+
+      <div class="option-row">
+        <label style="min-width: 60px;">Rate:</label>
+        <input id="rate-slider" type="range" min="0.5" max="2" step="0.1" value="1" />
+        <span class="value-display" id="rate-value">1x</span>
+      </div>
+
+      <div class="option-row">
+        <label style="min-width: 60px;">Pitch:</label>
+        <input id="pitch-slider" type="range" min="0.5" max="2" step="0.1" value="1" />
+        <span class="value-display" id="pitch-value">1</span>
+      </div>
+
+      <div class="option-row">
+        <label style="min-width: 60px;">Volume:</label>
+        <input id="volume-slider" type="range" min="0" max="1" step="0.1" value="1" />
+        <span class="value-display" id="volume-value">100%</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

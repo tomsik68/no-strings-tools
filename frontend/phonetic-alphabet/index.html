@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phonetic Alphabet</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .phonetic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .phonetic-card {
+      background: white;
+      padding: 12px;
+      border-radius: 6px;
+      border-left: 4px solid #2196f3;
+    }
+    .letter {
+      font-weight: bold;
+      font-size: 14px;
+      color: #333;
+    }
+    .word {
+      font-size: 16px;
+      color: #2196f3;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>NATO Phonetic Alphabet</h1>
+    <div class="phonetic-grid" id="phonetic-grid"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

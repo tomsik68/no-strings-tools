@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Word Counter</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    textarea { width: 100%; height: 200px; font-size: 14px; border: 1px solid #ddd; border-radius: 4px; padding: 8px; box-sizing: border-box; margin-top: 16px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-top: 16px; }
+    .stat { background: white; border-radius: 8px; padding: 12px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    .stat b { display: block; font-size: 22px; }
+    .stat span { font-size: 11px; color: #888; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Word Counter</h1>
+    <p class="w3-text-grey w3-small">Paste or type — counts update as you go. Unicode-aware (accents, CJK, emoji).</p>
+
+    <textarea id="input" placeholder="Paste or type text..." autocomplete="off"></textarea>
+
+    <div class="stat-grid">
+      <div class="stat"><b id="words">0</b><span>WORDS</span></div>
+      <div class="stat"><b id="chars">0</b><span>CHARACTERS</span></div>
+      <div class="stat"><b id="chars-ns">0</b><span>WITHOUT SPACES</span></div>
+      <div class="stat"><b id="sentences">0</b><span>SENTENCES</span></div>
+      <div class="stat"><b id="paragraphs">0</b><span>PARAGRAPHS</span></div>
+      <div class="stat"><b id="reading">0 min</b><span>READING TIME</span></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

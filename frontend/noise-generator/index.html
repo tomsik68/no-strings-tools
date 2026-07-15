@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noise Generator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .noise-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .noise-btn {
+      padding: 12px;
+      border: 2px solid #ddd;
+      background: white;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .noise-btn:hover {
+      border-color: #2196f3;
+    }
+    .noise-btn.active {
+      background-color: #2196f3;
+      color: white;
+      border-color: #2196f3;
+    }
+    .controls {
+      margin-top: 20px;
+      padding: 16px;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+    }
+    .control-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .control-row:last-child {
+      margin-bottom: 0;
+    }
+    label {
+      min-width: 80px;
+      font-weight: 600;
+      font-size: 13px;
+      color: #333;
+    }
+    input[type="range"] {
+      flex: 1;
+    }
+    .value-display {
+      min-width: 50px;
+      text-align: right;
+      font-weight: 600;
+    }
+    .status {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+    .status.playing {
+      color: #4caf50;
+      font-weight: bold;
+    }
+    .play-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+    .play-btn:hover {
+      background-color: #45a049;
+    }
+    .stop-btn {
+      background-color: #f44336;
+      color: white;
+    }
+    .stop-btn:hover {
+      background-color: #da190b;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Noise Generator</h1>
+
+    <p class="w3-text-grey w3-small">Generate relaxing or focusing background noise.</p>
+
+    <div class="noise-types">
+      <button class="noise-btn active" data-type="white">White</button>
+      <button class="noise-btn" data-type="brown">Brown</button>
+      <button class="noise-btn" data-type="pink">Pink</button>
+    </div>
+
+    <div class="controls">
+      <div class="control-row">
+        <label>Volume:</label>
+        <input id="volume-slider" type="range" min="0" max="1" step="0.1" value="0.3" />
+        <span class="value-display" id="volume-value">30%</span>
+      </div>
+
+      <div style="display: flex; gap: 8px;">
+        <button id="play-btn" class="w3-button w3-round play-btn" style="flex: 1;">▶️ Play</button>
+        <button id="stop-btn" class="w3-button w3-round stop-btn" style="flex: 1; display: none;">⏹️ Stop</button>
+      </div>
+    </div>
+
+    <div class="status" id="status">Ready</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

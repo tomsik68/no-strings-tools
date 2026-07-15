@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Clock</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .timezone-select-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    .timezone-input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    .timezone-dropdown {
+      display: none;
+      position: absolute;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-top: none;
+      width: 100%;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 10;
+    }
+    .timezone-dropdown.active {
+      display: block;
+    }
+    .timezone-option {
+      padding: 8px;
+      cursor: pointer;
+    }
+    .timezone-option:hover {
+      background-color: #f0f0f0;
+    }
+    .clocks-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .clock-card {
+      background: white;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+    }
+    .clock-card.home {
+      border: 3px solid #4caf50;
+      background: linear-gradient(135deg, #f1f8f6 0%, white 100%);
+    }
+    .clock-timezone {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 8px;
+    }
+    .clock-time {
+      font-size: 24px;
+      font-weight: bold;
+      font-family: "Courier New", monospace;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    .clock-offset {
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    .delete-btn {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      padding: 1px 4px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 9px;
+      line-height: 1;
+    }
+    .delete-btn:hover {
+      background-color: #da190b;
+    }
+    .home-badge {
+      display: inline-block;
+      background-color: #4caf50;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 10px;
+      margin-top: 4px;
+    }
+    .dst-indicator {
+      font-size: 14px;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      cursor: help;
+    }
+    .add-section {
+      margin-bottom: 20px;
+    }
+    .add-row {
+      display: flex;
+      gap: 8px;
+    }
+    .add-row input {
+      flex: 1;
+    }
+    .add-row button {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>World Clock</h1>
+
+    <div class="add-section">
+      <label class="w3-text-grey">Add Timezone</label>
+      <div class="add-row">
+        <div class="timezone-select-wrapper" style="flex: 1;">
+          <input
+            id="add-tz-input"
+            type="text"
+            class="timezone-input w3-border w3-round"
+            placeholder="Search timezone..."
+            autocomplete="off"
+          />
+          <div id="add-tz-dropdown" class="timezone-dropdown"></div>
+        </div>
+        <button id="add-tz-btn" class="w3-button w3-blue w3-round">Add</button>
+      </div>
+    </div>
+
+    <div class="clocks-container" id="clocks-container"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

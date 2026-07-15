@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chord Transposer</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .pane {
+      width: 100%;
+      height: 45vh;
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+      resize: vertical;
+      white-space: pre;
+    }
+    .shift-controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      margin: 12px 0;
+    }
+    .shift-value { font-size: 24px; font-weight: bold; font-family: "Courier New", monospace; min-width: 48px; text-align: center; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Chord Transposer</h1>
+    <p class="w3-text-grey">Paste a chord sheet. Only lines made of chords are transposed — lyrics stay put.</p>
+
+    <textarea id="input" class="w3-input w3-border w3-round pane" spellcheck="false" placeholder="C        G        Am       F&#10;Somewhere over the rainbow"></textarea>
+
+    <div class="shift-controls">
+      <button id="down-btn" class="w3-button w3-border w3-round w3-large" aria-label="Transpose down one semitone">−1</button>
+      <span class="shift-value" id="shift">0</span>
+      <button id="up-btn" class="w3-button w3-border w3-round w3-large" aria-label="Transpose up one semitone">+1</button>
+      <button id="copy-btn" class="w3-button w3-blue w3-round">Copy result</button>
+      <span id="copy-feedback" class="w3-text-green"></span>
+    </div>
+
+    <textarea id="output" class="w3-input w3-border w3-round pane" spellcheck="false" readonly aria-label="Transposed chord sheet"></textarea>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

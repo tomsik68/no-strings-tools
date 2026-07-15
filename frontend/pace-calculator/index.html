@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pace Calculator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .race-table td { padding: 8px 4px; font-size: 18px; }
+    .race-table td:last-child { text-align: right; font-family: "Courier New", monospace; font-weight: bold; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Pace Calculator</h1>
+    <p class="w3-text-grey">Fill in any two — the third is computed.</p>
+
+    <div class="w3-row-padding" style="margin-left: -8px; margin-right: -8px;">
+      <div class="w3-col s4">
+        <label for="distance-input">Distance (km)</label>
+        <input id="distance-input" class="w3-input w3-border w3-round" type="number" step="any" min="0" placeholder="10" />
+      </div>
+      <div class="w3-col s4">
+        <label for="time-input">Time</label>
+        <input id="time-input" class="w3-input w3-border w3-round" type="text" inputmode="numeric" placeholder="52:30" autocomplete="off" />
+      </div>
+      <div class="w3-col s4">
+        <label for="pace-input">Pace (min/km)</label>
+        <input id="pace-input" class="w3-input w3-border w3-round" type="text" inputmode="numeric" placeholder="5:15" autocomplete="off" />
+      </div>
+    </div>
+
+    <p class="w3-text-red" id="error" style="display: none;"></p>
+
+    <div id="races" style="display: none;">
+      <h4 style="margin-bottom: 4px;">At this pace</h4>
+      <table class="w3-table race-table">
+        <tr><td>5 km</td><td id="race-5k"></td></tr>
+        <tr><td>10 km</td><td id="race-10k"></td></tr>
+        <tr><td>Half marathon</td><td id="race-half"></td></tr>
+        <tr><td>Marathon</td><td id="race-full"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sketch Pad</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    #pad { width: 100%; height: 55vh; background: white; border: 1px solid #ddd; border-radius: 8px; margin-top: 16px; touch-action: none; cursor: crosshair; display: block; }
+    .btn-row { display: flex; gap: 8px; margin-top: 8px; }
+    .btn-row button, .btn-row a { flex: 1; padding: 12px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Sketch Pad</h1>
+    <p class="w3-text-grey w3-small">Draw with mouse, finger, or pen. Download as PNG — good for quick sketches and signatures.</p>
+
+    <canvas id="pad"></canvas>
+
+    <div class="btn-row">
+      <button id="undo-btn" class="w3-button w3-light-grey w3-border w3-round">↩️ Undo</button>
+      <button id="clear-btn" class="w3-button w3-light-grey w3-border w3-round">🗑 Clear</button>
+      <button id="download-btn" class="w3-button w3-blue w3-round">⬇️ PNG</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

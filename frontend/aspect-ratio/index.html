@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aspect Ratio Calculator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .ratio-display {
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+      font-family: "Courier New", monospace;
+      margin: 20px 0 4px 0;
+      color: #333;
+    }
+    .ratio-sub { text-align: center; color: #666; margin-bottom: 8px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Aspect Ratio</h1>
+
+    <p style="margin-bottom: 4px;"><b>Original size</b></p>
+    <div class="w3-row-padding" style="margin-left: -8px; margin-right: -8px;">
+      <div class="w3-col s6">
+        <label for="orig-w">Width</label>
+        <input id="orig-w" class="w3-input w3-border w3-round" type="number" min="1" value="1920" />
+      </div>
+      <div class="w3-col s6">
+        <label for="orig-h">Height</label>
+        <input id="orig-h" class="w3-input w3-border w3-round" type="number" min="1" value="1080" />
+      </div>
+    </div>
+
+    <div class="ratio-display" id="ratio">16:9</div>
+    <div class="ratio-sub" id="ratio-decimal">1.778</div>
+
+    <p style="margin-bottom: 4px;"><b>New size</b> — fill in either one</p>
+    <div class="w3-row-padding" style="margin-left: -8px; margin-right: -8px;">
+      <div class="w3-col s6">
+        <label for="new-w">Width</label>
+        <input id="new-w" class="w3-input w3-border w3-round" type="number" min="1" placeholder="e.g. 1280" />
+      </div>
+      <div class="w3-col s6">
+        <label for="new-h">Height</label>
+        <input id="new-h" class="w3-input w3-border w3-round" type="number" min="1" placeholder="e.g. 720" />
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

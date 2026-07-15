@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL Parser</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    textarea { width: 100%; height: 80px; font-family: monospace; font-size: 13px; border: 1px solid #ddd; border-radius: 4px; padding: 8px; box-sizing: border-box; }
+    .part-grid { display: grid; gap: 12px; margin-top: 16px; }
+    .part-box { background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #2196f3; }
+    .part-label { font-size: 11px; color: #999; font-weight: 600; margin-bottom: 4px; }
+    .part-value { font-family: monospace; font-size: 14px; word-break: break-all; color: #333; }
+    .param-row { display: grid; grid-template-columns: 1fr 2fr; gap: 8px; padding: 4px 0; border-bottom: 1px solid #f0f0f0; }
+    .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>URL Parser</h1>
+    <p class="w3-text-grey w3-small">Paste a URL — see every part broken down, query parameters decoded.</p>
+
+    <textarea id="input" placeholder="https://example.com/path?foo=bar&baz=hello%20world#section" autocomplete="off" spellcheck="false"></textarea>
+
+    <div class="error" id="error" style="display: none;"></div>
+    <div class="part-grid" id="results" style="display: none;">
+      <div class="part-box"><div class="part-label">Protocol</div><div class="part-value" id="protocol"></div></div>
+      <div class="part-box"><div class="part-label">Host</div><div class="part-value" id="host"></div></div>
+      <div class="part-box"><div class="part-label">Port</div><div class="part-value" id="port"></div></div>
+      <div class="part-box"><div class="part-label">Path</div><div class="part-value" id="path"></div></div>
+      <div class="part-box"><div class="part-label">Hash</div><div class="part-value" id="hash"></div></div>
+      <div class="part-box"><div class="part-label">Query parameters (decoded)</div><div id="params"></div></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

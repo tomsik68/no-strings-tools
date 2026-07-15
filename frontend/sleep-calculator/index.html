@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep Calculator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .wake-row { display: flex; align-items: center; gap: 12px; margin: 16px 0; }
+    .wake-row input { font-size: 20px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+    .times { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-top: 12px; }
+    .time-box { background: white; padding: 16px 12px; border-radius: 8px; border-left: 4px solid #2196f3; text-align: center; }
+    .time-box.best { border-left-color: #4caf50; }
+    .time-value { font-size: 24px; font-weight: bold; font-family: monospace; color: #333; }
+    .time-label { font-size: 11px; color: #999; margin-top: 4px; }
+    h2 { font-size: 18px; margin-top: 28px; }
+    .note { font-size: 12px; color: #999; margin-top: 20px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Sleep Calculator</h1>
+    <p class="w3-text-grey w3-small">Wake up between 90-minute sleep cycles, not in the middle of one.</p>
+
+    <div class="wake-row">
+      <label for="wake-time" style="font-weight: 600;">I want to wake up at</label>
+      <input id="wake-time" type="time" value="06:30" />
+    </div>
+
+    <h2>Go to bed at</h2>
+    <div class="times" id="bedtimes"></div>
+
+    <h2>If you go to bed now, wake up at</h2>
+    <div class="times" id="waketimes"></div>
+
+    <p class="note">Assumes ~15 minutes to fall asleep. Green = 5-6 full cycles (7.5-9 h), the sweet spot for most adults.</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dice Roller</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .dice-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .dice-btn {
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .dice-btn:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+    .dice-btn:active {
+      transform: scale(0.98);
+    }
+    .result-display {
+      margin-top: 24px;
+      padding: 20px;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .result-display .roll-type {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    .result-display .roll-value {
+      font-size: 48px;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+    .result-display .roll-time {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    .log-section {
+      margin-top: 24px;
+    }
+    .log-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .log-header h3 {
+      margin: 0;
+    }
+    .clear-btn {
+      padding: 4px 12px;
+      font-size: 12px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .clear-btn:hover {
+      background-color: #da190b;
+    }
+    .log-list {
+      background-color: #f9f9f9;
+      border-radius: 4px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .log-entry {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+    .log-entry:last-child {
+      border-bottom: none;
+    }
+    .log-entry .roll-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .log-entry .roll-die {
+      font-weight: 600;
+      background-color: #007bff;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 3px;
+      min-width: 40px;
+      text-align: center;
+    }
+    .log-entry .roll-result {
+      font-weight: bold;
+      color: #333;
+    }
+    .log-entry .roll-timestamp {
+      color: #999;
+      font-size: 12px;
+      text-align: right;
+    }
+    .log-empty {
+      padding: 20px;
+      text-align: center;
+      color: #999;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Dice Roller</h1>
+
+    <div class="dice-buttons">
+      <button class="dice-btn" data-dice="d4">d4</button>
+      <button class="dice-btn" data-dice="d6">d6</button>
+      <button class="dice-btn" data-dice="d8">d8</button>
+      <button class="dice-btn" data-dice="d10">d10</button>
+      <button class="dice-btn" data-dice="d12">d12</button>
+      <button class="dice-btn" data-dice="d20">d20</button>
+      <button class="dice-btn" data-dice="d100">d100</button>
+    </div>
+
+    <div class="result-display">
+      <div class="roll-type" id="roll-type">Roll a die to start</div>
+      <div class="roll-value" id="roll-value">-</div>
+      <div class="roll-time" id="roll-time"></div>
+    </div>
+
+    <div class="log-section">
+      <div class="log-header">
+        <h3 style="margin-bottom: 0;">Roll Log</h3>
+        <button class="clear-btn" id="clear-btn">Clear</button>
+      </div>
+      <div class="log-list" id="log-list">
+        <div class="log-empty">No rolls yet.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

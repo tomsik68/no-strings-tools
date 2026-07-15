@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact QR Code</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1/build/qrcode.min.js"></script>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Contact QR</h1>
+    <p class="w3-text-grey">Scan with a phone camera to save the contact.</p>
+
+    <label for="name-input">Name</label>
+    <input id="name-input" class="w3-input w3-border w3-round" type="text" autocomplete="off" placeholder="Jane Doe" />
+
+    <label for="phone-input" style="margin-top: 12px; display: block;">Phone</label>
+    <input id="phone-input" class="w3-input w3-border w3-round" type="tel" autocomplete="off" placeholder="+420 777 123 456" />
+
+    <label for="email-input" style="margin-top: 12px; display: block;">Email</label>
+    <input id="email-input" class="w3-input w3-border w3-round" type="email" autocomplete="off" placeholder="jane@example.com" />
+
+    <label for="org-input" style="margin-top: 12px; display: block;">Company <span class="w3-text-grey">(optional)</span></label>
+    <input id="org-input" class="w3-input w3-border w3-round" type="text" autocomplete="off" />
+
+    <div class="w3-center" style="margin-top: 24px;">
+      <canvas id="qr-canvas" width="256" height="256" aria-label="Contact QR code"></canvas>
+    </div>
+
+    <div class="w3-center" style="margin-bottom: 16px;">
+      <button id="download-btn" class="w3-button w3-blue w3-round" style="display: none;">Download PNG</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

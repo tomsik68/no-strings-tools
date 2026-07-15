@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duration Adder</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .total-display {
+      font-size: 56px;
+      font-weight: bold;
+      text-align: center;
+      font-family: "Courier New", monospace;
+      margin: 16px 0 0 0;
+      color: #333;
+    }
+    .decimal-display {
+      text-align: center;
+      font-size: 20px;
+      color: #666;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Duration Adder</h1>
+    <p class="w3-text-grey">One duration per line: <code>7:45</code>, <code>1:02:30</code>, <code>90m</code>, <code>1h 30m</code>, or plain minutes.</p>
+
+    <textarea
+      id="durations-input"
+      class="w3-input w3-border w3-round"
+      rows="8"
+      placeholder="7:45&#10;6:30&#10;8:15"
+      style="font-family: 'Courier New', monospace; resize: vertical;"
+      aria-label="Durations, one per line"
+    ></textarea>
+
+    <div class="total-display" id="total">0:00</div>
+    <div class="decimal-display" id="decimal">0 h</div>
+    <p class="w3-text-red w3-center" id="error" style="display: none;"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

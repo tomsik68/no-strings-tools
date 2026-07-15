@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPS Speedometer</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .speed { text-align: center; font-size: 110px; font-weight: bold; font-family: monospace; margin: 20px 0 0; color: #333; line-height: 1; }
+    .unit { text-align: center; font-size: 18px; color: #999; margin-bottom: 4px; }
+    .mph { text-align: center; font-size: 15px; color: #bbb; font-family: monospace; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+    .stat-box { background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #2196f3; text-align: center; }
+    .stat-label { font-size: 11px; color: #999; font-weight: 600; }
+    .stat-value { font-family: monospace; font-size: 18px; }
+    .start-btn { width: 100%; padding: 14px; font-size: 16px; margin-top: 16px; }
+    .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>GPS Speedometer</h1>
+    <p class="w3-text-grey w3-small">Your speed from GPS. Works offline once loaded — no network, just satellites.</p>
+
+    <div class="speed" id="speed">—</div>
+    <div class="unit">km/h</div>
+    <div class="mph" id="mph"></div>
+
+    <button id="start-btn" class="w3-button w3-blue w3-round start-btn">🚴 Start</button>
+    <div class="error" id="error" style="display: none;"></div>
+
+    <div class="stats" id="stats" style="display: none;">
+      <div class="stat-box"><div class="stat-label">Max</div><div class="stat-value" id="max"></div></div>
+      <div class="stat-box"><div class="stat-label">GPS accuracy</div><div class="stat-value" id="accuracy"></div></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

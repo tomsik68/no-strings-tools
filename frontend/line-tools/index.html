@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Line Tools</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Line Tools</h1>
+
+    <textarea
+      id="text-input"
+      class="w3-input w3-border w3-round"
+      rows="14"
+      placeholder="Paste lines here…"
+      spellcheck="false"
+      style="font-family: 'Courier New', monospace; resize: vertical;"
+      aria-label="Lines to process"
+    ></textarea>
+
+    <p class="w3-text-grey" id="stats" style="margin: 8px 0 0 0;">0 lines</p>
+
+    <div class="toolbar">
+      <button class="w3-button w3-border w3-round" data-op="sort">Sort A→Z</button>
+      <button class="w3-button w3-border w3-round" data-op="sort-desc">Sort Z→A</button>
+      <button class="w3-button w3-border w3-round" data-op="dedupe">Deduplicate</button>
+      <button class="w3-button w3-border w3-round" data-op="reverse">Reverse</button>
+      <button class="w3-button w3-border w3-round" data-op="shuffle">Shuffle</button>
+      <button class="w3-button w3-border w3-round" data-op="trim">Trim</button>
+      <button class="w3-button w3-border w3-round" data-op="remove-empty">Remove empty</button>
+      <button id="copy-btn" class="w3-button w3-blue w3-round">Copy</button>
+      <span id="copy-feedback" class="w3-text-green" style="align-self: center;"></span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

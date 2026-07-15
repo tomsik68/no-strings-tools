@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gamepad Tester</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .prompt { text-align: center; font-size: 18px; color: #999; margin: 60px 0; }
+    .pad-name { font-weight: 600; font-size: 15px; margin: 16px 0 8px; word-break: break-all; }
+    .buttons-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 8px; }
+    .btn-box { background: white; border: 2px solid #ddd; border-radius: 8px; padding: 10px 4px; text-align: center; font-size: 12px; }
+    .btn-box.pressed { background: #2196f3; color: white; border-color: #2196f3; font-weight: bold; }
+    .btn-value { font-family: monospace; font-size: 11px; }
+    .axes { margin-top: 16px; }
+    .axis-row { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+    .axis-label { font-size: 12px; color: #666; width: 60px; }
+    .axis-bar { flex: 1; height: 16px; background: #eee; border-radius: 8px; position: relative; }
+    .axis-fill { position: absolute; top: 0; bottom: 0; width: 4px; background: #2196f3; border-radius: 2px; transition: left 0.05s linear; }
+    .axis-value { font-family: monospace; font-size: 12px; width: 55px; text-align: right; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Gamepad Tester</h1>
+    <p class="w3-text-grey w3-small">Every button and stick, live. Test your controller without installing anything.</p>
+
+    <div class="prompt" id="prompt">🎮 Connect a controller and press any button</div>
+    <div id="pad" style="display: none;">
+      <div class="pad-name" id="pad-name"></div>
+      <div class="buttons-grid" id="buttons"></div>
+      <div class="axes" id="axes"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

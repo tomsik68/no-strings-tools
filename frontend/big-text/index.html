@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Big Text</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .banner {
+      position: fixed;
+      inset: 0;
+      background: black;
+      display: none;
+      align-items: center;
+      overflow: hidden;
+      z-index: 10;
+      cursor: pointer;
+    }
+    .banner .text {
+      color: white;
+      font-size: 55vh;
+      font-weight: bold;
+      white-space: nowrap;
+      will-change: transform;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Big Text</h1>
+    <p class="w3-text-grey">Show a message across the room — huge letters, scrolling if it doesn't fit. Tap to exit.</p>
+
+    <form id="form">
+      <label for="text-input">Message</label>
+      <input id="text-input" class="w3-input w3-border w3-round" type="text" autocomplete="off" placeholder="GATE B12" style="font-size: 20px;" />
+      <button type="submit" class="w3-button w3-green w3-round w3-large" style="margin-top: 16px; width: 100%;">Show it big</button>
+    </form>
+  </div>
+
+  <div class="banner" id="banner"><div class="text" id="banner-text"></div></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electricity Cost</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .cost-table td { padding: 8px 4px; font-size: 18px; }
+    .cost-table td:not(:first-child) { text-align: right; font-family: "Courier New", monospace; }
+    .cost-table tr:last-child td { font-weight: bold; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Electricity Cost</h1>
+
+    <label for="watts-input">Device power (watts)</label>
+    <input id="watts-input" class="w3-input w3-border w3-round" type="number" step="any" min="0" placeholder="e.g. 150" />
+
+    <label for="hours-input" style="margin-top: 12px; display: block;">Hours per day</label>
+    <input id="hours-input" class="w3-input w3-border w3-round" type="number" step="any" min="0" max="24" value="24" />
+
+    <label for="price-input" style="margin-top: 12px; display: block;">Price per kWh</label>
+    <input id="price-input" class="w3-input w3-border w3-round" type="number" step="any" min="0" placeholder="e.g. 6.50" />
+
+    <table class="w3-table cost-table" id="results" style="display: none; margin-top: 16px;">
+      <tr class="w3-text-grey"><td></td><td>Energy</td><td>Cost</td></tr>
+      <tr><td>Per day</td><td id="kwh-day"></td><td id="cost-day"></td></tr>
+      <tr><td>Per month</td><td id="kwh-month"></td><td id="cost-month"></td></tr>
+      <tr><td>Per year</td><td id="kwh-year"></td><td id="cost-year"></td></tr>
+    </table>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

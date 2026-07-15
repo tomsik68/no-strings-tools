@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speech to Text</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .recording-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin-right: 8px;
+      animation: none;
+    }
+    .recording-indicator.active {
+      background-color: #f44336;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+    .controls {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-record {
+      background-color: #4caf50;
+      color: white;
+    }
+    .btn-record:hover {
+      background-color: #45a049;
+    }
+    .btn-stop {
+      background-color: #f44336;
+      color: white;
+    }
+    .btn-stop:hover {
+      background-color: #da190b;
+    }
+    .btn-clear {
+      background-color: #2196f3;
+      color: white;
+    }
+    .btn-clear:hover {
+      background-color: #0b7dda;
+    }
+    .output {
+      margin-top: 20px;
+      padding: 16px;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      min-height: 80px;
+    }
+    .output-label {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .transcription {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #333;
+    }
+    .interim {
+      color: #999;
+      font-style: italic;
+    }
+    .confidence {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Speech to Text</h1>
+
+    <p class="w3-text-grey">Click record and speak. Your voice will be transcribed in real-time.</p>
+
+    <div class="controls">
+      <button id="record-btn" class="w3-button w3-round btn-record">
+        <span class="recording-indicator" id="indicator"></span>
+        🎤 Start Recording
+      </button>
+      <button id="stop-btn" class="w3-button w3-round btn-stop" style="display: none;">⏹️ Stop Recording</button>
+      <button id="clear-btn" class="w3-button w3-round btn-clear">Clear</button>
+    </div>
+
+    <div class="output">
+      <div class="output-label">Transcription</div>
+      <div class="transcription">
+        <span id="final-text"></span>
+        <span class="interim" id="interim-text"></span>
+      </div>
+      <div class="confidence" id="confidence"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

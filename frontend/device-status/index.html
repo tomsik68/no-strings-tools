@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Device Status</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .status-card {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      border-left: 4px solid #2196f3;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .status-label {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .status-value {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .status-card.charging {
+      border-left-color: #4caf50;
+    }
+    .status-card.low {
+      border-left-color: #f44336;
+    }
+    .status-card.online {
+      border-left-color: #4caf50;
+    }
+    .status-card.offline {
+      border-left-color: #f44336;
+    }
+    .detail-list {
+      margin-top: 20px;
+      padding: 16px;
+      background: #f5f5f5;
+      border-radius: 8px;
+    }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #ddd;
+      font-size: 13px;
+    }
+    .detail-row:last-child {
+      border-bottom: none;
+    }
+    .detail-label {
+      color: #666;
+    }
+    .detail-value {
+      font-weight: bold;
+      color: #333;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Device Status</h1>
+
+    <div class="status-grid">
+      <div class="status-card" id="battery-card">
+        <div class="status-label">Battery</div>
+        <div class="status-value" id="battery-value">--</div>
+      </div>
+
+      <div class="status-card" id="network-card">
+        <div class="status-label">Network</div>
+        <div class="status-value" id="network-value">--</div>
+      </div>
+
+      <div class="status-card">
+        <div class="status-label">Device</div>
+        <div class="status-value" id="device-type">--</div>
+      </div>
+
+      <div class="status-card">
+        <div class="status-label">Screen</div>
+        <div class="status-value" id="screen-size">--</div>
+      </div>
+    </div>
+
+    <div class="detail-list">
+      <div class="detail-row">
+        <span class="detail-label">User Agent</span>
+        <span class="detail-value" id="user-agent">--</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">RAM</span>
+        <span class="detail-value" id="ram">--</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Hardware</span>
+        <span class="detail-value" id="hardware">--</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Cores</span>
+        <span class="detail-value" id="cores">--</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

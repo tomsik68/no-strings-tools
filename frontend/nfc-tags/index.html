@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NFC Tags</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .big-btn { width: 100%; padding: 16px; font-size: 17px; margin-top: 12px; }
+    .record { background: white; padding: 10px 12px; border-radius: 8px; margin-top: 8px; border-left: 4px solid #2196f3; word-break: break-all; }
+    .record .meta { font-size: 11px; color: #999; }
+    .status-ok { background: #c8e6c9; color: #2e7d32; padding: 12px; border-radius: 4px; margin-top: 16px; }
+    .status-err { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 24px;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>NFC Tags</h1>
+    <p class="w3-text-grey w3-small">Read and write NFC tags — the stickers and cards you tap. Works in Chrome on Android; hold the tag to the back of your phone.</p>
+
+    <button id="scan-btn" class="w3-button w3-blue w3-round big-btn">📡 Start reading</button>
+    <div id="records"></div>
+
+    <label class="w3-small w3-text-grey" for="write-input" style="display: block; margin-top: 20px;">WRITE TO A TAG</label>
+    <input id="write-input" type="text" class="w3-input w3-border w3-round" placeholder="Text or URL to write" autocomplete="off" />
+    <button id="write-btn" class="w3-button w3-light-grey w3-border w3-round big-btn">✍️ Write to tag</button>
+
+    <div id="status" style="display: none;"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

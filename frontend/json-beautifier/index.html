@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON Beautifier</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    textarea {
+      font-family: monospace;
+      font-size: 14px;
+      resize: vertical;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 12px;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 0;
+      font-family: monospace;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .error {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>JSON Beautifier</h1>
+
+    <div class="w3-margin-top">
+      <label for="json-input" class="w3-text-grey">Paste JSON</label>
+      <textarea
+        id="json-input"
+        class="w3-input w3-border w3-round w3-margin-bottom"
+        placeholder="Paste JSON here..."
+        rows="8"
+      ></textarea>
+    </div>
+
+    <div class="w3-margin-top">
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <p class="w3-text-grey w3-small" style="margin: 0; flex: 1;">Output</p>
+        <button id="copy-btn" class="w3-button w3-blue w3-small w3-round" style="white-space: nowrap;">Copy</button>
+      </div>
+      <div id="error-container" style="min-height: 20px; margin-bottom: 8px;"></div>
+      <pre id="output">Paste JSON above...</pre>
+      <p id="copy-feedback" class="w3-text-grey w3-small" style="margin-top: 4px; min-height: 20px;"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

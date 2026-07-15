@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOTP Generator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .code-display {
+      font-size: 64px;
+      font-weight: bold;
+      text-align: center;
+      font-family: "Courier New", monospace;
+      letter-spacing: 8px;
+      margin: 20px 0 4px 0;
+      color: #333;
+      cursor: pointer;
+    }
+    .countdown-bar {
+      height: 6px;
+      background: #e0e0e0;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    .countdown-bar > div { height: 100%; background: #4caf50; transition: width 0.9s linear; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>TOTP Generator</h1>
+    <p class="w3-text-grey">
+      Codes are computed on this device and the secret is <b>never stored or sent anywhere</b>.
+      Meant for developers testing 2FA — keep real account secrets in a proper authenticator.
+    </p>
+
+    <label for="secret-input">Base32 secret</label>
+    <input
+      id="secret-input"
+      class="w3-input w3-border w3-round"
+      type="text"
+      autocomplete="off"
+      autocapitalize="characters"
+      spellcheck="false"
+      placeholder="JBSWY3DPEHPK3PXP"
+      style="font-family: 'Courier New', monospace;"
+    />
+
+    <div class="code-display" id="code" title="Click to copy" aria-live="polite"></div>
+    <div class="countdown-bar" id="bar-wrap" style="display: none;"><div id="bar"></div></div>
+    <p class="w3-center w3-text-grey" id="status"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

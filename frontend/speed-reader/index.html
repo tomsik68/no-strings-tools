@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speed Reader</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .reader {
+      position: fixed;
+      inset: 0;
+      background: #fafafa;
+      display: none;
+      z-index: 10;
+      cursor: pointer;
+    }
+    .reader .word {
+      position: absolute;
+      top: 40%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 9vw;
+      font-weight: bold;
+      color: #222;
+    }
+    @media (min-width: 800px) { .reader .word { font-size: 72px; } }
+    .reader .progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #2196f3;
+    }
+    .reader .hint {
+      position: absolute;
+      bottom: 24px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #999;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Speed Reader</h1>
+    <p class="w3-text-grey">Words flash one at a time — read without moving your eyes.</p>
+
+    <textarea
+      id="text-input"
+      class="w3-input w3-border w3-round"
+      rows="10"
+      placeholder="Paste the text you want to speed-read…"
+      style="resize: vertical;"
+    ></textarea>
+
+    <div style="display: flex; gap: 16px; align-items: end; margin-top: 16px; flex-wrap: wrap;">
+      <div>
+        <label for="wpm-input">Words per minute</label>
+        <input id="wpm-input" class="w3-input w3-border w3-round" type="number" min="60" max="1200" step="10" value="300" style="width: 120px;" />
+      </div>
+      <button id="start-btn" class="w3-button w3-green w3-round w3-large">▶ Start</button>
+    </div>
+  </div>
+
+  <div class="reader" id="reader">
+    <div class="progress" id="progress"></div>
+    <div class="word" id="word"></div>
+    <div class="hint">tap to pause · Esc to exit</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

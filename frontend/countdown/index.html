@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countdown</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .input-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      align-items: center;
+    }
+    .input-group input {
+      width: 80px;
+    }
+    .input-group label {
+      font-weight: 600;
+      color: #333;
+    }
+    .timer-display {
+      font-size: 72px;
+      font-weight: bold;
+      text-align: center;
+      font-family: "Courier New", monospace;
+      margin: 40px 0;
+      color: #333;
+    }
+    .timer-display.warning {
+      color: #f44336;
+    }
+    .controls {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .control-btn {
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .start-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+    .start-btn:hover:not(:disabled) {
+      background-color: #45a049;
+    }
+    .start-btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .stop-btn {
+      background-color: #f44336;
+      color: white;
+    }
+    .stop-btn:hover {
+      background-color: #da190b;
+    }
+    .reset-btn {
+      background-color: #2196f3;
+      color: white;
+    }
+    .reset-btn:hover {
+      background-color: #0b7dda;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Countdown</h1>
+
+    <div class="input-group">
+      <label>Minutes:</label>
+      <input id="minutes-input" type="number" min="0" value="1" />
+      <label>Seconds:</label>
+      <input id="seconds-input" type="number" min="0" max="59" value="0" />
+    </div>
+
+    <div class="timer-display" id="timer">00:01:00</div>
+
+    <div class="controls">
+      <button id="start-btn" class="control-btn start-btn">Start</button>
+      <button id="stop-btn" class="control-btn stop-btn" style="display: none;">Stop</button>
+      <button id="reset-btn" class="control-btn reset-btn">Reset</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

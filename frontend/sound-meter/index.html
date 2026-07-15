@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sound Meter</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .level-num { font-size: 56px; font-weight: 700; text-align: center; margin-top: 16px; font-variant-numeric: tabular-nums; }
+    .bar-track { height: 28px; background: #e0e0e0; border-radius: 14px; margin-top: 8px; position: relative; overflow: hidden; }
+    .bar-fill { height: 100%; width: 0; background: #4caf50; border-radius: 14px; transition: width 0.05s linear; }
+    .peak-mark { position: absolute; top: 0; bottom: 0; width: 3px; background: #f44336; }
+    .start-btn { width: 100%; padding: 16px; font-size: 17px; margin-top: 16px; }
+    .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Sound Meter</h1>
+    <p class="w3-text-grey w3-small">Live microphone level. Values are dBFS — relative to your mic's maximum, not calibrated SPL — good for comparing louder vs. quieter, spotting clipping, and checking a mic works.</p>
+
+    <div class="level-num" id="level">–∞</div>
+    <p class="w3-center w3-text-grey w3-small" style="margin: 0;">dBFS · peak <span id="peak">–∞</span></p>
+    <div class="bar-track">
+      <div class="bar-fill" id="bar"></div>
+      <div class="peak-mark" id="peak-mark" style="left: 0;"></div>
+    </div>
+
+    <button id="toggle-btn" class="w3-button w3-blue w3-round start-btn">🎙 Start listening</button>
+    <div class="error" id="error" style="display: none;"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compass</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .compass-container {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      margin: 30px auto;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      border: 3px solid #333;
+    }
+    .compass-inner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transition: transform 0.1s ease-out;
+    }
+    .compass-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .compass-n { transform: translate(0, -100px); }
+    .compass-e { transform: translate(100px, 0); }
+    .compass-s { transform: translate(0, 100px); }
+    .compass-w { transform: translate(-100px, 0); }
+    .compass-ne { transform: translate(70px, -70px); font-size: 14px; }
+    .compass-se { transform: translate(70px, 70px); font-size: 14px; }
+    .compass-sw { transform: translate(-70px, 70px); font-size: 14px; }
+    .compass-nw { transform: translate(-70px, -70px); font-size: 14px; }
+    .compass-needle {
+      position: absolute;
+      width: 8px;
+      height: 120px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(to top, #2196f3 0%, #2196f3 50%, #f44336 50%, #f44336 100%);
+      border-radius: 4px;
+      z-index: 10;
+    }
+    .compass-center {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #333;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 20;
+    }
+    .degree-display {
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+      font-family: monospace;
+      margin-top: 20px;
+      color: #333;
+    }
+    .direction-display {
+      text-align: center;
+      font-size: 24px;
+      color: #666;
+      margin-top: 8px;
+    }
+    .permission-message {
+      text-align: center;
+      color: #f44336;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Compass</h1>
+
+    <p class="w3-text-grey w3-small">Point your device north. Requires device orientation permission.</p>
+
+    <div class="compass-container">
+      <div class="compass-inner" id="compass-inner">
+        <div class="compass-face compass-n">N</div>
+        <div class="compass-face compass-ne">NE</div>
+        <div class="compass-face compass-e">E</div>
+        <div class="compass-face compass-se">SE</div>
+        <div class="compass-face compass-s">S</div>
+        <div class="compass-face compass-sw">SW</div>
+        <div class="compass-face compass-w">W</div>
+        <div class="compass-face compass-nw">NW</div>
+        <div class="compass-needle"></div>
+        <div class="compass-center"></div>
+      </div>
+    </div>
+
+    <div class="degree-display" id="degree-display">--°</div>
+    <div class="direction-display" id="direction-display">--</div>
+    <div class="permission-message" id="permission-message"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

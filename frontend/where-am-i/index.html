@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Where Am I</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .coords { text-align: center; font-family: monospace; font-size: 26px; font-weight: bold; margin: 24px 0 8px; color: #333; word-break: break-all; }
+    .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-top: 16px; }
+    .detail-box { background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #2196f3; }
+    .detail-label { font-size: 11px; color: #999; font-weight: 600; }
+    .detail-value { font-family: monospace; font-size: 15px; }
+    .action-btn { width: 100%; padding: 14px; font-size: 16px; margin-top: 16px; }
+    .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Where Am I</h1>
+    <p class="w3-text-grey w3-small">Your GPS coordinates, straight from the device. No map, no tiles, no network needed.</p>
+
+    <button id="start-btn" class="w3-button w3-blue w3-round action-btn">📍 Locate me</button>
+    <div class="error" id="error" style="display: none;"></div>
+
+    <div id="result" style="display: none;">
+      <div class="coords" id="coords"></div>
+      <button id="copy-btn" class="w3-button w3-light-grey w3-round action-btn">📋 Copy coordinates</button>
+      <div class="detail-grid">
+        <div class="detail-box"><div class="detail-label">Accuracy</div><div class="detail-value" id="accuracy"></div></div>
+        <div class="detail-box"><div class="detail-label">Altitude</div><div class="detail-value" id="altitude"></div></div>
+        <div class="detail-box"><div class="detail-label">Heading</div><div class="detail-value" id="heading"></div></div>
+        <div class="detail-box"><div class="detail-label">Speed</div><div class="detail-value" id="speed"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

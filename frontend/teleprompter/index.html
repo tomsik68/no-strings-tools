@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teleprompter</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .prompter {
+      position: fixed;
+      inset: 0;
+      background: black;
+      color: white;
+      overflow: hidden;
+      display: none;
+      z-index: 10;
+      cursor: pointer;
+    }
+    .prompter .scroll {
+      font-size: 6vh;
+      line-height: 1.5;
+      padding: 50vh 6vw;
+      white-space: pre-wrap;
+      will-change: transform;
+    }
+    .prompter.mirrored .scroll { transform-origin: center; }
+    .prompter-controls {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 11;
+    }
+    .prompter-controls input[type="range"] { width: 40vw; }
+    .paused-hint {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #bbb;
+      z-index: 11;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Teleprompter</h1>
+
+    <label for="script-input">Your script <span class="w3-text-grey">(saved automatically)</span></label>
+    <textarea
+      id="script-input"
+      class="w3-input w3-border w3-round"
+      rows="12"
+      placeholder="Paste or write your script here…"
+      style="resize: vertical;"
+    ></textarea>
+
+    <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px; flex-wrap: wrap;">
+      <button id="start-btn" class="w3-button w3-green w3-round w3-large">▶ Start</button>
+      <label><input type="checkbox" id="mirror-check" class="w3-check" /> Mirror (for beam-splitter glass)</label>
+    </div>
+    <p class="w3-text-grey w3-small">While running: tap to pause/resume, Esc to exit, slider to adjust speed.</p>
+  </div>
+
+  <div class="prompter" id="prompter">
+    <div class="scroll" id="scroll"></div>
+  </div>
+  <div class="paused-hint" id="paused-hint" style="display: none;">⏸ paused — tap to resume · Esc to exit</div>
+  <div class="prompter-controls" id="controls" style="display: none;">
+    <label for="speed-range" style="color: white;">Speed</label>
+    <input type="range" id="speed-range" min="10" max="150" value="50" />
+    <button id="exit-btn" class="w3-button w3-red w3-round">✕ Exit</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

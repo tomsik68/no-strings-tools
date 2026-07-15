@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tally Counter</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .count-display {
+      font-size: 96px;
+      font-weight: bold;
+      text-align: center;
+      font-family: "Courier New", monospace;
+      margin: 24px 0;
+      color: #333;
+    }
+    .plus-btn {
+      width: 100%;
+      padding: 48px 0;
+      font-size: 48px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      background: #4caf50;
+      color: white;
+      cursor: pointer;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .plus-btn:active { background: #388e3c; }
+    .small-controls {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Tally Counter</h1>
+
+    <div class="count-display" id="count" aria-live="polite">0</div>
+
+    <button id="plus-btn" class="plus-btn" aria-label="Increment count">+</button>
+
+    <div class="small-controls">
+      <button id="minus-btn" class="w3-button w3-border w3-round w3-large" aria-label="Decrement count">−</button>
+      <button id="reset-btn" class="w3-button w3-border w3-round w3-large">Reset</button>
+    </div>
+
+    <p class="w3-text-grey w3-small w3-center">Tap +, or press Space / ↑ / ↓. Your count is saved.</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

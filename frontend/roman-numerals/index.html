@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roman Numerals</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .result-display {
+      font-size: 56px;
+      font-weight: bold;
+      text-align: center;
+      font-family: "Courier New", monospace;
+      margin: 24px 0;
+      color: #333;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Roman Numerals</h1>
+    <p class="w3-text-grey">Type a number (1–3999) or a numeral (like MCMXC) — it converts either way.</p>
+
+    <input
+      id="value-input"
+      class="w3-input w3-border w3-round"
+      type="text"
+      autocomplete="off"
+      autocapitalize="characters"
+      spellcheck="false"
+      placeholder="2026 or MMXXVI"
+      style="font-family: 'Courier New', monospace; font-size: 24px; text-align: center;"
+      aria-label="Number or Roman numeral"
+    />
+
+    <div class="result-display" id="result" aria-live="polite"></div>
+    <p class="w3-text-red w3-center" id="error" style="display: none;"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

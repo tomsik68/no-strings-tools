@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mirror</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    video { width: 100%; border-radius: 8px; background: #000; transform: scaleX(-1); min-height: 300px; }
+    .buttons { display: flex; gap: 8px; margin-top: 12px; }
+    .buttons button { flex: 1; padding: 14px; font-size: 16px; }
+    .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Mirror</h1>
+    <p class="w3-text-grey w3-small">Your front camera as a mirror. Video never leaves your device.</p>
+
+    <video id="video" autoplay playsinline muted></video>
+
+    <div class="buttons">
+      <button id="start-btn" class="w3-button w3-blue w3-round">🪞 Start mirror</button>
+      <button id="freeze-btn" class="w3-button w3-light-grey w3-round" style="display: none;">❄️ Freeze</button>
+    </div>
+    <div class="error" id="error" style="display: none;"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

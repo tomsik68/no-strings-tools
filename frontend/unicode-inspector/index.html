@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unicode Inspector</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .char-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+    .char-cell {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 6px 8px;
+      text-align: center;
+      background: white;
+      min-width: 52px;
+    }
+    .char-cell.invisible-char { background: #fff3cd; border-color: #e0a800; }
+    .char-cell .glyph { font-size: 22px; font-family: "Courier New", monospace; min-height: 26px; }
+    .char-cell .code { font-size: 11px; color: #666; font-family: "Courier New", monospace; }
+    .char-cell .label { font-size: 10px; color: #b06000; }
+    .stats { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 14px; color: #666; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Unicode Inspector</h1>
+    <p class="w3-text-grey">Paste text to see every codepoint — including invisible characters.</p>
+
+    <textarea
+      id="text-input"
+      class="w3-input w3-border w3-round"
+      rows="4"
+      placeholder="Paste suspicious text here…"
+      style="resize: vertical;"
+      aria-label="Text to inspect"
+    ></textarea>
+
+    <div class="stats" id="stats"></div>
+
+    <div style="margin-top: 12px;">
+      <button id="clean-btn" class="w3-button w3-blue w3-round" style="display: none;">Copy cleaned text</button>
+      <span id="clean-feedback" class="w3-text-green"></span>
+    </div>
+
+    <div class="char-list" id="char-list"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

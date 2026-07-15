@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Test</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .target-text {
+      font-size: 20px;
+      line-height: 1.6;
+      font-family: "Courier New", monospace;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .target-text .ok { color: #2e7d32; }
+    .target-text .bad { color: white; background: #f44336; border-radius: 2px; }
+    .target-text .current { border-left: 2px solid #2196f3; margin-left: -2px; }
+    .live-stats { display: flex; gap: 24px; justify-content: center; font-size: 18px; color: #666; margin-bottom: 8px; }
+    .result-num { font-size: 64px; font-weight: bold; font-family: "Courier New", monospace; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Typing Test</h1>
+    <p class="w3-text-grey">Type the text below — the 60-second clock starts on your first keystroke.</p>
+
+    <div class="live-stats">
+      <span id="time-left">60s</span>
+      <span id="live-wpm">0 WPM</span>
+    </div>
+
+    <div class="target-text" id="target" aria-hidden="true"></div>
+
+    <textarea
+      id="typing-input"
+      class="w3-input w3-border w3-round"
+      rows="4"
+      placeholder="Start typing here…"
+      autocomplete="off"
+      autocapitalize="off"
+      spellcheck="false"
+      style="font-family: 'Courier New', monospace; font-size: 18px; resize: none;"
+      aria-label="Type the shown text here"
+    ></textarea>
+
+    <div class="w3-center" id="result" style="display: none; margin-top: 16px;">
+      <div class="result-num" id="final-wpm">0</div>
+      <div style="font-size: 20px;">WPM &nbsp;·&nbsp; <span id="final-accuracy">0%</span> accuracy</div>
+    </div>
+
+    <div class="w3-center" style="margin-top: 16px;">
+      <button id="restart-btn" class="w3-button w3-blue w3-round w3-large">New test</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

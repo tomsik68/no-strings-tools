@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resistor Decoder</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .color-name {
+      font-weight: 600;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 4px;
+    }
+    .resistor-bands {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 24px 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+    }
+    .band {
+      width: 30px;
+      height: 120px;
+      border-radius: 4px;
+      border: 2px solid #ddd;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      position: relative;
+    }
+    .band:hover {
+      transform: scale(1.1);
+    }
+    .band-label {
+      position: absolute;
+      top: -20px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #666;
+    }
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .color-option {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 6px;
+      border: 2px solid #ddd;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .color-option:hover {
+      transform: scale(1.05);
+      border-color: #333;
+    }
+    .color-option.light-text {
+      color: white;
+    }
+    .color-option.dark-text {
+      color: #333;
+    }
+    .result {
+      margin-top: 24px;
+      padding: 20px;
+      background-color: #e8f5e9;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .result-value {
+      font-size: 32px;
+      font-weight: bold;
+      color: #2e7d32;
+      font-family: monospace;
+    }
+    .result-tolerance {
+      font-size: 14px;
+      color: #666;
+      margin-top: 8px;
+    }
+    .mode-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+    .mode-btn {
+      flex: 1;
+      padding: 8px;
+      border: 2px solid #ddd;
+      background: white;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .mode-btn.active {
+      background-color: #2196f3;
+      color: white;
+      border-color: #2196f3;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Resistor Decoder</h1>
+
+    <div class="mode-buttons">
+      <button class="mode-btn active" data-mode="4-band">4-Band</button>
+      <button class="mode-btn" data-mode="5-band">5-Band</button>
+    </div>
+
+    <div class="w3-text-grey" style="margin-bottom: 16px;">Click bands to change color</div>
+
+    <div class="resistor-bands" id="resistor-display"></div>
+
+    <div class="w3-text-grey" style="margin-bottom: 8px;">Select color:</div>
+    <div class="color-grid" id="color-grid"></div>
+
+    <div class="result">
+      <div class="result-value" id="result-value">-</div>
+      <div class="result-tolerance" id="result-tolerance"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

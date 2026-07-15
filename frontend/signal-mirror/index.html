@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signal Mirror Calculator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    input { width: 100%; padding: 8px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 4px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .result { background: #f5f5f5; padding: 16px; border-radius: 8px; margin-top: 16px; }
+    .result-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #ddd; }
+    .result-row:last-child { border-bottom: none; }
+    .result-value { font-weight: bold; }
+    .diagram { background: #f0f8ff; padding: 12px; border-radius: 4px; margin-top: 12px; border-left: 4px solid #2196f3; font-size: 12px; line-height: 1.6; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>Signal Mirror Calculator</h1>
+    <p class="w3-text-grey w3-small">Calculate reflection angles for emergency signaling with a mirror.</p>
+    <div class="grid-2">
+      <div>
+        <label style="font-size: 12px; color: #666;">Sun Angle from Horizon (°)</label>
+        <input id="sun-angle" type="number" value="45" min="0" max="90" />
+      </div>
+      <div>
+        <label style="font-size: 12px; color: #666;">Distance to Target (km)</label>
+        <input id="distance" type="number" value="10" min="1" />
+      </div>
+      <div>
+        <label style="font-size: 12px; color: #666;">Mirror Size (cm)</label>
+        <input id="mirror-size" type="number" value="10" min="1" />
+      </div>
+      <div>
+        <label style="font-size: 12px; color: #666;">Observer Angle (°)</label>
+        <input id="observer-angle" type="number" value="30" min="0" max="90" />
+      </div>
+    </div>
+    <div class="result" id="result"></div>
+    <div class="diagram">
+      <strong>💡 Tip:</strong> Position mirror so sun reflects directly at target. Adjust angle to create 1-2 second flashes. Visible up to 160 km away on clear days.
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

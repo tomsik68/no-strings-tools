@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chess Clock</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    html, body { height: 100%; margin: 0; }
+    .clock { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
+    .zone {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Courier New", monospace;
+      font-size: min(13vh, 24vw);
+      font-weight: bold;
+      background: #e0e0e0;
+      color: #333;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+    .zone.top { transform: rotate(180deg); }
+    .zone.active { background: #4caf50; color: white; }
+    .zone.flagged { background: #f44336; color: white; }
+    .bar {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+      background: white;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <button id="zone-top" class="zone top" aria-label="Top player clock">5:00</button>
+    <div class="bar">
+      <a href="../index.html" class="w3-text-blue" style="text-decoration: none;" aria-label="Back to all apps">←</a>
+      <button class="w3-button w3-border w3-round preset" data-min="1">1m</button>
+      <button class="w3-button w3-border w3-round preset" data-min="3">3m</button>
+      <button class="w3-button w3-border w3-round preset" data-min="5">5m</button>
+      <button class="w3-button w3-border w3-round preset" data-min="10">10m</button>
+      <button id="pause-btn" class="w3-button w3-blue w3-round">Pause</button>
+      <button id="reset-btn" class="w3-button w3-border w3-round">Reset</button>
+    </div>
+    <button id="zone-bottom" class="zone" aria-label="Bottom player clock">5:00</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

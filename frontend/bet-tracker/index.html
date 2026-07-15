@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bet Tracker</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    h2 { font-size: 17px; margin: 24px 0 8px; }
+    .add-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .add-row input, .add-row select { padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; }
+    .add-row input[type=number] { width: 90px; }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; margin-top: 8px; }
+    th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #eee; font-size: 14px; }
+    th { font-size: 11px; color: #999; text-transform: uppercase; }
+    td.num, th.num { text-align: right; font-family: monospace; }
+    .odds { font-weight: bold; color: #2196f3; }
+    .win-btn { padding: 4px 10px; font-size: 12px; }
+    .remove-btn { background: none; border: none; color: #f44336; cursor: pointer; font-size: 14px; }
+    .payout-pos { color: #2e7d32; font-weight: bold; }
+    .payout-neg { color: #c62828; }
+    .banner { padding: 12px; border-radius: 4px; margin-top: 16px; background: #c8e6c9; color: #2e7d32; font-weight: bold; }
+    .muted { font-size: 12px; color: #999; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Bet Tracker</h1>
+    <p class="w3-text-grey w3-small">Friendly parimutuel betting: everyone bets into one pool, odds shift with the money, winners split the pot. No house cut.</p>
+
+    <div id="setup-section">
+      <h2>Outcomes</h2>
+      <div class="add-row">
+        <input id="outcome-input" type="text" placeholder="e.g. Team A wins" style="flex: 1;" />
+        <button id="add-outcome-btn" class="w3-button w3-blue w3-round">Add</button>
+      </div>
+    </div>
+
+    <div id="odds-section" style="display: none;">
+      <table>
+        <thead><tr><th>Outcome</th><th class="num">Pool</th><th class="num">Odds</th><th></th><th></th></tr></thead>
+        <tbody id="odds-body"></tbody>
+      </table>
+      <div class="muted" id="pool-total"></div>
+    </div>
+
+    <div id="bet-section" style="display: none;">
+      <h2>Place a bet</h2>
+      <div class="add-row">
+        <input id="bettor-input" type="text" placeholder="Who" style="flex: 1;" />
+        <select id="bet-outcome"></select>
+        <input id="amount-input" type="number" min="0.01" step="0.01" placeholder="Amount" />
+        <button id="add-bet-btn" class="w3-button w3-green w3-round">Bet</button>
+      </div>
+      <table id="bets-table" style="display: none;">
+        <thead><tr><th>Who</th><th>On</th><th class="num">Stake</th><th></th></tr></thead>
+        <tbody id="bets-body"></tbody>
+      </table>
+    </div>
+
+    <div id="result-section" style="display: none;">
+      <div class="banner" id="winner-banner"></div>
+      <h2>Payouts</h2>
+      <table>
+        <thead><tr><th>Who</th><th class="num">Stake</th><th class="num">Payout</th><th class="num">Net</th></tr></thead>
+        <tbody id="payouts-body"></tbody>
+      </table>
+    </div>
+
+    <div style="margin-top: 24px; display: flex; gap: 8px;">
+      <button id="new-round-btn" class="w3-button w3-light-grey w3-round" style="display: none;">New round (keep outcomes)</button>
+      <button id="reset-btn" class="w3-button w3-light-grey w3-round" style="display: none;">Reset everything</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

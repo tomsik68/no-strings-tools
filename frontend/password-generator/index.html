@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .password-display {
+      background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .password-display:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .password-value {
+      font-size: 28px;
+      font-weight: bold;
+      font-family: monospace;
+      word-break: break-all;
+      margin-bottom: 8px;
+    }
+    .password-hint {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .option-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .option-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .option-group label {
+      cursor: pointer;
+      font-size: 14px;
+      flex: 1;
+    }
+    .length-group {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .length-group input[type="range"] {
+      flex: 1;
+    }
+    .length-value {
+      min-width: 40px;
+      text-align: center;
+      font-weight: 600;
+    }
+    .copy-feedback {
+      color: #4caf50;
+      font-size: 12px;
+      margin-top: 8px;
+      min-height: 18px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Password Generator</h1>
+
+    <div class="w3-margin-top">
+      <label for="master-password" class="w3-text-grey">Master Password</label>
+      <input
+        id="master-password"
+        type="password"
+        class="w3-input w3-border w3-round w3-margin-bottom"
+        placeholder="Your master password..."
+        autocomplete="off"
+      />
+    </div>
+
+    <div>
+      <label for="site-name" class="w3-text-grey">Site/Service</label>
+      <input
+        id="site-name"
+        type="text"
+        class="w3-input w3-border w3-round w3-margin-bottom"
+        placeholder="e.g., gmail, github, netflix..."
+        autocomplete="off"
+      />
+    </div>
+
+    <div>
+      <label for="login" class="w3-text-grey">Login/Username</label>
+      <input
+        id="login"
+        type="text"
+        class="w3-input w3-border w3-round w3-margin-bottom"
+        placeholder="Your username or email..."
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="password-display" id="password-display">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+        <div class="password-value" id="password-value">-</div>
+        <button id="toggle-visibility" class="w3-button w3-small" style="background: rgba(255,255,255,0.2); color: white; border: none; padding: 4px 8px;">👁️</button>
+      </div>
+      <div class="password-hint">Click to copy</div>
+    </div>
+
+    <div class="w3-text-grey w3-small" style="margin-bottom: 12px;">Password Options</div>
+
+    <div class="length-group">
+      <label for="length-slider" style="min-width: 60px;">Length:</label>
+      <input id="length-slider" type="range" min="8" max="128" value="16" class="w3-round" />
+      <div class="length-value" id="length-value">16</div>
+    </div>
+
+    <div class="options-grid">
+      <div class="option-group">
+        <input id="use-uppercase" type="checkbox" checked />
+        <label for="use-uppercase">Uppercase</label>
+      </div>
+      <div class="option-group">
+        <input id="use-lowercase" type="checkbox" checked />
+        <label for="use-lowercase">Lowercase</label>
+      </div>
+      <div class="option-group">
+        <input id="use-numbers" type="checkbox" checked />
+        <label for="use-numbers">Numbers</label>
+      </div>
+      <div class="option-group">
+        <input id="use-symbols" type="checkbox" checked />
+        <label for="use-symbols">Symbols</label>
+      </div>
+    </div>
+
+    <div class="copy-feedback" id="copy-feedback"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

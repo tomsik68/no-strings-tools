@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Picker</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    textarea { width: 100%; height: 160px; font-size: 14px; border: 1px solid #ddd; border-radius: 4px; padding: 8px; box-sizing: border-box; }
+    .count { font-size: 12px; color: #999; margin: 4px 0 12px; }
+    .result { text-align: center; font-size: 42px; font-weight: bold; margin: 24px 0; color: #2196f3; min-height: 60px; word-break: break-word; }
+    .pick-btn { width: 100%; padding: 14px; font-size: 18px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Random Picker</h1>
+    <p class="w3-text-grey w3-small">One name per line. Click Pick — fate decides.</p>
+
+    <textarea id="input" placeholder="Alice&#10;Bob&#10;Carol" autocomplete="off"></textarea>
+    <div class="count" id="count"></div>
+
+    <button id="pick-btn" class="w3-button w3-blue w3-round pick-btn">🎲 Pick one</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

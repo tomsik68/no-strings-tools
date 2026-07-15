@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reaction Time</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .arena {
+      border: none;
+      width: 100%;
+      min-height: 55vh;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      background: #2196f3;
+      margin: 16px 0;
+    }
+    .arena.waiting { background: #f44336; }
+    .arena.go { background: #4caf50; }
+    .arena .big { font-size: 64px; font-family: "Courier New", monospace; }
+    .arena .small { font-size: 16px; font-weight: normal; opacity: 0.9; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Reaction Time</h1>
+
+    <button class="arena" id="arena">
+      <span id="arena-main">Tap to start</span>
+      <span class="small" id="arena-sub">Wait for green, then tap as fast as you can. 5 rounds.</span>
+    </button>
+
+    <p class="w3-center w3-text-grey" id="progress"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

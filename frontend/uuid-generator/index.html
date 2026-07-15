@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UUID Generator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .uuid-list {
+      background-color: #f9f9f9;
+      border-radius: 4px;
+      margin-top: 16px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .uuid-item {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: monospace;
+      font-size: 13px;
+    }
+    .uuid-item:last-child {
+      border-bottom: none;
+    }
+    .uuid-value {
+      flex: 1;
+      word-break: break-all;
+      color: #333;
+    }
+    .uuid-copy-btn {
+      padding: 4px 8px;
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .uuid-copy-btn:hover {
+      background-color: #0b7dda;
+    }
+    .controls {
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+    }
+    .controls input {
+      flex: 1;
+      max-width: 120px;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>UUID Generator</h1>
+
+    <div class="controls w3-margin-top">
+      <div>
+        <label for="count-input" class="w3-text-grey">How many:</label>
+        <input id="count-input" type="number" min="1" value="5" class="w3-input w3-border w3-round" />
+      </div>
+      <button id="generate-btn" class="w3-button w3-blue w3-round">Generate</button>
+      <button id="copy-all-btn" class="w3-button w3-green w3-round">Copy All</button>
+    </div>
+
+    <div class="uuid-list" id="uuid-list"></div>
+
+    <div id="copy-feedback" class="w3-text-grey w3-small" style="margin-top: 8px; min-height: 20px;"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

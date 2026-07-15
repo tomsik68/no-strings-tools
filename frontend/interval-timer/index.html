@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interval Timer</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .phase-display {
+      text-align: center;
+      border-radius: 12px;
+      padding: 32px 16px;
+      margin: 16px 0;
+      color: white;
+    }
+    .phase-display.prep { background: #ff9800; }
+    .phase-display.work { background: #4caf50; }
+    .phase-display.rest { background: #2196f3; }
+    .phase-display.done { background: #333; }
+    .phase-name { font-size: 32px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+    .phase-time {
+      font-size: 96px;
+      font-weight: bold;
+      font-family: "Courier New", monospace;
+      line-height: 1;
+      margin: 16px 0;
+    }
+    .phase-round { font-size: 20px; }
+    .controls { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Interval Timer</h1>
+
+    <form id="setup" class="w3-row-padding" style="margin-left: -8px; margin-right: -8px;">
+      <div class="w3-col s4">
+        <label for="work-input">Work (s)</label>
+        <input id="work-input" class="w3-input w3-border w3-round" type="number" min="1" value="30" required />
+      </div>
+      <div class="w3-col s4">
+        <label for="rest-input">Rest (s)</label>
+        <input id="rest-input" class="w3-input w3-border w3-round" type="number" min="0" value="10" required />
+      </div>
+      <div class="w3-col s4">
+        <label for="rounds-input">Rounds</label>
+        <input id="rounds-input" class="w3-input w3-border w3-round" type="number" min="1" value="8" required />
+      </div>
+      <div class="w3-col s12 w3-center" style="margin-top: 16px;">
+        <button type="submit" class="w3-button w3-green w3-round w3-large" style="min-width: 160px;">Start</button>
+      </div>
+    </form>
+
+    <div id="display" class="phase-display prep" style="display: none;">
+      <div class="phase-name" id="phase-name">Get ready</div>
+      <div class="phase-time" id="phase-time">3</div>
+      <div class="phase-round" id="phase-round">Round 1 / 8</div>
+    </div>
+
+    <div class="controls" id="run-controls" style="display: none;">
+      <button id="pause-btn" class="w3-button w3-blue w3-round w3-large">Pause</button>
+      <button id="stop-btn" class="w3-button w3-border w3-round w3-large">Stop</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

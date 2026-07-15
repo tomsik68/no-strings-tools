@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keycode Viewer</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .prompt { text-align: center; font-size: 20px; color: #999; margin: 60px 0; }
+    .key-display { text-align: center; font-size: 56px; font-weight: bold; font-family: monospace; margin: 24px 0; color: #333; word-break: break-all; }
+    .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+    .detail-box { background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #2196f3; }
+    .detail-label { font-size: 11px; color: #999; font-weight: 600; margin-bottom: 4px; }
+    .detail-value { font-family: monospace; font-size: 16px; color: #333; word-break: break-all; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Keycode Viewer</h1>
+    <p class="w3-text-grey w3-small">Press any key to see its JavaScript event values.</p>
+
+    <div class="prompt" id="prompt">⌨️ Press any key</div>
+    <div class="key-display" id="key-display" style="display: none;"></div>
+
+    <div class="detail-grid" id="details" style="display: none;">
+      <div class="detail-box"><div class="detail-label">event.key</div><div class="detail-value" id="key"></div></div>
+      <div class="detail-box"><div class="detail-label">event.code</div><div class="detail-value" id="code"></div></div>
+      <div class="detail-box"><div class="detail-label">event.keyCode (deprecated)</div><div class="detail-value" id="keycode"></div></div>
+      <div class="detail-box"><div class="detail-label">Modifiers</div><div class="detail-value" id="modifiers"></div></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

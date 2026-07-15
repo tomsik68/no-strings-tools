@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favicon Generator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .drop-zone {
+      display: block;
+      border: 2px dashed #aaa;
+      border-radius: 12px;
+      padding: 40px 16px;
+      text-align: center;
+      color: #666;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+    .drop-zone.dragover { border-color: #2196f3; background: #e3f2fd; }
+    .icon-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; align-items: end; }
+    .icon-item { text-align: center; }
+    .icon-item canvas { border: 1px solid #ddd; border-radius: 4px; image-rendering: pixelated; background: white; }
+    .icon-item a { display: block; font-size: 13px; margin-top: 4px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Favicon Generator</h1>
+    <p class="w3-text-grey">Drop a square-ish image, get every favicon size a site needs.</p>
+
+    <label class="drop-zone" id="drop-zone">
+      Drop an image here or click to choose
+      <input type="file" id="file-input" accept="image/*" style="display: none;" />
+    </label>
+
+    <div class="icon-grid" id="icons"></div>
+
+    <div id="snippet-wrap" style="display: none; margin-top: 20px;">
+      <label for="snippet">HTML for your <code>&lt;head&gt;</code></label>
+      <textarea id="snippet" class="w3-input w3-border w3-round" rows="4" readonly style="font-family: 'Courier New', monospace; font-size: 13px;"></textarea>
+      <button id="copy-btn" class="w3-button w3-blue w3-round" style="margin-top: 8px;">Copy snippet</button>
+      <span id="copy-feedback" class="w3-text-green"></span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

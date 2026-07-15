@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .phase-display {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .phase-label {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    .phase-name {
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+    }
+    .phase-name.work {
+      color: #2196f3;
+    }
+    .phase-name.break {
+      color: #4caf50;
+    }
+    .timer-display {
+      font-size: 72px;
+      font-weight: bold;
+      text-align: center;
+      font-family: "Courier New", monospace;
+      margin: 40px 0;
+      color: #333;
+    }
+    .controls {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .control-btn {
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .start-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+    .start-btn:hover {
+      background-color: #45a049;
+    }
+    .stop-btn {
+      background-color: #f44336;
+      color: white;
+    }
+    .stop-btn:hover {
+      background-color: #da190b;
+    }
+    .reset-btn {
+      background-color: #2196f3;
+      color: white;
+    }
+    .reset-btn:hover {
+      background-color: #0b7dda;
+    }
+    .session-count {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Pomodoro</h1>
+
+    <div class="phase-display">
+      <div class="phase-label">Current Phase</div>
+      <div class="phase-name work" id="phase-name">Work</div>
+    </div>
+
+    <div class="timer-display" id="timer">25:00</div>
+
+    <div class="controls">
+      <button id="start-btn" class="control-btn start-btn">Start</button>
+      <button id="stop-btn" class="control-btn stop-btn" style="display: none;">Stop</button>
+      <button id="reset-btn" class="control-btn reset-btn">Reset</button>
+    </div>
+
+    <div class="w3-center w3-margin-top">
+      <label for="work-minutes" class="w3-text-grey w3-small">Work minutes:</label>
+      <input id="work-minutes" type="number" min="1" max="120" value="25"
+             class="w3-border w3-round" style="width: 70px; padding: 4px 8px;" />
+    </div>
+
+    <div class="session-count">
+      Sessions completed: <strong id="session-count">0</strong>
+    </div>
+
+    <div id="session-log" class="w3-margin-top w3-small w3-text-grey"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

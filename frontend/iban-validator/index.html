@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IBAN Validator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .verdict {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 16px;
+      color: white;
+    }
+    .verdict.valid { background: #4caf50; }
+    .verdict.invalid { background: #f44336; }
+    .formatted {
+      text-align: center;
+      font-family: "Courier New", monospace;
+      font-size: 22px;
+      margin-top: 12px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>IBAN Validator</h1>
+    <p class="w3-text-grey">Checked entirely on this device — nothing is sent anywhere.</p>
+
+    <label for="iban-input">IBAN</label>
+    <input
+      id="iban-input"
+      class="w3-input w3-border w3-round"
+      type="text"
+      autocomplete="off"
+      autocapitalize="characters"
+      spellcheck="false"
+      placeholder="CZ65 0800 0000 1920 0014 5399"
+      style="font-family: 'Courier New', monospace;"
+    />
+
+    <div class="verdict" id="verdict" style="display: none;"></div>
+    <div class="formatted" id="formatted"></div>
+    <p class="w3-center w3-text-grey" id="country"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

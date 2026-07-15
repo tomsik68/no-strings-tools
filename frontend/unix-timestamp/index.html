@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unix Timestamp Converter</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .converter {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    .input-group {
+      margin-bottom: 16px;
+    }
+    .input-group label {
+      display: block;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    .result {
+      background: #f5f5f5;
+      padding: 12px;
+      border-radius: 4px;
+      margin-top: 8px;
+      font-family: monospace;
+      word-break: break-all;
+    }
+    .divider {
+      text-align: center;
+      color: #999;
+      margin: 20px 0;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Unix Timestamp Converter</h1>
+
+    <div class="converter">
+      <h3>Unix Timestamp → Date/Time</h3>
+      <div class="input-group">
+        <label>Timestamp (seconds or milliseconds)</label>
+        <input id="timestamp-input" type="text" placeholder="1704067200 or 1704067200000" />
+      </div>
+      <div class="result" id="timestamp-result">--</div>
+    </div>
+
+    <div class="divider">↕</div>
+
+    <div class="converter">
+      <h3>Date/Time → Unix Timestamp</h3>
+      <div class="input-group">
+        <label>Date & Time</label>
+        <input id="datetime-input" type="datetime-local" />
+      </div>
+      <div class="input-group">
+        <label>Timezone Offset</label>
+        <select id="timezone-select" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+          <option value="local">Local Timezone</option>
+          <option value="utc">UTC</option>
+        </select>
+      </div>
+      <div class="result" id="datetime-result">--</div>
+    </div>
+
+    <div class="converter" style="margin-top: 20px; background: #f0f8ff; border-left: 4px solid #2196f3;">
+      <h4>ℹ️ Now</h4>
+      <div class="result" id="now-timestamp"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

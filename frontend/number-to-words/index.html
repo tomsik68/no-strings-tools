@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Number to Words</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .words-display {
+      font-size: 24px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 16px;
+      min-height: 60px;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Number to Words</h1>
+
+    <label for="number-input">Number</label>
+    <input
+      id="number-input"
+      class="w3-input w3-border w3-round"
+      type="text"
+      inputmode="decimal"
+      autocomplete="off"
+      placeholder="1234.56"
+      style="font-family: 'Courier New', monospace; font-size: 20px;"
+    />
+
+    <div class="words-display" id="words" aria-live="polite"></div>
+
+    <button id="copy-btn" class="w3-button w3-blue w3-round" style="margin-top: 12px; display: none;">Copy</button>
+    <span id="copy-feedback" class="w3-text-green"></span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

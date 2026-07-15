@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Merger</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1/dist/pdf-lib.min.js"></script>
+  <style>
+    .drop-zone {
+      display: block;
+      border: 2px dashed #aaa;
+      border-radius: 12px;
+      padding: 40px 16px;
+      text-align: center;
+      color: #666;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+    .drop-zone.dragover { border-color: #2196f3; background: #e3f2fd; }
+    .file-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+    .file-row .name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>PDF Merger</h1>
+    <p class="w3-text-grey">Merged entirely on this device — your PDFs never leave the browser.</p>
+
+    <label class="drop-zone" id="drop-zone">
+      Drop PDFs here or click to choose (add more anytime)
+      <input type="file" id="file-input" accept="application/pdf" multiple style="display: none;" />
+    </label>
+
+    <div id="file-list"></div>
+
+    <p class="w3-text-red" id="error" style="display: none;"></p>
+
+    <div class="w3-center" style="margin: 20px 0;">
+      <button id="merge-btn" class="w3-button w3-green w3-round w3-large" style="display: none;">Merge &amp; download</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

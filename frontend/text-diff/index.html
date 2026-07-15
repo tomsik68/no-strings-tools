@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Diff</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 700px) { .input-grid { grid-template-columns: 1fr; } }
+    textarea { width: 100%; height: 180px; font-family: monospace; font-size: 12px; border: 1px solid #ddd; border-radius: 4px; padding: 8px; box-sizing: border-box; }
+    .pane-label { font-size: 12px; font-weight: 600; color: #666; margin-bottom: 4px; }
+    .diff-output { background: white; border: 1px solid #ddd; border-radius: 4px; margin-top: 16px; font-family: monospace; font-size: 12px; overflow-x: auto; }
+    .diff-line { padding: 1px 8px; white-space: pre-wrap; word-break: break-all; }
+    .diff-line.del { background: #ffebee; color: #b71c1c; }
+    .diff-line.add { background: #e8f5e9; color: #1b5e20; }
+    .diff-summary { font-size: 12px; color: #666; margin-top: 8px; }
+    .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Text Diff</h1>
+    <p class="w3-text-grey w3-small">Paste two texts — see line-by-line differences as you type.</p>
+
+    <div class="input-grid">
+      <div>
+        <div class="pane-label">Original</div>
+        <textarea id="left" placeholder="Original text..." spellcheck="false"></textarea>
+      </div>
+      <div>
+        <div class="pane-label">Changed</div>
+        <textarea id="right" placeholder="Changed text..." spellcheck="false"></textarea>
+      </div>
+    </div>
+
+    <div class="diff-summary" id="summary"></div>
+    <div class="error" id="error" style="display: none;"></div>
+    <div class="diff-output" id="output" style="display: none;"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

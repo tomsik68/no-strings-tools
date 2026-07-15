@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breathing Pacer</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 50vh;
+    }
+    .circle {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #64b5f6, #1565c0);
+      transform: scale(0.55);
+    }
+    .phase-label { font-size: 28px; font-weight: bold; margin-top: 28px; min-height: 36px; }
+    .phase-count { font-size: 20px; color: #666; min-height: 28px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Breathing Pacer</h1>
+    <p class="w3-text-grey">Box breathing: 4 in · 4 hold · 4 out · 4 hold. Follow the circle.</p>
+
+    <div class="stage">
+      <div class="circle" id="circle"></div>
+      <div class="phase-label" id="phase-label"></div>
+      <div class="phase-count" id="phase-count"></div>
+    </div>
+
+    <div class="w3-center" style="margin-bottom: 16px;">
+      <button id="toggle-btn" class="w3-button w3-green w3-round w3-large" style="min-width: 140px;">Start</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

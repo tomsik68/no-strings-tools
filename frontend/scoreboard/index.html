@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scoreboard</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .player-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 8px;
+    }
+    .player-row .name { flex: 1; min-width: 0; }
+    .player-row .score {
+      font-family: "Courier New", monospace;
+      font-size: 28px;
+      font-weight: bold;
+      min-width: 64px;
+      text-align: right;
+    }
+    .player-row button { min-width: 44px; }
+    .controls { display: flex; gap: 12px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Scoreboard</h1>
+
+    <div id="players"></div>
+
+    <div class="controls">
+      <button id="add-btn" class="w3-button w3-green w3-round">+ Player</button>
+      <button id="reset-btn" class="w3-button w3-border w3-round">Reset scores</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

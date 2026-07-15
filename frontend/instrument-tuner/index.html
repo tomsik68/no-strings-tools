@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instrument Tuner</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .note-display { text-align: center; font-size: 84px; font-weight: bold; margin: 12px 0 0; color: #333; min-height: 110px; }
+    .note-display.in-tune { color: #4caf50; }
+    .freq-display { text-align: center; font-size: 16px; color: #999; font-family: monospace; min-height: 24px; }
+    .meter { position: relative; height: 50px; background: linear-gradient(90deg, #ffcdd2, #fff9c4 35%, #c8e6c9 45%, #c8e6c9 55%, #fff9c4 65%, #ffcdd2); border-radius: 8px; margin: 24px 0 8px; overflow: hidden; }
+    .needle { position: absolute; top: 0; bottom: 0; width: 3px; background: #333; left: 50%; transition: left 0.1s linear; }
+    .meter-labels { display: flex; justify-content: space-between; font-size: 11px; color: #999; margin-bottom: 16px; }
+    .cents-display { text-align: center; font-size: 14px; color: #666; min-height: 20px; }
+    .start-btn { width: 100%; padding: 14px; font-size: 18px; }
+    .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Instrument Tuner</h1>
+    <p class="w3-text-grey w3-small">Play a note — see how close you are. A4 = 440 Hz. Audio never leaves your device.</p>
+
+    <div class="note-display" id="note">—</div>
+    <div class="freq-display" id="freq"></div>
+
+    <div class="meter">
+      <div class="needle" id="needle"></div>
+    </div>
+    <div class="meter-labels"><span>-50 cents (flat)</span><span>0</span><span>+50 cents (sharp)</span></div>
+    <div class="cents-display" id="cents"></div>
+
+    <button id="start-btn" class="w3-button w3-blue w3-round start-btn">🎤 Start tuning</button>
+    <div class="error" id="error" style="display: none;"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

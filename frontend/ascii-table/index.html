@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASCII Table</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .ascii-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .ascii-card {
+      background: white;
+      padding: 12px;
+      border-radius: 6px;
+      text-align: center;
+      border: 1px solid #ddd;
+      font-size: 12px;
+    }
+    .ascii-char {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-family: monospace;
+    }
+    .ascii-code {
+      color: #666;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>ASCII Table</h1>
+    <div class="ascii-grid" id="ascii-grid"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

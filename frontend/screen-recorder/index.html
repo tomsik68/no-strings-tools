@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Screen Recorder</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .record-btn { width: 100%; padding: 20px; font-size: 20px; margin-top: 16px; }
+    .preview-btn { width: 100%; padding: 10px; font-size: 15px; margin-top: 8px; }
+    video { width: 100%; border-radius: 8px; background: #000; margin-top: 16px; }
+    .download-btn { width: 100%; padding: 14px; font-size: 16px; margin-top: 8px; }
+    .rec-indicator { text-align: center; color: #f44336; font-weight: bold; margin-top: 12px; font-size: 15px; }
+    .hint { background: #fff3cd; color: #856404; padding: 12px; border-radius: 4px; margin-top: 16px; }
+    .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Screen Recorder</h1>
+    <p class="w3-text-grey w3-small">Record your screen, window, or tab — with desktop audio, your voice, and an optional webcam overlay — to a video file. Everything stays on your device.</p>
+
+    <label class="w3-margin-top" style="display: block; margin-top: 16px;">
+      <input id="mic-checkbox" type="checkbox" class="w3-check" checked />
+      🎙 Narrate with microphone
+    </label>
+    <label style="display: block; margin-top: 8px;">
+      <input id="cam-checkbox" type="checkbox" class="w3-check" />
+      📷 Webcam overlay in the corner
+    </label>
+    <p class="w3-text-grey w3-small">Tip: tick "Share audio" in the browser's picker to include desktop/tab sound.</p>
+
+    <button id="record-btn" class="w3-button w3-blue w3-round record-btn">⏺ Start recording</button>
+    <button id="preview-btn" class="w3-button w3-light-grey w3-border w3-round preview-btn">👁 Show preview</button>
+    <div class="rec-indicator" id="rec-indicator" style="display: none;">● Recording… click Stop or "Stop sharing"</div>
+    <div class="hint" id="hint" style="display: none;">🔇 No desktop audio in this capture — share a tab instead, or pick your speakers' "Monitor" as the microphone.</div>
+    <div class="error" id="error" style="display: none;"></div>
+
+    <video id="playback" style="display: none;" playsinline></video>
+    <a id="download-link" class="w3-button w3-green w3-round download-btn" style="display: none;">⬇️ Download recording</a>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

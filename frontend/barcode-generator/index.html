@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barcode Generator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3/dist/JsBarcode.all.min.js"></script>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Barcode Generator</h1>
+
+    <label for="text-input">Content</label>
+    <input id="text-input" class="w3-input w3-border w3-round" type="text" autocomplete="off" placeholder="Text or digits…" />
+
+    <label for="format-select" style="margin-top: 12px; display: block;">Format</label>
+    <select id="format-select" class="w3-select w3-border w3-round">
+      <option value="CODE128" selected>Code 128 (any text)</option>
+      <option value="EAN13">EAN-13 (12–13 digits)</option>
+      <option value="EAN8">EAN-8 (7–8 digits)</option>
+      <option value="UPC">UPC-A (11–12 digits)</option>
+      <option value="CODE39">Code 39</option>
+      <option value="ITF">ITF (even number of digits)</option>
+    </select>
+
+    <p class="w3-text-red" id="error" style="display: none;"></p>
+
+    <div class="w3-center" style="margin-top: 20px; overflow-x: auto;">
+      <svg id="barcode" aria-label="Generated barcode"></svg>
+    </div>
+
+    <div class="w3-center" style="margin-bottom: 16px;">
+      <button id="download-btn" class="w3-button w3-blue w3-round" style="display: none;">Download PNG</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contrast Checker</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .color-row { display: flex; gap: 8px; align-items: center; margin-top: 12px; }
+    .color-row input[type="color"] { width: 48px; height: 40px; padding: 2px; border: 1px solid #ccc; border-radius: 6px; cursor: pointer; }
+    .ratio-display {
+      font-size: 56px;
+      font-weight: bold;
+      text-align: center;
+      font-family: "Courier New", monospace;
+      margin: 16px 0 8px 0;
+      color: #333;
+    }
+    .verdicts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+    .verdict { border-radius: 6px; padding: 8px; text-align: center; font-weight: 600; color: white; }
+    .verdict.pass { background: #4caf50; }
+    .verdict.fail { background: #f44336; }
+    .preview { border-radius: 8px; padding: 20px; margin-top: 8px; border: 1px solid #ddd; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Contrast Checker</h1>
+
+    <label for="fg-hex">Text color</label>
+    <div class="color-row">
+      <input type="color" id="fg-color" value="#333333" aria-label="Pick text color" />
+      <input type="text" id="fg-hex" class="w3-input w3-border w3-round" value="#333333" autocomplete="off" style="font-family: 'Courier New', monospace;" />
+    </div>
+
+    <label for="bg-hex" style="margin-top: 12px; display: block;">Background color</label>
+    <div class="color-row">
+      <input type="color" id="bg-color" value="#ffffff" aria-label="Pick background color" />
+      <input type="text" id="bg-hex" class="w3-input w3-border w3-round" value="#ffffff" autocomplete="off" style="font-family: 'Courier New', monospace;" />
+    </div>
+
+    <div class="w3-center" style="margin-top: 12px;">
+      <button id="swap-btn" class="w3-button w3-border w3-round">⇅ Swap</button>
+    </div>
+
+    <div class="ratio-display" id="ratio">12.6:1</div>
+
+    <div class="verdicts">
+      <div class="verdict" id="aa-normal">AA normal</div>
+      <div class="verdict" id="aa-large">AA large</div>
+      <div class="verdict" id="aaa-normal">AAA normal</div>
+      <div class="verdict" id="aaa-large">AAA large</div>
+    </div>
+
+    <div class="preview" id="preview">
+      <span style="font-size: 14px;">Normal text (14px) — the quick brown fox jumps over the lazy dog.</span><br /><br />
+      <span style="font-size: 24px; font-weight: bold;">Large text (24px bold)</span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

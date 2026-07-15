@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Entities</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>HTML Entities</h1>
+    <p class="w3-text-grey">Type in either box — the other updates live.</p>
+
+    <label for="plain-input">Plain text</label>
+    <textarea
+      id="plain-input"
+      class="w3-input w3-border w3-round"
+      rows="6"
+      placeholder="café & <html>"
+      spellcheck="false"
+      style="font-family: 'Courier New', monospace; resize: vertical;"
+    ></textarea>
+
+    <label for="encoded-input" style="margin-top: 16px; display: block;">HTML-encoded</label>
+    <textarea
+      id="encoded-input"
+      class="w3-input w3-border w3-round"
+      rows="6"
+      placeholder="caf&amp;#233; &amp;amp; &amp;lt;html&amp;gt;"
+      spellcheck="false"
+      style="font-family: 'Courier New', monospace; resize: vertical;"
+    ></textarea>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

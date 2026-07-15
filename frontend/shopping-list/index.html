@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping List</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Shopping List</h1>
+
+    <div class="w3-margin-top">
+      <div style="display: flex; gap: 8px;">
+        <input
+          id="item-input"
+          type="text"
+          class="w3-input w3-border w3-round"
+          placeholder="Add item..."
+          autocomplete="off"
+        />
+        <button id="add-btn" class="w3-button w3-blue w3-round" style="white-space: nowrap;">Add</button>
+      </div>
+    </div>
+
+    <ul id="items-list" class="w3-ul w3-margin-top"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

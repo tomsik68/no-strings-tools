@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backup</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .big-btn { width: 100%; padding: 16px; font-size: 17px; margin-top: 12px; }
+    .key-row { display: flex; justify-content: space-between; padding: 8px 12px; }
+    .status-ok { background: #c8e6c9; color: #2e7d32; padding: 12px; border-radius: 4px; margin-top: 16px; }
+    .status-err { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 24px;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Backup</h1>
+    <p class="w3-text-grey w3-small">Your data lives only in this browser. Download it as a JSON file you own — restore it here, on another device, or read it with any tool.</p>
+
+    <h2 class="w3-small w3-text-grey" style="margin-bottom: 4px;">STORED ON THIS DEVICE</h2>
+    <ul id="key-list" class="w3-ul w3-border w3-round" style="padding: 0;"></ul>
+    <p id="empty" class="w3-text-grey" style="display: none;">Nothing stored yet — use some apps first.</p>
+
+    <button id="download-btn" class="w3-button w3-blue w3-round big-btn" autofocus>⬇️ Download backup</button>
+
+    <label class="w3-button w3-light-grey w3-border w3-round big-btn" style="display: block; text-align: center;">
+      📂 Restore from backup…
+      <input id="restore-input" type="file" accept=".json,application/json" style="display: none;" />
+    </label>
+
+    <div id="status" style="display: none;"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

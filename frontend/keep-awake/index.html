@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keep Awake</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .toggle-btn { width: 100%; padding: 40px; font-size: 28px; border-radius: 12px; margin-top: 24px; }
+    .status { text-align: center; margin-top: 20px; font-size: 15px; color: #666; }
+    .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Keep Awake</h1>
+    <p class="w3-text-grey w3-small">Stop your screen from sleeping — for recipes, sheet music, and long reads. Uses the browser's Wake Lock API.</p>
+
+    <button id="toggle-btn" class="w3-button w3-blue w3-round toggle-btn">😴 Screen can sleep</button>
+    <div class="status" id="status">Tap to keep the screen awake while this tab is visible.</div>
+    <div class="error" id="error" style="display: none;"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

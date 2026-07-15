@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Recorder</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .record-btn { width: 100%; padding: 20px; font-size: 20px; margin-top: 16px; }
+    .timer { text-align: center; font-family: monospace; font-size: 42px; font-weight: bold; margin: 16px 0; color: #333; }
+    .timer.recording { color: #f44336; }
+    audio { width: 100%; margin-top: 16px; }
+    .download-btn { width: 100%; padding: 14px; font-size: 16px; margin-top: 8px; }
+    .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Voice Recorder</h1>
+    <p class="w3-text-grey w3-small">A dictaphone with zero cloud. Record, listen, download.</p>
+
+    <div class="timer" id="timer">00:00</div>
+    <button id="record-btn" class="w3-button w3-blue w3-round record-btn">🎤 Start recording</button>
+    <div class="error" id="error" style="display: none;"></div>
+
+    <div id="result" style="display: none;">
+      <audio id="playback" controls></audio>
+      <a id="download-link" class="w3-button w3-green w3-round download-btn">⬇️ Download recording</a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunrise &amp; Sunset</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .sun-table td { padding: 8px 4px; font-size: 18px; }
+    .sun-table td:last-child { text-align: right; font-family: "Courier New", monospace; font-weight: bold; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Sunrise &amp; Sunset</h1>
+
+    <div class="w3-row-padding" style="margin-left: -8px; margin-right: -8px;">
+      <div class="w3-col s6">
+        <label for="lat-input">Latitude</label>
+        <input id="lat-input" class="w3-input w3-border w3-round" type="number" step="any" min="-90" max="90" />
+      </div>
+      <div class="w3-col s6">
+        <label for="lon-input">Longitude</label>
+        <input id="lon-input" class="w3-input w3-border w3-round" type="number" step="any" min="-180" max="180" />
+      </div>
+    </div>
+
+    <div style="margin-top: 12px; display: flex; gap: 12px; align-items: end; flex-wrap: wrap;">
+      <div style="flex: 1;">
+        <label for="date-input">Date</label>
+        <input id="date-input" class="w3-input w3-border w3-round" type="date" />
+      </div>
+      <button id="locate-btn" class="w3-button w3-blue w3-round">📍 Use my location</button>
+    </div>
+
+    <p class="w3-text-red" id="error" style="display: none;"></p>
+
+    <table class="w3-table sun-table" id="results" style="display: none; margin-top: 16px;">
+      <tr><td>🌄 Civil dawn</td><td id="civil-dawn"></td></tr>
+      <tr><td>🌅 Sunrise</td><td id="sunrise"></td></tr>
+      <tr><td>✨ Golden hour ends</td><td id="golden-end"></td></tr>
+      <tr><td>☀️ Solar noon</td><td id="solar-noon"></td></tr>
+      <tr><td>✨ Golden hour starts</td><td id="golden-start"></td></tr>
+      <tr><td>🌇 Sunset</td><td id="sunset"></td></tr>
+      <tr><td>🌆 Civil dusk</td><td id="civil-dusk"></td></tr>
+      <tr><td>⏳ Day length</td><td id="day-length"></td></tr>
+    </table>
+    <p class="w3-text-grey w3-small" id="tz-note" style="display: none;">Times shown in this device's timezone.</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

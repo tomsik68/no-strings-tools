@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wi-Fi QR Code</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1/build/qrcode.min.js"></script>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Wi-Fi QR Code</h1>
+    <p class="w3-text-grey">Scan with a phone camera to join the network.</p>
+
+    <label for="ssid-input">Network name (SSID)</label>
+    <input id="ssid-input" class="w3-input w3-border w3-round" type="text" autocomplete="off" />
+
+    <label for="password-input" style="margin-top: 12px; display: block;">Password</label>
+    <input id="password-input" class="w3-input w3-border w3-round" type="text" autocomplete="off" />
+
+    <label for="security-select" style="margin-top: 12px; display: block;">Security</label>
+    <select id="security-select" class="w3-select w3-border w3-round">
+      <option value="WPA" selected>WPA / WPA2 / WPA3</option>
+      <option value="WEP">WEP</option>
+      <option value="nopass">None (open network)</option>
+    </select>
+
+    <div class="w3-center" style="margin-top: 24px;">
+      <canvas id="qr-canvas" width="256" height="256" aria-label="Wi-Fi QR code"></canvas>
+    </div>
+
+    <div class="w3-center" style="margin-bottom: 16px;">
+      <button id="download-btn" class="w3-button w3-blue w3-round" style="display: none;">Download PNG</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

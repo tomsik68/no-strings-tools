@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXIF Stripper</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .drop-zone { display: block; border: 2px dashed #bbb; border-radius: 8px; padding: 40px 16px; text-align: center; color: #888; margin-top: 16px; cursor: pointer; }
+    .drop-zone.over { border-color: #2196f3; color: #2196f3; }
+    .download-btn { width: 100%; padding: 14px; font-size: 16px; margin-top: 8px; }
+    .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>EXIF Stripper</h1>
+    <p class="w3-text-grey w3-small">Photos carry hidden metadata: GPS location, camera model, timestamps. Drop a photo and get a clean copy with all of it removed — before you share it. Nothing leaves your browser.</p>
+
+    <label class="drop-zone" id="drop-zone">
+      📷 Drop a photo here or click to choose
+      <input id="file-input" type="file" accept="image/*" style="display: none;" />
+    </label>
+
+    <div id="result" style="display: none;">
+      <p id="summary" class="w3-center"></p>
+      <a id="download-link" class="w3-button w3-blue w3-round download-btn"></a>
+    </div>
+    <div class="error" id="error" style="display: none;"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

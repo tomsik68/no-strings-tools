@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loan Calculator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .result-box {
+      background-color: #e3f2fd;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 16px;
+      border-left: 4px solid #2196f3;
+    }
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #bbdefb;
+      font-size: 14px;
+    }
+    .result-row:last-child {
+      border-bottom: none;
+    }
+    .result-label {
+      color: #666;
+    }
+    .result-value {
+      font-weight: bold;
+      color: #1976d2;
+      font-family: monospace;
+    }
+    .input-row {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 600;
+      color: #333;
+      font-size: 13px;
+    }
+    input {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Loan Calculator</h1>
+
+    <div class="input-row">
+      <label for="principal">Loan Amount ($)</label>
+      <input id="principal" type="number" class="w3-input w3-border w3-round" value="200000" />
+    </div>
+
+    <div class="input-row">
+      <label for="rate">Annual Interest Rate (%)</label>
+      <input id="rate" type="number" class="w3-input w3-border w3-round" value="6.5" step="0.01" />
+    </div>
+
+    <div class="input-row">
+      <label for="years">Loan Term (Years)</label>
+      <input id="years" type="number" class="w3-input w3-border w3-round" value="30" />
+    </div>
+
+    <div class="result-box">
+      <div class="result-row">
+        <span class="result-label">Monthly Payment</span>
+        <span class="result-value" id="monthly-payment">$0</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Total Interest</span>
+        <span class="result-value" id="total-interest">$0</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Total Amount Paid</span>
+        <span class="result-value" id="total-paid">$0</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
