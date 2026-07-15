@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nostrings.tools/sitemap.xml
