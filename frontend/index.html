@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>No Strings Tools — 129 free web tools, no signup, no tracking</title>
-  <meta name="description" content="129 fast, free tools that work offline in your browser: converters, generators, calculators, testers and more. No accounts, no ads, no tracking. No strings attached." />
+  <title>No Strings Tools — 127 free web tools, no signup, no tracking</title>
+  <meta name="description" content="127 fast, free tools that work offline in your browser: converters, generators, calculators, testers and more. No accounts, no ads, no tracking. No strings attached." />
   <link rel="canonical" href="https://nostrings.tools/" />
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="./favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
-  <meta property="og:title" content="No Strings Tools — 129 free web tools, no signup, no tracking" />
-  <meta property="og:description" content="129 fast, free tools that work offline in your browser: converters, generators, calculators, testers and more. No accounts, no ads, no tracking. No strings attached." />
+  <meta property="og:title" content="No Strings Tools — 127 free web tools, no signup, no tracking" />
+  <meta property="og:description" content="127 fast, free tools that work offline in your browser: converters, generators, calculators, testers and more. No accounts, no ads, no tracking. No strings attached." />
   <meta property="og:url" content="https://nostrings.tools/" />
   <meta property="og:image" content="https://nostrings.tools/og-image.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "No Strings Tools", "url": "https://nostrings.tools/", "description": "129 fast, free tools that work offline in your browser: converters, generators, calculators, testers and more. No accounts, no ads, no tracking. No strings attached.", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "No Strings Tools", "url": "https://nostrings.tools/", "description": "127 fast, free tools that work offline in your browser: converters, generators, calculators, testers and more. No accounts, no ads, no tracking. No strings attached.", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <style>
     body {
@@ -48,7 +48,19 @@
       transition: all 0.2s ease;
       text-decoration: none;
       color: inherit;
+      position: relative;
     }
+    .star-btn {
+      position: absolute; top: 5px; right: 5px;
+      background: none; border: none;
+      font-size: 15px; cursor: pointer;
+      color: #e0e0e0; line-height: 1; padding: 3px;
+      z-index: 1; transition: color 0.1s;
+    }
+    .app-card:hover .star-btn { color: #bbb; }
+    .star-btn.active { color: #ffc107 !important; }
+    #fav-section { margin-top: 16px; }
+    .fav-title { font-size: 13px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
     .app-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -82,7 +94,13 @@
       style="margin-top: 20px; max-width: 400px;"
     />
 
-    <div class="app-grid">
+    <div id="fav-section" hidden>
+      <div class="fav-title" style="margin-top:20px;">⭐ Favourites</div>
+      <div class="app-grid" id="fav-grid"></div>
+      <hr style="border:none; border-top:1px solid #ddd; margin:16px 0 0;" />
+    </div>
+
+    <div class="app-grid" id="main-grid">
       <a href="./ascii-table/index.html" class="app-card">
         <div>
           <h3>📝 ASCII Table</h3>
@@ -580,6 +598,13 @@
         </div>
       </a>
 
+      <a href="./parking-spot/index.html" class="app-card">
+        <div>
+          <h3>🚗 Parking Spot</h3>
+          <p>Remember where you parked with label, GPS & photos.</p>
+        </div>
+      </a>
+
       <a href="./password-generator/index.html" class="app-card">
         <div>
           <h3>🔑 Password Generator</h3>
@@ -608,31 +633,10 @@
         </div>
       </a>
 
-      <a href="./periodic-table/index.html" class="app-card">
-        <div>
-          <h3>⚛️ Periodic Table</h3>
-          <p>Element lookup & info.</p>
-        </div>
-      </a>
-
       <a href="./phonetic-alphabet/index.html" class="app-card">
         <div>
           <h3>🎤 Phonetic Alphabet</h3>
           <p>NATO phonetic codes.</p>
-        </div>
-      </a>
-
-      <a href="./physics-constants/index.html" class="app-card">
-        <div>
-          <h3>⚡ Physics Constants</h3>
-          <p>Key physics values.</p>
-        </div>
-      </a>
-
-      <a href="./planets/index.html" class="app-card">
-        <div>
-          <h3>🪐 Planets</h3>
-          <p>Solar system reference.</p>
         </div>
       </a>
 
@@ -1000,19 +1004,80 @@
 
   <script>
     const searchInput = document.getElementById("search-input");
-    const appCards = document.querySelectorAll(".app-card");
+    const favSection = document.getElementById("fav-section");
+    const favGrid = document.getElementById("fav-grid");
+    const mainCards = document.querySelectorAll("#main-grid .app-card");
 
-    searchInput.focus();
+    const FAVS_KEY = "nostrings-favs";
+    let favs = new Set(JSON.parse(localStorage.getItem(FAVS_KEY) || "[]"));
 
+    function saveFavs() {
+      localStorage.setItem(FAVS_KEY, JSON.stringify([...favs]));
+    }
+
+    function renderFavSection() {
+      const searching = !!searchInput.value.trim();
+      const favCards = [...mainCards].filter(c => favs.has(c.getAttribute("href")));
+      if (favCards.length === 0 || searching) { favSection.hidden = true; return; }
+      favSection.hidden = false;
+      favGrid.innerHTML = favCards.map(c => {
+        const href = c.getAttribute("href");
+        const h3 = c.querySelector("h3").outerHTML;
+        const p = c.querySelector("p").outerHTML;
+        return `<a href="${href}" class="app-card"><div>${h3}${p}</div><button class="star-btn active" data-href="${href}" title="Remove from favourites" aria-label="Remove from favourites">★</button></a>`;
+      }).join("");
+    }
+
+    function updateStars() {
+      mainCards.forEach(card => {
+        const href = card.getAttribute("href");
+        const btn = card.querySelector(".star-btn");
+        if (!btn) return;
+        const active = favs.has(href);
+        btn.textContent = active ? "★" : "☆";
+        btn.classList.toggle("active", active);
+        btn.title = active ? "Remove from favourites" : "Add to favourites";
+      });
+    }
+
+    function toggleFav(href) {
+      if (favs.has(href)) favs.delete(href); else favs.add(href);
+      saveFavs();
+      updateStars();
+      renderFavSection();
+    }
+
+    // Add star buttons to all main grid cards
+    mainCards.forEach(card => {
+      const href = card.getAttribute("href");
+      const btn = document.createElement("button");
+      btn.className = "star-btn" + (favs.has(href) ? " active" : "");
+      btn.textContent = favs.has(href) ? "★" : "☆";
+      btn.title = favs.has(href) ? "Remove from favourites" : "Add to favourites";
+      btn.setAttribute("aria-label", "Toggle favourite");
+      btn.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); toggleFav(href); });
+      card.appendChild(btn);
+    });
+
+    // Handle star clicks in the fav panel (event delegation)
+    favGrid.addEventListener("click", e => {
+      const btn = e.target.closest(".star-btn");
+      if (btn) { e.preventDefault(); e.stopPropagation(); toggleFav(btn.dataset.href); }
+    });
+
+    // Search
     searchInput.addEventListener("input", () => {
       const query = searchInput.value.toLowerCase().trim();
-      appCards.forEach((card) => {
+      mainCards.forEach(card => {
         const title = card.querySelector("h3").textContent.toLowerCase();
-        const description = card.querySelector("p").textContent.toLowerCase();
-        const matches = title.includes(query) || description.includes(query);
-        card.style.display = matches ? "" : "none";
+        const desc = card.querySelector("p").textContent.toLowerCase();
+        card.style.display = (!query || title.includes(query) || desc.includes(query)) ? "" : "none";
       });
+      favSection.hidden = !!query || favs.size === 0;
     });
+
+    searchInput.focus();
+    renderFavSection();
   </script>
 </body>
 </html>

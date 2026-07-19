@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parking Spot — Remember where you parked, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Remember where you parked: save a label, GPS pin, and photos of your spot and ticket. Free web tool that runs entirely in your browser — no signup, no ads, no tracking. Works offline." />
+  <link rel="canonical" href="https://nostrings.tools/parking-spot/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Parking Spot — Remember where you parked, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Remember where you parked: save a label, GPS pin, and photos of your spot and ticket. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/parking-spot/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Parking Spot","url":"https://nostrings.tools/parking-spot/","description":"Remember where you parked: save a label, GPS pin, and photos of your spot and ticket.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 480px; margin: 0 auto; }
+
+    /* Form */
+    .field-label { font-size: 13px; color: #666; margin-bottom: 5px; display: block; }
+    .field-block { margin-bottom: 18px; }
+
+    /* GPS button */
+    #gps-btn { font-size: 14px; }
+    #gps-status { font-size: 12px; margin-top: 5px; min-height: 16px; }
+    .ok { color: #388e3c; }
+    .err { color: #d32f2f; }
+
+    /* Photo slots */
+    .photo-slot {
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      transition: border-color 0.15s;
+    }
+    .photo-slot:hover { border-color: #2196f3; }
+    .photo-slot.filled { border: 2px solid #2196f3; min-height: 0; }
+    .slot-empty { text-align: center; color: #aaa; padding: 20px; font-size: 14px; pointer-events: none; }
+    .slot-img { width: 100%; display: block; max-height: 220px; object-fit: cover; border-radius: 5px; }
+    .photo-remove {
+      position: absolute; top: 6px; right: 6px;
+      background: rgba(0,0,0,0.55); color: white;
+      border: none; border-radius: 50%;
+      width: 28px; height: 28px; cursor: pointer;
+      font-size: 16px; line-height: 28px; text-align: center;
+      padding: 0;
+    }
+    .photo-remove:hover { background: rgba(200,0,0,0.8); }
+    input[type="file"] { display: none; }
+
+    /* Display state */
+    .big-label { font-size: 26px; font-weight: 700; color: #222; line-height: 1.35; word-break: break-word; }
+    .display-thumb { width: 100%; border-radius: 8px; cursor: zoom-in; display: block; max-height: 260px; object-fit: cover; }
+    .section-label { font-size: 11px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+    .saved-ago { font-size: 12px; color: #bbb; margin-top: 14px; }
+    .nav-btn { font-size: 14px !important; }
+
+    /* Lightbox */
+    dialog {
+      padding: 0; border: none; border-radius: 8px;
+      background: black; max-width: 95vw; max-height: 95vh;
+      position: relative;
+    }
+    dialog::backdrop { background: rgba(0,0,0,0.88); }
+    #lightbox-img { display: block; max-width: 92vw; max-height: 88vh; border-radius: 6px; }
+    #lightbox-close {
+      position: absolute; top: 8px; right: 8px;
+      background: rgba(0,0,0,0.55); color: white;
+      border: none; border-radius: 50%;
+      width: 32px; height: 32px; cursor: pointer;
+      font-size: 20px; line-height: 32px; text-align: center; padding: 0;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">🚗 Parking Spot</h1>
+
+    <!-- ── DISPLAY STATE ─────────────────────────────── -->
+    <div id="view" hidden>
+      <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Your car is parked at:</p>
+
+      <div class="w3-card w3-padding w3-round w3-white w3-margin-bottom">
+        <div id="display-label"></div>
+        <div id="display-gps"></div>
+        <div id="display-spot-photo"></div>
+        <div id="display-ticket-photo"></div>
+        <div class="saved-ago" id="display-time"></div>
+      </div>
+
+      <button id="edit-btn" class="w3-button w3-border w3-round w3-margin-right">✏️ Edit</button>
+      <button id="found-btn" class="w3-button w3-green w3-round">✅ I found my car!</button>
+    </div>
+
+    <!-- ── FORM STATE ──────────────────────────────────── -->
+    <div id="form">
+      <div class="field-block">
+        <label class="field-label" for="label-input">Where are you parked?</label>
+        <input id="label-input" type="text" class="w3-input w3-border w3-round"
+          placeholder="Level 3 · B · 42, near blue pillar…" autocomplete="off" />
+      </div>
+
+      <div class="field-block">
+        <label class="field-label">GPS location</label>
+        <button id="gps-btn" class="w3-button w3-border w3-round">📍 Capture GPS</button>
+        <div id="gps-status"></div>
+      </div>
+
+      <div class="field-block">
+        <label class="field-label">Photo of parking spot</label>
+        <input type="file" id="spot-file" accept="image/*" />
+        <div class="photo-slot" id="spot-slot"
+             onclick="if(!this.classList.contains('filled')) document.getElementById('spot-file').click()">
+          <div class="slot-empty" id="spot-empty">📷 Tap to add photo</div>
+          <img class="slot-img" id="spot-img" hidden
+               onclick="event.stopPropagation(); document.getElementById('spot-file').click()" />
+          <button class="photo-remove" id="spot-remove" hidden
+                  onclick="event.stopPropagation(); removePhoto('spot')" title="Remove photo">×</button>
+        </div>
+      </div>
+
+      <div class="field-block">
+        <label class="field-label">Photo of parking ticket</label>
+        <input type="file" id="ticket-file" accept="image/*" />
+        <div class="photo-slot" id="ticket-slot"
+             onclick="if(!this.classList.contains('filled')) document.getElementById('ticket-file').click()">
+          <div class="slot-empty" id="ticket-empty">🎫 Tap to add photo</div>
+          <img class="slot-img" id="ticket-img" hidden
+               onclick="event.stopPropagation(); document.getElementById('ticket-file').click()" />
+          <button class="photo-remove" id="ticket-remove" hidden
+                  onclick="event.stopPropagation(); removePhoto('ticket')" title="Remove photo">×</button>
+        </div>
+      </div>
+
+      <button id="save-btn" class="w3-button w3-blue w3-round w3-block" style="font-size:15px; padding:12px;">
+        💾 Save parking spot
+      </button>
+      <button id="cancel-btn" class="w3-button w3-round w3-block w3-margin-top" hidden>
+        Cancel
+      </button>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <dialog id="lightbox">
+    <button id="lightbox-close" title="Close">×</button>
+    <img id="lightbox-img" alt="Parking photo" />
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
