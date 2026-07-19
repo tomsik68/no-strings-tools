@@ -61,29 +61,43 @@ function formatTime(date) {
   return `${hours}:${minutes}:${seconds}`;
 }
 
+function dayKey(date) {
+  return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+}
+
+function formatDate(date) {
+  return date.toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+}
+
 function renderLog() {
   if (rolls.length === 0) {
     logList.innerHTML = '<div class="log-empty">No rolls yet.</div>';
     return;
   }
 
-  logList.innerHTML = rolls
-    .slice()
-    .reverse()
-    .map((roll) => {
-      const date = new Date(roll.timestamp);
-      const time = formatTime(date);
-      return `
-        <div class="log-entry">
-          <div class="roll-info">
-            <div class="roll-die">${roll.dice.toUpperCase()}</div>
-            <div class="roll-result">${roll.result}</div>
-          </div>
-          <div class="roll-timestamp">${time}</div>
+  const reversed = rolls.slice().reverse();
+  let lastDay = null;
+  const parts = [];
+
+  for (const roll of reversed) {
+    const date = new Date(roll.timestamp);
+    const key = dayKey(date);
+    if (key !== lastDay) {
+      parts.push(`<div class="log-day-heading">${formatDate(date)}</div>`);
+      lastDay = key;
+    }
+    parts.push(`
+      <div class="log-entry">
+        <div class="roll-info">
+          <div class="roll-die">${roll.dice.toUpperCase()}</div>
+          <div class="roll-result">${roll.result}</div>
         </div>
-      `;
-    })
-    .join("");
+        <div class="roll-timestamp">${formatTime(date)}</div>
+      </div>
+    `);
+  }
+
+  logList.innerHTML = parts.join("");
 }
 
 renderLog();
