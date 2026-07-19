@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Tracker — Build daily streaks, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Track daily habits and build streaks. Check off each habit every day, see your history at a glance. Free web tool that runs entirely in your browser — no signup, no ads, no tracking. Works offline." />
+  <link rel="canonical" href="https://nostrings.tools/habit-tracker/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Habit Tracker — Build daily streaks, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Track daily habits and build streaks. Check off each habit every day, see your history at a glance. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/habit-tracker/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Habit Tracker","url":"https://nostrings.tools/habit-tracker/","description":"Track daily habits and build streaks. Check off each habit every day, see your history at a glance.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 540px; margin: 0 auto; }
+    .habit-card {
+      background: white; border-radius: 8px; padding: 14px 16px;
+      margin-bottom: 10px; border: 1px solid #eee;
+    }
+    .habit-top { display: flex; align-items: center; gap: 12px; }
+    .habit-checkbox { width: 22px; height: 22px; cursor: pointer; flex-shrink: 0; }
+    .habit-name { flex: 1; font-size: 15px; font-weight: 600; color: #222; }
+    .habit-name.done { text-decoration: line-through; color: #aaa; }
+    .streak { font-size: 13px; white-space: nowrap; }
+    .streak.on { color: #ff6d00; font-weight: 700; }
+    .streak.off { color: #ccc; }
+    .habit-del { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 2px; line-height: 1; }
+    .habit-del:hover { color: #f44336; }
+    .dots { display: flex; gap: 3px; margin-top: 10px; flex-wrap: nowrap; }
+    .dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+    .dot.done { opacity: 1; }
+    .dot.miss { background: #e8e8e8 !important; }
+    .dot.today { outline: 2px solid #555; outline-offset: 1px; }
+    .add-row { display: flex; gap: 8px; margin-top: 14px; }
+    #new-habit { flex: 1; padding: 9px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; }
+    #new-habit:focus { outline: none; border-color: #2196f3; }
+    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+    .date-label { font-size: 12px; color: #bbb; text-align: right; margin-bottom: 8px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">✅ Habit Tracker</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">One checkbox per habit, every day.</p>
+    <div class="date-label" id="date-label"></div>
+
+    <div id="habits-list"></div>
+
+    <div class="add-row">
+      <input id="new-habit" type="text" placeholder="Add a new habit…" autocomplete="off" />
+      <button id="add-btn" class="w3-button w3-blue w3-round">Add</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

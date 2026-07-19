@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Packing List — Trip packing checklist with presets, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Build a packing list with presets for weekend trips, camping, beach and more. Check items off as you pack. Free web tool that runs entirely in your browser — no signup, no ads, no tracking. Works offline." />
+  <link rel="canonical" href="https://nostrings.tools/packing-list/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Packing List — Trip packing checklist with presets, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Build a packing list with presets for weekend trips, camping, beach and more. Check items off as you pack. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/packing-list/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Packing List","url":"https://nostrings.tools/packing-list/","description":"Build a packing list with presets for weekend trips, camping, beach and more. Check items off as you pack.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 500px; margin: 0 auto; }
+    .preset-row { display: flex; gap: 8px; align-items: center; margin-bottom: 14px; }
+    #preset-select { flex: 1; padding: 7px 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; font-family: inherit; background: white; }
+    .progress-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .progress-label { font-size: 13px; color: #888; white-space: nowrap; }
+    progress { flex: 1; height: 7px; border-radius: 4px; overflow: hidden; }
+    progress::-webkit-progress-bar { background: #e0e0e0; border-radius: 4px; }
+    progress::-webkit-progress-value { background: #4caf50; border-radius: 4px; transition: width .3s; }
+    progress::-moz-progress-bar { background: #4caf50; border-radius: 4px; }
+    #items-list { list-style: none; margin: 10px 0; padding: 0; }
+    .item-row { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #eee; }
+    .item-row:last-child { border-bottom: none; }
+    .item-row input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; flex-shrink: 0; accent-color: #4caf50; }
+    .item-label { flex: 1; font-size: 14px; cursor: pointer; }
+    .item-label.done { text-decoration: line-through; color: #bbb; }
+    .item-del { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 4px; line-height: 1; }
+    .item-del:hover { color: #f44336; }
+    .add-row { display: flex; gap: 8px; margin-top: 12px; }
+    #new-item { flex: 1; padding: 8px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; font-family: inherit; }
+    #new-item:focus { outline: none; border-color: #2196f3; }
+    .actions { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .empty { text-align: center; color: #bbb; padding: 24px 0; font-size: 14px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">🧳 Packing List</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Start from a preset or build your own list.</p>
+
+    <div class="preset-row">
+      <select id="preset-select">
+        <option value="">— Load a preset —</option>
+        <option>Weekend Trip</option>
+        <option>Beach</option>
+        <option>Camping</option>
+        <option>Business Trip</option>
+        <option>Gym Bag</option>
+      </select>
+      <button id="load-btn" class="w3-button w3-border w3-round" style="font-size:13px; white-space:nowrap;">Load</button>
+    </div>
+
+    <div class="progress-row">
+      <span class="progress-label" id="progress-label">0 / 0 packed</span>
+      <progress id="progress-bar" value="0" max="1"></progress>
+    </div>
+
+    <ul id="items-list"></ul>
+
+    <div class="add-row">
+      <input id="new-item" type="text" placeholder="Add an item…" autocomplete="off" />
+      <button id="add-btn" class="w3-button w3-blue w3-round">Add</button>
+    </div>
+
+    <div class="actions">
+      <button id="uncheck-btn" class="w3-button w3-border w3-round" style="font-size:13px;">Uncheck all</button>
+      <button id="clear-btn" class="w3-button w3-border w3-round" style="font-size:13px; color:#f44336;">Clear list</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
