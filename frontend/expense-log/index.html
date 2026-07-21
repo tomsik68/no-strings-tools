@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Log — Track daily spending, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Log daily expenses by category. See your monthly total. No budgets, no charts — just a simple logbook. Free web tool that runs entirely in your browser — no signup, no ads, no tracking. Works offline." />
+  <link rel="canonical" href="https://nostrings.tools/expense-log/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Expense Log — Track daily spending, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Log daily expenses by category. See your monthly total. No budgets, no charts — just a simple logbook. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/expense-log/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Expense Log","url":"https://nostrings.tools/expense-log/","description":"Log daily expenses by category. See your monthly total. No budgets, no charts — just a simple logbook.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 500px; margin: 0 auto; }
+    .month-stat { background: white; border-radius: 8px; padding: 14px 18px; margin-bottom: 16px; border: 1px solid #eee; display: flex; align-items: baseline; gap: 8px; }
+    .month-val { font-size: 26px; font-weight: 700; color: #222; }
+    .month-lbl { font-size: 13px; color: #999; }
+    .expense-row { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: white; border-radius: 8px; margin-bottom: 6px; border: 1px solid #eee; }
+    .expense-cat { font-size: 20px; flex-shrink: 0; }
+    .expense-info { flex: 1; min-width: 0; }
+    .expense-note { font-size: 14px; color: #222; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .expense-date { font-size: 11px; color: #bbb; }
+    .expense-amount { font-size: 15px; font-weight: 700; color: #222; flex-shrink: 0; }
+    .del-btn { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 2px; line-height: 1; flex-shrink: 0; }
+    .del-btn:hover { color: #f44336; }
+    .add-form { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    @media (max-width: 420px) { .form-row { grid-template-columns: 1fr; } }
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .field input, .field select { padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; background: white; }
+    .field input:focus, .field select:focus { outline: none; border-color: #ff9800; }
+    .add-row { display: flex; justify-content: space-between; align-items: center; }
+    .clear-btn { font-size: 13px; color: #f44336; background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; }
+    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">💸 Expense Log</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Simple spending logbook. No budgets, no fuss.</p>
+
+    <div id="stats"></div>
+    <div id="expense-list"></div>
+
+    <div class="add-form">
+      <div class="form-row">
+        <div class="field">
+          <label for="e-amount">Amount</label>
+          <input id="e-amount" type="number" min="0" step="0.01" placeholder="0.00" />
+        </div>
+        <div class="field">
+          <label for="e-category">Category</label>
+          <select id="e-category">
+            <option value="food">🍔 Food</option>
+            <option value="transport">🚌 Transport</option>
+            <option value="shopping">🛍️ Shopping</option>
+            <option value="health">💊 Health</option>
+            <option value="entertainment">🎬 Entertainment</option>
+            <option value="other">📦 Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="e-note">Note (optional)</label>
+        <input id="e-note" type="text" placeholder="e.g. Coffee" autocomplete="off" />
+      </div>
+      <div class="field">
+        <label for="e-date">Date</label>
+        <input id="e-date" type="date" />
+      </div>
+      <div class="add-row">
+        <button id="clear-btn" class="clear-btn">Clear all…</button>
+        <button id="add-btn" class="w3-button w3-round" style="background:#ff9800; color:white;">Log Expense</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

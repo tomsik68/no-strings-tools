@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mood Tracker — Daily check-in with 30-day history, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Log your mood once a day with a single tap. See your 30-day history at a glance. Free web tool that runs entirely in your browser — no signup, no ads, no tracking. Works offline." />
+  <link rel="canonical" href="https://nostrings.tools/mood-tracker/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Mood Tracker — Daily check-in with 30-day history, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Log your mood once a day with a single tap. See your 30-day history at a glance. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/mood-tracker/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Mood Tracker","url":"https://nostrings.tools/mood-tracker/","description":"Log your mood once a day with a single tap. See your 30-day history at a glance.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 460px; margin: 0 auto; }
+    .date-label { font-size: 12px; color: #bbb; text-align: right; margin-bottom: 10px; }
+    .mood-buttons { display: flex; gap: 8px; margin: 4px 0 16px; }
+    .mood-btn {
+      flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px;
+      padding: 12px 4px; border: 2px solid #eee; border-radius: 10px;
+      background: white; cursor: pointer; font-size: 26px; font-family: inherit;
+      transition: border-color .15s, background .15s; line-height: 1;
+    }
+    .mood-btn span { font-size: 11px; color: #aaa; font-weight: 600; }
+    .mood-btn.selected span { color: #444; }
+    #note-wrap { margin-bottom: 16px; }
+    #note-wrap label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; display: block; margin-bottom: 4px; }
+    #mood-note { width: 100%; padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; box-sizing: border-box; }
+    #mood-note:focus { outline: none; border-color: #9c27b0; }
+    .history-label { font-size: 12px; color: #aaa; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
+    #mood-history { display: flex; flex-wrap: wrap; gap: 4px; }
+    .mood-dot { width: 24px; height: 24px; border-radius: 5px; cursor: default; }
+    .mood-dot.today { outline: 2px solid #333; outline-offset: 1px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">😊 Mood Tracker</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">One tap a day. Spot patterns over time.</p>
+    <div class="date-label" id="date-label"></div>
+
+    <div class="mood-buttons">
+      <button class="mood-btn">😢<span>Rough</span></button>
+      <button class="mood-btn">😕<span>Low</span></button>
+      <button class="mood-btn">😐<span>Okay</span></button>
+      <button class="mood-btn">🙂<span>Good</span></button>
+      <button class="mood-btn">😄<span>Great</span></button>
+    </div>
+
+    <div id="note-wrap" hidden>
+      <label for="mood-note">Note (optional)</label>
+      <input id="mood-note" type="text" placeholder="What's on your mind?" autocomplete="off" />
+    </div>
+
+    <div class="history-label">Last 30 days</div>
+    <div id="mood-history"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
