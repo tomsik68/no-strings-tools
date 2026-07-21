@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Sync — Sync your tools data between devices, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Sync your No Strings Tools data between phone and PC. Peer-to-peer, no server, no account. Both devices must be online at the same time." />
+  <link rel="canonical" href="https://nostrings.tools/data-sync/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Data Sync — Sync your tools data between devices, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Sync your No Strings Tools data between devices. Peer-to-peer, no server, no account." />
+  <meta property="og:url" content="https://nostrings.tools/data-sync/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Data Sync","url":"https://nostrings.tools/data-sync/","description":"Sync your No Strings Tools data between devices. Peer-to-peer, no server, no account.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 460px; margin: 0 auto; }
+    .panel { background: white; border-radius: 10px; padding: 24px; border: 1px solid #e0e0e0; }
+    .how-it-works { background: #f0f7ff; border-left: 4px solid #1565c0; border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 13px; color: #444; line-height: 1.7; margin-bottom: 22px; }
+    .start-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .start-btns button { flex: 1; padding: 14px 10px; border-radius: 8px; border: none; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer; }
+    #start-host-btn { background: #1565c0; color: white; }
+    #start-host-btn:hover { background: #0d47a1; }
+    #start-guest-btn { background: white; color: #1565c0; border: 2px solid #1565c0; }
+    #start-guest-btn:hover { background: #e3f2fd; }
+    .sync-code-display { font-family: monospace; font-size: 42px; font-weight: 700; letter-spacing: 10px; text-align: center; padding: 20px 0 12px; color: #222; }
+    .copy-row { display: flex; justify-content: center; gap: 8px; margin-bottom: 18px; }
+    .copy-btn { padding: 7px 18px; border-radius: 6px; border: 1px solid #ccc; background: white; color: #555; font-size: 13px; font-family: inherit; cursor: pointer; }
+    .copy-btn:hover { background: #f5f5f5; }
+    .join-row { display: flex; gap: 8px; margin-top: 6px; }
+    .join-row input { flex: 1; padding: 11px 14px; border: 2px solid #ccc; border-radius: 8px; font-size: 20px; font-family: monospace; letter-spacing: 6px; text-transform: uppercase; text-align: center; }
+    .join-row input:focus { outline: none; border-color: #1565c0; }
+    .join-row button { padding: 11px 20px; border-radius: 8px; border: none; background: #1565c0; color: white; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer; }
+    .join-row button:hover { background: #0d47a1; }
+    .status { margin-top: 14px; padding: 11px 14px; border-radius: 8px; font-size: 14px; }
+    .status.info { background: #e3f2fd; color: #1565c0; }
+    .status.success { background: #e8f5e9; color: #2e7d32; }
+    .status.error { background: #ffebee; color: #c62828; }
+    .done-icon { font-size: 48px; text-align: center; margin-bottom: 8px; }
+    .done-title { font-size: 22px; font-weight: 700; text-align: center; margin-bottom: 8px; color: #222; }
+    .done-sub { font-size: 14px; color: #666; text-align: center; line-height: 1.6; margin-bottom: 20px; }
+    .done-stats { display: flex; gap: 10px; margin-bottom: 20px; }
+    .done-stat { flex: 1; text-align: center; background: #f5f5f5; border-radius: 8px; padding: 10px; }
+    .done-stat-val { font-size: 24px; font-weight: 700; color: #222; }
+    .done-stat-lbl { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: .04em; margin-top: 2px; }
+    #again-btn { width: 100%; padding: 12px; border-radius: 8px; border: none; background: #e3f2fd; color: #1565c0; font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer; }
+    #again-btn:hover { background: #bbdefb; }
+    .field-label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; display: block; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">🔄 Data Sync</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Sync your tools data between devices, peer-to-peer.</p>
+
+    <!-- Step: choose role -->
+    <div id="step-init" class="panel">
+      <div class="how-it-works">
+        Open this page on <strong>both devices</strong> at the same time.<br>
+        Click <strong>Start</strong> on one device to get a code, then <strong>Join</strong> on the other and enter that code.<br>
+        Data is sent directly — no server, no account, no cloud.
+      </div>
+      <div class="start-btns">
+        <button id="start-host-btn">Start on this device</button>
+        <button id="start-guest-btn">Join with a code</button>
+      </div>
+    </div>
+
+    <!-- Step: host (shows code) -->
+    <div id="step-host" class="panel" hidden>
+      <span class="field-label">Your sync code — enter this on the other device</span>
+      <div class="sync-code-display" id="host-code"></div>
+      <div class="copy-row">
+        <button class="copy-btn" id="copy-code-btn">📋 Copy code</button>
+        <button class="copy-btn" id="copy-url-btn">🔗 Copy link</button>
+      </div>
+      <div id="host-status" class="status info">Waiting for the other device to join…</div>
+    </div>
+
+    <!-- Step: guest (enter code) -->
+    <div id="step-join" class="panel" hidden>
+      <span class="field-label">Code from the other device</span>
+      <div class="join-row">
+        <input id="join-code" type="text" maxlength="6" placeholder="ABC123" autocomplete="off" />
+        <button id="connect-btn">Sync</button>
+      </div>
+      <div id="guest-status" class="status info" hidden></div>
+    </div>
+
+    <!-- Step: done -->
+    <div id="step-done" class="panel" hidden>
+      <div class="done-icon">✅</div>
+      <div class="done-title">Sync complete</div>
+      <div class="done-stats">
+        <div class="done-stat">
+          <div class="done-stat-val" id="stat-keys">—</div>
+          <div class="done-stat-lbl">apps synced</div>
+        </div>
+        <div class="done-stat">
+          <div class="done-stat-val" id="stat-entries">—</div>
+          <div class="done-stat-lbl">entries added</div>
+        </div>
+      </div>
+      <div class="done-sub">Data merged across both devices. You can close this tab.</div>
+      <button id="again-btn">↺ Sync again</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
