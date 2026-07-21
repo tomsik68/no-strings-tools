@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Headache Log — Track migraines &amp; headaches, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Log headaches and migraines with date, severity, duration and trigger notes. See your frequency and patterns. Useful to bring to a doctor. Free, no account, works offline." />
+  <link rel="canonical" href="https://nostrings.tools/headache-log/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Headache Log — Track migraines &amp; headaches, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Log headaches with date, severity, duration and triggers. Useful to bring to a doctor. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/headache-log/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Headache Log","url":"https://nostrings.tools/headache-log/","description":"Log headaches with date, severity, duration and triggers. Useful to bring to a doctor.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 500px; margin: 0 auto; }
+    .stats-row { display: flex; gap: 10px; margin-bottom: 16px; }
+    .stat { background: white; border-radius: 8px; padding: 12px 14px; flex: 1; text-align: center; border: 1px solid #eee; }
+    .stat-val { font-size: 20px; font-weight: 700; color: #222; }
+    .stat-lbl { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: .04em; margin-top: 2px; }
+    .headache-row { background: white; border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; border: 1px solid #eee; display: flex; align-items: flex-start; gap: 10px; }
+    .h-severity { font-size: 13px; font-weight: 700; padding: 3px 8px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; margin-top: 1px; }
+    .sev-1 { background: #e8f5e9; color: #2e7d32; }
+    .sev-2 { background: #fff8e1; color: #f57f17; }
+    .sev-3 { background: #fff3e0; color: #e65100; }
+    .sev-4 { background: #fde8e8; color: #c62828; }
+    .sev-5 { background: #b71c1c; color: white; }
+    .h-info { flex: 1; min-width: 0; }
+    .h-date { font-size: 13px; font-weight: 600; color: #222; }
+    .h-details { font-size: 12px; color: #aaa; margin-top: 2px; }
+    .h-notes { font-size: 13px; color: #555; margin-top: 4px; font-style: italic; }
+    .del-btn { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 2px; line-height: 1; flex-shrink: 0; }
+    .del-btn:hover { color: #f44336; }
+    .add-form { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .sev-buttons { display: flex; gap: 6px; }
+    .sev-btn { flex: 1; padding: 8px 4px; border: 2px solid #eee; border-radius: 8px; background: white; cursor: pointer; font-size: 13px; font-weight: 700; font-family: inherit; text-align: center; transition: all .15s; }
+    .sev-btn.active { color: white; border-color: transparent; }
+    .sev-btn[data-sev="1"].active { background: #43a047; }
+    .sev-btn[data-sev="2"].active { background: #ffa726; }
+    .sev-btn[data-sev="3"].active { background: #f57c00; }
+    .sev-btn[data-sev="4"].active { background: #e53935; }
+    .sev-btn[data-sev="5"].active { background: #b71c1c; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    @media (max-width: 420px) { .form-row { grid-template-columns: 1fr; } }
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .field input, .field select { padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; background: white; }
+    .field input:focus, .field select:focus { outline: none; border-color: #e53935; }
+    .add-row { display: flex; justify-content: flex-end; }
+    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">🤕 Headache Log</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Track patterns. Bring it to your doctor.</p>
+
+    <div id="stats"></div>
+    <div id="headache-list"></div>
+
+    <div class="add-form">
+      <div class="field">
+        <label>Severity</label>
+        <div class="sev-buttons">
+          <button class="sev-btn" data-sev="1">1<br><span style="font-weight:400;font-size:10px;">Mild</span></button>
+          <button class="sev-btn" data-sev="2">2</button>
+          <button class="sev-btn" data-sev="3">3</button>
+          <button class="sev-btn" data-sev="4">4</button>
+          <button class="sev-btn" data-sev="5">5<br><span style="font-weight:400;font-size:10px;">Severe</span></button>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="h-date">Date</label>
+          <input id="h-date" type="date" />
+        </div>
+        <div class="field">
+          <label for="h-duration">Duration (hours)</label>
+          <input id="h-duration" type="number" min="0" step="0.5" placeholder="e.g. 3" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="h-location">Location (optional)</label>
+        <select id="h-location">
+          <option value="">— not specified —</option>
+          <option>Frontal</option>
+          <option>Temple (left)</option>
+          <option>Temple (right)</option>
+          <option>Back of head</option>
+          <option>Whole head</option>
+          <option>Behind eyes</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="h-notes">Trigger / notes (optional)</label>
+        <input id="h-notes" type="text" placeholder="e.g. Stress, lack of sleep, alcohol…" autocomplete="off" />
+      </div>
+      <div class="add-row">
+        <button id="add-btn" class="w3-button w3-round" style="background:#e53935; color:white;">Log Headache</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

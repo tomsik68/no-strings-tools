@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Log — Track exercises, sets &amp; reps, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Log workouts — exercise name, sets, reps and weight. Simple history view. No coaching, no plans, no account. Free web tool that runs entirely in your browser. Works offline." />
+  <link rel="canonical" href="https://nostrings.tools/workout-log/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Workout Log — Track exercises, sets &amp; reps, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Log workouts — exercise name, sets, reps and weight. Simple history. No coaching, no plans, no account. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/workout-log/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Workout Log","url":"https://nostrings.tools/workout-log/","description":"Log workouts — exercise name, sets, reps and weight. Simple history. No coaching, no plans, no account.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 520px; margin: 0 auto; }
+    .day-block { margin-bottom: 16px; }
+    .day-heading { font-size: 12px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: .05em; padding: 6px 14px; background: #eee; border-radius: 6px 6px 0 0; }
+    .exercise-row { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: white; border-bottom: 1px solid #f0f0f0; }
+    .exercise-row:last-child { border-bottom: none; border-radius: 0 0 6px 6px; }
+    .exercise-name { font-size: 14px; font-weight: 600; color: #222; flex: 1; }
+    .exercise-sets { font-size: 13px; color: #666; flex-shrink: 0; }
+    .del-entry { background: none; border: none; color: #ddd; cursor: pointer; font-size: 16px; padding: 0 2px; line-height: 1; }
+    .del-entry:hover { color: #f44336; }
+    .add-form { margin-top: 16px; background: white; border-radius: 8px; padding: 16px; border: 1px solid #eee; }
+    .form-title { font-size: 12px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; }
+    .form-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 8px; align-items: end; }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr 1fr; } }
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field label { font-size: 11px; color: #aaa; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .field input { padding: 8px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; }
+    .field input:focus { outline: none; border-color: #f57c00; }
+    .add-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+    .date-field { display: flex; flex-direction: column; gap: 4px; }
+    .date-field label { font-size: 11px; color: #aaa; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .date-field input { padding: 7px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; font-family: inherit; }
+    .date-field input:focus { outline: none; border-color: #f57c00; }
+    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">🏋️ Workout Log</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Log what you did. No coaching, no plans.</p>
+
+    <div id="workout-list"></div>
+
+    <div class="add-form">
+      <div class="form-title">Log a set</div>
+      <div class="form-row">
+        <div class="field">
+          <label for="w-exercise">Exercise</label>
+          <input id="w-exercise" type="text" list="exercise-list" placeholder="Bench Press" autocomplete="off" />
+          <datalist id="exercise-list">
+            <option>Bench Press</option><option>Squat</option><option>Deadlift</option>
+            <option>Pull-ups</option><option>Push-ups</option><option>Overhead Press</option>
+            <option>Barbell Row</option><option>Dips</option><option>Lunges</option>
+            <option>Romanian Deadlift</option><option>Leg Press</option><option>Lat Pulldown</option>
+            <option>Bicep Curl</option><option>Tricep Pushdown</option><option>Face Pull</option>
+            <option>Hip Thrust</option><option>Plank</option><option>Cable Row</option>
+          </datalist>
+        </div>
+        <div class="field">
+          <label for="w-sets">Sets</label>
+          <input id="w-sets" type="number" min="1" max="99" placeholder="3" />
+        </div>
+        <div class="field">
+          <label for="w-reps">Reps</label>
+          <input id="w-reps" type="number" min="1" max="999" placeholder="10" />
+        </div>
+        <div class="field">
+          <label for="w-weight">Weight</label>
+          <input id="w-weight" type="number" min="0" step="0.5" placeholder="60" />
+        </div>
+      </div>
+      <div class="add-row">
+        <div class="date-field">
+          <label for="w-date">Date</label>
+          <input id="w-date" type="date" />
+        </div>
+        <button id="add-btn" class="w3-button w3-round" style="background:#f57c00; color:white;">Log Set</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

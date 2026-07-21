@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading Log — Track books you've read &amp; want to read, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Track books you're reading, have read, or want to read. Add ratings and notes. Simple, offline, no account needed. Works in any modern browser." />
+  <link rel="canonical" href="https://nostrings.tools/reading-log/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Reading Log — Track books you've read &amp; want to read, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Track books you're reading, have read, or want to read. Ratings and notes. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/reading-log/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Reading Log","url":"https://nostrings.tools/reading-log/","description":"Track books — reading, read, or want to read. Add ratings and notes.","applicationCategory":"LifestyleApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 540px; margin: 0 auto; }
+    .filter-tabs { display: flex; gap: 0; margin-bottom: 14px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
+    .tab { flex: 1; padding: 8px 4px; border: none; background: white; color: #888; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer; text-align: center; }
+    .tab.active { background: #283593; color: white; }
+    .tab:not(:last-child) { border-right: 1px solid #ddd; }
+    .book-card { background: white; border-radius: 8px; padding: 13px 16px; margin-bottom: 8px; border: 1px solid #eee; display: flex; gap: 12px; align-items: flex-start; }
+    .book-info { flex: 1; min-width: 0; }
+    .book-title { font-size: 14px; font-weight: 700; color: #222; }
+    .book-author { font-size: 12px; color: #888; margin-top: 2px; }
+    .book-notes { font-size: 12px; color: #555; margin-top: 5px; font-style: italic; }
+    .star-rating { display: flex; gap: 2px; margin-top: 4px; }
+    .star { font-size: 15px; cursor: pointer; color: #ddd; line-height: 1; transition: color .1s; }
+    .star.on { color: #f9a825; }
+    .book-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; flex-shrink: 0; }
+    .status-select { font-size: 11px; padding: 3px 6px; border: 1px solid #ddd; border-radius: 5px; background: white; color: #555; font-family: inherit; cursor: pointer; }
+    .del-btn { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 2px; line-height: 1; }
+    .del-btn:hover { color: #f44336; }
+    .add-form { margin-top: 20px; background: white; border-radius: 8px; padding: 16px; border: 1px solid #eee; display: flex; flex-direction: column; gap: 10px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 420px) { .form-row { grid-template-columns: 1fr; } }
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .field input, .field select, .field textarea { padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; background: white; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #283593; }
+    .field textarea { resize: vertical; min-height: 52px; }
+    .add-row { display: flex; justify-content: flex-end; }
+    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+    .status-tag { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 10px; white-space: nowrap; }
+    .status-tag.reading { background: #e3f2fd; color: #1565c0; }
+    .status-tag.read    { background: #e8f5e9; color: #2e7d32; }
+    .status-tag.want    { background: #f3e5f5; color: #6a1b9a; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">📚 Reading Log</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Books you've read, are reading, or want to read.</p>
+
+    <div class="filter-tabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="reading">Reading</button>
+      <button class="tab" data-filter="read">Read</button>
+      <button class="tab" data-filter="want">Want to Read</button>
+    </div>
+
+    <div id="book-list"></div>
+
+    <div class="add-form">
+      <div class="form-row">
+        <div class="field">
+          <label for="b-title">Title</label>
+          <input id="b-title" type="text" placeholder="Book title" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="b-author">Author</label>
+          <input id="b-author" type="text" placeholder="Author name" autocomplete="off" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="b-status">Status</label>
+          <select id="b-status">
+            <option value="want">Want to Read</option>
+            <option value="reading">Reading</option>
+            <option value="read">Read</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="b-notes">Notes (optional)</label>
+          <input id="b-notes" type="text" placeholder="Brief thoughts…" autocomplete="off" />
+        </div>
+      </div>
+      <div class="add-row">
+        <button id="add-btn" class="w3-button w3-round" style="background:#283593; color:white;">Add Book</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

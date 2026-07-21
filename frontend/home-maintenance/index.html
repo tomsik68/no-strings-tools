@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Maintenance Log — Track household tasks, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Track home maintenance tasks — HVAC filter, smoke alarm battery, boiler service and more. See what's overdue, log a task with one tap. Free, no account, works offline." />
+  <link rel="canonical" href="https://nostrings.tools/home-maintenance/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Home Maintenance Log — Track household tasks, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Track home maintenance tasks. See what's overdue, log a task with one tap. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/home-maintenance/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Home Maintenance Log","url":"https://nostrings.tools/home-maintenance/","description":"Track home maintenance tasks. See what's overdue, log a task with one tap.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 540px; margin: 0 auto; }
+    .task-card { background: white; border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; border: 1px solid #eee; }
+    .task-top { display: flex; align-items: center; gap: 10px; }
+    .task-name { flex: 1; font-size: 15px; font-weight: 600; color: #222; }
+    .status-badge { font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 12px; white-space: nowrap; flex-shrink: 0; }
+    .status-badge.overdue { background: #fde8e8; color: #c62828; }
+    .status-badge.soon    { background: #fff3e0; color: #e65100; }
+    .status-badge.ok      { background: #e8f5e9; color: #2e7d32; }
+    .task-del { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 2px; line-height: 1; flex-shrink: 0; }
+    .task-del:hover { color: #f44336; }
+    .task-meta { font-size: 12px; color: #aaa; margin-top: 6px; }
+    .log-btn { margin-top: 10px; font-size: 12px; padding: 5px 12px; border-radius: 5px; border: 1px solid #558b2f; color: #33691e; background: white; cursor: pointer; font-family: inherit; }
+    .log-btn:hover { background: #f1f8e9; }
+    .add-form { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 420px) { .form-row { grid-template-columns: 1fr; } }
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .field input, .field select { padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; background: white; }
+    .field input:focus, .field select:focus { outline: none; border-color: #558b2f; }
+    .add-row { display: flex; justify-content: flex-end; }
+    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">🏠 Home Maintenance</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Never forget the filter, the battery, or the boiler.</p>
+
+    <div id="tasks-list"></div>
+
+    <div class="add-form">
+      <div class="field">
+        <label for="new-name">Task</label>
+        <input id="new-name" type="text" list="task-suggestions" placeholder="e.g. HVAC Filter" autocomplete="off" />
+        <datalist id="task-suggestions">
+          <option>HVAC Filter</option>
+          <option>Smoke Alarm Battery</option>
+          <option>CO Detector Battery</option>
+          <option>Boiler Service</option>
+          <option>Chimney Sweep</option>
+          <option>Gutter Cleaning</option>
+          <option>Exterminator</option>
+          <option>Fire Extinguisher Check</option>
+          <option>Water Filter</option>
+          <option>Dryer Vent Cleaning</option>
+          <option>Septic Tank</option>
+          <option>Roof Inspection</option>
+          <option>Window Seals Check</option>
+        </datalist>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="last-done">Last done</label>
+          <input id="last-done" type="date" />
+        </div>
+        <div class="field">
+          <label for="interval-select">Repeat every</label>
+          <select id="interval-select">
+            <option value="1">1 month</option>
+            <option value="3">3 months</option>
+            <option value="6">6 months</option>
+            <option value="12" selected>1 year</option>
+            <option value="24">2 years</option>
+            <option value="36">3 years</option>
+          </select>
+        </div>
+      </div>
+      <div class="add-row">
+        <button id="add-btn" class="w3-button w3-round" style="background:#558b2f; color:white;">Add Task</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
