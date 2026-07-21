@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medicine Tracker — Did I take my pills? Free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Track daily medications with one tap. Records the time you took each pill so you never have to wonder. Free web tool that runs entirely in your browser — no signup, no ads, no tracking. Works offline." />
+  <link rel="canonical" href="https://nostrings.tools/medicine-tracker/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Medicine Tracker — Did I take my pills? Free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Track daily medications with one tap. Records the time you took each pill so you never have to wonder. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/medicine-tracker/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Medicine Tracker","url":"https://nostrings.tools/medicine-tracker/","description":"Track daily medications with one tap. Records the time you took each pill so you never have to wonder.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 480px; margin: 0 auto; }
+    .date-label { font-size: 12px; color: #bbb; text-align: right; margin-bottom: 12px; }
+    .med-card { background: white; border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; border: 1px solid #eee; transition: border-color .15s; }
+    .med-card.taken { border-color: #a5d6a7; background: #f9fff9; }
+    .med-top { display: flex; align-items: center; gap: 12px; }
+    .med-checkbox { width: 22px; height: 22px; cursor: pointer; flex-shrink: 0; accent-color: #4caf50; }
+    .med-info { flex: 1; }
+    .med-name { font-size: 15px; font-weight: 600; color: #222; }
+    .med-status { font-size: 12px; margin-top: 2px; }
+    .med-status.taken { color: #388e3c; font-weight: 600; }
+    .med-status.pending { color: #bbb; }
+    .med-del { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 2px; line-height: 1; flex-shrink: 0; }
+    .med-del:hover { color: #f44336; }
+    .med-dots { display: flex; gap: 3px; margin-top: 10px; }
+    .med-dot { width: 11px; height: 11px; border-radius: 2px; background: #e8e8e8; flex-shrink: 0; }
+    .med-dot.taken { background: #4caf50; }
+    .med-dot.today { outline: 2px solid #555; outline-offset: 1px; }
+    .add-row { display: flex; gap: 8px; margin-top: 16px; }
+    #new-med { flex: 1; padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; }
+    #new-med:focus { outline: none; border-color: #4caf50; }
+    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">💊 Medicine Tracker</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Did I take my pills? One tap to confirm — and know exactly when.</p>
+    <div class="date-label" id="date-label"></div>
+
+    <div id="meds-list"></div>
+
+    <div class="add-row">
+      <input id="new-med" type="text" placeholder="Add a medication…" autocomplete="off" />
+      <button id="add-btn" class="w3-button w3-round" style="background:#4caf50;color:white;">Add</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

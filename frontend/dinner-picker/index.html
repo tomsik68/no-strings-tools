@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dinner Picker — Random meal chooser, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Can't decide what's for dinner? Save your favourite meals and restaurants, tap to get a random pick. Free web tool that runs entirely in your browser — no signup, no ads, no tracking. Works offline." />
+  <link rel="canonical" href="https://nostrings.tools/dinner-picker/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Dinner Picker — Random meal chooser, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Can't decide what's for dinner? Save your favourite meals and restaurants, tap to get a random pick. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/dinner-picker/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Dinner Picker","url":"https://nostrings.tools/dinner-picker/","description":"Save your favourite meals and restaurants, tap to get a random pick for dinner.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 460px; margin: 0 auto; }
+    #pick-btn {
+      display: block; width: 100%; padding: 18px; font-size: 20px; font-weight: 700;
+      background: #ff9800; color: white; border: none; border-radius: 10px;
+      cursor: pointer; font-family: inherit; margin: 16px 0; transition: background .15s;
+    }
+    #pick-btn:hover { background: #f57c00; }
+    #pick-btn:disabled { background: #e0e0e0; color: #aaa; cursor: not-allowed; }
+    #result { margin-bottom: 16px; }
+    .result-card {
+      background: #ff9800; color: white; border-radius: 10px;
+      padding: 20px 24px; text-align: center;
+    }
+    .result-name { font-size: 24px; font-weight: 700; line-height: 1.2; }
+    .meals-label { font-size: 12px; color: #aaa; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin: 16px 0 8px; }
+    .meal-row { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: white; border-radius: 8px; margin-bottom: 6px; border: 1px solid #eee; }
+    .meal-row.active { border-color: #ff9800; background: #fff8f0; }
+    .meal-name { flex: 1; font-size: 14px; color: #222; }
+    .del-btn { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 2px; line-height: 1; flex-shrink: 0; }
+    .del-btn:hover { color: #f44336; }
+    .add-row { display: flex; gap: 8px; margin-top: 8px; }
+    #new-meal { flex: 1; padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; }
+    #new-meal:focus { outline: none; border-color: #ff9800; }
+    .empty { text-align: center; color: #bbb; padding: 20px 0; font-size: 14px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">🍽️ Dinner Picker</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Can't decide? Let fate choose.</p>
+
+    <button id="pick-btn" disabled>🎲 Pick for me!</button>
+    <div id="result" hidden></div>
+
+    <div class="meals-label">Your options</div>
+    <div id="meals-list"></div>
+
+    <div class="add-row">
+      <input id="new-meal" type="text" placeholder="e.g. Pasta Bolognese, Thai place…" autocomplete="off" />
+      <button id="add-btn" class="w3-button w3-round" style="background:#ff9800;color:white;">Add</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Notes — Personal notes &amp; gift ideas per person, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Keep notes about people — allergies, preferences, gift ideas. Tap a name to see everything you know about them. Free web tool that runs entirely in your browser — no signup, no ads, no tracking. Works offline." />
+  <link rel="canonical" href="https://nostrings.tools/contact-notes/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Contact Notes — Personal notes &amp; gift ideas per person, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Keep notes about people — allergies, preferences, gift ideas. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/contact-notes/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Contact Notes","url":"https://nostrings.tools/contact-notes/","description":"Keep notes about people — allergies, preferences, gift ideas.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 520px; margin: 0 auto; }
+    .contact-card { background: white; border-radius: 8px; margin-bottom: 8px; border: 1px solid #eee; overflow: hidden; }
+    .contact-header { display: flex; align-items: center; gap: 10px; padding: 13px 16px; cursor: pointer; user-select: none; }
+    .contact-header:hover { background: #f9f9f9; }
+    .contact-avatar { width: 32px; height: 32px; border-radius: 50%; background: #009688; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+    .contact-name { flex: 1; font-size: 15px; font-weight: 600; color: #222; }
+    .contact-preview { font-size: 12px; color: #bbb; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; }
+    .chevron { color: #ccc; font-size: 12px; transition: transform .15s; flex-shrink: 0; }
+    .chevron.open { transform: rotate(90deg); }
+    .contact-body { padding: 0 16px 16px; border-top: 1px solid #f0f0f0; display: none; }
+    .contact-body.open { display: block; }
+    .section-label { font-size: 11px; color: #aaa; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin: 14px 0 6px; }
+    .notes-area { width: 100%; min-height: 80px; padding: 9px 11px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 14px; font-family: inherit; resize: vertical; box-sizing: border-box; line-height: 1.5; }
+    .notes-area:focus { outline: none; border-color: #009688; }
+    .gift-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid #f5f5f5; }
+    .gift-row:last-child { border-bottom: none; }
+    .gift-row input[type="checkbox"] { accent-color: #009688; width: 16px; height: 16px; flex-shrink: 0; }
+    .gift-label { flex: 1; font-size: 14px; cursor: pointer; }
+    .gift-label.bought { text-decoration: line-through; color: #bbb; }
+    .gift-del { background: none; border: none; color: #e0e0e0; cursor: pointer; font-size: 16px; padding: 0 2px; line-height: 1; flex-shrink: 0; }
+    .gift-del:hover { color: #f44336; }
+    .gift-add-row { display: flex; gap: 8px; margin-top: 8px; }
+    .gift-input { flex: 1; padding: 7px 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 13px; font-family: inherit; }
+    .gift-input:focus { outline: none; border-color: #009688; }
+    .contact-del { font-size: 12px; color: #f44336; background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; margin-top: 12px; }
+    .add-contact-row { display: flex; gap: 8px; margin-top: 16px; }
+    #new-contact { flex: 1; padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; }
+    #new-contact:focus { outline: none; border-color: #009688; }
+    .empty { text-align: center; color: #bbb; padding: 28px 0; font-size: 14px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">👤 Contact Notes</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Notes and gift ideas, one card per person.</p>
+
+    <div id="contacts-list"></div>
+
+    <div class="add-contact-row">
+      <input id="new-contact" type="text" placeholder="Add a person…" autocomplete="off" />
+      <button id="add-contact-btn" class="w3-button w3-round" style="background:#009688;color:white;">Add</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

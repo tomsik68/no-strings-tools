@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Box — Save recipes offline, free &amp; no account | No Strings Tools</title>
+  <meta name="description" content="Save your favourite recipes — ingredients and steps. No clutter, no ads, no sign-in. Open any recipe in one tap. Free web tool that runs entirely in your browser. Works offline." />
+  <link rel="canonical" href="https://nostrings.tools/recipe-box/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Recipe Box — Save recipes offline, free &amp; no account | No Strings Tools" />
+  <meta property="og:description" content="Save your favourite recipes. No clutter, no ads, no sign-in. Open any recipe in one tap. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/recipe-box/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Recipe Box","url":"https://nostrings.tools/recipe-box/","description":"Save your favourite recipes — ingredients and steps. No clutter, no ads, no sign-in. Works offline.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 560px; margin: 0 auto; }
+    /* list panel */
+    .search-row { display: flex; gap: 8px; margin-bottom: 16px; }
+    #search-input { flex: 1; padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; }
+    #search-input:focus { outline: none; border-color: #ff7043; }
+    .recipe-card { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: white; border-radius: 8px; margin-bottom: 8px; border: 1px solid #eee; cursor: pointer; transition: box-shadow .15s; }
+    .recipe-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+    .recipe-card-name { flex: 1; font-size: 15px; font-weight: 600; color: #222; }
+    .recipe-card-meta { font-size: 12px; color: #bbb; flex-shrink: 0; }
+    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+    /* detail panel */
+    #detail-panel { display: none; }
+    #detail-panel.open { display: block; }
+    .detail-top { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .back-btn { background: none; border: none; color: #1976d2; cursor: pointer; font-size: 14px; padding: 0; font-family: inherit; flex-shrink: 0; }
+    .del-recipe-btn { background: none; border: none; color: #f44336; cursor: pointer; font-size: 13px; padding: 0; font-family: inherit; margin-left: auto; }
+    .field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+    .field label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .field input { padding: 9px 11px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 15px; font-family: inherit; font-weight: 600; }
+    .field input:focus { outline: none; border-color: #ff7043; }
+    .field textarea { padding: 9px 11px; border: 1px solid #e0e0e0; border-radius: 6px; font-size: 14px; font-family: inherit; resize: vertical; line-height: 1.6; min-height: 100px; }
+    .field textarea:focus { outline: none; border-color: #ff7043; }
+    .field input.servings { font-size: 14px; font-weight: normal; max-width: 140px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" id="back-home" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">🍳 Recipe Box</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Your private recipe collection. No internet required.</p>
+
+    <div id="list-panel">
+      <div class="search-row">
+        <input id="search-input" type="text" placeholder="Search recipes…" autocomplete="off" />
+        <button id="new-recipe-btn" class="w3-button w3-round" style="background:#ff7043;color:white;white-space:nowrap;">+ New</button>
+      </div>
+      <div id="recipe-list"></div>
+    </div>
+
+    <div id="detail-panel">
+      <div class="detail-top">
+        <button class="back-btn" id="back-btn">← All recipes</button>
+        <button class="del-recipe-btn" id="del-recipe-btn">Delete recipe</button>
+      </div>
+      <div class="field">
+        <label for="r-name">Recipe name</label>
+        <input id="r-name" type="text" placeholder="e.g. Pasta Bolognese" />
+      </div>
+      <div class="field">
+        <label for="r-servings">Servings</label>
+        <input id="r-servings" type="text" class="servings" placeholder="e.g. 4 servings" />
+      </div>
+      <div class="field">
+        <label for="r-ingredients">Ingredients</label>
+        <textarea id="r-ingredients" placeholder="One ingredient per line&#10;e.g. 400g pasta&#10;2 cloves garlic"></textarea>
+      </div>
+      <div class="field">
+        <label for="r-steps">Steps</label>
+        <textarea id="r-steps" style="min-height:140px;" placeholder="Step by step instructions…"></textarea>
+      </div>
+      <div class="field">
+        <label for="r-notes">Notes (optional)</label>
+        <textarea id="r-notes" style="min-height:60px;" placeholder="Tips, variations, source…"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
