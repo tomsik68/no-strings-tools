@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Tracker — Never miss a birthday, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Track upcoming birthdays and see who's celebrating next. Days-until countdown, automatic age. Free web tool that runs entirely in your browser — no signup, no ads, no tracking. Works offline." />
+  <link rel="canonical" href="https://nostrings.tools/birthday-tracker/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Birthday Tracker — Never miss a birthday, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Track upcoming birthdays and see who's celebrating next. Days-until countdown, automatic age. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/birthday-tracker/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Birthday Tracker","url":"https://nostrings.tools/birthday-tracker/","description":"Track upcoming birthdays and see who's celebrating next. Days-until countdown, automatic age.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 500px; margin: 0 auto; }
+    .bday-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 14px; background: white; border-radius: 8px;
+      margin-bottom: 8px; border: 1px solid #eee;
+    }
+    .bday-info { flex: 1; min-width: 0; }
+    .bday-name { font-size: 15px; font-weight: 600; color: #222; }
+    .bday-date { font-size: 12px; color: #999; margin-top: 1px; }
+    .age-badge { font-size: 11px; color: #bbb; margin-top: 1px; }
+    .bday-countdown { font-size: 13px; font-weight: 700; text-align: right; flex-shrink: 0; white-space: nowrap; }
+    .bday-countdown.today { color: #e91e63; }
+    .bday-countdown.soon { color: #ff9800; }
+    .bday-countdown.future { color: #888; font-weight: 600; }
+    .bday-del { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 2px; flex-shrink: 0; line-height: 1; }
+    .bday-del:hover { color: #f44336; }
+    .add-form { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .field input { padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; }
+    .field input:focus { outline: none; border-color: #e91e63; }
+    .add-row { display: flex; justify-content: flex-end; }
+    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">🎂 Birthday Tracker</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Never miss a birthday again.</p>
+
+    <div id="bday-list"></div>
+
+    <div class="add-form">
+      <div class="field">
+        <label for="bday-name">Name</label>
+        <input id="bday-name" type="text" placeholder="e.g. Mom" autocomplete="off" />
+      </div>
+      <div class="field">
+        <label for="bday-date">Birthday</label>
+        <input id="bday-date" type="date" />
+      </div>
+      <div class="add-row">
+        <button id="add-btn" class="w3-button w3-round" style="background:#e91e63; color:white;">Add Birthday</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
