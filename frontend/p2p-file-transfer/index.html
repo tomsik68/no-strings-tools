@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>P2P File Transfer — Send files device to device, no server, free | No Strings Tools</title>
+  <meta name="description" content="Send files device to device, no server, no signup. Open on both devices, share a code, drop your files. Direct peer-to-peer transfer in your browser." />
+  <link rel="canonical" href="https://nostrings.tools/p2p-file-transfer/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="P2P File Transfer — Send files device to device, no server | No Strings Tools" />
+  <meta property="og:description" content="Send files device to device, no server, no signup. Direct peer-to-peer transfer in your browser." />
+  <meta property="og:url" content="https://nostrings.tools/p2p-file-transfer/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"P2P File Transfer","url":"https://nostrings.tools/p2p-file-transfer/","description":"Send files device to device with no server and no account. Direct peer-to-peer transfer in your browser.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 520px; margin: 0 auto; }
+    .panel { background: white; border-radius: 10px; padding: 24px; border: 1px solid #e0e0e0; margin-bottom: 12px; }
+    .how-it-works { background: #e1f5fe; border-left: 4px solid #0277bd; border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 13px; color: #444; line-height: 1.7; margin-bottom: 22px; }
+    /* Role buttons */
+    .start-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .start-btns button { flex: 1; padding: 14px 10px; border-radius: 8px; border: none; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer; }
+    #start-session-btn { background: #0277bd; color: white; }
+    #start-session-btn:hover { background: #01579b; }
+    #join-session-btn { background: white; color: #0277bd; border: 2px solid #0277bd; }
+    #join-session-btn:hover { background: #e1f5fe; }
+    /* Code display */
+    .sync-code-display { font-family: monospace; font-size: 42px; font-weight: 700; letter-spacing: 10px; text-align: center; padding: 20px 0 12px; color: #222; }
+    .copy-row { display: flex; justify-content: center; gap: 8px; margin-bottom: 18px; }
+    .copy-btn { padding: 7px 18px; border-radius: 6px; border: 1px solid #ccc; background: white; color: #555; font-size: 13px; font-family: inherit; cursor: pointer; }
+    .copy-btn:hover { background: #f5f5f5; }
+    /* Join input */
+    .join-row { display: flex; gap: 8px; margin-top: 6px; }
+    .join-row input { flex: 1; padding: 11px 14px; border: 2px solid #ccc; border-radius: 8px; font-size: 20px; font-family: monospace; letter-spacing: 6px; text-transform: uppercase; text-align: center; outline: none; }
+    .join-row input:focus { border-color: #0277bd; }
+    .join-row button { padding: 11px 20px; border-radius: 8px; border: none; background: #0277bd; color: white; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer; }
+    .join-row button:hover { background: #01579b; }
+    /* Status */
+    .status { margin-top: 14px; padding: 11px 14px; border-radius: 8px; font-size: 14px; }
+    .status.info    { background: #e1f5fe; color: #0277bd; }
+    .status.success { background: #e8f5e9; color: #2e7d32; }
+    .status.error   { background: #ffebee; color: #c62828; }
+    .field-label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; display: block; }
+    /* Drop zone */
+    .drop-zone { border: 2px dashed #ccc; border-radius: 10px; padding: 36px 24px; text-align: center; cursor: pointer; transition: border-color .15s, background .15s; background: #fafafa; }
+    .drop-zone:hover, .drop-zone.drag-over { border-color: #0277bd; background: #e1f5fe; }
+    .drop-zone.disabled { opacity: .45; pointer-events: none; }
+    .drop-icon { font-size: 40px; margin-bottom: 10px; }
+    .drop-title { font-size: 15px; font-weight: 700; color: #333; margin: 0 0 6px; }
+    .drop-sub   { font-size: 13px; color: #888; margin: 0 0 16px; }
+    .choose-btn { display: inline-block; padding: 9px 22px; background: #0277bd; color: white; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; }
+    .choose-btn:hover { background: #01579b; }
+    /* Transfer log */
+    #transfer-log { margin-top: 12px; }
+    .tx-item { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; }
+    .tx-name { font-size: 14px; font-weight: 600; margin-bottom: 6px; word-break: break-all; }
+    .tx-size { font-weight: 400; color: #888; }
+    .tx-bar  { height: 5px; background: #e0e0e0; border-radius: 3px; overflow: hidden; margin-bottom: 5px; }
+    .tx-fill { height: 100%; background: #0277bd; border-radius: 3px; width: 0%; transition: width .1s; }
+    .tx-fill.done { background: #2e7d32; }
+    .tx-sub  { font-size: 12px; color: #888; }
+    .tx-link { color: #0277bd; text-decoration: none; font-size: 13px; font-weight: 700; }
+    .tx-link:hover { text-decoration: underline; }
+    /* Disconnect */
+    #new-session-btn { margin-top: 14px; width: 100%; padding: 11px; border-radius: 8px; border: none; background: #e0e0e0; color: #333; font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer; }
+    #new-session-btn:hover { background: #bdbdbd; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">📁 P2P File Transfer</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Send files directly between devices — no server, no account, no size limit.</p>
+
+    <!-- Step: choose role -->
+    <div id="step-init" class="panel">
+      <div class="how-it-works">
+        Open this page on <strong>both devices</strong> at the same time.<br>
+        Click <strong>Start session</strong> on one to get a code, then <strong>Join</strong> on the other.<br>
+        Once connected, either device can send files to the other.
+      </div>
+      <div class="start-btns">
+        <button id="start-session-btn">Start session</button>
+        <button id="join-session-btn">Join with a code</button>
+      </div>
+    </div>
+
+    <!-- Sender: code panel (stays visible) -->
+    <div id="step-start" class="panel" hidden>
+      <span class="field-label">Share this code — enter it on the other device</span>
+      <div class="sync-code-display" id="start-code"></div>
+      <div class="copy-row">
+        <button class="copy-btn" id="copy-code-btn">📋 Copy code</button>
+        <button class="copy-btn" id="copy-url-btn">🔗 Copy link</button>
+      </div>
+      <div id="start-status" class="status info">Waiting for the other device…</div>
+    </div>
+
+    <!-- Receiver: enter code -->
+    <div id="step-join" class="panel" hidden>
+      <span class="field-label">Code from the other device</span>
+      <div class="join-row">
+        <input id="join-code" type="text" maxlength="6" placeholder="ABC123" autocomplete="off" />
+        <button id="connect-btn">Join</button>
+      </div>
+      <div id="join-status" class="status info" hidden></div>
+    </div>
+
+    <!-- Transfer area (shown once connected for both sides) -->
+    <div id="transfer-section" hidden>
+      <div id="conn-status" class="status success" style="margin-bottom:12px;">Connected — drop files below to send them to the other device</div>
+      <div class="drop-zone" id="drop-zone">
+        <div class="drop-icon">📂</div>
+        <p class="drop-title">Drop files here to send</p>
+        <p class="drop-sub">Any type, any size — sent directly to the other device</p>
+        <label class="choose-btn">
+          Choose files
+          <input type="file" id="file-input" multiple hidden />
+        </label>
+      </div>
+      <div id="transfer-log"></div>
+      <button id="new-session-btn">↺ New session</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
