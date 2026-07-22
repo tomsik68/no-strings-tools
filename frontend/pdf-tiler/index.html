@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Tiler — Tile a PDF page for printing | No Strings Tools</title>
+  <meta name="description" content="Upload a PDF, auto-crop the content, and tile multiple copies onto a single A4 page for efficient printing. No upload, runs in your browser." />
+  <link rel="canonical" href="https://nostrings.tools/pdf-tiler/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="PDF Tiler — Tile a PDF page for printing | No Strings Tools" />
+  <meta property="og:description" content="Auto-crop and tile a PDF page — get multiple copies on one A4 sheet. Runs entirely in your browser." />
+  <meta property="og:url" content="https://nostrings.tools/pdf-tiler/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"PDF Tiler","url":"https://nostrings.tools/pdf-tiler/","description":"Auto-crop and tile a PDF page — get multiple copies on one A4 sheet. Runs entirely in your browser.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 520px; margin: 0 auto; }
+    .panel { background: white; border-radius: 10px; padding: 20px 24px; border: 1px solid #e0e0e0; margin-bottom: 12px; }
+    /* Drop zone */
+    .drop-zone { background: white; border: 2px dashed #ccc; border-radius: 12px; padding: 52px 24px; text-align: center; cursor: pointer; transition: border-color .15s, background .15s; }
+    .drop-zone:hover, .drop-zone.drag-over { border-color: #e65100; background: #fff8f5; }
+    .drop-icon { font-size: 52px; margin-bottom: 14px; }
+    .drop-title { font-size: 17px; font-weight: 700; color: #333; margin: 0 0 6px; }
+    .drop-sub { font-size: 14px; color: #888; margin: 0 0 22px; }
+    .choose-btn { display: inline-block; padding: 11px 28px; background: #e65100; color: white; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; }
+    .choose-btn:hover { background: #bf360c; }
+    /* Processing spinner */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner { width: 34px; height: 34px; border: 3px solid #fbe9e7; border-top-color: #e65100; border-radius: 50%; animation: spin .8s linear infinite; margin: 0 auto 16px; }
+    /* Preview */
+    #preview-canvas { display: block; margin: 0 auto 14px; box-shadow: 0 2px 20px rgba(0,0,0,.18); border: 1px solid #e0e0e0; max-width: 100%; }
+    .grid-info { text-align: center; font-size: 15px; color: #333; margin: 0 0 16px; }
+    .grid-info strong { color: #e65100; }
+    /* Margin buttons */
+    .field-label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; display: block; }
+    .margin-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .margin-btn { padding: 9px 16px; border-radius: 8px; border: 2px solid #e0e0e0; background: white; font-size: 13px; font-family: inherit; cursor: pointer; transition: all .12s; }
+    .margin-btn:hover { border-color: #e65100; color: #e65100; }
+    .margin-btn.active { border-color: #e65100; background: #e65100; color: white; }
+    /* Action buttons */
+    .action-row { display: flex; gap: 10px; }
+    .action-row button { flex: 1; padding: 13px; border-radius: 8px; border: none; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer; }
+    #download-btn { background: #e65100; color: white; }
+    #download-btn:hover:not(:disabled) { background: #bf360c; }
+    #download-btn:disabled { opacity: .5; cursor: default; }
+    #reset-btn, #retry-btn { background: #e0e0e0; color: #333; }
+    #reset-btn:hover, #retry-btn:hover { background: #bdbdbd; }
+    /* Error */
+    .error-panel { background: white; border-radius: 10px; padding: 28px 24px; border: 1px solid #e0e0e0; text-align: center; }
+    .error-icon { font-size: 40px; margin-bottom: 12px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">🔲 PDF Tiler</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Auto-crops the content from a PDF page and tiles as many copies as fit on A4.</p>
+
+    <!-- Drop state -->
+    <div id="state-drop">
+      <div class="drop-zone" id="drop-zone">
+        <div class="drop-icon">📄</div>
+        <p class="drop-title">Drop a PDF here</p>
+        <p class="drop-sub">Business cards, labels, vouchers, ID cards…</p>
+        <label class="choose-btn">
+          Choose PDF
+          <input type="file" id="file-input" accept=".pdf" hidden />
+        </label>
+      </div>
+      <p style="font-size:12px; color:#aaa; text-align:center; margin-top:12px;">Processed entirely in your browser — file never leaves your device. Requires internet on first use.</p>
+    </div>
+
+    <!-- Processing state -->
+    <div id="state-processing" class="panel" style="text-align:center; padding:40px 24px;" hidden>
+      <div class="spinner"></div>
+      <p style="color:#666; margin:0; font-size:14px;">Rendering PDF and detecting content…</p>
+    </div>
+
+    <!-- Result state -->
+    <div id="state-result" hidden>
+      <canvas id="preview-canvas"></canvas>
+      <p class="grid-info" id="grid-info"></p>
+      <div class="panel">
+        <span class="field-label">Margin between copies</span>
+        <div class="margin-row">
+          <button class="margin-btn active" data-gap="0">None</button>
+          <button class="margin-btn" data-gap="20">Small (~2 mm)</button>
+          <button class="margin-btn" data-gap="40">Medium (~4 mm)</button>
+        </div>
+        <div class="action-row">
+          <button id="download-btn">⬇ Download tiled PDF</button>
+          <button id="reset-btn">↺ New file</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error state -->
+    <div id="state-error" class="error-panel" hidden>
+      <div class="error-icon">⚠️</div>
+      <p style="font-weight:700; color:#c62828; margin:0 0 8px;">Could not read this PDF</p>
+      <p id="error-msg" style="font-size:14px; color:#666; margin:0 0 20px;"></p>
+      <button id="retry-btn" style="padding:10px 28px; border-radius:8px; border:none; font-size:14px; font-weight:700; font-family:inherit; cursor:pointer;">Try another file</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
