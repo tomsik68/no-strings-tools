@@ -1,10 +1,17 @@
 pdfjsLib.GlobalWorkerOptions.workerSrc =
   'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
 
-const SCALE = 4;                             // render at 4× = ~288 DPI
-const A4_W  = Math.round(595.28 * SCALE);   // 2381 px
-const A4_H  = Math.round(841.89 * SCALE);   // 3368 px
-const PREVIEW_W = 240;                       // preview canvas width in px
+const SCALE = 4; // render at 4× (~288 DPI)
+const PREVIEW_W = 240;
+
+// Output paper sizes: wPt/hPt in portrait PDF points, used for output canvas + PDF page
+const OUTPUT_SIZES = {
+  A3:     { wPt: 841.89, hPt: 1190.55 },
+  A4:     { wPt: 595.28, hPt:  841.89 },
+  A5:     { wPt: 419.53, hPt:  595.28 },
+  Letter: { wPt: 612,    hPt:  792    },
+  Legal:  { wPt: 612,    hPt: 1008    },
+};
 
 let cropCanvas = null;
 let currentFilename = 'tiled.pdf';
@@ -16,6 +23,45 @@ function showState(id) {
   ['state-drop', 'state-processing', 'state-result', 'state-error'].forEach(s => {
     document.getElementById(s).hidden = s !== id;
   });
+}
+
+// --- Paper size helpers ---
+
+// Detect which known paper size the input PDF matches (within 8pt tolerance).
+// Works for both portrait and landscape input since we normalise to portrait before comparing.
+function detectInputSize(wPt, hPt) {
+  const pw = Math.min(wPt, hPt);
+  const ph = Math.max(wPt, hPt);
+  for (const [name, s] of Object.entries(OUTPUT_SIZES)) {
+    if (Math.abs(pw - s.wPt) < 8 && Math.abs(ph - s.hPt) < 8) return name;
+  }
+  return 'A4';
+}
+
+function getOutputPx() {
+  const name = document.getElementById('paper-size-select').value;
+  const s = OUTPUT_SIZES[name] || OUTPUT_SIZES.A4;
+  return { w: Math.round(s.wPt * SCALE), h: Math.round(s.hPt * SCALE), wPt: s.wPt, hPt: s.hPt };
+}
+
+// --- Tile layout ---
+// Returns { cols, rows, cellW, cellH, scaled }.
+// If the crop is bigger than the output page, returns 1 copy scaled to fit.
+
+function getTileLayout() {
+  const { w: outW, h: outH } = getOutputPx();
+  const cropW = cropCanvas.width;
+  const cropH = cropCanvas.height;
+  const gap = currentGap;
+
+  if (cropW > outW || cropH > outH) {
+    const sc = Math.min(outW / cropW, outH / cropH);
+    return { cols: 1, rows: 1, cellW: Math.round(cropW * sc), cellH: Math.round(cropH * sc), scaled: true };
+  }
+
+  const cols = Math.max(1, Math.floor((outW + gap) / (cropW + gap)));
+  const rows = Math.max(1, Math.floor((outH + gap) / (cropH + gap)));
+  return { cols, rows, cellW: cropW, cellH: cropH, scaled: false };
 }
 
 // --- Crop detection ---
@@ -39,9 +85,9 @@ function detectCrop(canvas) {
     }
   }
 
-  if (maxX === -1) return { x: 0, y: 0, w: width, h: height }; // all white — use full page
+  if (maxX === -1) return { x: 0, y: 0, w: width, h: height };
 
-  const pad = 12; // small padding around detected content
+  const pad = 12;
   const x  = Math.max(0, minX - pad);
   const y  = Math.max(0, minY - pad);
   const x2 = Math.min(width  - 1, maxX + pad);
@@ -49,30 +95,23 @@ function detectCrop(canvas) {
   return { x, y, w: x2 - x + 1, h: y2 - y + 1 };
 }
 
-// --- Grid ---
-
-function calcGrid(w, h, gap) {
-  const cols = Math.max(1, Math.floor((A4_W + gap) / (w + gap)));
-  const rows = Math.max(1, Math.floor((A4_H + gap) / (h + gap)));
-  return { cols, rows };
-}
-
 // --- Preview ---
 
 function renderPreview() {
   if (!cropCanvas) return;
-  const { cols, rows } = calcGrid(cropCanvas.width, cropCanvas.height, currentGap);
+  const { w: outW, h: outH } = getOutputPx();
+  const { cols, rows, cellW, cellH, scaled } = getTileLayout();
 
   const preview = document.getElementById('preview-canvas');
-  const sc = PREVIEW_W / A4_W;
+  const sc = PREVIEW_W / outW;
   preview.width  = PREVIEW_W;
-  preview.height = Math.round(A4_H * sc);
+  preview.height = Math.round(outH * sc);
   const ctx = preview.getContext('2d');
   ctx.fillStyle = 'white';
   ctx.fillRect(0, 0, preview.width, preview.height);
 
-  const cw = Math.round(cropCanvas.width  * sc);
-  const ch = Math.round(cropCanvas.height * sc);
+  const cw = Math.round(cellW * sc);
+  const ch = Math.round(cellH * sc);
   const g  = Math.round(currentGap * sc);
 
   for (let r = 0; r < rows; r++) {
@@ -82,8 +121,14 @@ function renderPreview() {
   }
 
   const n = cols * rows;
-  document.getElementById('grid-info').innerHTML =
-    `<strong>${n} cop${n === 1 ? 'y' : 'ies'} per page</strong> &nbsp;—&nbsp; ${cols} col${cols > 1 ? 's' : ''} × ${rows} row${rows > 1 ? 's' : ''}`;
+  const info = document.getElementById('grid-info');
+  if (scaled) {
+    info.innerHTML = `<strong>1 copy per page</strong> &nbsp;—&nbsp; scaled to fit`;
+  } else {
+    info.innerHTML =
+      `<strong>${n} cop${n === 1 ? 'y' : 'ies'} per page</strong> &nbsp;—&nbsp; ` +
+      `${cols} col${cols > 1 ? 's' : ''} × ${rows} row${rows > 1 ? 's' : ''}`;
+  }
 }
 
 // --- Process PDF ---
@@ -94,11 +139,15 @@ async function processPDF(file) {
 
   try {
     const arrayBuffer = await file.arrayBuffer();
-    const pdf      = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-    const page     = await pdf.getPage(1);
-    const viewport = page.getViewport({ scale: SCALE });
+    const pdf  = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    const page = await pdf.getPage(1);
 
-    // Render page 1 to an offscreen canvas
+    // Detect paper size from unscaled viewport (dimensions are in PDF points at scale=1)
+    const vp1 = page.getViewport({ scale: 1 });
+    document.getElementById('paper-size-select').value = detectInputSize(vp1.width, vp1.height);
+
+    // Render page at high resolution
+    const viewport = page.getViewport({ scale: SCALE });
     const rendered = document.createElement('canvas');
     rendered.width  = Math.round(viewport.width);
     rendered.height = Math.round(viewport.height);
@@ -107,10 +156,8 @@ async function processPDF(file) {
     ctx.fillRect(0, 0, rendered.width, rendered.height);
     await page.render({ canvasContext: ctx, viewport }).promise;
 
-    // Auto-crop
+    // Auto-crop whitespace
     const crop = detectCrop(rendered);
-
-    // Extract cropped tile into its own canvas
     cropCanvas = document.createElement('canvas');
     cropCanvas.width  = crop.w;
     cropCanvas.height = crop.h;
@@ -141,32 +188,31 @@ async function downloadTiled() {
   btn.textContent = 'Creating PDF…';
 
   try {
+    const { w: outW, h: outH, wPt, hPt } = getOutputPx();
+    const { cols, rows, cellW, cellH } = getTileLayout();
     const gap = currentGap;
-    const { cols, rows } = calcGrid(cropCanvas.width, cropCanvas.height, gap);
 
-    // Build full-resolution tiled canvas
     const out = document.createElement('canvas');
-    out.width  = A4_W;
-    out.height = A4_H;
+    out.width  = outW;
+    out.height = outH;
     const ctx = out.getContext('2d');
     ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, A4_W, A4_H);
+    ctx.fillRect(0, 0, outW, outH);
 
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
-        ctx.drawImage(cropCanvas, c * (cropCanvas.width + gap), r * (cropCanvas.height + gap));
+        ctx.drawImage(cropCanvas, c * (cellW + gap), r * (cellH + gap), cellW, cellH);
       }
     }
 
-    // Export via pdf-lib as A4 PDF
     const { PDFDocument } = PDFLib;
-    const pdfDoc = await PDFDocument.create();
-    const pdfPage = pdfDoc.addPage([595.28, 841.89]); // A4 in points
+    const pdfDoc  = await PDFDocument.create();
+    const pdfPage = pdfDoc.addPage([wPt, hPt]);
 
-    const blob = await canvasToBlob(out, 'image/jpeg', 0.95);
+    const blob    = await canvasToBlob(out, 'image/jpeg', 0.95);
     const jpgBytes = new Uint8Array(await blob.arrayBuffer());
-    const jpgImg = await pdfDoc.embedJpg(jpgBytes);
-    pdfPage.drawImage(jpgImg, { x: 0, y: 0, width: 595.28, height: 841.89 });
+    const jpgImg  = await pdfDoc.embedJpg(jpgBytes);
+    pdfPage.drawImage(jpgImg, { x: 0, y: 0, width: wPt, height: hPt });
 
     const pdfBytes = await pdfDoc.save();
     const url = URL.createObjectURL(new Blob([pdfBytes], { type: 'application/pdf' }));
@@ -194,11 +240,7 @@ fileInput.addEventListener('change', () => {
 });
 
 dropZone.addEventListener('click', () => fileInput.click());
-
-dropZone.addEventListener('dragover', e => {
-  e.preventDefault();
-  dropZone.classList.add('drag-over');
-});
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
 dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
 dropZone.addEventListener('drop', e => {
   e.preventDefault();
@@ -206,6 +248,8 @@ dropZone.addEventListener('drop', e => {
   const file = e.dataTransfer.files[0];
   if (file?.type === 'application/pdf' || file?.name?.endsWith('.pdf')) processPDF(file);
 });
+
+document.getElementById('paper-size-select').addEventListener('change', renderPreview);
 
 document.querySelectorAll('.margin-btn').forEach(btn => {
   btn.addEventListener('click', () => {

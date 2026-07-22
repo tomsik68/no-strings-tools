@@ -50,6 +50,9 @@
     #download-btn:disabled { opacity: .5; cursor: default; }
     #reset-btn, #retry-btn { background: #e0e0e0; color: #333; }
     #reset-btn:hover, #retry-btn:hover { background: #bdbdbd; }
+    /* Paper size select */
+    #paper-size-select { width: 100%; padding: 10px 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 14px; font-family: inherit; margin-bottom: 20px; outline: none; cursor: pointer; background: white; appearance: auto; }
+    #paper-size-select:focus { border-color: #e65100; }
     /* Error */
     .error-panel { background: white; border-radius: 10px; padding: 28px 24px; border: 1px solid #e0e0e0; text-align: center; }
     .error-icon { font-size: 40px; margin-bottom: 12px; }
@@ -59,7 +62,7 @@
   <div class="w3-container w3-padding-large card">
     <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
     <h1 style="margin-bottom:4px;">🔲 PDF Tiler</h1>
-    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Auto-crops the content from a PDF page and tiles as many copies as fit on A4.</p>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Auto-crops the content and tiles as many copies as fit on the output page.</p>
 
     <!-- Drop state -->
     <div id="state-drop">
@@ -86,6 +89,14 @@
       <canvas id="preview-canvas"></canvas>
       <p class="grid-info" id="grid-info"></p>
       <div class="panel">
+        <span class="field-label">Output paper size</span>
+        <select id="paper-size-select">
+          <option value="A3">A3 (297 × 420 mm)</option>
+          <option value="A4">A4 (210 × 297 mm)</option>
+          <option value="A5">A5 (148 × 210 mm)</option>
+          <option value="Letter">Letter (8.5 × 11 in)</option>
+          <option value="Legal">Legal (8.5 × 14 in)</option>
+        </select>
         <span class="field-label">Margin between copies</span>
         <div class="margin-row">
           <button class="margin-btn active" data-gap="0">None</button>
