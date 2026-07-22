@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shared Timer — Synchronized countdown for groups | No Strings Tools</title>
+  <meta name="description" content="Start a countdown and share it with others. Everyone sees the same timer in real-time. Peer-to-peer, no server, no account." />
+  <link rel="canonical" href="https://nostrings.tools/shared-timer/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Shared Timer — Synchronized countdown for groups | No Strings Tools" />
+  <meta property="og:description" content="Start a countdown and share it with others. Everyone sees the same timer in real-time. Peer-to-peer, no server, no account." />
+  <meta property="og:url" content="https://nostrings.tools/shared-timer/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Shared Timer","url":"https://nostrings.tools/shared-timer/","description":"Start a countdown and share it with others. Everyone sees the same timer in real-time. Peer-to-peer, no server, no account.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .card { max-width: 480px; margin: 0 auto; }
+    .panel { background: white; border-radius: 10px; padding: 24px; border: 1px solid #e0e0e0; margin-bottom: 12px; }
+    .status { padding: 11px 14px; border-radius: 8px; font-size: 14px; margin-top: 14px; }
+    .status.info { background: #ede7f6; color: #4a148c; }
+    .status.success { background: #e8f5e9; color: #2e7d32; }
+    .status.error { background: #ffebee; color: #c62828; }
+    .field-label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; display: block; }
+    /* Duration picker */
+    .preset-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .preset-btn { padding: 10px 16px; border-radius: 8px; border: 2px solid #e0e0e0; background: white; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer; transition: border-color .12s, background .12s; }
+    .preset-btn:hover { border-color: #4a148c; color: #4a148c; }
+    .preset-btn.selected { border-color: #4a148c; background: #4a148c; color: white; }
+    .custom-row { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .custom-row input { width: 80px; padding: 10px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; font-family: inherit; text-align: center; outline: none; }
+    .custom-row input:focus { border-color: #4a148c; }
+    .role-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .role-btns button { flex: 1; padding: 14px 10px; border-radius: 8px; border: none; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer; }
+    #start-host-btn { background: #4a148c; color: white; }
+    #start-host-btn:hover { background: #38006b; }
+    #start-guest-btn { background: white; color: #4a148c; border: 2px solid #4a148c; }
+    #start-guest-btn:hover { background: #ede7f6; }
+    /* Code display */
+    .sync-code-display { font-family: monospace; font-size: 42px; font-weight: 700; letter-spacing: 10px; text-align: center; padding: 16px 0 10px; color: #222; }
+    .copy-row { display: flex; justify-content: center; gap: 8px; margin-bottom: 4px; }
+    .copy-btn { padding: 7px 18px; border-radius: 6px; border: 1px solid #ccc; background: white; color: #555; font-size: 13px; font-family: inherit; cursor: pointer; }
+    .copy-btn:hover { background: #f5f5f5; }
+    /* Join */
+    .join-row { display: flex; gap: 8px; margin-top: 6px; }
+    .join-row input { flex: 1; padding: 11px 14px; border: 2px solid #ccc; border-radius: 8px; font-size: 20px; font-family: monospace; letter-spacing: 6px; text-transform: uppercase; text-align: center; outline: none; }
+    .join-row input:focus { border-color: #4a148c; }
+    .join-row button { padding: 11px 20px; border-radius: 8px; border: none; background: #4a148c; color: white; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer; }
+    .join-row button:hover { background: #38006b; }
+    /* Timer */
+    #timer-display { font-family: monospace; font-size: 80px; font-weight: 700; text-align: center; letter-spacing: 4px; padding: 28px 0 20px; transition: color 0.5s; color: #222; }
+    #timer-done-msg { display: none; text-align: center; font-size: 22px; font-weight: 700; color: #c62828; margin-bottom: 6px; }
+    .timer-controls { display: flex; gap: 12px; justify-content: center; }
+    .timer-controls button { padding: 12px 28px; border-radius: 8px; border: none; font-size: 16px; font-weight: 700; font-family: inherit; cursor: pointer; }
+    #start-btn { background: #4a148c; color: white; }
+    #start-btn:hover:not(:disabled) { background: #38006b; }
+    #start-btn:disabled { opacity: 0.4; cursor: default; }
+    #reset-btn { background: #e0e0e0; color: #333; }
+    #reset-btn:hover { background: #bdbdbd; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large card">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration:none; font-size:14px;">← Back</a>
+    <h1 style="margin-bottom:4px;">⏱️ Shared Timer</h1>
+    <p class="w3-text-grey" style="margin-top:0; font-size:13px;">Start a countdown and share it — everyone sees the same timer.</p>
+
+    <!-- Setup: pick duration, choose role -->
+    <div id="step-setup" class="panel">
+      <span class="field-label">Duration</span>
+      <div class="preset-btns">
+        <button class="preset-btn" data-min="5">5m</button>
+        <button class="preset-btn" data-min="10">10m</button>
+        <button class="preset-btn selected" data-min="15">15m</button>
+        <button class="preset-btn" data-min="25">25m</button>
+        <button class="preset-btn" data-min="30">30m</button>
+      </div>
+      <div class="custom-row">
+        <input id="custom-min" type="number" min="1" max="999" placeholder="—" aria-label="Custom duration in minutes" />
+        <span style="color:#666; font-size:14px;">min custom</span>
+      </div>
+      <div class="role-btns">
+        <button id="start-host-btn">Start &amp; share</button>
+        <button id="start-guest-btn">Join a timer</button>
+      </div>
+    </div>
+
+    <!-- Host: code panel (stays visible) -->
+    <div id="step-host" class="panel" hidden>
+      <span class="field-label">Share this code — open this page on the other device and enter it</span>
+      <div class="sync-code-display" id="host-code"></div>
+      <div class="copy-row">
+        <button class="copy-btn" id="copy-code-btn">📋 Copy code</button>
+        <button class="copy-btn" id="copy-url-btn">🔗 Copy link</button>
+      </div>
+      <div id="host-status" class="status info">Waiting for guests…</div>
+    </div>
+
+    <!-- Guest: enter code -->
+    <div id="step-join" class="panel" hidden>
+      <span class="field-label">Code from the other device</span>
+      <div class="join-row">
+        <input id="join-code" type="text" maxlength="6" placeholder="ABC123" autocomplete="off" />
+        <button id="connect-btn">Join</button>
+      </div>
+      <div id="guest-status" class="status info" hidden></div>
+    </div>
+
+    <!-- Timer display (host and guest) -->
+    <div id="step-timer" class="panel" hidden>
+      <div id="timer-done-msg">⏰ Time's up!</div>
+      <div id="timer-display">00:00</div>
+      <div id="timer-controls" class="timer-controls" hidden>
+        <button id="start-btn">▶ Start</button>
+        <button id="reset-btn">↺ Reset</button>
+      </div>
+      <div id="timer-guest-status" class="status success" hidden>Connected — timer is controlled by the host.</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
