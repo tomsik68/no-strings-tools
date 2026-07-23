@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rent vs Buy — rough break-even | No Strings Tools</title>
+  <meta name="description" content="Compare renting vs buying with price, rate, rent and horizon. Rough estimate only. Free, offline." />
+  <link rel="canonical" href="https://nostrings.tools/rent-vs-buy/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Rent vs Buy — rough break-even | No Strings Tools" />
+  <meta property="og:description" content="Compare renting vs buying. Rough estimate only." />
+  <meta property="og:url" content="https://nostrings.tools/rent-vs-buy/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rent vs Buy","url":"https://nostrings.tools/rent-vs-buy/","description":"Compare renting vs buying.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 480px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>Rent vs Buy</h1>
+    <p class="w3-text-grey w3-small">Rough numbers only — not financial advice.</p>
+
+    <label for="price">Home price</label>
+    <input id="price" type="number" min="0" value="300000" class="w3-input w3-border w3-round" />
+    <label for="down" style="margin-top: 10px; display: block;">Down payment %</label>
+    <input id="down" type="number" min="0" max="100" value="20" class="w3-input w3-border w3-round" />
+    <label for="rate" style="margin-top: 10px; display: block;">Mortgage rate % / year</label>
+    <input id="rate" type="number" min="0" step="0.1" value="4" class="w3-input w3-border w3-round" />
+    <label for="years" style="margin-top: 10px; display: block;">Loan term (years)</label>
+    <input id="years" type="number" min="1" value="30" class="w3-input w3-border w3-round" />
+    <label for="rent" style="margin-top: 10px; display: block;">Monthly rent (alternative)</label>
+    <input id="rent" type="number" min="0" value="1200" class="w3-input w3-border w3-round" />
+    <label for="horizon" style="margin-top: 10px; display: block;">Stay horizon (years)</label>
+    <input id="horizon" type="number" min="1" value="7" class="w3-input w3-border w3-round" />
+    <label for="growth" style="margin-top: 10px; display: block;">Home value growth % / year</label>
+    <input id="growth" type="number" step="0.1" value="2" class="w3-input w3-border w3-round" />
+
+    <div id="out" class="w3-panel w3-white w3-round w3-border w3-margin-top" style="padding: 16px;"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

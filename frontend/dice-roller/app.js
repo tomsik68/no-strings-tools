@@ -15,7 +15,13 @@ const diceSizes = {
   d100: 100,
 };
 
-let rolls = JSON.parse(localStorage.getItem("dice-rolls")) || [];
+const KEY = "dice-roller";
+const OLD_KEY = "dice-rolls";
+if (!localStorage.getItem(KEY) && localStorage.getItem(OLD_KEY)) {
+  localStorage.setItem(KEY, localStorage.getItem(OLD_KEY));
+  localStorage.removeItem(OLD_KEY);
+}
+let rolls = JSON.parse(localStorage.getItem(KEY) || "[]");
 
 diceButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -28,7 +34,7 @@ clearBtn.addEventListener("click", () => {
   if (rolls.length === 0) return;
   if (confirm("Clear all rolls?")) {
     rolls = [];
-    localStorage.setItem("dice-rolls", JSON.stringify(rolls));
+    localStorage.setItem(KEY, JSON.stringify(rolls));
     renderLog();
   }
 });
@@ -44,7 +50,7 @@ function roll(diceType) {
     timestamp: timestamp.toISOString(),
   });
 
-  localStorage.setItem("dice-rolls", JSON.stringify(rolls));
+  localStorage.setItem(KEY, JSON.stringify(rolls));
 
   // Display result
   rollType.textContent = diceType.toUpperCase();

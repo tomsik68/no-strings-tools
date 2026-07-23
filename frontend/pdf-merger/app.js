@@ -4,6 +4,11 @@ const fileList = document.getElementById("file-list");
 const mergeBtn = document.getElementById("merge-btn");
 const errorEl = document.getElementById("error");
 
+if (typeof PDFLib === "undefined") {
+  errorEl.textContent = "PDF library failed to load — connect once so it can cache, then this works offline.";
+  errorEl.style.display = "";
+}
+
 let files = [];
 
 function render() {
@@ -72,6 +77,11 @@ dropZone.addEventListener("drop", (e) => {
 });
 
 mergeBtn.addEventListener("click", async () => {
+  if (typeof PDFLib === "undefined") {
+    errorEl.textContent = "PDF library failed to load — connect once so it can cache, then this works offline.";
+    errorEl.style.display = "";
+    return;
+  }
   mergeBtn.disabled = true;
   mergeBtn.textContent = "Merging…";
   errorEl.style.display = "none";

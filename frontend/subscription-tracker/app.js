@@ -4,6 +4,7 @@ let subs = JSON.parse(localStorage.getItem(KEY) || '[]');
 
 const save = () => localStorage.setItem(KEY, JSON.stringify(subs));
 const todayStr = () => new Date().toISOString().slice(0, 10);
+const esc = (t) => { const d = document.createElement('div'); d.textContent = t ?? ''; return d.innerHTML; };
 
 function addPeriod(dateStr, cycle) {
   const d = new Date(dateStr + 'T00:00:00');
@@ -62,7 +63,7 @@ function render() {
     const meqStr = s.cycle !== 'monthly' ? ` (€${meq.toFixed(2)}/mo)` : '';
     return `<div class="sub-card">
       <div class="sub-info">
-        <div class="sub-name">${s.name}</div>
+        <div class="sub-name">${esc(s.name)}</div>
         <div class="sub-meta">${costStr}${meqStr} · renews ${fmtDate(s.nextRenewal)}</div>
       </div>
       <div class="sub-right">

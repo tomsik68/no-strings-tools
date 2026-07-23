@@ -1,5 +1,15 @@
-pdfjsLib.GlobalWorkerOptions.workerSrc =
-  'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+if (typeof pdfjsLib !== 'undefined') {
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+} else {
+  const err = document.getElementById('error-msg');
+  const panel = document.getElementById('state-error');
+  if (err && panel) {
+    err.textContent = 'PDF library failed to load — connect once so it can cache, then this works offline.';
+    panel.hidden = false;
+    document.getElementById('state-drop').hidden = true;
+  }
+}
 
 const SCALE = 4; // render at 4× (~288 DPI)
 const PREVIEW_W = 240;

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMR / TDEE Calculator — daily calorie estimate | No Strings Tools</title>
+  <meta name="description" content="Estimate BMR and TDEE from age, sex, height, weight and activity. Free, offline, no account." />
+  <link rel="canonical" href="https://nostrings.tools/bmr-tdee/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="BMR / TDEE Calculator | No Strings Tools" />
+  <meta property="og:description" content="Estimate BMR and TDEE from age, sex, height, weight and activity." />
+  <meta property="og:url" content="https://nostrings.tools/bmr-tdee/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"BMR / TDEE Calculator","url":"https://nostrings.tools/bmr-tdee/","description":"Estimate BMR and TDEE.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 440px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>BMR / TDEE</h1>
+    <p class="w3-text-grey w3-small">Mifflin–St Jeor. Rough estimate only.</p>
+
+    <label for="sex">Sex</label>
+    <select id="sex" class="w3-select w3-border w3-round">
+      <option value="m">Male</option>
+      <option value="f">Female</option>
+    </select>
+    <div class="w3-row-padding" style="margin: 10px -8px 0;">
+      <div class="w3-third">
+        <label for="age">Age</label>
+        <input id="age" type="number" min="15" max="100" value="30" class="w3-input w3-border w3-round" />
+      </div>
+      <div class="w3-third">
+        <label for="h">Height (cm)</label>
+        <input id="h" type="number" min="100" max="250" value="175" class="w3-input w3-border w3-round" />
+      </div>
+      <div class="w3-third">
+        <label for="w">Weight (kg)</label>
+        <input id="w" type="number" min="30" max="300" value="75" class="w3-input w3-border w3-round" />
+      </div>
+    </div>
+    <label for="act" style="margin-top: 10px; display: block;">Activity</label>
+    <select id="act" class="w3-select w3-border w3-round">
+      <option value="1.2">Sedentary</option>
+      <option value="1.375">Light (1–3 days/wk)</option>
+      <option value="1.55" selected>Moderate (3–5 days/wk)</option>
+      <option value="1.725">Hard (6–7 days/wk)</option>
+      <option value="1.9">Very hard / physical job</option>
+    </select>
+
+    <div id="out" class="w3-panel w3-white w3-round w3-border w3-margin-top" style="padding: 16px;"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

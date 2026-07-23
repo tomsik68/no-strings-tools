@@ -1,7 +1,15 @@
-let bills = JSON.parse(localStorage.getItem("trip-bills")) || [];
+const KEY = "bill-splitter";
+const OLD_KEY = "trip-bills";
+(function migrateKey() {
+  if (!localStorage.getItem(KEY) && localStorage.getItem(OLD_KEY)) {
+    localStorage.setItem(KEY, localStorage.getItem(OLD_KEY));
+    localStorage.removeItem(OLD_KEY);
+  }
+})();
+let bills = JSON.parse(localStorage.getItem(KEY) || "[]");
 
 function save() {
-  localStorage.setItem("trip-bills", JSON.stringify(bills));
+  localStorage.setItem(KEY, JSON.stringify(bills));
 }
 
 function genId() {

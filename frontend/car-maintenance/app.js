@@ -4,6 +4,7 @@ let tasks = JSON.parse(localStorage.getItem(KEY) || '[]');
 
 const save = () => localStorage.setItem(KEY, JSON.stringify(tasks));
 const todayStr = () => new Date().toISOString().slice(0, 10);
+const esc = (t) => { const d = document.createElement('div'); d.textContent = t ?? ''; return d.innerHTML; };
 
 function addMonths(dateStr, months) {
   const d = new Date(dateStr + 'T00:00:00');
@@ -44,7 +45,7 @@ function render() {
     const { cls, label, due } = classify(t);
     return `<div class="task-card">
       <div class="task-top">
-        <span class="task-name">${t.name}</span>
+        <span class="task-name">${esc(t.name)}</span>
         <span class="status-badge ${cls}">${label}</span>
         <button class="task-del" data-id="${t.id}" aria-label="Delete">×</button>
       </div>

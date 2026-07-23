@@ -5,6 +5,11 @@ const orgInput = document.getElementById("org-input");
 const canvas = document.getElementById("qr-canvas");
 const downloadBtn = document.getElementById("download-btn");
 
+if (typeof QRCode === "undefined") {
+  downloadBtn.insertAdjacentHTML("beforebegin",
+    '<p class="w3-text-red w3-small">QR library failed to load — connect once so it can cache, then this works offline.</p>');
+}
+
 nameInput.focus();
 
 // Backslash, comma and semicolon are special in vCard values
@@ -18,7 +23,7 @@ function generate() {
 
   canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
   downloadBtn.style.display = "none";
-  if (!name || (!phone && !email)) return;
+  if (!name || (!phone && !email) || typeof QRCode === "undefined") return;
 
   const words = name.split(/\s+/);
   const family = words.length > 1 ? words[words.length - 1] : "";

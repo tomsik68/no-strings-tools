@@ -11,6 +11,11 @@ const ctx = canvas.getContext("2d", { willReadFrequently: true });
 
 // Native BarcodeDetector where available (Chrome/Edge), jsQR everywhere else
 const detector = "BarcodeDetector" in window ? new BarcodeDetector({ formats: ["qr_code"] }) : null;
+if (!detector && typeof jsQR === "undefined") {
+  errorEl.textContent = "QR scanner library failed to load — connect once so it can cache, then this works offline.";
+  errorEl.style.display = "block";
+  startBtn.disabled = true;
+}
 console.log("[qr-scanner] using", detector ? "BarcodeDetector" : "jsQR");
 
 let scanning = false;

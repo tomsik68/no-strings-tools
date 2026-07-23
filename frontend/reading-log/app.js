@@ -4,6 +4,7 @@ let books = JSON.parse(localStorage.getItem(KEY) || '[]');
 let filter = 'all';
 
 const save = () => localStorage.setItem(KEY, JSON.stringify(books));
+const esc = (t) => { const d = document.createElement('div'); d.textContent = t ?? ''; return d.innerHTML; };
 
 const STATUS_LABELS = { reading: 'Reading', read: 'Read', want: 'Want to Read' };
 
@@ -27,10 +28,10 @@ function render() {
   list.innerHTML = sorted.map(b => `
     <div class="book-card">
       <div class="book-info">
-        <div class="book-title">${b.title}</div>
-        ${b.author ? `<div class="book-author">${b.author}</div>` : ''}
+        <div class="book-title">${esc(b.title)}</div>
+        ${b.author ? `<div class="book-author">${esc(b.author)}</div>` : ''}
         ${b.status === 'read' ? `<div class="star-rating">${stars(b.rating || 0, b.id)}</div>` : ''}
-        ${b.notes ? `<div class="book-notes">${b.notes}</div>` : ''}
+        ${b.notes ? `<div class="book-notes">${esc(b.notes)}</div>` : ''}
       </div>
       <div class="book-actions">
         <select class="status-select" data-id="${b.id}">

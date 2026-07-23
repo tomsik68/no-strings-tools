@@ -2,6 +2,11 @@ const ID_PREFIX = 'NOSTRINGS-FILETX-';
 const CHUNK_SIZE = 64 * 1024;
 const BUFFER_HIGH = 1024 * 1024;
 
+if (typeof Peer === 'undefined') {
+  document.body.insertAdjacentHTML('afterbegin',
+    '<p class="w3-panel w3-pale-red w3-border w3-round" style="max-width:520px;margin:16px auto">PeerJS failed to load — this app needs a network connection to start (and for peer discovery).</p>');
+}
+
 let peer = null;
 let conn = null;
 const receiving = new Map(); // id → { name, size, chunks[], received, fillEl, subEl }
@@ -16,6 +21,15 @@ function fmtSize(bytes) {
   if (bytes < 1024) return bytes + ' B';
   if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
   return (bytes / 1048576).toFixed(2) + ' MB';
+}
+
+function esc(t) {
+  const d = document.createElement('div');
+  d.textContent = t ?? '';
+  return d.innerHTML;
+}
+function escAttr(t) {
+  return String(t ?? '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
 
 function setStatus(id, msg, type) {
@@ -33,7 +47,7 @@ function addTxItem(icon, name, size) {
   const item = document.createElement('div');
   item.className = 'tx-item';
   item.innerHTML =
-    `<div class="tx-name">${icon} ${name} <span class="tx-size">(${fmtSize(size)})</span></div>` +
+    `<div class="tx-name">${icon} ${esc(name)} <span class="tx-size">(${fmtSize(size)})</span></div>` +
     `<div class="tx-bar"><div class="tx-fill"></div></div>` +
     `<div class="tx-sub">0%</div>`;
   log.prepend(item);
@@ -95,7 +109,7 @@ function handleMsg(msg) {
       receiving.delete(msg.id);
       const url = URL.createObjectURL(new Blob(rx.chunks));
       rx.fillEl.classList.add('done');
-      rx.subEl.innerHTML = `<a class="tx-link" href="${url}" download="${rx.name}">⬇ Save ${rx.name}</a>`;
+      rx.subEl.innerHTML = `<a class="tx-link" href="${url}" download="${escAttr(rx.name)}">⬇ Save ${esc(rx.name)}</a>`;
     }
   }
 }

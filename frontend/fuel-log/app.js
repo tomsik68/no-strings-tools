@@ -16,6 +16,7 @@ let activeCar = state.cars[0]?.id || null;
 
 function save() { localStorage.setItem(KEY, JSON.stringify(state)); }
 function todayStr() { return new Date().toISOString().slice(0, 10); }
+function esc(t) { const d = document.createElement('div'); d.textContent = t ?? ''; return d.innerHTML; }
 function fmtDate(s) {
   return new Date(s + 'T00:00:00').toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
 }
@@ -44,7 +45,7 @@ function renderCars() {
     return;
   }
   section.innerHTML = state.cars.map(c => `
-    <button class="car-tab ${c.id === activeCar ? 'active' : ''}" data-car-id="${c.id}">${c.name}</button>
+    <button class="car-tab ${c.id === activeCar ? 'active' : ''}" data-car-id="${c.id}">${esc(c.name)}</button>
   `).join('') + `<button class="car-add-btn" id="add-car-btn" title="Add car">+ Car</button>`;
   document.getElementById('add-car-btn').addEventListener('click', promptAddCar);
 }

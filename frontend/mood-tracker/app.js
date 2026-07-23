@@ -2,6 +2,9 @@ let moods = JSON.parse(localStorage.getItem('mood-tracker')) || {};
 
 function save() { localStorage.setItem('mood-tracker', JSON.stringify(moods)); }
 function todayStr() { return new Date().toISOString().slice(0, 10); }
+function escAttr(t) {
+  return String(t ?? '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
 
 const MOODS = [
   { emoji: '😢', label: 'Rough', color: '#ef5350' },
@@ -44,7 +47,7 @@ function render() {
     const bg = m ? MOODS[m.mood - 1].color : '#e8e8e8';
     const tip = m ? `${date}: ${MOODS[m.mood - 1].label}${m.note ? ' — ' + m.note : ''}` : date;
     const cls = date === today ? ' today' : '';
-    return `<div class="mood-dot${cls}" style="background:${bg}" title="${tip}"></div>`;
+    return `<div class="mood-dot${cls}" style="background:${bg}" title="${escAttr(tip)}"></div>`;
   }).join('');
 }
 

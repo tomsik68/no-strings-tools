@@ -1,5 +1,10 @@
 const ID_PREFIX = 'NOSTRINGS-SYNC-';
 
+if (typeof Peer === 'undefined') {
+  document.body.insertAdjacentHTML('afterbegin',
+    '<p class="w3-panel w3-pale-red w3-border w3-round" style="max-width:520px;margin:16px auto">PeerJS failed to load — this app needs a network connection to start.</p>');
+}
+
 // --- Data helpers ---
 
 function getAll() {

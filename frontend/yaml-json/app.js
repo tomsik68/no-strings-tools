@@ -6,12 +6,22 @@ const errorEl = document.getElementById("error");
 const copyBtn = document.getElementById("copy-btn");
 const copyFeedback = document.getElementById("copy-feedback");
 
+if (typeof jsyaml === "undefined") {
+  errorEl.textContent = "YAML library failed to load — connect once so it can cache, then this works offline.";
+  errorEl.style.display = "";
+}
+
 input.focus();
 
 function convert() {
   const text = input.value.trim();
   copyFeedback.textContent = "";
   errorEl.style.display = "none";
+  if (typeof jsyaml === "undefined") {
+    errorEl.textContent = "YAML library failed to load — connect once so it can cache, then this works offline.";
+    errorEl.style.display = "";
+    return;
+  }
   if (!text) {
     output.value = "";
     inputKind.textContent = "";

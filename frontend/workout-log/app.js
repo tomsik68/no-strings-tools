@@ -4,6 +4,7 @@ let entries = JSON.parse(localStorage.getItem(KEY) || '[]');
 
 const save = () => localStorage.setItem(KEY, JSON.stringify(entries));
 const todayStr = () => new Date().toISOString().slice(0, 10);
+const esc = (t) => { const d = document.createElement('div'); d.textContent = t ?? ''; return d.innerHTML; };
 
 function fmtDate(d) {
   const dt = new Date(d + 'T00:00:00');
@@ -32,7 +33,7 @@ function render() {
     const rows = exs.map(e => {
       const weight = e.weight ? ` @ ${e.weight} kg` : '';
       return `<div class="exercise-row">
-        <span class="exercise-name">${e.exercise}</span>
+        <span class="exercise-name">${esc(e.exercise)}</span>
         <span class="exercise-sets">${e.sets}×${e.reps}${weight}</span>
         <button class="del-entry" data-id="${e.id}" aria-label="Delete">×</button>
       </div>`;

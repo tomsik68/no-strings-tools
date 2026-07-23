@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fridge Expiry — track use-by dates, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Log fridge and pantry items with use-by dates. See what's expiring soon. Free, private, offline." />
+  <link rel="canonical" href="https://nostrings.tools/fridge-expiry/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Fridge Expiry — track use-by dates | No Strings Tools" />
+  <meta property="og:description" content="Log items with use-by dates. See what's expiring soon." />
+  <meta property="og:url" content="https://nostrings.tools/fridge-expiry/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fridge Expiry","url":"https://nostrings.tools/fridge-expiry/","description":"Log fridge and pantry items with use-by dates.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 520px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1 style="margin-bottom: 4px;">🧊 Fridge Expiry</h1>
+    <p class="w3-text-grey" style="margin-top: 0;">Use-by dates, sorted by urgency.</p>
+    <div id="list"></div>
+    <div class="w3-margin-top">
+      <label for="name">Item</label>
+      <input id="name" type="text" class="w3-input w3-border w3-round" placeholder="Milk, leftovers…" autocomplete="off" />
+      <div class="w3-row-padding" style="margin: 8px -8px 0;">
+        <div class="w3-half">
+          <label for="exp">Use by</label>
+          <input id="exp" type="date" class="w3-input w3-border w3-round" />
+        </div>
+        <div class="w3-half">
+          <label for="where">Where</label>
+          <select id="where" class="w3-select w3-border w3-round">
+            <option value="fridge">Fridge</option>
+            <option value="freezer">Freezer</option>
+            <option value="pantry">Pantry</option>
+          </select>
+        </div>
+      </div>
+      <button id="add" class="w3-button w3-blue w3-round w3-margin-top">Add</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

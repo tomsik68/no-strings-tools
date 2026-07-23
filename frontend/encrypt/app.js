@@ -7,6 +7,11 @@ const clearBtn = document.getElementById("clear-btn");
 const outputText = document.getElementById("output-text");
 const feedback = document.getElementById("feedback");
 
+if (typeof CryptoJS === "undefined") {
+  feedback.textContent = "Crypto library failed to load — connect once so it can cache, then this works offline.";
+  feedback.className = "w3-text-red";
+}
+
 passwordInput.focus();
 
 encryptBtn.addEventListener("click", encrypt);
@@ -15,6 +20,10 @@ copyBtn.addEventListener("click", copyOutput);
 clearBtn.addEventListener("click", clear);
 
 function encrypt() {
+  if (typeof CryptoJS === "undefined") {
+    showFeedback("Crypto library failed to load — connect once so it can cache", "error");
+    return;
+  }
   const password = passwordInput.value;
   const text = textInput.value;
 
@@ -38,6 +47,10 @@ function encrypt() {
 }
 
 function decrypt() {
+  if (typeof CryptoJS === "undefined") {
+    showFeedback("Crypto library failed to load — connect once so it can cache", "error");
+    return;
+  }
   const password = passwordInput.value;
   const text = textInput.value;
 

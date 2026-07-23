@@ -3,6 +3,11 @@ const canvas = document.getElementById("qr-canvas");
 const downloadBtn = document.getElementById("download-btn");
 const downloadFeedback = document.getElementById("download-feedback");
 
+if (typeof QRCode === "undefined") {
+  downloadFeedback.textContent = "QR library failed to load — connect once so it can cache, then this works offline.";
+  downloadFeedback.className = "w3-text-red w3-small";
+}
+
 textInput.focus();
 
 function generateQR() {
@@ -11,7 +16,7 @@ function generateQR() {
   // Clear previous QR code
   canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
 
-  if (!text) return;
+  if (!text || typeof QRCode === "undefined") return;
 
   QRCode.toCanvas(canvas, text, { width: 256, margin: 1, errorCorrectionLevel: "H" }, (error) => {
     if (error) {

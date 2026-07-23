@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice Generator — print-ready, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Make a simple invoice with line items and tax. Print or save as PDF from your browser. Data stays local." />
+  <link rel="canonical" href="https://nostrings.tools/invoice-generator/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Invoice Generator — print-ready, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Make a simple invoice with line items and tax. Data stays local." />
+  <meta property="og:url" content="https://nostrings.tools/invoice-generator/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Invoice Generator","url":"https://nostrings.tools/invoice-generator/","description":"Make a simple invoice with line items and tax.","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    @media print {
+      body * { visibility: hidden; }
+      #preview, #preview * { visibility: visible; }
+      #preview { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none !important; border: none !important; }
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large" style="max-width: 720px; margin: 0 auto;">
+    <div class="no-print">
+      <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+      <h1 style="margin-bottom: 4px;">🧾 Invoice</h1>
+      <p class="w3-text-grey" style="margin-top: 0;">Fill in, then print / save as PDF.</p>
+    </div>
+
+    <div class="w3-row-padding no-print" style="margin: 0 -8px;">
+      <div class="w3-half">
+        <label for="from">From</label>
+        <textarea id="from" class="w3-input w3-border w3-round" rows="3" placeholder="Your name&#10;Address"></textarea>
+      </div>
+      <div class="w3-half">
+        <label for="to">Bill to</label>
+        <textarea id="to" class="w3-input w3-border w3-round" rows="3" placeholder="Client name&#10;Address"></textarea>
+      </div>
+    </div>
+    <div class="w3-row-padding no-print" style="margin: 8px -8px 0;">
+      <div class="w3-third">
+        <label for="num">Invoice #</label>
+        <input id="num" class="w3-input w3-border w3-round" value="001" />
+      </div>
+      <div class="w3-third">
+        <label for="date">Date</label>
+        <input id="date" type="date" class="w3-input w3-border w3-round" />
+      </div>
+      <div class="w3-third">
+        <label for="tax">Tax %</label>
+        <input id="tax" type="number" min="0" step="0.1" value="21" class="w3-input w3-border w3-round" />
+      </div>
+    </div>
+
+    <div class="no-print w3-margin-top">
+      <div id="lines"></div>
+      <button id="add-line" class="w3-button w3-border w3-round w3-small">+ Line</button>
+      <button id="print-btn" class="w3-button w3-blue w3-round w3-right">Print / PDF</button>
+    </div>
+
+    <div id="preview" class="w3-panel w3-white w3-round w3-border w3-margin-top" style="padding: 24px;"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

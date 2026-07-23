@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards — local Q&amp;A decks, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Simple flashcards on your device. Flip, know or again. No account, no cloud." />
+  <link rel="canonical" href="https://nostrings.tools/flashcards/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Flashcards — local Q&amp;A decks | No Strings Tools" />
+  <meta property="og:description" content="Simple flashcards on your device. No account, no cloud." />
+  <meta property="og:url" content="https://nostrings.tools/flashcards/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Flashcards","url":"https://nostrings.tools/flashcards/","description":"Simple local flashcards.","applicationCategory":"EducationalApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 480px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1 style="margin-bottom: 4px;">🃏 Flashcards</h1>
+    <p class="w3-text-grey" style="margin-top: 0;">One deck. Flip. Know or again.</p>
+
+    <div id="study" class="w3-center" style="min-height: 180px;">
+      <div id="card" class="w3-panel w3-white w3-round w3-border" style="padding: 40px 20px; cursor: pointer; min-height: 140px; display: flex; align-items: center; justify-content: center;">
+        <div id="card-text" style="font-size: 20px; font-weight: 600;">Add cards below</div>
+      </div>
+      <div id="progress" class="w3-text-grey w3-small"></div>
+      <div id="actions" class="w3-margin-top" hidden>
+        <button id="again-btn" class="w3-button w3-orange w3-round">Again</button>
+        <button id="know-btn" class="w3-button w3-green w3-round">Know</button>
+      </div>
+      <p id="hint" class="w3-text-grey w3-small">Tap card to flip</p>
+    </div>
+
+    <details class="w3-margin-top">
+      <summary style="cursor: pointer;">Edit cards</summary>
+      <div class="w3-margin-top">
+        <label for="front">Front</label>
+        <input id="front" class="w3-input w3-border w3-round" autocomplete="off" />
+        <label for="back" style="margin-top: 8px; display: block;">Back</label>
+        <input id="back" class="w3-input w3-border w3-round" autocomplete="off" />
+        <button id="add-card" class="w3-button w3-blue w3-round w3-margin-top">Add card</button>
+        <div id="card-list" class="w3-margin-top"></div>
+      </div>
+    </details>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

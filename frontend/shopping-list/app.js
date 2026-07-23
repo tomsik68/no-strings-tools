@@ -2,7 +2,13 @@ const itemInput = document.getElementById("item-input");
 const addBtn = document.getElementById("add-btn");
 const itemsList = document.getElementById("items-list");
 
-let items = JSON.parse(localStorage.getItem("shopping-items")) || [];
+const KEY = "shopping-list";
+const OLD_KEY = "shopping-items";
+if (!localStorage.getItem(KEY) && localStorage.getItem(OLD_KEY)) {
+  localStorage.setItem(KEY, localStorage.getItem(OLD_KEY));
+  localStorage.removeItem(OLD_KEY);
+}
+let items = JSON.parse(localStorage.getItem(KEY) || "[]");
 
 function escapeHtml(text) {
   const div = document.createElement("div");
@@ -57,7 +63,7 @@ function render() {
 }
 
 function save() {
-  localStorage.setItem("shopping-items", JSON.stringify(items));
+  localStorage.setItem(KEY, JSON.stringify(items));
   render();
 }
 

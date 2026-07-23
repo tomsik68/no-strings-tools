@@ -4,6 +4,11 @@ const svg = document.getElementById("barcode");
 const errorEl = document.getElementById("error");
 const downloadBtn = document.getElementById("download-btn");
 
+if (typeof JsBarcode === "undefined") {
+  errorEl.textContent = "Barcode library failed to load — connect once so it can cache, then this works offline.";
+  errorEl.style.display = "";
+}
+
 textInput.focus();
 
 function generate() {
@@ -11,7 +16,13 @@ function generate() {
   svg.innerHTML = "";
   errorEl.style.display = "none";
   downloadBtn.style.display = "none";
-  if (!text) return;
+  if (!text || typeof JsBarcode === "undefined") {
+    if (typeof JsBarcode === "undefined") {
+      errorEl.textContent = "Barcode library failed to load — connect once so it can cache, then this works offline.";
+      errorEl.style.display = "";
+    }
+    return;
+  }
 
   let ok = true;
   JsBarcode(svg, text, {

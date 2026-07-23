@@ -5,6 +5,7 @@ let severity = 0;
 
 const save = () => localStorage.setItem(KEY, JSON.stringify(entries));
 const todayStr = () => new Date().toISOString().slice(0, 10);
+const esc = (t) => { const d = document.createElement('div'); d.textContent = t ?? ''; return d.innerHTML; };
 
 const SEV_LABELS = ['', 'Mild', 'Moderate', 'Bad', 'Severe', 'Extreme'];
 
@@ -45,14 +46,14 @@ function render() {
   list.innerHTML = sorted.map(e => {
     const details = [
       e.duration ? `${e.duration}h` : null,
-      e.location || null,
+      e.location ? esc(e.location) : null,
     ].filter(Boolean).join(' · ');
     return `<div class="headache-row">
       <span class="h-severity sev-${e.severity}">${e.severity} — ${SEV_LABELS[e.severity]}</span>
       <div class="h-info">
-        <div class="h-date">${fmtDate(e.date)}${e.time ? ' at ' + e.time : ''}</div>
+        <div class="h-date">${fmtDate(e.date)}${e.time ? ' at ' + esc(e.time) : ''}</div>
         ${details ? `<div class="h-details">${details}</div>` : ''}
-        ${e.notes ? `<div class="h-notes">${e.notes}</div>` : ''}
+        ${e.notes ? `<div class="h-notes">${esc(e.notes)}</div>` : ''}
       </div>
       <button class="del-btn" data-id="${e.id}" aria-label="Delete">×</button>
     </div>`;

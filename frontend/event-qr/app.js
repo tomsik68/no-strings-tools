@@ -9,6 +9,11 @@ const pngBtn = document.getElementById("png-btn");
 
 let lastIcs = "";
 
+if (typeof QRCode === "undefined") {
+  icsBtn.insertAdjacentHTML("beforebegin",
+    '<p class="w3-text-red w3-small">QR library failed to load — connect once so it can cache, then this works offline. .ics download still works without it.</p>');
+}
+
 function pad(n) { return String(n).padStart(2, "0"); }
 
 function toIcsStamp(localValue) {
@@ -57,12 +62,11 @@ function generate() {
   icsBtn.style.display = "none";
   pngBtn.style.display = "none";
   if (!lastIcs) return;
+  icsBtn.style.display = "";
+  if (typeof QRCode === "undefined") return;
 
   QRCode.toCanvas(canvas, lastIcs, { width: 256, margin: 1, errorCorrectionLevel: "M" }, (err) => {
-    if (!err) {
-      icsBtn.style.display = "";
-      pngBtn.style.display = "";
-    }
+    if (!err) pngBtn.style.display = "";
   });
 }
 

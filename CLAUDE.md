@@ -42,7 +42,8 @@ Before shipping an app, verify:
 
 ### Frontend
 - **HTML5 semantic markup** (no div soup)
-- **W3.CSS** (via CDN) for styling—**zero custom CSS**
+- **W3.CSS** (via CDN) for styling—prefer it first
+- **Custom CSS:** small `<style>` blocks in `index.html` are OK when W3 can't do the layout (flex rows, badges, grids, timer displays). **No separate `.css` files.** Soft cap ~40 lines; rethink past ~80. No decorative animations or design-system sprawl.
 - **Vanilla JavaScript** (ES2020+) for interactivity
 - **HTMX** or **Alpine.js** acceptable for dynamic behavior, but only if necessary
 - **No build step.** Write plain HTML/JS files, link via CDN.
@@ -86,9 +87,9 @@ no-strings-tools/
 ### App Structure
 
 Each app is a self-contained folder in `frontend/`:
-- **`index.html`** — the entire UI (semantic HTML + W3.CSS classes)
+- **`index.html`** — the entire UI (semantic HTML + W3.CSS classes; optional small `<style>` block)
 - **`app.js`** — vanilla JS for interactivity (optional if no JS needed)
-- **No custom CSS file** — W3.CSS handles everything
+- **No separate `.css` file** — keep styles in the HTML if needed
 
 **Important:** Use **relative links** for all navigation (e.g., `./timezone/` or `../`), not absolute paths starting with `/`. This ensures the app works both online and offline.
 
@@ -115,7 +116,7 @@ Provides:
 1. Create a folder in `frontend/`: `mkdir frontend/new-app`
 2. Write `index.html` with semantic HTML + W3.CSS classes
 3. Add `app.js` if you need interactivity
-4. Link to W3.CSS via CDN (no other CSS)
+4. Link to W3.CSS via CDN; add a small `<style>` block only if W3 isn't enough
 5. Test offline (open as `file:///` or use local server)
 6. Add to `frontend/index.html` app grid
 7. Push to git; deploy via `./deploy.sh`
@@ -225,7 +226,7 @@ There are no accounts in any app. If users need their data elsewhere:
 ## What Not to Do
 
 - ❌ Don't add accounts, logins, or server-side anything—localStorage and P2P only
-- ❌ Don't add custom CSS—use W3.CSS only
+- ❌ Don't add separate `.css` files or large decorative stylesheets—W3.CSS first, small inline `<style>` only when needed
 - ❌ Don't build a framework or component library
 - ❌ Don't add analytics, ads, or tracking
 - ❌ Don't support old browsers (>2 years old)

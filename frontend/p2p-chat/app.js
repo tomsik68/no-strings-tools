@@ -35,6 +35,10 @@ function showStatus(message, type = "info") {
   setupStatus.className = `status ${type}`;
 }
 
+if (typeof Peer === "undefined") {
+  showStatus("PeerJS failed to load — this app needs a network connection to start (and for peer discovery).", "error");
+}
+
 function generateCode() {
   return Math.random().toString(36).substring(2, 8).toUpperCase();
 }

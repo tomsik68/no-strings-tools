@@ -4,6 +4,11 @@ const securitySelect = document.getElementById("security-select");
 const canvas = document.getElementById("qr-canvas");
 const downloadBtn = document.getElementById("download-btn");
 
+if (typeof QRCode === "undefined") {
+  downloadBtn.insertAdjacentHTML("beforebegin",
+    '<p class="w3-text-red w3-small">QR library failed to load — connect once so it can cache, then this works offline.</p>');
+}
+
 ssidInput.focus();
 
 // Special characters in the WIFI: format must be backslash-escaped
@@ -21,7 +26,7 @@ function generate() {
   canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
   downloadBtn.style.display = "none";
 
-  if (!ssid || (security !== "nopass" && !password)) return;
+  if (!ssid || (security !== "nopass" && !password) || typeof QRCode === "undefined") return;
 
   const payload =
     security === "nopass"

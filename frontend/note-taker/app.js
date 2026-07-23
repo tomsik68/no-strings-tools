@@ -1,16 +1,21 @@
 // marked v11 API: use marked.use() for renderer hooks; code() receives a token object
-marked.use({
-  breaks: true,
-  gfm: true,
-  renderer: {
-    code({ text, lang }) {
-      if (lang && hljs.getLanguage(lang)) {
-        return `<pre><code class="hljs language-${lang}">${hljs.highlight(text, { language: lang }).value}</code></pre>`;
+if (typeof marked === "undefined" || typeof hljs === "undefined") {
+  document.body.insertAdjacentHTML("afterbegin",
+    '<p class="w3-panel w3-pale-red w3-border w3-round" style="max-width:700px;margin:16px auto">Markdown library failed to load — connect once so it can cache, then this works offline.</p>');
+} else {
+  marked.use({
+    breaks: true,
+    gfm: true,
+    renderer: {
+      code({ text, lang }) {
+        if (lang && hljs.getLanguage(lang)) {
+          return `<pre><code class="hljs language-${lang}">${hljs.highlight(text, { language: lang }).value}</code></pre>`;
+        }
+        return `<pre><code class="hljs">${hljs.highlightAuto(text).value}</code></pre>`;
       }
-      return `<pre><code class="hljs">${hljs.highlightAuto(text).value}</code></pre>`;
     }
-  }
-});
+  });
+}
 
 let notes = JSON.parse(localStorage.getItem("note-taker-notes")) || [];
 let currentId = localStorage.getItem("note-taker-current") || null;

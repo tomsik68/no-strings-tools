@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slug Cleaner — title to URL slug | No Strings Tools</title>
+  <meta name="description" content="Turn a title into a clean URL slug: lowercase, dashes, ASCII. Free, offline." />
+  <link rel="canonical" href="https://nostrings.tools/slug-cleaner/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Slug Cleaner — title to URL slug | No Strings Tools" />
+  <meta property="og:description" content="Turn a title into a clean URL slug." />
+  <meta property="og:url" content="https://nostrings.tools/slug-cleaner/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Slug Cleaner","url":"https://nostrings.tools/slug-cleaner/","description":"Title to URL slug.","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 520px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>Slug Cleaner</h1>
+    <p class="w3-text-grey w3-small">Title → url-friendly-slug</p>
+    <label for="title">Title</label>
+    <input id="title" class="w3-input w3-border w3-round" placeholder="Hello, World! Café 2026" autocomplete="off" />
+    <div class="w3-panel w3-white w3-round w3-border w3-margin-top" style="padding: 16px;">
+      <div class="w3-text-grey w3-small">Slug</div>
+      <div id="slug" style="font-family: monospace; font-size: 18px; font-weight: 600; word-break: break-all; min-height: 28px;">—</div>
+      <button id="copy" class="w3-button w3-blue w3-round w3-small w3-margin-top">Copy</button>
+      <span id="fb" class="w3-text-grey w3-small"></span>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
