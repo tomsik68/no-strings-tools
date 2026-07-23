@@ -23,6 +23,7 @@
   <url><loc>https://nostrings.tools/chess-clock/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/chmod-calculator/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/chord-transposer/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://nostrings.tools/color-converter/</loc><lastmod>2026-07-23</lastmod></url>
   <url><loc>https://nostrings.tools/color-palette/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/colorblind-simulator/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/compass/</loc><lastmod>2026-07-15</lastmod></url>
@@ -39,13 +40,16 @@
   <url><loc>https://nostrings.tools/dice-roller/</loc><lastmod>2026-07-19</lastmod></url>
   <url><loc>https://nostrings.tools/dinner-picker/</loc><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://nostrings.tools/doctor-visits/</loc><lastmod>2026-07-21</lastmod></url>
+  <url><loc>https://nostrings.tools/dpi-print/</loc><lastmod>2026-07-23</lastmod></url>
   <url><loc>https://nostrings.tools/duration-adder/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/electricity-cost/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/encrypt/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/entropy-calculator/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/exif-stripper/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://nostrings.tools/event-qr/</loc><lastmod>2026-07-23</lastmod></url>
   <url><loc>https://nostrings.tools/expense-log/</loc><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://nostrings.tools/eyedropper/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://nostrings.tools/fasting-timer/</loc><lastmod>2026-07-23</lastmod></url>
   <url><loc>https://nostrings.tools/favicon-generator/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/flashlight/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/fuel-log/</loc><lastmod>2026-07-21</lastmod></url>
@@ -75,6 +79,7 @@
   <url><loc>https://nostrings.tools/live-pad/</loc><lastmod>2026-07-22</lastmod></url>
   <url><loc>https://nostrings.tools/loan-calculator/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/lorem-ipsum/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://nostrings.tools/maidenhead/</loc><lastmod>2026-07-23</lastmod></url>
   <url><loc>https://nostrings.tools/medicine-tracker/</loc><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://nostrings.tools/meditation-timer/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/metronome/</loc><lastmod>2026-07-15</lastmod></url>
@@ -97,6 +102,7 @@
   <url><loc>https://nostrings.tools/pdf-tiler/</loc><lastmod>2026-07-22</lastmod></url>
   <url><loc>https://nostrings.tools/pedometer/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/percentage-calculator/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://nostrings.tools/pet-care/</loc><lastmod>2026-07-23</lastmod></url>
   <url><loc>https://nostrings.tools/period-tracker/</loc><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://nostrings.tools/phonetic-alphabet/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/plant-watering/</loc><lastmod>2026-07-21</lastmod></url>
@@ -123,6 +129,7 @@
   <url><loc>https://nostrings.tools/sleep-log/</loc><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://nostrings.tools/sound-meter/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/speaker-test/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://nostrings.tools/sql-formatter/</loc><lastmod>2026-07-23</lastmod></url>
   <url><loc>https://nostrings.tools/speaking-clock/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/speech-to-text/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/speed-reader/</loc><lastmod>2026-07-15</lastmod></url>
@@ -146,14 +153,18 @@
   <url><loc>https://nostrings.tools/unit-price/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/unix-timestamp/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/url-parser/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://nostrings.tools/user-agent-parser/</loc><lastmod>2026-07-23</lastmod></url>
   <url><loc>https://nostrings.tools/uuid-generator/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/vcard-qr/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/voice-recorder/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/voltage-divider/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://nostrings.tools/warranty-tracker/</loc><lastmod>2026-07-23</lastmod></url>
   <url><loc>https://nostrings.tools/water-reminder/</loc><lastmod>2026-07-19</lastmod></url>
   <url><loc>https://nostrings.tools/where-am-i/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/wifi-qr/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://nostrings.tools/wishlist/</loc><lastmod>2026-07-23</lastmod></url>
   <url><loc>https://nostrings.tools/word-counter/</loc><lastmod>2026-07-15</lastmod></url>
+  <url><loc>https://nostrings.tools/work-hours/</loc><lastmod>2026-07-23</lastmod></url>
   <url><loc>https://nostrings.tools/workout-log/</loc><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://nostrings.tools/world-clock/</loc><lastmod>2026-07-15</lastmod></url>
   <url><loc>https://nostrings.tools/yaml-json/</loc><lastmod>2026-07-15</lastmod></url>

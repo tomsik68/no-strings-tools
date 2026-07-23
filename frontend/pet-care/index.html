@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pet Care Log — Vaccines, flea &amp; more, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Track pet care: vaccines, flea treatment, deworming and weight. See what's due. Free, private, works offline." />
+  <link rel="canonical" href="https://nostrings.tools/pet-care/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Pet Care Log — Vaccines, flea &amp; more, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Track pet care: vaccines, flea treatment, deworming and weight. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/pet-care/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Pet Care Log","url":"https://nostrings.tools/pet-care/","description":"Track pet care: vaccines, flea treatment, deworming and weight.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 540px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1 style="margin-bottom: 4px;">🐾 Pet Care</h1>
+    <p class="w3-text-grey" style="margin-top: 0;">Log vaccines, flea, deworming &amp; weight.</p>
+
+    <div id="pet-list"></div>
+
+    <div class="w3-margin-top">
+      <label for="pet-name">Add a pet</label>
+      <div style="display: flex; gap: 8px;">
+        <input id="pet-name" type="text" class="w3-input w3-border w3-round" placeholder="Name" autocomplete="off" style="flex: 1;" />
+        <select id="pet-type" class="w3-select w3-border w3-round" style="width: 110px;">
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="other">Other</option>
+        </select>
+        <button id="add-pet" class="w3-button w3-blue w3-round">Add</button>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

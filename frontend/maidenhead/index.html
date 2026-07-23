@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maidenhead / QTH — Grid square converter, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Convert latitude/longitude to Maidenhead locator (QTH grid square) and back. Free ham radio tool, works offline." />
+  <link rel="canonical" href="https://nostrings.tools/maidenhead/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Maidenhead / QTH — Grid square converter, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Convert lat/lon to Maidenhead locator and back. Free, works offline." />
+  <meta property="og:url" content="https://nostrings.tools/maidenhead/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Maidenhead / QTH","url":"https://nostrings.tools/maidenhead/","description":"Convert latitude/longitude to Maidenhead locator and back.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 480px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>Maidenhead / QTH</h1>
+    <p class="w3-text-grey w3-small">Lat/lon ⇄ grid square. For ham radio &amp; maps.</p>
+
+    <div class="w3-row-padding" style="margin: 0 -8px;">
+      <div class="w3-half">
+        <label for="lat">Latitude</label>
+        <input id="lat" type="number" step="any" class="w3-input w3-border w3-round" placeholder="50.0755" />
+      </div>
+      <div class="w3-half">
+        <label for="lon">Longitude</label>
+        <input id="lon" type="number" step="any" class="w3-input w3-border w3-round" placeholder="14.4378" />
+      </div>
+    </div>
+    <button id="gps-btn" class="w3-button w3-border w3-round w3-margin-top w3-small">Use my location</button>
+
+    <div class="w3-panel w3-white w3-round w3-border w3-center" style="padding: 16px; margin-top: 16px;">
+      <div class="w3-text-grey w3-small">Grid square</div>
+      <div id="grid-out" style="font-size: 28px; font-weight: 700; font-family: monospace; letter-spacing: .08em; min-height: 40px;">—</div>
+    </div>
+
+    <label for="grid-in" style="margin-top: 8px; display: block;">Or paste a grid square</label>
+    <input id="grid-in" type="text" class="w3-input w3-border w3-round" placeholder="JO70aa" autocomplete="off" spellcheck="false" style="font-family: monospace; text-transform: uppercase;" />
+    <div id="coords-out" class="w3-text-grey w3-small" style="margin-top: 8px; min-height: 20px;"></div>
+    <p id="error" class="w3-text-red w3-small" style="min-height: 18px;"></p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

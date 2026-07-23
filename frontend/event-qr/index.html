@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event QR — Calendar event as QR &amp; ICS, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Turn an event into a QR code and downloadable calendar file (.ics). Created locally — nothing leaves your device." />
+  <link rel="canonical" href="https://nostrings.tools/event-qr/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Event QR — Calendar event as QR &amp; ICS, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Turn an event into a QR code and downloadable calendar file (.ics). Created locally." />
+  <meta property="og:url" content="https://nostrings.tools/event-qr/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Event QR","url":"https://nostrings.tools/event-qr/","description":"Turn an event into a QR code and downloadable calendar file (.ics).","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1/build/qrcode.min.js"></script>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>Event QR</h1>
+    <p class="w3-text-grey">Scan to add the event, or download an .ics file.</p>
+
+    <label for="title-input">Title</label>
+    <input id="title-input" class="w3-input w3-border w3-round" type="text" autocomplete="off" placeholder="Team lunch" />
+
+    <label for="start-input" style="margin-top: 12px; display: block;">Starts</label>
+    <input id="start-input" class="w3-input w3-border w3-round" type="datetime-local" />
+
+    <label for="end-input" style="margin-top: 12px; display: block;">Ends</label>
+    <input id="end-input" class="w3-input w3-border w3-round" type="datetime-local" />
+
+    <label for="loc-input" style="margin-top: 12px; display: block;">Location <span class="w3-text-grey">(optional)</span></label>
+    <input id="loc-input" class="w3-input w3-border w3-round" type="text" autocomplete="off" />
+
+    <label for="desc-input" style="margin-top: 12px; display: block;">Notes <span class="w3-text-grey">(optional)</span></label>
+    <input id="desc-input" class="w3-input w3-border w3-round" type="text" autocomplete="off" />
+
+    <div class="w3-center" style="margin-top: 24px;">
+      <canvas id="qr-canvas" width="256" height="256" aria-label="Event QR code"></canvas>
+    </div>
+    <div class="w3-center" style="margin-bottom: 16px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+      <button id="ics-btn" class="w3-button w3-blue w3-round" style="display: none;">Download .ics</button>
+      <button id="png-btn" class="w3-button w3-blue w3-round" style="display: none;">Download PNG</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

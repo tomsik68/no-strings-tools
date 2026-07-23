@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warranty Tracker — Never miss an expiry, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Track product warranties. See what's expiring soon and what's still covered. Free, no account, works offline." />
+  <link rel="canonical" href="https://nostrings.tools/warranty-tracker/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Warranty Tracker — Never miss an expiry, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Track product warranties. See what's expiring soon and what's still covered. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/warranty-tracker/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Warranty Tracker","url":"https://nostrings.tools/warranty-tracker/","description":"Track product warranties. See what's expiring soon and what's still covered.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 520px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1 style="margin-bottom: 4px;">🛡️ Warranty Tracker</h1>
+    <p class="w3-text-grey" style="margin-top: 0;">Item + purchase date + months. Know what's covered.</p>
+
+    <div id="item-list"></div>
+
+    <div class="w3-margin-top">
+      <label for="item-name">Item</label>
+      <input id="item-name" type="text" class="w3-input w3-border w3-round" placeholder="e.g. Laptop, dishwasher…" autocomplete="off" />
+      <div class="w3-row-padding" style="margin: 8px -8px 0;">
+        <div class="w3-half">
+          <label for="item-bought">Purchased</label>
+          <input id="item-bought" type="date" class="w3-input w3-border w3-round" />
+        </div>
+        <div class="w3-half">
+          <label for="item-months">Warranty (months)</label>
+          <input id="item-months" type="number" min="1" value="24" class="w3-input w3-border w3-round" />
+        </div>
+      </div>
+      <label for="item-note" style="margin-top: 8px; display: block;">Note <span class="w3-text-grey">(optional)</span></label>
+      <input id="item-note" type="text" class="w3-input w3-border w3-round" placeholder="Store, serial, receipt…" autocomplete="off" />
+      <button id="add-btn" class="w3-button w3-blue w3-round w3-margin-top">Add</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

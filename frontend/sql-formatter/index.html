@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQL Formatter — Pretty-print SQL, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Paste SQL, get it indented and readable instantly. Free, runs offline in your browser, no tracking." />
+  <link rel="canonical" href="https://nostrings.tools/sql-formatter/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="SQL Formatter — Pretty-print SQL, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Paste SQL, get it indented and readable instantly. Free, works offline." />
+  <meta property="og:url" content="https://nostrings.tools/sql-formatter/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"SQL Formatter","url":"https://nostrings.tools/sql-formatter/","description":"Paste SQL, get it indented and readable instantly.","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    textarea, pre { font-family: monospace; font-size: 14px; }
+    pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; margin: 0; white-space: pre-wrap; word-break: break-word; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>SQL Formatter</h1>
+
+    <label for="sql-input" class="w3-text-grey">Paste SQL</label>
+    <textarea id="sql-input" class="w3-input w3-border w3-round" rows="8" placeholder="select * from users where id = 1"></textarea>
+
+    <div style="display: flex; gap: 8px; align-items: center; margin-top: 12px;">
+      <p class="w3-text-grey w3-small" style="margin: 0; flex: 1;">Output</p>
+      <button id="copy-btn" class="w3-button w3-blue w3-small w3-round">Copy</button>
+    </div>
+    <pre id="output">Paste SQL above…</pre>
+    <p id="copy-feedback" class="w3-text-grey w3-small" style="min-height: 18px;"></p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

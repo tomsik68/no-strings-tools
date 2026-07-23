@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Converter — HEX, RGB, HSL, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Convert colors between HEX, RGB and HSL instantly. Pick a color or type any format. Free, works offline." />
+  <link rel="canonical" href="https://nostrings.tools/color-converter/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Color Converter — HEX, RGB, HSL, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Convert colors between HEX, RGB and HSL instantly. Free, works offline." />
+  <meta property="og:url" content="https://nostrings.tools/color-converter/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Color Converter","url":"https://nostrings.tools/color-converter/","description":"Convert colors between HEX, RGB and HSL instantly.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 480px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>Color Converter</h1>
+    <p class="w3-text-grey w3-small">Type or pick a color — see HEX, RGB and HSL.</p>
+
+    <div id="swatch" class="w3-round w3-border" style="height: 100px; background: #2196f3; margin-bottom: 16px;"></div>
+
+    <label for="picker">Picker</label>
+    <input id="picker" type="color" value="#2196f3" class="w3-input w3-border w3-round" style="height: 48px; padding: 4px;" />
+
+    <label for="hex" style="margin-top: 12px; display: block;">HEX</label>
+    <input id="hex" type="text" class="w3-input w3-border w3-round" value="#2196f3" autocomplete="off" spellcheck="false" style="font-family: monospace;" />
+
+    <label for="rgb" style="margin-top: 12px; display: block;">RGB</label>
+    <input id="rgb" type="text" class="w3-input w3-border w3-round" value="rgb(33, 150, 243)" autocomplete="off" spellcheck="false" style="font-family: monospace;" />
+
+    <label for="hsl" style="margin-top: 12px; display: block;">HSL</label>
+    <input id="hsl" type="text" class="w3-input w3-border w3-round" value="hsl(207, 90%, 54%)" autocomplete="off" spellcheck="false" style="font-family: monospace;" />
+
+    <p id="error" class="w3-text-red w3-small" style="min-height: 20px; margin-top: 8px;"></p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

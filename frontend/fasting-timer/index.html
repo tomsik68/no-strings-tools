@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fasting Timer — Track your fast, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Start a fast, see elapsed time and progress toward your goal. Defaults to 16 hours. Free, no account, works offline." />
+  <link rel="canonical" href="https://nostrings.tools/fasting-timer/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Fasting Timer — Track your fast, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Start a fast, see elapsed time and progress toward your goal. Defaults to 16 hours. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/fasting-timer/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fasting Timer","url":"https://nostrings.tools/fasting-timer/","description":"Start a fast, see elapsed time and progress toward your goal.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 480px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1 style="margin-bottom: 4px;">⏳ Fasting Timer</h1>
+    <p class="w3-text-grey" style="margin-top: 0;">Start fasting. See how long you've gone.</p>
+
+    <div class="w3-panel w3-white w3-round w3-border w3-center" style="padding: 28px 16px;">
+      <div id="phase-label" class="w3-text-grey w3-small" style="text-transform: uppercase; letter-spacing: .05em;">Ready</div>
+      <div id="elapsed" style="font-size: 48px; font-weight: 700; margin: 8px 0; font-variant-numeric: tabular-nums;">0:00:00</div>
+      <div id="goal-line" class="w3-text-grey">Goal: 16 hours</div>
+      <div class="w3-light-grey w3-round" style="height: 10px; margin: 16px auto 0; max-width: 280px; overflow: hidden;">
+        <div id="progress" class="w3-blue" style="height: 100%; width: 0%; transition: width .3s;"></div>
+      </div>
+      <div id="eta" class="w3-text-grey w3-small" style="margin-top: 8px; min-height: 18px;"></div>
+    </div>
+
+    <div class="w3-center" style="margin-top: 8px;">
+      <button id="start-btn" class="w3-button w3-blue w3-round w3-large">Start Fast</button>
+      <button id="stop-btn" class="w3-button w3-red w3-round w3-large" style="display: none;">End Fast</button>
+    </div>
+
+    <div class="w3-margin-top">
+      <label for="goal-hours">Goal (hours)</label>
+      <input id="goal-hours" type="number" min="1" max="72" value="16" class="w3-input w3-border w3-round" style="max-width: 120px;" />
+    </div>
+
+    <div id="history" class="w3-margin-top"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DPI / Print Size — Pixels to inches &amp; cm, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Convert image pixel dimensions and DPI to print size in inches and centimeters. Free, works offline." />
+  <link rel="canonical" href="https://nostrings.tools/dpi-print/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="DPI / Print Size — Pixels to inches &amp; cm, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Convert image pixel dimensions and DPI to print size in inches and centimeters." />
+  <meta property="og:url" content="https://nostrings.tools/dpi-print/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"DPI / Print Size","url":"https://nostrings.tools/dpi-print/","description":"Convert image pixel dimensions and DPI to print size in inches and centimeters.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 480px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>DPI / Print Size</h1>
+    <p class="w3-text-grey w3-small">Pixels + DPI → physical print size.</p>
+
+    <div class="w3-row-padding" style="margin: 0 -8px;">
+      <div class="w3-half">
+        <label for="width-px">Width (px)</label>
+        <input id="width-px" type="number" min="1" value="3000" class="w3-input w3-border w3-round" />
+      </div>
+      <div class="w3-half">
+        <label for="height-px">Height (px)</label>
+        <input id="height-px" type="number" min="1" value="2000" class="w3-input w3-border w3-round" />
+      </div>
+    </div>
+
+    <label for="dpi" style="margin-top: 12px; display: block;">DPI</label>
+    <input id="dpi" type="number" min="1" value="300" class="w3-input w3-border w3-round" style="max-width: 160px;" />
+    <div class="w3-margin-top">
+      <button type="button" class="w3-button w3-small w3-border w3-round dpi-preset" data-dpi="72">72</button>
+      <button type="button" class="w3-button w3-small w3-border w3-round dpi-preset" data-dpi="150">150</button>
+      <button type="button" class="w3-button w3-small w3-border w3-round dpi-preset" data-dpi="300">300</button>
+      <button type="button" class="w3-button w3-small w3-border w3-round dpi-preset" data-dpi="600">600</button>
+    </div>
+
+    <div id="results" class="w3-margin-top"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
