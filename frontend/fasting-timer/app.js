@@ -23,6 +23,7 @@ function render() {
 
   const startBtn = document.getElementById("start-btn");
   const stopBtn = document.getElementById("stop-btn");
+  const cancelBtn = document.getElementById("cancel-btn");
   const phase = document.getElementById("phase-label");
   const elapsedEl = document.getElementById("elapsed");
   const progress = document.getElementById("progress");
@@ -37,6 +38,7 @@ function render() {
     phase.textContent = pct >= 100 ? "Goal reached" : "Fasting";
     startBtn.style.display = "none";
     stopBtn.style.display = "";
+    cancelBtn.style.display = "";
     if (pct < 100) {
       const left = goalMs - elapsed;
       const doneAt = new Date(Date.now() + left);
@@ -51,6 +53,7 @@ function render() {
     phase.textContent = "Ready";
     startBtn.style.display = "";
     stopBtn.style.display = "none";
+    cancelBtn.style.display = "none";
     eta.textContent = "";
   }
 
@@ -59,7 +62,10 @@ function render() {
     hist.innerHTML = "";
     return;
   }
-  hist.innerHTML = `<div class="w3-text-grey w3-small" style="margin-bottom: 6px;">Recent fasts</div>` +
+  hist.innerHTML = `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+      <span class="w3-text-grey w3-small">Recent fasts</span>
+      <button id="clear-history" class="w3-button w3-small w3-text-grey" style="padding: 2px 8px;">Clear</button>
+    </div>` +
     state.history.slice(0, 10).map((h) => {
       const start = new Date(h.start);
       return `<div class="w3-panel w3-white w3-round w3-border" style="padding: 8px 12px; margin: 0 0 6px; display: flex; justify-content: space-between;">
@@ -81,6 +87,22 @@ document.getElementById("stop-btn").addEventListener("click", () => {
   state.history.unshift({ start: state.startedAt, ms });
   state.history = state.history.slice(0, 30);
   state.startedAt = null;
+  save();
+  render();
+});
+
+document.getElementById("cancel-btn").addEventListener("click", () => {
+  if (!state.startedAt) return;
+  if (!confirm("Discard the current fast without saving it?")) return;
+  state.startedAt = null;
+  save();
+  render();
+});
+
+document.getElementById("history").addEventListener("click", (ev) => {
+  if (!ev.target.closest("#clear-history")) return;
+  if (!confirm("Clear all saved fasts?")) return;
+  state.history = [];
   save();
   render();
 });
