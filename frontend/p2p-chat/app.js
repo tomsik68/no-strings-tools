@@ -17,6 +17,17 @@ const fileInput = document.getElementById("file-input");
 // Namespace peer IDs so room codes can't collide with other apps
 // on the public PeerJS broker
 const ID_PREFIX = "NOSTRINGSCHAT-";
+
+// STUN for direct P2P; free public TURN relays as fallback for networks
+// that block UDP or isolate clients (public WiFi, corporate, CGNAT)
+const ICE_CONFIG = {
+  iceServers: [
+    { urls: "stun:stun.l.google.com:19302" },
+    { urls: "turn:openrelay.metered.ca:80", username: "openrelayproject", credential: "openrelayproject" },
+    { urls: "turn:openrelay.metered.ca:443", username: "openrelayproject", credential: "openrelayproject" },
+    { urls: "turn:openrelay.metered.ca:443?transport=tcp", username: "openrelayproject", credential: "openrelayproject" },
+  ],
+};
 const CHUNK_SIZE = 64 * 1024;
 const BUFFER_HIGH = 1024 * 1024;
 
@@ -251,7 +262,7 @@ createBtn.addEventListener("click", () => {
   isHost = true;
   const code = generateCode();
   showStatus("Creating room...", "info");
-  peer = new Peer(ID_PREFIX + code);
+  peer = new Peer(ID_PREFIX + code, { config: ICE_CONFIG });
 
   peer.on("open", (id) => {
     console.log("[p2p-chat] hosting room", code, "as", id);
@@ -282,7 +293,7 @@ joinBtn.addEventListener("click", () => {
   }
 
   showStatus("Connecting...", "info");
-  peer = new Peer();
+  peer = new Peer({ config: ICE_CONFIG });
 
   peer.on("open", (id) => {
     console.log("[p2p-chat] peer open as", id, "- joining room", code);

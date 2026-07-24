@@ -1,4 +1,15 @@
 const ID_PREFIX = 'NOSTRINGS-FILETX-';
+
+// STUN for direct P2P; free public TURN relays as fallback for networks
+// that block UDP or isolate clients (public WiFi, corporate, CGNAT)
+const ICE_CONFIG = {
+  iceServers: [
+    { urls: 'stun:stun.l.google.com:19302' },
+    { urls: 'turn:openrelay.metered.ca:80', username: 'openrelayproject', credential: 'openrelayproject' },
+    { urls: 'turn:openrelay.metered.ca:443', username: 'openrelayproject', credential: 'openrelayproject' },
+    { urls: 'turn:openrelay.metered.ca:443?transport=tcp', username: 'openrelayproject', credential: 'openrelayproject' },
+  ],
+};
 const CHUNK_SIZE = 64 * 1024;
 const BUFFER_HIGH = 1024 * 1024;
 
@@ -163,7 +174,7 @@ function startSession() {
   document.getElementById('start-code').textContent = code;
   setStatus('start-status', 'Waiting for the other device…', 'info');
 
-  peer = new Peer(ID_PREFIX + code);
+  peer = new Peer(ID_PREFIX + code, { config: ICE_CONFIG });
   peer.on('connection', c => {
     wireConn(c);
     // conn.on('open') fires after wireConn, so onConnected handles the rest
@@ -184,7 +195,7 @@ function joinSession() {
   document.getElementById('connect-btn').disabled = true;
   setStatus('join-status', 'Connecting…', 'info');
 
-  peer = new Peer();
+  peer = new Peer({ config: ICE_CONFIG });
   peer.on('open', () => {
     const c = peer.connect(ID_PREFIX + code, { reliable: true });
     wireConn(c);

@@ -1,5 +1,16 @@
 const ID_PREFIX = 'NOSTRINGS-SYNC-';
 
+// STUN for direct P2P; free public TURN relays as fallback for networks
+// that block UDP or isolate clients (public WiFi, corporate, CGNAT)
+const ICE_CONFIG = {
+  iceServers: [
+    { urls: 'stun:stun.l.google.com:19302' },
+    { urls: 'turn:openrelay.metered.ca:80', username: 'openrelayproject', credential: 'openrelayproject' },
+    { urls: 'turn:openrelay.metered.ca:443', username: 'openrelayproject', credential: 'openrelayproject' },
+    { urls: 'turn:openrelay.metered.ca:443?transport=tcp', username: 'openrelayproject', credential: 'openrelayproject' },
+  ],
+};
+
 if (typeof Peer === 'undefined') {
   document.body.insertAdjacentHTML('afterbegin',
     '<p class="w3-panel w3-pale-red w3-border w3-round" style="max-width:520px;margin:16px auto">PeerJS failed to load — this app needs a network connection to start.</p>');
@@ -140,7 +151,7 @@ function startHost() {
   const code = generateCode();
   document.getElementById('host-code').textContent = code;
 
-  peer = new Peer(ID_PREFIX + code);
+  peer = new Peer(ID_PREFIX + code, { config: ICE_CONFIG });
   peer.on('open', () => setHostStatus('Waiting for the other device to join…', 'info'));
 
   peer.on('connection', conn => {
@@ -173,7 +184,7 @@ function startGuest() {
   setGuestStatus('Connecting…', 'info');
   document.getElementById('connect-btn').disabled = true;
 
-  peer = new Peer();
+  peer = new Peer({ config: ICE_CONFIG });
   peer.on('open', () => {
     const conn = peer.connect(ID_PREFIX + code, { reliable: true });
 
