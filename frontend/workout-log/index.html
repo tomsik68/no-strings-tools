@@ -32,9 +32,9 @@
     .form-title { font-size: 12px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; }
     .form-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 8px; align-items: end; }
     @media (max-width: 480px) { .form-row { grid-template-columns: 1fr 1fr; } }
-    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
     .field label { font-size: 11px; color: #aaa; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
-    .field input { padding: 8px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; }
+    .field input { padding: 8px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; width: 100%; min-width: 0; box-sizing: border-box; }
     .field input:focus { outline: none; border-color: #f57c00; }
     .add-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
     .date-field { display: flex; flex-direction: column; gap: 4px; }
