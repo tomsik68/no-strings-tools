@@ -25,7 +25,10 @@ const receiving = new Map(); // id → { name, size, chunks[], received, fillEl,
 // --- Utilities ---
 
 function generateCode() {
-  return Math.random().toString(36).substring(2, 8).toUpperCase();
+  const chars = "23456789ABCDEFGHJKMNPQRSTUVWXYZ"; // no 0/O, 1/I/L lookalikes
+  let code = "";
+  for (let i = 0; i < 6; i++) code += chars[Math.floor(Math.random() * chars.length)];
+  return code;
 }
 
 function fmtSize(bytes) {
