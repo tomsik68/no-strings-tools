@@ -21,6 +21,7 @@ if (typeof Peer === 'undefined') {
 let peer = null;
 let conn = null;
 const receiving = new Map(); // id → { name, size, chunks[], received, fillEl, subEl }
+const sending = new Map(); // id → { size, fillEl, subEl, ackBytes }
 
 // --- Utilities ---
 
@@ -82,6 +83,8 @@ async function sendFile(file) {
   if (!conn?.open) return;
   const id = crypto.randomUUID();
   const { fillEl, subEl } = addTxItem('📤', file.name, file.size);
+  sending.set(id, { size: file.size, fillEl, subEl, ackBytes: 0 });
+  subEl.textContent = 'Sending…';
 
   conn.send({ type: 'file-start', id, name: file.name, size: file.size });
 
@@ -89,14 +92,11 @@ async function sendFile(file) {
   while (offset < file.size) {
     const data = await file.slice(offset, offset + CHUNK_SIZE).arrayBuffer();
     await waitDrain();
-    if (!conn?.open) { subEl.textContent = 'Cancelled — disconnected'; return; }
+    if (!conn?.open) { subEl.textContent = 'Cancelled — disconnected'; sending.delete(id); return; }
     conn.send({ type: 'file-chunk', id, data });
     offset += data.byteLength;
-    const pct = Math.min(100, Math.round((offset / file.size) * 100));
-    fillEl.style.width = pct + '%';
-    subEl.textContent = pct === 100 ? '✓ Sent' : pct + '%';
   }
-  fillEl.classList.add('done');
+  subEl.textContent = 'Waiting for receiver…';
 }
 
 // --- Receive ---
@@ -118,12 +118,27 @@ function handleMsg(msg) {
     const pct = Math.min(100, Math.round((rx.received / rx.size) * 100));
     rx.fillEl.style.width = pct + '%';
     rx.subEl.textContent = pct + '%';
+    if (conn?.open) conn.send({ type: 'file-ack', id: msg.id, received: rx.received });
 
     if (rx.received >= rx.size) {
       receiving.delete(msg.id);
       const url = URL.createObjectURL(new Blob(rx.chunks));
       rx.fillEl.classList.add('done');
       rx.subEl.innerHTML = `<a class="tx-link" href="${url}" download="${escAttr(rx.name)}">⬇ Save ${esc(rx.name)}</a>`;
+    }
+    return;
+  }
+
+  if (msg.type === 'file-ack') {
+    const tx = sending.get(msg.id);
+    if (!tx) return;
+    tx.ackBytes = Math.min(tx.size, Number(msg.received) || 0);
+    const pct = Math.min(100, Math.round((tx.ackBytes / tx.size) * 100));
+    tx.fillEl.style.width = pct + '%';
+    tx.subEl.textContent = pct === 100 ? '✓ Received by other device' : pct + '% received';
+    if (pct === 100) {
+      tx.fillEl.classList.add('done');
+      sending.delete(msg.id);
     }
   }
 }
@@ -157,6 +172,7 @@ function resetToInit() {
   try { peer?.destroy(); } catch (_) {}
   conn = null; peer = null;
   receiving.clear();
+  sending.clear();
   document.getElementById('transfer-log').innerHTML = '';
   document.getElementById('transfer-section').hidden = true;
   document.getElementById('step-start').hidden = true;
