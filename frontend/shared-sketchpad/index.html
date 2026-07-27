@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shared Sketchpad — Draw together over WebRTC, free &amp; offline | No Strings Tools</title>
+  <meta name="description" content="Draw together in real-time over WebRTC. No server, no signup, no tracking — the room lives as long as its host's tab." />
+  <link rel="canonical" href="https://nostrings.tools/shared-sketchpad/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Shared Sketchpad — Draw together over WebRTC, free &amp; offline | No Strings Tools" />
+  <meta property="og:description" content="Draw together in real-time over WebRTC. No server, no signup, no tracking — the room lives as long as its host's tab." />
+  <meta property="og:url" content="https://nostrings.tools/shared-sketchpad/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Shared Sketchpad", "url": "https://nostrings.tools/shared-sketchpad/", "description": "Draw together in real-time over WebRTC. No server, no signup, no tracking — the room lives as long as its host's tab.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    body { margin: 0; padding: 0; }
+    .card-section { background: white; padding: 20px; border-radius: 8px; margin-bottom: 16px; }
+    .card-section h2 { margin-top: 0; color: #333; }
+    .status { padding: 12px; border-radius: 4px; margin-top: 12px; font-size: 13px; }
+    .status.connected { background: #c8e6c9; color: #2e7d32; }
+    .status.error { background: #ffcdd2; color: #c62828; }
+    .status.info { background: #bbdefb; color: #1565c0; }
+    .field-label { font-size: 13px; font-weight: 600; color: #333; margin-top: 12px; display: block; }
+    input[type=text], input[type=number] { width: 100%; font-size: 14px; border: 1px solid #ddd; border-radius: 4px; padding: 10px; margin: 6px 0 12px 0; box-sizing: border-box; }
+    .action-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+    .room-header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+    .room-code { font-family: monospace; font-size: 18px; font-weight: 700; background: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; padding: 4px 10px; }
+    .members { font-size: 13px; color: #666; margin-bottom: 12px; }
+    .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+    .toolbar label { font-size: 13px; color: #333; }
+    #pad { background: white; cursor: crosshair; touch-action: none; display: block; }
+    .canvas-wrap { overflow: auto; border: 1px solid #ddd; border-radius: 4px; background: #fafafa; }
+    .size-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 12px; }
+    .size-row input[type=number] { width: 90px; margin: 0; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Shared Sketchpad</h1>
+    <p class="w3-text-grey w3-small">Draw together in real-time over WebRTC. One person hosts the room; everyone else joins with the code. Works without a server.</p>
+
+    <!-- Setup -->
+    <div id="setup-card" class="card-section">
+      <h2>Start or join a room</h2>
+      <label class="field-label" for="name-input">Nickname</label>
+      <input id="name-input" type="text" maxlength="20" placeholder="e.g. alice" autocomplete="off" />
+
+      <label class="field-label" for="code-input">Room code (leave empty to create a room)</label>
+      <input id="code-input" type="text" maxlength="6" placeholder="e.g. X7K2QP" autocomplete="off" />
+
+      <div class="action-buttons">
+        <button id="create-btn" class="w3-button w3-blue w3-round">Create Room</button>
+        <button id="join-btn" class="w3-button w3-green w3-round">Join Room</button>
+      </div>
+      <div id="setup-status"></div>
+    </div>
+
+    <!-- Sketch room -->
+    <div id="sketch-card" class="card-section" style="display: none;">
+      <div class="room-header">
+        <h2 style="margin: 0;">Room</h2>
+        <span id="room-code" class="room-code"></span>
+        <button id="copy-code-btn" class="w3-button w3-blue w3-round w3-small" aria-label="Copy room code">📋 Copy</button>
+        <button id="copy-link-btn" class="w3-button w3-blue w3-round w3-small" aria-label="Copy invite link">🔗 Copy Link</button>
+      </div>
+      <div id="members" class="members">In room: —</div>
+      <div id="room-status" class="status info" style="display: none; margin-bottom: 12px;"></div>
+
+      <div class="toolbar">
+        <label for="color-input">Color</label>
+        <input id="color-input" type="color" value="#222222" aria-label="Stroke color" />
+        <label for="width-input">Width</label>
+        <input id="width-input" type="range" min="1" max="20" value="3" aria-label="Stroke width" />
+        <span id="width-val" class="w3-small">3</span>
+        <button id="undo-btn" class="w3-button w3-light-grey w3-border w3-round">↩️ Undo</button>
+        <button id="clear-btn" class="w3-button w3-light-grey w3-border w3-round">🗑 Clear</button>
+        <button id="download-btn" class="w3-button w3-blue w3-round">⬇️ PNG</button>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="pad" width="640" height="360"></canvas>
+      </div>
+
+      <div class="size-row">
+        <label for="width-field">Width</label>
+        <input id="width-field" type="number" min="100" max="1920" value="640" />
+        <label for="height-field">Height</label>
+        <input id="height-field" type="number" min="100" max="1080" value="360" />
+        <button id="resize-btn" class="w3-button w3-light-grey w3-border w3-round">Resize</button>
+        <button id="max-btn" class="w3-button w3-light-grey w3-border w3-round">Max 1280×720</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
