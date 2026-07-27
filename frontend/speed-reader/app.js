@@ -1,14 +1,17 @@
 const textInput = document.getElementById("text-input");
 const wpmInput = document.getElementById("wpm-input");
+const chunkSizeInput = document.getElementById("chunk-size-input");
 const startBtn = document.getElementById("start-btn");
 const reader = document.getElementById("reader");
 const wordEl = document.getElementById("word");
+const nextEl = document.getElementById("next");
 const progress = document.getElementById("progress");
 
 textInput.focus();
 
 let words = [];
 let index = 0;
+let chunkSize = 1;
 let running = false;
 let paused = false;
 let timer = null;
@@ -22,17 +25,38 @@ function wordDelay(word) {
   return base * factor;
 }
 
+function chunkDelay(chunk) {
+  return chunk.reduce((sum, word) => sum + wordDelay(word), 0);
+}
+
+function currentChunk() {
+  return words.slice(index, index + chunkSize);
+}
+
+function upcomingChunk() {
+  return words.slice(index + chunkSize, index + 2 * chunkSize);
+}
+
+function render() {
+  const chunk = currentChunk();
+  wordEl.textContent = chunk.join(" ");
+  const next = upcomingChunk();
+  nextEl.textContent = next.length ? next.join(" ") : "";
+  progress.style.width = (Math.min(index + chunk.length, words.length) / words.length) * 100 + "%";
+}
+
 function showNext() {
   if (index >= words.length) {
     wordEl.textContent = "✓ Done";
+    nextEl.textContent = "";
     progress.style.width = "100%";
     timer = setTimeout(exit, 1200);
     return;
   }
-  const word = words[index++];
-  wordEl.textContent = word;
-  progress.style.width = (index / words.length) * 100 + "%";
-  timer = setTimeout(showNext, wordDelay(word));
+  const chunk = currentChunk();
+  index += chunk.length;
+  render();
+  timer = setTimeout(showNext, chunkDelay(chunk));
 }
 
 function start() {
@@ -41,6 +65,8 @@ function start() {
     textInput.focus();
     return;
   }
+  chunkSize = Math.min(5, Math.max(1, Math.round(Number(chunkSizeInput.value) || 1)));
+  chunkSizeInput.value = chunkSize;
   index = 0;
   running = true;
   paused = false;

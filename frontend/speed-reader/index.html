@@ -27,17 +27,27 @@
       z-index: 10;
       cursor: pointer;
     }
-    .reader .word {
+    .reader .display {
       position: absolute;
-      top: 40%;
-      left: 0;
-      right: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
+      width: 90vw;
+    }
+    .reader .word {
       font-size: 9vw;
       font-weight: bold;
       color: #222;
+      line-height: 1.2;
     }
-    @media (min-width: 800px) { .reader .word { font-size: 72px; } }
+    .reader .next {
+      font-size: 4vw;
+      color: #999;
+      margin-top: 20px;
+      min-height: 1.2em;
+    }
+    @media (min-width: 800px) { .reader .word { font-size: 72px; } .reader .next { font-size: 28px; } }
     .reader .progress {
       position: absolute;
       top: 0;
@@ -75,13 +85,20 @@
         <label for="wpm-input">Words per minute</label>
         <input id="wpm-input" class="w3-input w3-border w3-round" type="number" min="60" max="1200" step="10" value="300" style="width: 120px;" />
       </div>
+      <div>
+        <label for="chunk-size-input">Words per flash</label>
+        <input id="chunk-size-input" class="w3-input w3-border w3-round" type="number" min="1" max="5" value="1" style="width: 120px;" />
+      </div>
       <button id="start-btn" class="w3-button w3-green w3-round w3-large">▶ Start</button>
     </div>
   </div>
 
   <div class="reader" id="reader">
     <div class="progress" id="progress"></div>
-    <div class="word" id="word"></div>
+    <div class="display">
+      <div class="word" id="word"></div>
+      <div class="next" id="next"></div>
+    </div>
     <div class="hint">tap to pause · Esc to exit</div>
   </div>
 
