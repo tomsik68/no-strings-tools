@@ -1,0 +1,1136 @@
+[
+  {
+    "id": "ascii-table",
+    "title": "ASCII Table",
+    "emoji": "📝",
+    "description": "Character codes."
+  },
+  {
+    "id": "aspect-ratio",
+    "title": "Aspect Ratio",
+    "emoji": "📐",
+    "description": "Scale dimensions proportionally."
+  },
+  {
+    "id": "backup",
+    "title": "Backup",
+    "emoji": "💾",
+    "description": "Export & restore all app data."
+  },
+  {
+    "id": "barcode-generator",
+    "title": "Barcode Generator",
+    "emoji": "🏷️",
+    "description": "Make EAN, UPC & Code 128 codes."
+  },
+  {
+    "id": "barcode-scanner",
+    "title": "Barcode Scanner",
+    "emoji": "🔖",
+    "description": "EAN, UPC, Code 128 & more."
+  },
+  {
+    "id": "base-converter",
+    "title": "Base Converter",
+    "emoji": "🔢",
+    "description": "Binary, hex, octal, decimal."
+  },
+  {
+    "id": "base64",
+    "title": "Base64",
+    "emoji": "📝",
+    "description": "Encode & decode base64."
+  },
+  {
+    "id": "bet-tracker",
+    "title": "Bet Tracker",
+    "emoji": "🏇",
+    "description": "Parimutuel pool betting."
+  },
+  {
+    "id": "big-text",
+    "title": "Big Text",
+    "emoji": "📢",
+    "description": "Huge message across the room."
+  },
+  {
+    "id": "bill-splitter",
+    "title": "Bill Splitter",
+    "emoji": "💵",
+    "description": "Split multiple bills across a group and settle up."
+  },
+  {
+    "id": "birthday-tracker",
+    "title": "Birthday Tracker",
+    "emoji": "🎂",
+    "description": "Upcoming birthdays with days-until countdown."
+  },
+  {
+    "id": "blood-pressure",
+    "title": "Blood Pressure Log",
+    "emoji": "🩸",
+    "description": "Log readings with automatic classification."
+  },
+  {
+    "id": "bmr-tdee",
+    "title": "BMR / TDEE",
+    "emoji": "🔥",
+    "description": "Daily calorie estimate from stats."
+  },
+  {
+    "id": "body-weight",
+    "title": "Body Weight Log",
+    "emoji": "⚖️",
+    "description": "Log your weight and track the trend."
+  },
+  {
+    "id": "breathing-pacer",
+    "title": "Breathing Pacer",
+    "emoji": "🫁",
+    "description": "Box breathing to calm down."
+  },
+  {
+    "id": "business-days",
+    "title": "Business Days",
+    "emoji": "📅",
+    "description": "Add or count working days."
+  },
+  {
+    "id": "capacitor-decoder",
+    "title": "Capacitor Decoder",
+    "emoji": "🔩",
+    "description": "Decode capacitor color bands."
+  },
+  {
+    "id": "car-maintenance",
+    "title": "Car Maintenance",
+    "emoji": "🚗",
+    "description": "Track oil changes, tyres & more. Never miss a service."
+  },
+  {
+    "id": "case-converter",
+    "title": "Case Converter",
+    "emoji": "🔡",
+    "description": "camelCase, snake_case & more."
+  },
+  {
+    "id": "char-picker",
+    "title": "Character Picker",
+    "emoji": "±",
+    "description": "Copy em dashes, arrows & more."
+  },
+  {
+    "id": "chess-clock",
+    "title": "Chess Clock",
+    "emoji": "♟️",
+    "description": "Two-player game timer."
+  },
+  {
+    "id": "chmod-calculator",
+    "title": "Chmod Calculator",
+    "emoji": "🔒",
+    "description": "Unix permissions decoder."
+  },
+  {
+    "id": "chord-transposer",
+    "title": "Chord Transposer",
+    "emoji": "🎸",
+    "description": "Shift a chord sheet to a new key."
+  },
+  {
+    "id": "color-converter",
+    "title": "Color Converter",
+    "emoji": "🎨",
+    "description": "HEX ↔ RGB ↔ HSL."
+  },
+  {
+    "id": "color-palette",
+    "title": "Color Palette",
+    "emoji": "🎨",
+    "description": "Generate random colors."
+  },
+  {
+    "id": "colorblind-simulator",
+    "title": "Colorblind Simulator",
+    "emoji": "👓",
+    "description": "See images as colorblind users do."
+  },
+  {
+    "id": "compass",
+    "title": "Compass",
+    "emoji": "🧭",
+    "description": "Device magnetometer."
+  },
+  {
+    "id": "contact-notes",
+    "title": "Contact Notes",
+    "emoji": "👤",
+    "description": "Notes &amp; gift ideas, one card per person."
+  },
+  {
+    "id": "contrast-checker",
+    "title": "Contrast Checker",
+    "emoji": "🌓",
+    "description": "WCAG color contrast ratios."
+  },
+  {
+    "id": "countdown",
+    "title": "Countdown",
+    "emoji": "⏲️",
+    "description": "Count down to zero."
+  },
+  {
+    "id": "cron-explainer",
+    "title": "Cron Explainer",
+    "emoji": "⏰",
+    "description": "Decode cron expressions."
+  },
+  {
+    "id": "crop-factor",
+    "title": "Crop Factor",
+    "emoji": "📷",
+    "description": "Lens mm → full-frame equivalent."
+  },
+  {
+    "id": "csv-json",
+    "title": "CSV ↔ JSON",
+    "emoji": "📊",
+    "description": "Convert both directions."
+  },
+  {
+    "id": "data-sync",
+    "title": "Data Sync",
+    "emoji": "🔄",
+    "description": "Sync your tools data between devices, peer-to-peer."
+  },
+  {
+    "id": "date-difference",
+    "title": "Date Difference",
+    "emoji": "📅",
+    "description": "Days between dates, ages."
+  },
+  {
+    "id": "day-counter",
+    "title": "Day Counter",
+    "emoji": "📆",
+    "description": "Days since & until saved dates."
+  },
+  {
+    "id": "dead-pixel",
+    "title": "Dead Pixel",
+    "emoji": "🔲",
+    "description": "Fullscreen display check."
+  },
+  {
+    "id": "debt-payoff",
+    "title": "Debt Payoff Calculator",
+    "emoji": "💰",
+    "description": "Payoff date, total interest, extra payments."
+  },
+  {
+    "id": "device-status",
+    "title": "Device Status",
+    "emoji": "📱",
+    "description": "Battery, network, hardware."
+  },
+  {
+    "id": "dice-roller",
+    "title": "Dice Roller",
+    "emoji": "🎲",
+    "description": "Roll D&D dice with history."
+  },
+  {
+    "id": "dinner-picker",
+    "title": "Dinner Picker",
+    "emoji": "🍽️",
+    "description": "Can't decide? Let fate pick from your list."
+  },
+  {
+    "id": "doctor-visits",
+    "title": "Doctor Visits",
+    "emoji": "🩺",
+    "description": "Track regular check-ups and see what's overdue."
+  },
+  {
+    "id": "dof-calculator",
+    "title": "Depth of Field",
+    "emoji": "📷",
+    "description": "Near/far focus limits."
+  },
+  {
+    "id": "dpi-print",
+    "title": "DPI / Print Size",
+    "emoji": "🖨️",
+    "description": "Pixels + DPI → inches &amp; cm."
+  },
+  {
+    "id": "duration-adder",
+    "title": "Duration Adder",
+    "emoji": "⏱️",
+    "description": "Sum up hours and minutes."
+  },
+  {
+    "id": "electricity-cost",
+    "title": "Electricity Cost",
+    "emoji": "🔌",
+    "description": "What a device costs to run."
+  },
+  {
+    "id": "encrypt",
+    "title": "Encrypt/Decrypt",
+    "emoji": "🔐",
+    "description": "AES encryption with password."
+  },
+  {
+    "id": "entropy-calculator",
+    "title": "Entropy Calculator",
+    "emoji": "🔐",
+    "description": "Measure password strength."
+  },
+  {
+    "id": "event-qr",
+    "title": "Event QR",
+    "emoji": "📅",
+    "description": "Calendar event as QR &amp; .ics file."
+  },
+  {
+    "id": "exif-stripper",
+    "title": "EXIF Stripper",
+    "emoji": "🧹",
+    "description": "Remove photo metadata & GPS."
+  },
+  {
+    "id": "expense-log",
+    "title": "Expense Log",
+    "emoji": "💸",
+    "description": "Simple spending logbook with monthly total."
+  },
+  {
+    "id": "eyedropper",
+    "title": "Eyedropper",
+    "emoji": "🎨",
+    "description": "Pick colors from your screen."
+  },
+  {
+    "id": "fasting-timer",
+    "title": "Fasting Timer",
+    "emoji": "⏳",
+    "description": "Start a fast, track elapsed vs goal."
+  },
+  {
+    "id": "favicon-generator",
+    "title": "Favicon Generator",
+    "emoji": "⭐",
+    "description": "All favicon sizes from one image."
+  },
+  {
+    "id": "flashcards",
+    "title": "Flashcards",
+    "emoji": "🃏",
+    "description": "Local Q&A decks. Flip, know, again."
+  },
+  {
+    "id": "flashlight",
+    "title": "Flashlight",
+    "emoji": "🔦",
+    "description": "Camera flash or bright screen."
+  },
+  {
+    "id": "fridge-expiry",
+    "title": "Fridge Expiry",
+    "emoji": "🧊",
+    "description": "Use-by dates, sorted by urgency."
+  },
+  {
+    "id": "fuel-log",
+    "title": "Fuel Log",
+    "emoji": "⛽",
+    "description": "Track fill-ups, L/100km and spend."
+  },
+  {
+    "id": "gamepad-tester",
+    "title": "Gamepad Tester",
+    "emoji": "🎮",
+    "description": "Test controller buttons & sticks."
+  },
+  {
+    "id": "gps-speedometer",
+    "title": "GPS Speedometer",
+    "emoji": "🚗",
+    "description": "Speed from GPS."
+  },
+  {
+    "id": "gratitude-journal",
+    "title": "Gratitude Journal",
+    "emoji": "🙏",
+    "description": "Three things you're grateful for today. Daily practice."
+  },
+  {
+    "id": "gzip",
+    "title": "Gzip",
+    "emoji": "🗜️",
+    "description": "Compress & decompress files."
+  },
+  {
+    "id": "habit-tracker",
+    "title": "Habit Tracker",
+    "emoji": "✅",
+    "description": "Build daily streaks, one checkbox at a time."
+  },
+  {
+    "id": "hash-generator",
+    "title": "Hash Generator",
+    "emoji": "#️⃣",
+    "description": "SHA hashes as you type."
+  },
+  {
+    "id": "headache-log",
+    "title": "Headache Log",
+    "emoji": "🤕",
+    "description": "Track migraines & headaches. Severity, triggers, patterns."
+  },
+  {
+    "id": "home-maintenance",
+    "title": "Home Maintenance",
+    "emoji": "🏠",
+    "description": "Track HVAC filter, smoke alarm battery & more."
+  },
+  {
+    "id": "html-entities",
+    "title": "HTML Entities",
+    "emoji": "🔣",
+    "description": "Encode & decode &amp;amp; friends."
+  },
+  {
+    "id": "iban-validator",
+    "title": "IBAN Validator",
+    "emoji": "🏦",
+    "description": "Check account numbers offline."
+  },
+  {
+    "id": "id-expiry",
+    "title": "ID Expiry",
+    "emoji": "🪪",
+    "description": "Passport & licence renewals."
+  },
+  {
+    "id": "image-resizer",
+    "title": "Image Resizer",
+    "emoji": "🖼️",
+    "description": "Shrink images, all on-device."
+  },
+  {
+    "id": "image-to-base64",
+    "title": "Image to Base64",
+    "emoji": "🖼️",
+    "description": "Data URIs from any image."
+  },
+  {
+    "id": "instrument-tuner",
+    "title": "Instrument Tuner",
+    "emoji": "🎸",
+    "description": "Mic pitch detection."
+  },
+  {
+    "id": "interval-timer",
+    "title": "Interval Timer",
+    "emoji": "🏋️",
+    "description": "Work/rest rounds with beeps."
+  },
+  {
+    "id": "investment-calculator",
+    "title": "Investment Calculator",
+    "emoji": "📈",
+    "description": "Project investment growth."
+  },
+  {
+    "id": "invoice-generator",
+    "title": "Invoice",
+    "emoji": "🧾",
+    "description": "Line items + tax, print-ready."
+  },
+  {
+    "id": "json-beautifier",
+    "title": "} JSON",
+    "emoji": "{",
+    "description": "Format and validate JSON."
+  },
+  {
+    "id": "jwt-decoder",
+    "title": "JWT Decoder",
+    "emoji": "🔐",
+    "description": "Decode JWT tokens."
+  },
+  {
+    "id": "keep-awake",
+    "title": "Keep Awake",
+    "emoji": "☕",
+    "description": "Stop screen from sleeping."
+  },
+  {
+    "id": "keycode-viewer",
+    "title": "Keycode Viewer",
+    "emoji": "⌨️",
+    "description": "See JS key event values."
+  },
+  {
+    "id": "kitchen-timer",
+    "title": "Kitchen Timer",
+    "emoji": "🍲",
+    "description": "Up to 4 named countdowns."
+  },
+  {
+    "id": "knot-guide",
+    "title": "Knot Guide",
+    "emoji": "🪢",
+    "description": "Essential knot reference."
+  },
+  {
+    "id": "led-resistor",
+    "title": "LED Resistor",
+    "emoji": "💡",
+    "description": "Calculate LED resistor value."
+  },
+  {
+    "id": "light-detector",
+    "title": "Light Detector",
+    "emoji": "💡",
+    "description": "Ambient light sensor."
+  },
+  {
+    "id": "line-tools",
+    "title": "Line Tools",
+    "emoji": "📑",
+    "description": "Sort, dedupe & shuffle lines."
+  },
+  {
+    "id": "live-pad",
+    "title": "Live Pad",
+    "emoji": "📝",
+    "description": "Shared real-time scratchpad. Both can type. Vanishes when you close the tab."
+  },
+  {
+    "id": "loan-calculator",
+    "title": "Loan Calculator",
+    "emoji": "💳",
+    "description": "Calculate loan payments."
+  },
+  {
+    "id": "lorem-ipsum",
+    "title": "Lorem Ipsum",
+    "emoji": "📃",
+    "description": "Placeholder text on demand."
+  },
+  {
+    "id": "maidenhead",
+    "title": "Maidenhead / QTH",
+    "emoji": "📡",
+    "description": "Lat/lon ⇄ grid square."
+  },
+  {
+    "id": "medicine-tracker",
+    "title": "Medicine Tracker",
+    "emoji": "💊",
+    "description": "Did I take my pills? One tap — records the time."
+  },
+  {
+    "id": "meditation-timer",
+    "title": "Meditation Timer",
+    "emoji": "🧘",
+    "description": "Mindfulness timer."
+  },
+  {
+    "id": "meeting-cost",
+    "title": "Meeting Cost",
+    "emoji": "💸",
+    "description": "Live ticking cost of a meeting."
+  },
+  {
+    "id": "meeting-overlap",
+    "title": "Meeting Overlap",
+    "emoji": "🌍",
+    "description": "When can everyone talk?"
+  },
+  {
+    "id": "metronome",
+    "title": "Metronome",
+    "emoji": "🎵",
+    "description": "Web Audio rhythm keeper."
+  },
+  {
+    "id": "mileage-log",
+    "title": "Mileage Log",
+    "emoji": "🚗",
+    "description": "Trips for tax or expenses."
+  },
+  {
+    "id": "mirror",
+    "title": "Mirror",
+    "emoji": "🪞",
+    "description": "Front camera as a mirror."
+  },
+  {
+    "id": "mood-tracker",
+    "title": "Mood Tracker",
+    "emoji": "😊",
+    "description": "Daily mood check-in with 30-day history."
+  },
+  {
+    "id": "moon-phase",
+    "title": "Moon Phase",
+    "emoji": "🌙",
+    "description": "Today's moon and what's next."
+  },
+  {
+    "id": "morse-code",
+    "title": "Morse Code",
+    "emoji": "📡",
+    "description": "Encode/decode morse."
+  },
+  {
+    "id": "nfc-tags",
+    "title": "NFC Tags",
+    "emoji": "🏷️",
+    "description": "Read & write NFC tags."
+  },
+  {
+    "id": "noise-generator",
+    "title": "Noise Generator",
+    "emoji": "🌊",
+    "description": "White, brown, pink noise."
+  },
+  {
+    "id": "note-taker",
+    "title": "Note Taker",
+    "emoji": "📝",
+    "description": "Markdown notes with live preview, saved locally."
+  },
+  {
+    "id": "number-to-words",
+    "title": "Number to Words",
+    "emoji": "🔟",
+    "description": "1234 in plain English."
+  },
+  {
+    "id": "one-rep-max",
+    "title": "One-Rep Max",
+    "emoji": "🏋️",
+    "description": "Weight × reps → estimated 1RM."
+  },
+  {
+    "id": "p2p-chat",
+    "title": "P2P Chat",
+    "emoji": "💬",
+    "description": "Temporary group chat & file sharing."
+  },
+  {
+    "id": "p2p-file-transfer",
+    "title": "P2P File Transfer",
+    "emoji": "📁",
+    "description": "Send files device to device. No server, no account, no size limit."
+  },
+  {
+    "id": "pace-calculator",
+    "title": "Pace Calculator",
+    "emoji": "🏃",
+    "description": "Distance, time & running pace."
+  },
+  {
+    "id": "packing-list",
+    "title": "Packing List",
+    "emoji": "🧳",
+    "description": "Trip checklist with presets for camping, beach & more."
+  },
+  {
+    "id": "paint-estimator",
+    "title": "Paint / Flooring",
+    "emoji": "🎨",
+    "description": "Room size → materials to buy."
+  },
+  {
+    "id": "parking-meter",
+    "title": "Parking Meter",
+    "emoji": "🅿️",
+    "description": "Calculate parking costs."
+  },
+  {
+    "id": "parking-spot",
+    "title": "Parking Spot",
+    "emoji": "🚗",
+    "description": "Remember where you parked with label, GPS & photos."
+  },
+  {
+    "id": "password-generator",
+    "title": "Password Generator",
+    "emoji": "🔑",
+    "description": "Stateless password generation."
+  },
+  {
+    "id": "pdf-merger",
+    "title": "PDF Merger",
+    "emoji": "📄",
+    "description": "Combine PDFs, fully offline."
+  },
+  {
+    "id": "pdf-tiler",
+    "title": "PDF Tiler",
+    "emoji": "🔲",
+    "description": "Tile a PDF page for printing — auto-crops and fits as many copies as possible on A4."
+  },
+  {
+    "id": "pedometer",
+    "title": "Pedometer",
+    "emoji": "👟",
+    "description": "Step counter."
+  },
+  {
+    "id": "percentage-calculator",
+    "title": "Percentage",
+    "emoji": "％",
+    "description": "The three % questions."
+  },
+  {
+    "id": "period-tracker",
+    "title": "Period Tracker",
+    "emoji": "🌸",
+    "description": "Private cycle tracking — data stays on your device."
+  },
+  {
+    "id": "pet-care",
+    "title": "Pet Care",
+    "emoji": "🐾",
+    "description": "Vaccines, flea, deworming &amp; weight."
+  },
+  {
+    "id": "phonetic-alphabet",
+    "title": "Phonetic Alphabet",
+    "emoji": "🎤",
+    "description": "NATO phonetic codes."
+  },
+  {
+    "id": "plant-watering",
+    "title": "Plant Watering",
+    "emoji": "🪴",
+    "description": "Track when plants need water, log with one tap."
+  },
+  {
+    "id": "pomodoro",
+    "title": "Pomodoro",
+    "emoji": "🍅",
+    "description": "25 min work + 5 min break."
+  },
+  {
+    "id": "qr-code",
+    "title": "QR Code",
+    "emoji": "⬜",
+    "description": "Generate QR codes instantly."
+  },
+  {
+    "id": "qr-scanner",
+    "title": "QR Scanner",
+    "emoji": "📷",
+    "description": "Scan QR codes with camera."
+  },
+  {
+    "id": "random-picker",
+    "title": "Random Picker",
+    "emoji": "🎯",
+    "description": "Pick a name from a list."
+  },
+  {
+    "id": "reaction-time",
+    "title": "Reaction Time",
+    "emoji": "⚡",
+    "description": "Test your reflexes."
+  },
+  {
+    "id": "readability",
+    "title": "Readability",
+    "emoji": "📖",
+    "description": "Flesch score & grade level."
+  },
+  {
+    "id": "reading-log",
+    "title": "Reading Log",
+    "emoji": "📚",
+    "description": "Track books you've read, are reading, or want to read."
+  },
+  {
+    "id": "recipe-box",
+    "title": "Recipe Box",
+    "emoji": "🍳",
+    "description": "Save your favourite recipes. No clutter, no ads."
+  },
+  {
+    "id": "recipe-scaler",
+    "title": "Recipe Scaler",
+    "emoji": "👨‍🍳",
+    "description": "Scale ingredients by servings."
+  },
+  {
+    "id": "regex-tester",
+    "title": "Regex Tester",
+    "emoji": "🔍",
+    "description": "Test regex patterns live."
+  },
+  {
+    "id": "rent-vs-buy",
+    "title": "Rent vs Buy",
+    "emoji": "🏠",
+    "description": "Rough break-even over N years."
+  },
+  {
+    "id": "resistor-decoder",
+    "title": "Resistor Decoder",
+    "emoji": "⚡",
+    "description": "Decode resistor color bands."
+  },
+  {
+    "id": "roman-numerals",
+    "title": "Roman Numerals",
+    "emoji": "🏛️",
+    "description": "MCMXC ⇄ 1990."
+  },
+  {
+    "id": "schengen",
+    "title": "Schengen 90/180",
+    "emoji": "✈️",
+    "description": "Track Schengen days under the 90/180 rule."
+  },
+  {
+    "id": "scoreboard",
+    "title": "Scoreboard",
+    "emoji": "🏆",
+    "description": "Keep score on game night."
+  },
+  {
+    "id": "screen-recorder",
+    "title": "Screen Recorder",
+    "emoji": "🎥",
+    "description": "Screencasts: screen, voice & webcam."
+  },
+  {
+    "id": "seismometer",
+    "title": "Seismometer",
+    "emoji": "📈",
+    "description": "Vibration trace from sensors."
+  },
+  {
+    "id": "shared-sketchpad",
+    "title": "Shared Sketchpad",
+    "emoji": "✍️",
+    "description": "Draw together over WebRTC — everyone sees the same sketch in real-time."
+  },
+  {
+    "id": "shared-timer",
+    "title": "Shared Timer",
+    "emoji": "⏱️",
+    "description": "Start a countdown and share it — everyone sees the same timer in real-time."
+  },
+  {
+    "id": "shopping-list",
+    "title": "Shopping List",
+    "emoji": "🛒",
+    "description": "Track what you need to buy."
+  },
+  {
+    "id": "signal-mirror",
+    "title": "Signal Mirror",
+    "emoji": "🪞",
+    "description": "Emergency signaling."
+  },
+  {
+    "id": "size-converter",
+    "title": "Size Converter",
+    "emoji": "👕",
+    "description": "EU, US & UK clothing sizes."
+  },
+  {
+    "id": "sketch-pad",
+    "title": "Sketch Pad",
+    "emoji": "✍️",
+    "description": "Draw & sign, save as PNG."
+  },
+  {
+    "id": "sleep-calculator",
+    "title": "Sleep Calculator",
+    "emoji": "😴",
+    "description": "Bedtimes by sleep cycles."
+  },
+  {
+    "id": "sleep-log",
+    "title": "Sleep Log",
+    "emoji": "🛌",
+    "description": "Log each night, track your weekly average."
+  },
+  {
+    "id": "slug-cleaner",
+    "title": "Slug Cleaner",
+    "emoji": "🔗",
+    "description": "Title → url-friendly-slug."
+  },
+  {
+    "id": "sound-meter",
+    "title": "Sound Meter",
+    "emoji": "🎚️",
+    "description": "Live mic level in dB."
+  },
+  {
+    "id": "speaker-test",
+    "title": "Speaker Test",
+    "emoji": "🔊",
+    "description": "Left, right & sweep."
+  },
+  {
+    "id": "speaking-clock",
+    "title": "Speaking Clock",
+    "emoji": "⏰",
+    "description": "Browser announces time."
+  },
+  {
+    "id": "speech-to-text",
+    "title": "Speech to Text",
+    "emoji": "🎤",
+    "description": "Browser transcribes your voice."
+  },
+  {
+    "id": "speed-reader",
+    "title": "Speed Reader",
+    "emoji": "👁️",
+    "description": "Flash words at your reading pace."
+  },
+  {
+    "id": "spirit-level",
+    "title": "Spirit Level",
+    "emoji": "⚖️",
+    "description": "Check if surface is level."
+  },
+  {
+    "id": "sql-formatter",
+    "title": "SQL Formatter",
+    "emoji": "🗃️",
+    "description": "Pretty-print SQL as you paste."
+  },
+  {
+    "id": "stopwatch",
+    "title": "Stopwatch",
+    "emoji": "⏱️",
+    "description": "Simple timer that counts up."
+  },
+  {
+    "id": "subnet-calculator",
+    "title": "Subnet Calculator",
+    "emoji": "🌐",
+    "description": "CIDR to ranges & masks."
+  },
+  {
+    "id": "subscription-tracker",
+    "title": "Subscription Tracker",
+    "emoji": "💳",
+    "description": "Know what you're paying for. Monthly total, renewal dates."
+  },
+  {
+    "id": "sunrise-sunset",
+    "title": "Sunrise & Sunset",
+    "emoji": "🌅",
+    "description": "Sun times and golden hour."
+  },
+  {
+    "id": "swim-bike-pace",
+    "title": "Swim & Bike Pace",
+    "emoji": "🏊",
+    "description": "Pace /100m or km/h."
+  },
+  {
+    "id": "tally-counter",
+    "title": "Tally Counter",
+    "emoji": "🔢",
+    "description": "Count anything, one tap at a time."
+  },
+  {
+    "id": "tap-bpm",
+    "title": "Tap BPM",
+    "emoji": "🥁",
+    "description": "Tap along to find the tempo."
+  },
+  {
+    "id": "teleprompter",
+    "title": "Teleprompter",
+    "emoji": "📜",
+    "description": "Auto-scrolling script reader."
+  },
+  {
+    "id": "text-diff",
+    "title": "Text Diff",
+    "emoji": "🔀",
+    "description": "Compare two texts line by line."
+  },
+  {
+    "id": "text-to-speech",
+    "title": "Text to Speech",
+    "emoji": "🔊",
+    "description": "Browser speaks your text."
+  },
+  {
+    "id": "timezone",
+    "title": "Timezone",
+    "emoji": "⏰",
+    "description": "Convert times across timezones."
+  },
+  {
+    "id": "tip-tax",
+    "title": "Tip & Tax",
+    "emoji": "💵",
+    "description": "Bill → tip → VAT → split."
+  },
+  {
+    "id": "tone-generator",
+    "title": "Tone Generator",
+    "emoji": "🎼",
+    "description": "Pure tones, any frequency."
+  },
+  {
+    "id": "totp",
+    "title": "TOTP Codes",
+    "emoji": "🔐",
+    "description": "2FA codes from a secret, offline."
+  },
+  {
+    "id": "touch-tester",
+    "title": "Touch Tester",
+    "emoji": "👆",
+    "description": "Multi-touch visualizer."
+  },
+  {
+    "id": "transfer-time",
+    "title": "Transfer Time",
+    "emoji": "📡",
+    "description": "File size + speed → ETA."
+  },
+  {
+    "id": "typing-test",
+    "title": "Typing Test",
+    "emoji": "⌨️",
+    "description": "Measure your typing speed."
+  },
+  {
+    "id": "unicode-inspector",
+    "title": "Unicode Inspector",
+    "emoji": "🕵️",
+    "description": "Reveal hidden characters in text."
+  },
+  {
+    "id": "unit-converter",
+    "title": "Unit Converter",
+    "emoji": "📏",
+    "description": "Convert units instantly."
+  },
+  {
+    "id": "unit-price",
+    "title": "Unit Price",
+    "emoji": "⚖️",
+    "description": "Which package is the better deal?"
+  },
+  {
+    "id": "unix-timestamp",
+    "title": "Unix Timestamp",
+    "emoji": "⏱️",
+    "description": "Timestamp ↔️ date converter."
+  },
+  {
+    "id": "url-parser",
+    "title": "URL Parser",
+    "emoji": "🔗",
+    "description": "Break URLs into parts."
+  },
+  {
+    "id": "user-agent-parser",
+    "title": "User-Agent Parser",
+    "emoji": "🌐",
+    "description": "Browser, OS &amp; device from a UA string."
+  },
+  {
+    "id": "uuid-generator",
+    "title": "UUID Generator",
+    "emoji": "🔑",
+    "description": "Generate unique IDs."
+  },
+  {
+    "id": "vcard-qr",
+    "title": "Contact QR",
+    "emoji": "👤",
+    "description": "Share contact details as a QR."
+  },
+  {
+    "id": "voice-recorder",
+    "title": "Voice Recorder",
+    "emoji": "🎙️",
+    "description": "Record audio, download it."
+  },
+  {
+    "id": "voltage-divider",
+    "title": "Voltage Divider",
+    "emoji": "⚡",
+    "description": "Calculate output voltage."
+  },
+  {
+    "id": "warranty-tracker",
+    "title": "Warranty Tracker",
+    "emoji": "🛡️",
+    "description": "Item + purchase date + expiry countdown."
+  },
+  {
+    "id": "water-reminder",
+    "title": "Water Reminder",
+    "emoji": "💧",
+    "description": "Track daily glasses of water, resets at midnight."
+  },
+  {
+    "id": "where-am-i",
+    "title": "Where Am I",
+    "emoji": "📍",
+    "description": "Your GPS coordinates."
+  },
+  {
+    "id": "wifi-qr",
+    "title": "Wi-Fi QR",
+    "emoji": "📶",
+    "description": "Share your Wi-Fi as a QR code."
+  },
+  {
+    "id": "wishlist",
+    "title": "Wishlist",
+    "emoji": "✨",
+    "description": "Things you want, optional prices."
+  },
+  {
+    "id": "word-counter",
+    "title": "Word Counter",
+    "emoji": "🔤",
+    "description": "Words, chars, reading time."
+  },
+  {
+    "id": "work-hours",
+    "title": "Work Hours",
+    "emoji": "⏱️",
+    "description": "Clock in/out, weekly total."
+  },
+  {
+    "id": "workout-log",
+    "title": "Workout Log",
+    "emoji": "🏋️",
+    "description": "Log exercises, sets & reps. No coaching, no plans."
+  },
+  {
+    "id": "world-clock",
+    "title": "World Clock",
+    "emoji": "🌍",
+    "description": "See time across timezones."
+  },
+  {
+    "id": "yaml-json",
+    "title": "YAML ⇄ JSON",
+    "emoji": "🔄",
+    "description": "Convert either way, instantly."
+  }
+]

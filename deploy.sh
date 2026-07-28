@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+echo "📝 Regenerating dashboard and sitemap..."
+python3 scripts/generate.py
+
 echo "📦 Creating frontend tarball..."
 tar --exclude='.git' --exclude='node_modules' --exclude='.DS_Store' \
     -czf /tmp/nostrings-frontend.tar.gz \
