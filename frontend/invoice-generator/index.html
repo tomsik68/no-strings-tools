@@ -31,18 +31,63 @@
   <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 720px; margin: 0 auto;">
     <div class="no-print">
       <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
-      <h1 style="margin-bottom: 4px;">🧾 Invoice</h1>
+      <h1>Invoice</h1>
       <p class="w3-text-grey" style="margin-top: 0;">Fill in, then print / save as PDF.</p>
     </div>
-
     <div class="w3-row-padding no-print" style="margin: 0 -8px;">
       <div class="w3-half">
-        <label for="from">From</label>
+        <div class="no-print" style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+          <label for="from">From</label>
+          <select id="from-saved" class="w3-select w3-border w3-round w3-small" style="width:auto;max-width:160px;">
+            <option value="">Saved details</option>
+          </select>
+        </div>
         <textarea id="from" class="w3-input w3-border w3-round" rows="3" placeholder="Your name&#10;Address"></textarea>
+        <button id="save-from" class="w3-button w3-small w3-light-grey w3-border w3-round w3-margin-top">Save current</button>
       </div>
       <div class="w3-half">
-        <label for="to">Bill to</label>
+        <div class="no-print" style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+          <label for="to">Bill to</label>
+          <select id="to-saved" class="w3-select w3-border w3-round w3-small" style="width:auto;max-width:160px;">
+            <option value="">Saved clients</option>
+          </select>
+        </div>
         <textarea id="to" class="w3-input w3-border w3-round" rows="3" placeholder="Client name&#10;Address"></textarea>
+        <button id="save-to" class="w3-button w3-small w3-light-grey w3-border w3-round w3-margin-top">Save current</button>
+      </div>
+    </div>
+    <div class="w3-row-padding no-print" style="margin: 8px -8px 0;">
+      <div class="w3-half">
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" class="w3-input w3-border w3-round" placeholder="+421..." />
+      </div>
+      <div class="w3-half">
+        <label for="email">Email</label>
+        <input id="email" type="email" class="w3-input w3-border w3-round" placeholder="you@example.com" />
+      </div>
+    </div>
+    <div class="w3-row-padding no-print" style="margin: 8px -8px 0;">
+      <div class="w3-third">
+        <label for="ico">IČO</label>
+        <input id="ico" class="w3-input w3-border w3-round" placeholder="Seller IČO" />
+      </div>
+      <div class="w3-third">
+        <label for="dic">DIČ</label>
+        <input id="dic" class="w3-input w3-border w3-round" placeholder="Seller DIČ" />
+      </div>
+      <div class="w3-third">
+        <label for="ic-dph">IČ DPH</label>
+        <input id="ic-dph" class="w3-input w3-border w3-round" placeholder="Seller VAT ID" />
+      </div>
+    </div>
+    <div class="w3-row-padding no-print" style="margin: 8px -8px 0;">
+      <div class="w3-half">
+        <label for="client-ico">Client IČO</label>
+        <input id="client-ico" class="w3-input w3-border w3-round" />
+      </div>
+      <div class="w3-half">
+        <label for="client-dic">Client DIČ</label>
+        <input id="client-dic" class="w3-input w3-border w3-round" />
       </div>
     </div>
     <div class="w3-row-padding no-print" style="margin: 8px -8px 0;">
@@ -51,7 +96,7 @@
         <input id="num" class="w3-input w3-border w3-round" value="001" />
       </div>
       <div class="w3-third">
-        <label for="date">Date</label>
+        <label for="date">Issue date</label>
         <input id="date" type="date" class="w3-input w3-border w3-round" />
       </div>
       <div class="w3-third">
@@ -59,15 +104,100 @@
         <input id="tax" type="number" min="0" step="0.1" value="21" class="w3-input w3-border w3-round" />
       </div>
     </div>
-
+    <div class="w3-row-padding no-print" style="margin: 8px -8px 0;">
+      <div class="w3-third">
+        <label for="delivery">Delivery date</label>
+        <input id="delivery" type="date" class="w3-input w3-border w3-round" />
+      </div>
+      <div class="w3-third">
+        <label for="due">Due date</label>
+        <input id="due" type="date" class="w3-input w3-border w3-round" />
+      </div>
+      <div class="w3-third">
+        <label for="currency">Currency</label>
+        <select id="currency" class="w3-select w3-border w3-round">
+          <option value="€" selected>€ (EUR)</option>
+          <option value="$">$ (USD)</option>
+          <option value="£">£ (GBP)</option>
+          <option value="Kč">Kč (CZK)</option>
+        </select>
+      </div>
+    </div>
+    <div class="w3-row-padding no-print" style="margin: 8px -8px 0;">
+      <div class="w3-half">
+        <label for="iban">IBAN</label>
+        <input id="iban" class="w3-input w3-border w3-round" placeholder="SK..." />
+      </div>
+      <div class="w3-half">
+        <label for="account">Account number</label>
+        <input id="account" class="w3-input w3-border w3-round" placeholder="1234567890/0900" />
+      </div>
+    </div>
+    <div class="w3-row-padding no-print" style="margin: 8px -8px 0;">
+      <div class="w3-half">
+        <label for="bank-name">Bank name</label>
+        <input id="bank-name" class="w3-input w3-border w3-round" placeholder="Slovenská sporiteľňa" />
+      </div>
+      <div class="w3-half">
+        <label for="swift">SWIFT</label>
+        <input id="swift" class="w3-input w3-border w3-round" placeholder="GIBASKBX" />
+      </div>
+    </div>
+    <div class="w3-row-padding no-print" style="margin: 8px -8px 0;">
+      <div class="w3-half">
+        <label for="payment-method">Payment method</label>
+        <input id="payment-method" class="w3-input w3-border w3-round" value="Bankový prevod" />
+      </div>
+      <div class="w3-half">
+        <label for="issued-by">Issued by</label>
+        <input id="issued-by" class="w3-input w3-border w3-round" placeholder="Tomáš Jašek" />
+      </div>
+    </div>
+    <div class="w3-row-padding no-print" style="margin: 8px -8px 0;">
+      <div class="w3-half">
+        <label for="counter">Invoice counter</label>
+        <div style="display:flex;gap:4px;">
+          <button id="counter-minus" class="w3-button w3-border w3-round" type="button">-</button>
+          <input id="counter" type="number" min="1" class="w3-input w3-border w3-round" style="width:80px;text-align:center;" />
+          <button id="counter-plus" class="w3-button w3-border w3-round" type="button">+</button>
+          <button id="counter-use" class="w3-button w3-light-grey w3-border w3-round" type="button">Use &amp; next</button>
+        </div>
+      </div>
+      <div class="w3-half">
+        <label for="template-saved">Templates</label>
+        <div style="display:flex;gap:4px;">
+          <select id="template-saved" class="w3-select w3-border w3-round w3-small" style="flex:1;">
+            <option value="">Load a saved template</option>
+          </select>
+          <button id="save-template" class="w3-button w3-small w3-light-grey w3-border w3-round" type="button">Save</button>
+          <button id="delete-template" class="w3-button w3-small w3-red w3-round" type="button" style="display:none;">Delete</button>
+        </div>
+      </div>
+    </div>
     <div class="no-print w3-margin-top">
       <div id="lines"></div>
       <button id="add-line" class="w3-button w3-border w3-round w3-small">+ Line</button>
       <button id="print-btn" class="w3-button w3-blue w3-round w3-right">Print / PDF</button>
     </div>
-
+    <div class="w3-row-padding no-print" style="margin: 8px -8px 0;">
+      <div class="w3-twothird">
+        <label for="note">Note</label>
+        <textarea id="note" class="w3-input w3-border w3-round" rows="2" placeholder="e.g. We are not VAT payers"></textarea>
+      </div>
+    </div>
+    <div class="w3-row-padding no-print" style="margin: 8px -8px 0;">
+      <div class="w3-half">
+        <label for="signature">Signature image</label>
+        <input id="signature" type="file" accept="image/*" class="w3-input w3-border w3-round w3-small" />
+        <button id="clear-sig" class="w3-button w3-small w3-light-grey w3-border w3-round w3-margin-top" type="button">Clear signature</button>
+      </div>
+      <div class="w3-half">
+        <img id="sig-preview" src="" alt="Signature preview" class="w3-image w3-border w3-round" style="max-height:80px;display:none;" />
+      </div>
+    </div>
     <div id="preview" class="w3-panel w3-white w3-round w3-border w3-margin-top" style="padding: 24px;"></div>
   </div>
-  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
