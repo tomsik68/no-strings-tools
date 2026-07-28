@@ -22,7 +22,7 @@
 <body class="w3-light-grey">
   <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 520px; margin-left: auto; margin-right: auto;">
     <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
-    <h1 style="margin-bottom: 4px;">⏱️ Work Hours</h1>
+    <h1>Work Hours</h1>
     <p class="w3-text-grey" style="margin-top: 0;">Clock in, clock out. See this week's total.</p>
 
     <div class="w3-panel w3-white w3-round w3-border w3-center" style="padding: 20px;">
@@ -55,6 +55,32 @@
           </div>
         </div>
         <button id="man-add" class="w3-button w3-blue w3-round w3-margin-top">Add</button>
+      </div>
+    </details>
+
+    <details class="w3-margin-top">
+      <summary class="w3-text-grey" style="cursor: pointer;">Export CSV</summary>
+      <div class="w3-margin-top">
+        <label for="export-range">Range</label>
+        <select id="export-range" class="w3-select w3-border w3-round">
+          <option value="today">Today</option>
+          <option value="date">Specific date</option>
+          <option value="week">This week</option>
+          <option value="month">This month</option>
+          <option value="year">This year</option>
+          <option value="custom">Custom range</option>
+        </select>
+        <div id="export-single" class="w3-margin-top" style="display: none;">
+          <label for="export-date">Date</label>
+          <input id="export-date" type="date" class="w3-input w3-border w3-round" />
+        </div>
+        <div id="export-range-fields">
+          <label for="export-start" class="w3-margin-top">From</label>
+          <input id="export-start" type="date" class="w3-input w3-border w3-round" />
+          <label for="export-end" class="w3-margin-top">To</label>
+          <input id="export-end" type="date" class="w3-input w3-border w3-round" />
+        </div>
+        <button id="export-btn" class="w3-button w3-blue w3-round w3-margin-top">Download CSV</button>
       </div>
     </details>
   </div>

@@ -114,5 +114,116 @@ document.getElementById("man-add").addEventListener("click", () => {
   render();
 });
 
+// --- CSV export ---
+const exportRange = document.getElementById("export-range");
+const exportSingle = document.getElementById("export-single");
+const exportRangeFields = document.getElementById("export-range-fields");
+const exportDate = document.getElementById("export-date");
+const exportStart = document.getElementById("export-start");
+const exportEnd = document.getElementById("export-end");
+
+function localDateStr(d = new Date()) {
+  const x = new Date(d);
+  x.setMinutes(x.getMinutes() - x.getTimezoneOffset());
+  return x.toISOString().slice(0, 10);
+}
+
+function setMidnight(d) {
+  const x = new Date(d);
+  x.setHours(0, 0, 0, 0);
+  return x;
+}
+
+function updateExportFields() {
+  const today = localDateStr();
+  exportDate.value = today;
+  const mode = exportRange.value;
+  if (mode === "date") {
+    exportSingle.style.display = "block";
+    exportRangeFields.style.display = "none";
+    exportStart.value = exportDate.value;
+    exportEnd.value = exportDate.value;
+  } else {
+    exportSingle.style.display = "none";
+    exportRangeFields.style.display = "block";
+    const now = new Date();
+    let start = new Date();
+    let end = new Date();
+    if (mode === "today") {
+      start = setMidnight(now);
+      end = setMidnight(now);
+    } else if (mode === "week") {
+      const day = (now.getDay() + 6) % 7; // Monday = 0
+      start = setMidnight(now);
+      start.setDate(start.getDate() - day);
+      end = new Date(start);
+      end.setDate(end.getDate() + 6);
+    } else if (mode === "month") {
+      start = new Date(now.getFullYear(), now.getMonth(), 1);
+      end = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+    } else if (mode === "year") {
+      start = new Date(now.getFullYear(), 0, 1);
+      end = new Date(now.getFullYear(), 11, 31);
+    } else {
+      start = setMidnight(now);
+      end = setMidnight(now);
+    }
+    exportStart.value = localDateStr(start);
+    exportEnd.value = localDateStr(end);
+  }
+}
+
+exportRange.addEventListener("change", updateExportFields);
+exportDate.addEventListener("change", () => {
+  exportStart.value = exportDate.value;
+  exportEnd.value = exportDate.value;
+});
+exportStart.addEventListener("change", () => { exportRange.value = "custom"; });
+exportEnd.addEventListener("change", () => { exportRange.value = "custom"; });
+
+document.getElementById("export-btn").addEventListener("click", () => {
+  const start = exportStart.value;
+  const end = exportEnd.value;
+  if (!start || !end) return;
+  const startMs = setMidnight(new Date(start)).getTime();
+  const endMs = setMidnight(new Date(end)).getTime() + 24 * 60 * 60 * 1000 - 1;
+  const rows = data.entries
+    .filter((e) => {
+      const t = new Date(e.start).getTime();
+      return t >= startMs && t <= endMs;
+    })
+    .sort((a, b) => a.start.localeCompare(b.start));
+  if (!rows.length) {
+    alert("No entries in the selected range.");
+    return;
+  }
+  let csv = "Date,Start,End,Duration (h),Duration (HH:MM)\n";
+  let totalMs = 0;
+  for (const e of rows) {
+    const s = new Date(e.start);
+    const en = new Date(e.end);
+    const ms = Math.max(0, en.getTime() - s.getTime());
+    totalMs += ms;
+    const hours = (ms / 3600000).toFixed(2);
+    const h = Math.floor(ms / 3600000);
+    const m = Math.floor((ms % 3600000) / 60000);
+    const date = localDateStr(s);
+    const startTime = s.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit" });
+    const endTime = en.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit" });
+    csv += `${date},${startTime},${endTime},${hours},${h}:${String(m).padStart(2, "0")}\n`;
+  }
+  const totalH = Math.floor(totalMs / 3600000);
+  const totalM = Math.floor((totalMs % 3600000) / 60000);
+  csv += `Total,,,${(totalMs / 3600000).toFixed(2)},${totalH}:${String(totalM).padStart(2, "0")}\n`;
+  const blob = new Blob([csv], { type: "text/csv" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `work-hours-${start}_to_${end}.csv`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+
+updateExportFields();
+
 render();
 setInterval(() => { if (data.open) render(); }, 30000);
