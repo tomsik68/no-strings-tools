@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meeting Cost — live price of the meeting | nostrings.tools</title>
+  <meta name="description" content="People × hourly rate × time = the live ticking cost of your meeting. Free, offline, slightly uncomfortable." />
+  <link rel="canonical" href="https://nostrings.tools/meeting-cost/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Meeting Cost — live price of the meeting | nostrings.tools" />
+  <meta property="og:description" content="People × hourly rate × time = the live ticking cost of your meeting." />
+  <meta property="og:url" content="https://nostrings.tools/meeting-cost/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Meeting Cost","url":"https://nostrings.tools/meeting-cost/","description":"Live ticking cost of a meeting.","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 440px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>Meeting Cost</h1>
+    <p class="w3-text-grey" style="margin-top: 0;">Watch the money burn, live.</p>
+
+    <div class="w3-row-padding" style="margin: 0 -8px;">
+      <div class="w3-half">
+        <label for="people">People</label>
+        <input id="people" type="number" min="1" value="5" class="w3-input w3-border w3-round" />
+      </div>
+      <div class="w3-half">
+        <label for="rate">Avg hourly rate</label>
+        <input id="rate" type="number" min="0" step="0.5" value="60" class="w3-input w3-border w3-round" />
+      </div>
+    </div>
+
+    <div class="w3-panel w3-white w3-round w3-border w3-center w3-margin-top" style="padding: 24px 16px;">
+      <div id="cost" style="font-size: 44px; font-weight: 700; font-variant-numeric: tabular-nums;">€0.00</div>
+      <div id="elapsed" class="w3-text-grey" style="font-variant-numeric: tabular-nums;">0:00:00</div>
+      <div id="burn" class="w3-text-grey w3-small" style="margin-top: 4px;">€5.00 / minute</div>
+    </div>
+
+    <div class="w3-center" style="margin-top: 12px;">
+      <button id="start-btn" class="w3-button w3-blue w3-round w3-large">Start</button>
+      <button id="pause-btn" class="w3-button w3-orange w3-round w3-large" style="display: none;">Pause</button>
+      <button id="reset-btn" class="w3-button w3-border w3-round" style="display: none;">Reset</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
