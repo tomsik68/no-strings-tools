@@ -3,7 +3,7 @@
     "id": "ascii-table",
     "title": "ASCII Table",
     "emoji": "📝",
-    "description": "Character codes."
+    "description": "Full ASCII table with decimal, hex, octal, binary and character codes."
   },
   {
     "id": "aspect-ratio",
@@ -21,7 +21,7 @@
     "id": "barcode-generator",
     "title": "Barcode Generator",
     "emoji": "🏷️",
-    "description": "Make EAN, UPC & Code 128 codes."
+    "description": "Generate barcodes from text: EAN, UPC, Code 128, Code 39."
   },
   {
     "id": "barcode-scanner",
@@ -279,7 +279,7 @@
     "id": "encrypt",
     "title": "Encrypt/Decrypt",
     "emoji": "🔐",
-    "description": "AES encryption with password."
+    "description": "Encrypt and decrypt text online with AES-256-GCM in your browser."
   },
   {
     "id": "entropy-calculator",
@@ -369,7 +369,7 @@
     "id": "gzip",
     "title": "Gzip",
     "emoji": "🗜️",
-    "description": "Compress & decompress files."
+    "description": "Compress and decompress gzip files and text online, locally in your browser."
   },
   {
     "id": "habit-tracker",
@@ -591,7 +591,7 @@
     "id": "nfc-tags",
     "title": "NFC Tags",
     "emoji": "🏷️",
-    "description": "Read & write NFC tags."
+    "description": "Read and write NFC tags (NDEF) from your browser with Web NFC."
   },
   {
     "id": "noise-generator",
@@ -621,7 +621,7 @@
     "id": "p2p-chat",
     "title": "P2P Chat",
     "emoji": "💬",
-    "description": "Temporary group chat & file sharing."
+    "description": "Private peer-to-peer chat and send files P2P over WebRTC."
   },
   {
     "id": "p2p-file-transfer",
@@ -651,7 +651,7 @@
     "id": "parking-meter",
     "title": "Parking Meter",
     "emoji": "🅿️",
-    "description": "Calculate parking costs."
+    "description": "Calculate parking cost and track time with a simple parking meter."
   },
   {
     "id": "parking-spot",
@@ -705,7 +705,7 @@
     "id": "phonetic-alphabet",
     "title": "Phonetic Alphabet",
     "emoji": "🎤",
-    "description": "NATO phonetic codes."
+    "description": "NATO phonetic alphabet reference and letter-to-code converter."
   },
   {
     "id": "plant-watering",
@@ -729,7 +729,7 @@
     "id": "qr-scanner",
     "title": "QR Scanner",
     "emoji": "📷",
-    "description": "Scan QR codes with camera."
+    "description": "Scan QR codes and barcodes with your webcam or camera."
   },
   {
     "id": "random-picker",
@@ -765,13 +765,13 @@
     "id": "recipe-scaler",
     "title": "Recipe Scaler",
     "emoji": "👨‍🍳",
-    "description": "Scale ingredients by servings."
+    "description": "Scale recipe ingredients by servings or weight."
   },
   {
     "id": "regex-tester",
     "title": "Regex Tester",
     "emoji": "🔍",
-    "description": "Test regex patterns live."
+    "description": "Test JavaScript regular expressions against sample text with live match highlighting."
   },
   {
     "id": "rent-vs-buy",
@@ -873,7 +873,7 @@
     "id": "sound-meter",
     "title": "Sound Meter",
     "emoji": "🎚️",
-    "description": "Live mic level in dB."
+    "description": "Measure sound level in decibels with your microphone."
   },
   {
     "id": "speaker-test",
@@ -897,7 +897,7 @@
     "id": "speed-reader",
     "title": "Speed Reader",
     "emoji": "👁️",
-    "description": "Flash words at your reading pace."
+    "description": "Free online speed reader and speed reading tool."
   },
   {
     "id": "spirit-level",
@@ -1017,7 +1017,7 @@
     "id": "unicode-inspector",
     "title": "Unicode Inspector",
     "emoji": "🕵️",
-    "description": "Reveal hidden characters in text."
+    "description": "Inspect Unicode characters and detect invisible characters, zero-width spaces, and hidden symbols."
   },
   {
     "id": "unit-converter",
@@ -1053,7 +1053,7 @@
     "id": "uuid-generator",
     "title": "UUID Generator",
     "emoji": "🔑",
-    "description": "Generate unique IDs."
+    "description": "Generate random UUIDs (UUID v4) instantly with this free random UUID generator."
   },
   {
     "id": "vcard-qr",
@@ -1095,7 +1095,7 @@
     "id": "wifi-qr",
     "title": "Wi-Fi QR",
     "emoji": "📶",
-    "description": "Share your Wi-Fi as a QR code."
+    "description": "Create a Wi-Fi QR code from your SSID and password."
   },
   {
     "id": "wishlist",
