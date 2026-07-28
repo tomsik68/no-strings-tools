@@ -1,7 +1,7 @@
 # No Strings Tools
 
 ![License: MIT](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
-![130+ tools](https://img.shields.io/badge/tools-130%2B-blue?style=for-the-badge)
+![190+ tools](https://img.shields.io/badge/tools-190%2B-blue?style=for-the-badge)
 ![Works offline](https://img.shields.io/badge/works-offline-orange?style=for-the-badge)
 ![Zero tracking](https://img.shields.io/badge/tracking-zero-red?style=for-the-badge)
 ![No build step](https://img.shields.io/badge/build_step-none-lightgrey?style=for-the-badge)
@@ -26,9 +26,12 @@ See [CLAUDE.md](CLAUDE.md) for full guidelines.
 
 ```
 no-strings-tools/
-├── frontend/                  # All 130+ apps (deploy this)
-│   ├── index.html             # Dashboard & search
-│   ├── [130+ app folders]/    # Each app
+├── frontend/                  # All 190+ apps (deploy this)
+│   ├── index.html             # Dashboard & search (generated)
+│   ├── apps.json              # App manifest
+│   ├── index.template.html    # Dashboard template
+│   ├── sitemap.xml            # Sitemap (generated)
+│   ├── [190+ app folders]/    # Each app
 │   └── README.md
 │
 ├── deploy.sh                  # Deploy frontend to server
@@ -115,16 +118,19 @@ python3 -m http.server 8000
 1. Create folder: `frontend/new-app/`
 2. Write `index.html` (semantic HTML + W3.CSS)
 3. Write `app.js` (vanilla JS, optional)
-4. Add to `frontend/index.html` app grid
-5. Test offline
+4. Add an entry to `frontend/apps.json`
+5. Run `python3 scripts/generate.py` to regenerate the dashboard and sitemap
+6. Test offline
 
 ## Deployment
 
 Every push to `main` deploys `frontend/` to GitHub Pages automatically
-(`.github/workflows/deploy-pages.yml`). Manual alternatives:
+(`.github/workflows/deploy-pages.yml`). `deploy.sh` and `just deploy` regenerate
+the dashboard and sitemap from `frontend/apps.json` before uploading. Manual alternatives:
 
 ```bash
-./deploy.sh  # To your server
+python3 scripts/generate.py  # Regenerate dashboard + sitemap
+./deploy.sh                  # To your server
 # OR
 wrangler pages deploy frontend  # To Cloudflare Pages
 ```
@@ -134,7 +140,7 @@ wrangler pages deploy frontend  # To Cloudflare Pages
 - **Page load:** <1 second
 - **Offline:** 100% functional
 - **File size:** ~50KB per app (average)
-- **No build:** Direct CDN links
+- **No build:** Apps are plain HTML+JS; only the dashboard/sitemap is generated
 - **ES2020+:** Modern browsers only
 
 ## Privacy & Security
