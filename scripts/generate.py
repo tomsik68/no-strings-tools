@@ -47,7 +47,8 @@ def generate_dashboard(apps):
 def generate_sitemap(apps):
     lines = ['<?xml version="1.0" encoding="UTF-8"?>']
     lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
-    today = "2026-07-28"  # regenerate date when apps are added/changed
+    from datetime import date
+    today = date.today().isoformat()
     lines.append(f"  <url><loc>https://nostrings.tools/</loc><lastmod>{today}</lastmod></url>")
     lines.append(f"  <url><loc>https://nostrings.tools/about/</loc><lastmod>{today}</lastmod></url>")
     for app in apps:

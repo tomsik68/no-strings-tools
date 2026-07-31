@@ -3,7 +3,7 @@
     "id": "ascii-table",
     "title": "ASCII Table",
     "emoji": "📝",
-    "description": "Full ASCII table with decimal, hex, octal, binary and character codes."
+    "description": "Full ASCII table online with decimal, hex, octal, binary and character codes. Search and copy ASCII codes — works offline."
   },
   {
     "id": "aspect-ratio",
@@ -21,7 +21,7 @@
     "id": "barcode-generator",
     "title": "Barcode Generator",
     "emoji": "🏷️",
-    "description": "Generate barcodes from text: EAN, UPC, Code 128, Code 39."
+    "description": "Free barcode generator for EAN, UPC, Code 128, Code 39 and IMEI. Create and download barcodes instantly in your browser."
   },
   {
     "id": "barcode-scanner",
@@ -183,7 +183,7 @@
     "id": "cron-explainer",
     "title": "Cron Explainer",
     "emoji": "⏰",
-    "description": "Decode cron expressions."
+    "description": "Decode cron expressions and decode cron schedules into plain English. Free cron explainer — works offline in your browser."
   },
   {
     "id": "crop-factor",
@@ -279,7 +279,7 @@
     "id": "encrypt",
     "title": "Encrypt/Decrypt",
     "emoji": "🔐",
-    "description": "Encrypt and decrypt text online with AES-256-GCM in your browser."
+    "description": "Encrypt and decrypt text online with AES-256-GCM in your browser. Free word encryption tool — works offline, no signup."
   },
   {
     "id": "entropy-calculator",
@@ -309,7 +309,7 @@
     "id": "eyedropper",
     "title": "Eyedropper",
     "emoji": "🎨",
-    "description": "Pick colors from your screen."
+    "description": "Free online eyedropper tool and color picker. Pick colors from any part of your screen and copy HEX values."
   },
   {
     "id": "fasting-timer",
@@ -369,7 +369,7 @@
     "id": "gzip",
     "title": "Gzip",
     "emoji": "🗜️",
-    "description": "Compress and decompress gzip files and text online, locally in your browser."
+    "description": "Gzip compress and decompress text or files online. Free gzip tool that runs locally in your browser — nothing is uploaded."
   },
   {
     "id": "habit-tracker",
@@ -426,6 +426,12 @@
     "description": "Data URIs from any image."
   },
   {
+    "id": "imei-barcode",
+    "title": "IMEI Barcode",
+    "emoji": "📱",
+    "description": "Generate a barcode from a valid IMEI number. Validate IMEI and create a Code 128 barcode instantly."
+  },
+  {
     "id": "instrument-tuner",
     "title": "Instrument Tuner",
     "emoji": "🎸",
@@ -468,10 +474,16 @@
     "description": "Stop screen from sleeping."
   },
   {
+    "id": "keystroke-test",
+    "title": "Keystroke Test",
+    "emoji": "⌨️",
+    "description": "Test keyboard typing speed, keys per second and detect ghosting."
+  },
+  {
     "id": "keycode-viewer",
     "title": "Keycode Viewer",
     "emoji": "⌨️",
-    "description": "See JS key event values."
+    "description": "See JavaScript key event values, keycodes and key code tester. Press any key to view keycode, code and which values."
   },
   {
     "id": "kitchen-timer",
@@ -489,7 +501,7 @@
     "id": "led-resistor",
     "title": "LED Resistor",
     "emoji": "💡",
-    "description": "Calculate LED resistor value."
+    "description": "Calculate resistor value for LED circuits. Free LED resistor calculator — works offline in your browser."
   },
   {
     "id": "light-detector",
@@ -609,7 +621,7 @@
     "id": "number-to-words",
     "title": "Number to Words",
     "emoji": "🔟",
-    "description": "1234 in plain English."
+    "description": "Convert numbers to words in English. Type 1234 and see it written out — numbers in words instantly, no signup."
   },
   {
     "id": "one-rep-max",
@@ -651,7 +663,7 @@
     "id": "parking-meter",
     "title": "Parking Meter",
     "emoji": "🅿️",
-    "description": "Calculate parking cost and track time with a simple parking meter."
+    "description": "Calculate parking cost and track time with a simple parking lot cost calculator. Free parking meter — works offline."
   },
   {
     "id": "parking-spot",
@@ -705,7 +717,7 @@
     "id": "phonetic-alphabet",
     "title": "Phonetic Alphabet",
     "emoji": "🎤",
-    "description": "NATO phonetic alphabet reference and letter-to-code converter."
+    "description": "NATO phonetic alphabet reference and letter-to-code converter. Look up Alpha, Bravo, Charlie and convert text to ICAO phonetic codes."
   },
   {
     "id": "plant-watering",
@@ -729,7 +741,7 @@
     "id": "qr-scanner",
     "title": "QR Scanner",
     "emoji": "📷",
-    "description": "Scan QR codes and barcodes with your webcam or camera."
+    "description": "Free online QR scanner and live QR code reader for your webcam or camera. Scan QR codes and barcodes instantly — no signup."
   },
   {
     "id": "random-picker",
@@ -771,7 +783,7 @@
     "id": "regex-tester",
     "title": "Regex Tester",
     "emoji": "🔍",
-    "description": "Test JavaScript regular expressions against sample text with live match highlighting."
+    "description": "Free JavaScript regex tester online. Test regular expressions against sample text with live match highlighting — no signup, works offline."
   },
   {
     "id": "rent-vs-buy",
@@ -873,7 +885,7 @@
     "id": "sound-meter",
     "title": "Sound Meter",
     "emoji": "🎚️",
-    "description": "Measure sound level in decibels with your microphone."
+    "description": "Measure sound level in decibels with your microphone. Free online mic dB meter and sound level meter — works in your browser."
   },
   {
     "id": "speaker-test",
@@ -897,7 +909,13 @@
     "id": "speed-reader",
     "title": "Speed Reader",
     "emoji": "👁️",
-    "description": "Free online speed reader and speed reading tool."
+    "description": "Free online speed reader and speed reading website. Paste text, set WPM and read one word at a time — works offline."
+  },
+  {
+    "id": "ssid-generator",
+    "title": "SSID Generator",
+    "emoji": "📶",
+    "description": "Generate random SSID names for your Wi-Fi network."
   },
   {
     "id": "spirit-level",
@@ -951,7 +969,7 @@
     "id": "tap-bpm",
     "title": "Tap BPM",
     "emoji": "🥁",
-    "description": "Tap along to find the tempo."
+    "description": "Tap for BPM or tap tempo to find the beats per minute. Free online tap BPM tool — works in your browser."
   },
   {
     "id": "teleprompter",
@@ -963,7 +981,7 @@
     "id": "text-diff",
     "title": "Text Diff",
     "emoji": "🔀",
-    "description": "Compare two texts line by line."
+    "description": "Compare strings and texts online. Free string diff tool that shows line-by-line differences — no signup, works offline."
   },
   {
     "id": "text-to-speech",
@@ -1011,13 +1029,13 @@
     "id": "typing-test",
     "title": "Typing Test",
     "emoji": "⌨️",
-    "description": "Measure your typing speed."
+    "description": "Free online typing test. Measure your typing speed and WPM with a simple, no-signup test that works in your browser."
   },
   {
     "id": "unicode-inspector",
     "title": "Unicode Inspector",
     "emoji": "🕵️",
-    "description": "Inspect Unicode characters and detect invisible characters, zero-width spaces, and hidden symbols."
+    "description": "Detect invisible characters, zero-width spaces, non-ASCII and hidden symbols. Paste text to inspect every Unicode code point."
   },
   {
     "id": "unit-converter",
@@ -1053,7 +1071,7 @@
     "id": "uuid-generator",
     "title": "UUID Generator",
     "emoji": "🔑",
-    "description": "Generate random UUIDs (UUID v4) instantly with this free random UUID generator."
+    "description": "Free random UUID generator. Generate random UUID v4 identifiers instantly — copy with one click, no server, works offline."
   },
   {
     "id": "vcard-qr",
@@ -1089,13 +1107,13 @@
     "id": "where-am-i",
     "title": "Where Am I",
     "emoji": "📍",
-    "description": "Your GPS coordinates."
+    "description": "Find your GPS coordinates and current location. Get my coordinates and see where am I — free, no signup, works in browser."
   },
   {
     "id": "wifi-qr",
     "title": "Wi-Fi QR",
     "emoji": "📶",
-    "description": "Create a Wi-Fi QR code from your SSID and password."
+    "description": "Free Wi-Fi QR code generator. Create a QR code for your Wi-Fi network from SSID and password — guests scan to connect instantly."
   },
   {
     "id": "wishlist",

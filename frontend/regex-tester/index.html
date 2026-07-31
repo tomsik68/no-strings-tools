@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Regex Tester — JavaScript Regular Expression Tool | nostrings.tools</title>
-  <meta name="description" content="Test JavaScript regular expressions against sample text with live match highlighting. Free regex tester, offline, no signup." />
+  <title>JavaScript Regex Tester — Online Regex Tool | nostrings.tools</title>
+  <meta name="description" content="Free JavaScript regex tester online. Test regular expressions against sample text with live match highlighting and flags — works offline, no signup." />
   <link rel="canonical" href="https://nostrings.tools/regex-tester/" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
-  <meta property="og:title" content="Regex Tester — JavaScript Regular Expression Tool | nostrings.tools" />
-  <meta property="og:description" content="Test JavaScript regular expressions against sample text with live match highlighting. Free regex tester, offline, no signup." />
+  <meta property="og:title" content="JavaScript Regex Tester — Online Regex Tool | nostrings.tools" />
+  <meta property="og:description" content="Free JavaScript regex tester online. Test regular expressions against sample text with live match highlighting and flags — works offline, no signup." />
   <meta property="og:url" content="https://nostrings.tools/regex-tester/" />
   <meta property="og:image" content="https://nostrings.tools/og-image.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Regex Tester", "url": "https://nostrings.tools/regex-tester/", "description": "Test JavaScript regular expressions against sample text with live match highlighting. Free regex tester, offline, no signup.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Regex Tester", "url": "https://nostrings.tools/regex-tester/", "description": "Free JavaScript regex tester online. Test regular expressions against sample text with live match highlighting and flags — works offline, no signup.", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <style>
     textarea { width: 100%; font-family: monospace; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
@@ -66,6 +66,32 @@
     </div>
 
     <div class="results" id="results"></div>
+
+    <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #ddd;">
+      <h2 class="w3-large">Test JavaScript regular expressions online</h2>
+      <p class="w3-text-grey w3-small">This free regex tester lets you check JavaScript regular expressions against sample text in real time. Toggle global, case-insensitive and multiline flags and see every match highlighted. Your pattern and text stay in your browser — nothing is uploaded.</p>
+
+      <h3 class="w3-medium" style="margin-top: 24px;">Frequently asked questions</h3>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>How do I test a regex match online?</summary>
+        <p>Enter your regular expression pattern, paste sample text, and select the flags you need. Matches are highlighted automatically as you type.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>Which regex flags are supported?</summary>
+        <p>The tool supports Global (g), Case-insensitive (i) and Multiline (m) — the most common JavaScript RegExp flags.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>Is this a JavaScript regex tester?</summary>
+        <p>Yes. It uses the browser's native JavaScript RegExp engine, so results match what you get in Node.js and modern browsers.</p>
+      </details>
+
+      <h3 class="w3-medium" style="margin-top: 24px;">Related tools</h3>
+      <p class="w3-small w3-text-grey">
+        <a href="../text-diff/" class="w3-text-blue" style="text-decoration: none;">Text Diff</a> ·
+        <a href="../unicode-inspector/" class="w3-text-blue" style="text-decoration: none;">Unicode Inspector</a> ·
+        <a href="../json-beautifier/" class="w3-text-blue" style="text-decoration: none;">JSON Beautifier</a>
+      </p>
+    </section>
   </div>
 
   <script src="app.js"></script>

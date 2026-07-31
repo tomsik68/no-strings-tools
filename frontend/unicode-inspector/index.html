@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unicode Inspector — Detect Invisible Characters | nostrings.tools</title>
-  <meta name="description" content="Inspect Unicode characters and detect invisible characters, zero-width spaces, and hidden symbols. Paste text to see every code point offline." />
+  <title>Unicode Inspector — Detect Invisible & Hidden Characters | nostrings.tools</title>
+  <meta name="description" content="Detect invisible characters, zero-width spaces, non-ASCII and hidden symbols. Paste text to inspect every Unicode code point — works offline in your browser." />
   <link rel="canonical" href="https://nostrings.tools/unicode-inspector/" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
-  <meta property="og:title" content="Unicode Inspector — Detect Invisible Characters | nostrings.tools" />
-  <meta property="og:description" content="Inspect Unicode characters and detect invisible characters, zero-width spaces, and hidden symbols. Paste text to see every code point offline." />
+  <meta property="og:title" content="Unicode Inspector — Detect Invisible & Hidden Characters | nostrings.tools" />
+  <meta property="og:description" content="Detect invisible characters, zero-width spaces, non-ASCII and hidden symbols. Paste text to inspect every Unicode code point — works offline in your browser." />
   <meta property="og:url" content="https://nostrings.tools/unicode-inspector/" />
   <meta property="og:image" content="https://nostrings.tools/og-image.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Unicode Inspector", "url": "https://nostrings.tools/unicode-inspector/", "description": "Inspect Unicode characters and detect invisible characters, zero-width spaces, and hidden symbols. Paste text to see every code point offline.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Unicode Inspector", "url": "https://nostrings.tools/unicode-inspector/", "description": "Detect invisible characters, zero-width spaces, non-ASCII and hidden symbols. Paste text to inspect every Unicode code point — works offline in your browser.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <style>
     .char-list {
@@ -64,6 +64,32 @@
     </div>
 
     <div class="char-list" id="char-list"></div>
+
+    <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #ddd;">
+      <h2 class="w3-large">Detect invisible and hidden characters</h2>
+      <p class="w3-text-grey w3-small">Paste any text to reveal every Unicode code point, including invisible characters, zero-width spaces, non-printable symbols and unusual whitespace. Useful for debugging, cleaning pasted text or finding hidden characters in strings.</p>
+
+      <h3 class="w3-medium" style="margin-top: 24px;">Frequently asked questions</h3>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>How do I detect invisible characters in text?</summary>
+        <p>Paste the text into the box above. The tool lists every character with its Unicode code point and highlights invisible or unusual characters.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>What are zero-width spaces?</summary>
+        <p>Zero-width space (U+200B) and zero-width non-joiner (U+200C) are invisible characters sometimes hidden in copied text. This tool reveals them so you can remove them.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>Is my text uploaded?</summary>
+        <p>No. Inspection happens entirely in your browser. Your text never leaves your device.</p>
+      </details>
+
+      <h3 class="w3-medium" style="margin-top: 24px;">Related tools</h3>
+      <p class="w3-small w3-text-grey">
+        <a href="../text-diff/" class="w3-text-blue" style="text-decoration: none;">Text Diff</a> ·
+        <a href="../regex-tester/" class="w3-text-blue" style="text-decoration: none;">Regex Tester</a> ·
+        <a href="../html-entities/" class="w3-text-blue" style="text-decoration: none;">HTML Entities</a>
+      </p>
+    </section>
   </div>
 
   <script src="app.js"></script>

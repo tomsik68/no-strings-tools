@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IMEI Barcode Generator — Code 128 from IMEI | nostrings.tools</title>
+  <meta name="description" content="Generate a barcode from an IMEI number. Validate IMEI and create a Code 128 barcode instantly — free, offline, works in your browser." />
+  <link rel="canonical" href="https://nostrings.tools/imei-barcode/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="IMEI Barcode Generator — Code 128 from IMEI | nostrings.tools" />
+  <meta property="og:description" content="Generate a barcode from an IMEI number. Validate IMEI and create a Code 128 barcode instantly — free, offline, works in your browser." />
+  <meta property="og:url" content="https://nostrings.tools/imei-barcode/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "IMEI Barcode Generator", "url": "https://nostrings.tools/imei-barcode/", "description": "Generate a barcode from an IMEI number. Validate IMEI and create a Code 128 barcode instantly — free, offline, works in your browser.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+  <style>
+    #barcode { max-width: 100%; height: auto; }
+    .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 12px; }
+    .valid { background: #e8f5e9; color: #1b5e20; padding: 12px; border-radius: 4px; margin-top: 12px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>IMEI Barcode Generator</h1>
+    <p class="w3-text-grey w3-small">Enter a 15-digit IMEI to validate it and generate a Code 128 barcode.</p>
+
+    <label for="imei-input">IMEI number</label>
+    <input id="imei-input" class="w3-input w3-border w3-round" type="text" inputmode="numeric" maxlength="15" autocomplete="off" placeholder="123456789012345" />
+
+    <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+      <button id="generate-btn" class="w3-button w3-blue w3-round" style="flex: 1;">Generate</button>
+      <button id="random-btn" class="w3-button w3-grey w3-round" style="flex: 1;">Random IMEI</button>
+      <button id="download-btn" class="w3-button w3-green w3-round" style="flex: 1; display: none;">Download PNG</button>
+    </div>
+
+    <div id="message"></div>
+
+    <div class="w3-center" style="margin-top: 20px; overflow-x: auto;">
+      <svg id="barcode" aria-label="IMEI barcode"></svg>
+    </div>
+
+    <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #ddd;">
+      <h2 class="w3-large">Generate a barcode from an IMEI</h2>
+      <p class="w3-text-grey w3-small">This IMEI barcode generator validates your 15-digit IMEI using the Luhn checksum, then creates a scannable Code 128 barcode. Useful for labeling devices, inventory or repair tickets. Everything runs in your browser — no data is uploaded.</p>
+
+      <h3 class="w3-medium" style="margin-top: 24px;">Frequently asked questions</h3>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>What is an IMEI?</summary>
+        <p>IMEI stands for International Mobile Equipment Identity. It is a unique 15-digit number used to identify mobile devices.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>Does this validate the IMEI?</summary>
+        <p>Yes. The tool checks that the number is 15 digits and passes the Luhn checksum used by valid IMEIs.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>What barcode format is used?</summary>
+        <p>Code 128, because it can encode all 15 IMEI digits while remaining compact and widely scannable.</p>
+      </details>
+
+      <h3 class="w3-medium" style="margin-top: 24px;">Related tools</h3>
+      <p class="w3-small w3-text-grey">
+        <a href="../barcode-generator/" class="w3-text-blue" style="text-decoration: none;">Barcode Generator</a> ·
+        <a href="../qr-code/" class="w3-text-blue" style="text-decoration: none;">QR Code Generator</a> ·
+        <a href="../wifi-qr/" class="w3-text-blue" style="text-decoration: none;">Wi-Fi QR</a>
+      </p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

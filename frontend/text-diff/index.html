@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Text Diff — Free, Offline | nostrings.tools</title>
-  <meta name="description" content="Compare two blocks of text and see the differences highlighted. Runs offline in your browser — nothing is uploaded." />
+  <title>Text Diff — Compare Strings & Text Online | nostrings.tools</title>
+  <meta name="description" content="Compare strings and text online for free. Paste two blocks to see line-by-line differences and string diff instantly — works offline in your browser." />
   <link rel="canonical" href="https://nostrings.tools/text-diff/" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
-  <meta property="og:title" content="Text Diff — Free, Offline | nostrings.tools" />
-  <meta property="og:description" content="Compare two blocks of text and see the differences highlighted. Runs offline in your browser — nothing is uploaded." />
+  <meta property="og:title" content="Text Diff — Compare Strings & Text Online | nostrings.tools" />
+  <meta property="og:description" content="Compare strings and text online for free. Paste two blocks to see line-by-line differences and string diff instantly — works offline in your browser." />
   <meta property="og:url" content="https://nostrings.tools/text-diff/" />
   <meta property="og:image" content="https://nostrings.tools/og-image.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Text Diff", "url": "https://nostrings.tools/text-diff/", "description": "Compare two blocks of text and see the differences highlighted. Runs offline in your browser — nothing is uploaded.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Text Diff", "url": "https://nostrings.tools/text-diff/", "description": "Compare strings and text online for free. Paste two blocks to see line-by-line differences and string diff instantly — works offline in your browser.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <style>
     .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -52,6 +52,32 @@
     <div class="diff-summary" id="summary"></div>
     <div class="error" id="error" style="display: none;"></div>
     <div class="diff-output" id="output" style="display: none;"></div>
+
+    <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #ddd;">
+      <h2 class="w3-large">Compare strings and text online</h2>
+      <p class="w3-text-grey w3-small">Use this free text diff tool to compare two strings, paragraphs, or code blocks side by side. It highlights added and removed lines as you type, so you can spot changes instantly. Everything runs in your browser — nothing is uploaded.</p>
+
+      <h3 class="w3-medium" style="margin-top: 24px;">Frequently asked questions</h3>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>How do I compare two strings online?</summary>
+        <p>Paste the original text in the left box and the changed text in the right box. The diff appears automatically with removed lines in red and added lines in green.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>Can I compare code or long documents?</summary>
+        <p>Yes. The tool compares line by line, so it works for code, logs, contracts, or any long text.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>Is my text sent to a server?</summary>
+        <p>No. The comparison is done locally in your browser. Your text never leaves your device.</p>
+      </details>
+
+      <h3 class="w3-medium" style="margin-top: 24px;">Related tools</h3>
+      <p class="w3-small w3-text-grey">
+        <a href="../regex-tester/" class="w3-text-blue" style="text-decoration: none;">Regex Tester</a> ·
+        <a href="../unicode-inspector/" class="w3-text-blue" style="text-decoration: none;">Unicode Inspector</a> ·
+        <a href="../line-tools/" class="w3-text-blue" style="text-decoration: none;">Line Tools</a>
+      </p>
+    </section>
   </div>
 
   <script src="app.js"></script>

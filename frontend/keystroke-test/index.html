@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keystroke Test — Keyboard Speed & Ghosting | nostrings.tools</title>
+  <meta name="description" content="Free online keystroke test. Measure keyboard typing speed, keys per second and detect ghosting. No signup, works offline in your browser." />
+  <link rel="canonical" href="https://nostrings.tools/keystroke-test/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Keystroke Test — Keyboard Speed & Ghosting | nostrings.tools" />
+  <meta property="og:description" content="Free online keystroke test. Measure keyboard typing speed, keys per second and detect ghosting. No signup, works offline in your browser." />
+  <meta property="og:url" content="https://nostrings.tools/keystroke-test/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Keystroke Test", "url": "https://nostrings.tools/keystroke-test/", "description": "Free online keystroke test. Measure keyboard typing speed, keys per second and detect ghosting. No signup, works offline in your browser.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .test-area {
+      background: white;
+      border: 2px dashed #bbb;
+      border-radius: 8px;
+      padding: 40px 16px;
+      text-align: center;
+      margin-top: 16px;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      outline: none;
+    }
+    .test-area.active { border-color: #2196f3; background: #f5f5f5; }
+    .big-num { font-size: 56px; font-weight: 700; font-variant-numeric: tabular-nums; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+    .stat { background: white; padding: 16px; border-radius: 8px; text-align: center; }
+    .stat-value { font-size: 28px; font-weight: 700; font-variant-numeric: tabular-nums; }
+    .stat-label { font-size: 12px; color: #666; }
+    .pressed-keys { min-height: 48px; margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .key-pill {
+      background: #2196f3; color: white; padding: 6px 12px; border-radius: 4px;
+      font-family: "Courier New", monospace; font-weight: 600; font-size: 13px;
+    }
+    .hint { font-size: 12px; color: #888; margin-top: 8px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Keystroke Test</h1>
+    <p class="w3-text-grey w3-small">Test your keyboard speed and rollover. Press keys inside the box — see keys per second, KPM and any detected ghosting.</p>
+
+    <div id="test-area" class="test-area" tabindex="0" role="button" aria-label="Press keys here to test">
+      <div class="big-num" id="main-display">0.0</div>
+      <div class="w3-text-grey w3-small">keys per second</div>
+      <div class="hint">Click here, then type as fast as you can</div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value" id="kpm">0</div>
+        <div class="stat-label">keys / minute</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="total">0</div>
+        <div class="stat-label">total keys</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="wpm">0</div>
+        <div class="stat-label">est. WPM</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 16px; text-align: center;">
+      <button id="reset-btn" class="w3-button w3-blue w3-round">Reset</button>
+    </div>
+
+    <div class="w3-text-grey w3-small" style="margin-top: 12px;">Currently pressed:</div>
+    <div class="pressed-keys" id="pressed-keys"></div>
+    <div class="hint" id="ghost-hint" style="display: none;">Multiple keys held at once — if a key appears without you pressing it, your keyboard may be ghosting.</div>
+
+    <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #ddd;">
+      <h2 class="w3-large">Test keyboard typing speed</h2>
+      <p class="w3-text-grey w3-small">This keystroke test measures how fast your keyboard registers key presses. Use it to benchmark your raw typing speed, check keyboard rollover, or spot ghosting. The test runs for a short sliding window and updates keys-per-second, keys-per-minute and an estimated WPM in real time.</p>
+
+      <h3 class="w3-medium" style="margin-top: 24px;">Frequently asked questions</h3>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>How do I test my keyboard speed?</summary>
+        <p>Click the test area and start pressing keys as fast as you can. The tool counts every key press and shows your keys per second, keys per minute and estimated WPM.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>What is keyboard ghosting?</summary>
+        <p>Ghosting happens when a keyboard reports a key press you did not make, usually when many keys are held at once. This tool shows the keys currently pressed so you can visually detect unexpected keys.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>Can I use this on mobile?</summary>
+        <p>The tool works best with a physical keyboard. On-screen mobile keyboards may not register rapid keystrokes the same way.</p>
+      </details>
+
+      <h3 class="w3-medium" style="margin-top: 24px;">Related tools</h3>
+      <p class="w3-small w3-text-grey">
+        <a href="../typing-test/" class="w3-text-blue" style="text-decoration: none;">Typing Test</a> ·
+        <a href="../keycode-viewer/" class="w3-text-blue" style="text-decoration: none;">Keycode Viewer</a> ·
+        <a href="../touch-tester/" class="w3-text-blue" style="text-decoration: none;">Touch Tester</a>
+      </p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

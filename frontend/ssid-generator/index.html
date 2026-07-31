@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random SSID Generator — Wi-Fi Network Names | nostrings.tools</title>
+  <meta name="description" content="Generate random SSID names for your Wi-Fi network. Free random SSID generator — copy, refresh, and set a new network name instantly. No signup." />
+  <link rel="canonical" href="https://nostrings.tools/ssid-generator/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Random SSID Generator — Wi-Fi Network Names | nostrings.tools" />
+  <meta property="og:description" content="Generate random SSID names for your Wi-Fi network. Free random SSID generator — copy, refresh, and set a new network name instantly. No signup." />
+  <meta property="og:url" content="https://nostrings.tools/ssid-generator/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Random SSID Generator", "url": "https://nostrings.tools/ssid-generator/", "description": "Generate random SSID names for your Wi-Fi network. Free random SSID generator — copy, refresh, and set a new network name instantly. No signup.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    .ssid-display {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      font-family: "Courier New", monospace;
+      font-size: 22px;
+      text-align: center;
+      word-break: break-all;
+      margin-top: 16px;
+    }
+    .history {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .history-item {
+      background: white;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+    }
+    .copy-btn-small {
+      padding: 4px 10px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Random SSID Generator</h1>
+    <p class="w3-text-grey w3-small">Generate random Wi-Fi network names. Copy your favorite or keep refreshing until you find the right one.</p>
+
+    <div class="ssid-display" id="ssid">—</div>
+
+    <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+      <button id="generate-btn" class="w3-button w3-blue w3-round w3-large" style="flex: 1;">🔄 Generate</button>
+      <button id="copy-btn" class="w3-button w3-green w3-round w3-large" style="flex: 1;">📋 Copy</button>
+    </div>
+
+    <div id="feedback" class="w3-text-green w3-small" style="margin-top: 8px; min-height: 20px; text-align: center;"></div>
+
+    <div class="w3-margin-top">
+      <label class="w3-text-grey w3-small">Options</label>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 4px;">
+        <label class="w3-small"><input type="checkbox" id="include-numbers" checked /> Include numbers</label>
+        <label class="w3-small"><input type="checkbox" id="include-hyphens" /> Use hyphens</label>
+      </div>
+    </div>
+
+    <h3 class="w3-medium" style="margin-top: 24px;">History</h3>
+    <div class="history" id="history"></div>
+
+    <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #ddd;">
+      <h2 class="w3-large">Random SSID name generator</h2>
+      <p class="w3-text-grey w3-small">Use this free random SSID generator to create unique Wi-Fi network names. Each name is built from short, pronounceable fragments so it is easy to read and share. Nothing is stored or uploaded.</p>
+
+      <h3 class="w3-medium" style="margin-top: 24px;">Frequently asked questions</h3>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>What is an SSID?</summary>
+        <p>SSID stands for Service Set Identifier — the name that identifies your Wi-Fi network. Devices see this name when scanning for available networks.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>How do I change my Wi-Fi SSID?</summary>
+        <p>Log in to your router's admin page, find the wireless settings, and enter the new SSID. Save the settings and reconnect your devices.</p>
+      </details>
+
+      <h3 class="w3-medium" style="margin-top: 24px;">Related tools</h3>
+      <p class="w3-small w3-text-grey">
+        <a href="../wifi-qr/" class="w3-text-blue" style="text-decoration: none;">Wi-Fi QR</a> ·
+        <a href="../password-generator/" class="w3-text-blue" style="text-decoration: none;">Password Generator</a> ·
+        <a href="../random-picker/" class="w3-text-blue" style="text-decoration: none;">Random Picker</a>
+      </p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

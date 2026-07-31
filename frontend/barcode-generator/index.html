@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Barcode Generator — Text to EAN, UPC, Code 128 | nostrings.tools</title>
-  <meta name="description" content="Generate barcodes from text: EAN, UPC, Code 128, Code 39. Free, offline, no signup — create and download barcodes instantly in your browser." />
+  <meta name="description" content="Generate EAN, UPC, Code 128, Code 39 and IMEI barcodes instantly. Free barcode generator — works offline in your browser." />
   <link rel="canonical" href="https://nostrings.tools/barcode-generator/" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
   <meta property="og:title" content="Barcode Generator — Text to EAN, UPC, Code 128 | nostrings.tools" />
-  <meta property="og:description" content="Generate barcodes from text: EAN, UPC, Code 128, Code 39. Free, offline, no signup — create and download barcodes instantly in your browser." />
+  <meta property="og:description" content="Generate EAN, UPC, Code 128, Code 39 and IMEI barcodes instantly. Free barcode generator — works offline in your browser." />
   <meta property="og:url" content="https://nostrings.tools/barcode-generator/" />
   <meta property="og:image" content="https://nostrings.tools/og-image.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Barcode Generator", "url": "https://nostrings.tools/barcode-generator/", "description": "Generate barcodes from text: EAN, UPC, Code 128, Code 39. Free, offline, no signup — create and download barcodes instantly in your browser.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Barcode Generator", "url": "https://nostrings.tools/barcode-generator/", "description": "Generate EAN, UPC, Code 128, Code 39 and IMEI barcodes instantly. Free barcode generator — works offline in your browser.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
 </head>
@@ -26,7 +26,7 @@
 
     <h1>Barcode Generator</h1>
 
-    <p class="w3-text-grey w3-small">Generate barcodes instantly. No signup, no ads, no tracking — works offline.</p><label for="text-input">Content</label>
+    <p class="w3-text-grey w3-small">Generate EAN, UPC, Code 128, Code 39 and IMEI barcodes instantly. No signup, no ads, no tracking — works offline.</p><label for="text-input">Content</label>
     <input id="text-input" class="w3-input w3-border w3-round" type="text" autocomplete="off" placeholder="Text or digits…" />
 
     <label for="format-select" style="margin-top: 12px; display: block;">Format</label>
@@ -50,6 +50,14 @@
     </div>
   </div>
 
+    <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #ddd;">
+      <h3 class="w3-medium">Related tools</h3>
+      <p class="w3-small w3-text-grey">
+        <a href="../imei-barcode/" class="w3-text-blue" style="text-decoration: none;">IMEI Barcode</a> ·
+        <a href="../qr-code/" class="w3-text-blue" style="text-decoration: none;">QR Code Generator</a> ·
+        <a href="../qr-scanner/" class="w3-text-blue" style="text-decoration: none;">QR Scanner</a>
+      </p>
+    </section>
   <script src="app.js"></script>
 </body>
 </html>
