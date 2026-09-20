@@ -1074,6 +1074,12 @@
     "description": "Generate random UUIDs (v4) instantly. Copy with one click, no server involved — works in your browser."
   },
   {
+    "id": "vaccination-tracker",
+    "title": "Vaccination Tracker",
+    "emoji": "💉",
+    "description": "Track all your vaccinations with flexible time intervals. Set reminders in days, months or years — completely private, works offline."
+  },
+  {
     "id": "vcard-qr",
     "title": "Contact QR",
     "emoji": "👤",
