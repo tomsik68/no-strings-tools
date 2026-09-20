@@ -324,6 +324,12 @@
     "description": "All favicon sizes from one image."
   },
   {
+    "id": "financial-planner",
+    "title": "Financial Planner",
+    "emoji": "🏦",
+    "description": "Month-by-month payments, income, and savings with a rolling balance."
+  },
+  {
     "id": "flashcards",
     "title": "Flashcards",
     "emoji": "🃏",

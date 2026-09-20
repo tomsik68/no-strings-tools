@@ -169,6 +169,12 @@
         const s = JSON.parse(v);
         return (s.entries?.length > 0) || s.open !== null;
       },
+      "financial-planner": (v) => {
+        const s = JSON.parse(v);
+        return (s.recurring?.length > 0) ||
+               Object.values(s.months || {}).some(m => m.items?.length > 0) ||
+               s.savingsBalance !== 0;
+      },
       // teleprompter-speed always holds a default value once the page has
       // been opened, so it never counts as "data" on its own — only the
       // script text does.
