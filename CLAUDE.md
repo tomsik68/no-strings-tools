@@ -78,8 +78,6 @@ no-strings-tools/
 │   ├── [more app folders]/
 │   └── README.md
 │
-├── deploy.sh                        # Deploy frontend
-├── justfile                         # Alternative: requires `just` CLI
 ├── CLAUDE.md                        # This file
 └── README.md                        # Root overview
 ```
@@ -118,8 +116,8 @@ Provides:
 3. Add `app.js` if you need interactivity
 4. Link to W3.CSS via CDN; add a small `<style>` block only if W3 isn't enough
 5. Test offline (open as `file:///` or use local server)
-6. Add to `frontend/index.html` app grid
-7. Push to git; deploy via `./deploy.sh`
+6. Add an entry to `frontend/apps.json`, then run `python3 scripts/generate.py` to regenerate `frontend/index.html` and the sitemap
+7. Push to `main` — GitHub Actions deploys `frontend/` to GitHub Pages automatically
 
 ### Code Reuse
 
@@ -138,23 +136,13 @@ Provides:
 
 ### Frontend (Required)
 
-Deploy the frontend to any static host:
+Every push to `main` deploys `frontend/` to GitHub Pages automatically via
+`.github/workflows/deploy-pages.yml`. Regenerate the dashboard and sitemap
+before pushing if `apps.json` changed:
 
-**Option 1: To your server**
 ```bash
-./deploy.sh
-# Deploys to /srv/blog/nostrings/index.html on server
-```
-
-**Option 2: Cloudflare Pages**
-```bash
-wrangler pages deploy frontend
-```
-
-**Option 3: Any CDN (S3, etc.)**
-```bash
-# Copy frontend/ to your host
-scp -r frontend/* user@server:/var/www/nostrings/
+python3 scripts/generate.py
+git push
 ```
 
 **Apps work immediately** — no backend needed.

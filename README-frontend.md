@@ -14,31 +14,14 @@ frontend/
 
 ## Deployment
 
-### Quick Deploy to Server
+Every push to `main` deploys `frontend/` to GitHub Pages automatically via
+`.github/workflows/deploy-pages.yml`. Regenerate the dashboard and sitemap
+first if you changed `apps.json`:
 
 ```bash
 cd ..
-./deploy.sh
-```
-
-Deploys to `/srv/blog/nostrings/index.html` on server.
-
-### Deploy to Cloudflare Pages
-
-```bash
-wrangler pages deploy frontend
-```
-
-### Deploy Anywhere
-
-The frontend is pure HTML+JS. No build step needed.
-
-```bash
-# Copy to your server:
-scp -r frontend/* user@server:/var/www/nostrings/
-
-# Or upload to S3:
-aws s3 sync frontend s3://my-nostrings-bucket/
+python3 scripts/generate.py
+git push
 ```
 
 ## Features

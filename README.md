@@ -34,8 +34,6 @@ no-strings-tools/
 │   ├── [190+ app folders]/    # Each app
 │   └── README.md
 │
-├── deploy.sh                  # Deploy frontend to server
-├── justfile                   # Alternative (requires `just` CLI)
 ├── CLAUDE.md                  # App development guidelines
 └── README.md                  # This file
 ```
@@ -125,14 +123,12 @@ python3 -m http.server 8000
 ## Deployment
 
 Every push to `main` deploys `frontend/` to GitHub Pages automatically
-(`.github/workflows/deploy-pages.yml`). `deploy.sh` and `just deploy` regenerate
-the dashboard and sitemap from `frontend/apps.json` before uploading. Manual alternatives:
+(`.github/workflows/deploy-pages.yml`). Before pushing, regenerate the
+dashboard and sitemap from `frontend/apps.json`:
 
 ```bash
 python3 scripts/generate.py  # Regenerate dashboard + sitemap
-./deploy.sh                  # To your server
-# OR
-wrangler pages deploy frontend  # To Cloudflare Pages
+git push
 ```
 
 ## Performance
