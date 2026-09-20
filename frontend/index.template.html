@@ -165,6 +165,14 @@
         const s = JSON.parse(v);
         return s.startedAt !== null || (s.history?.length > 0);
       },
+      "work-hours": (v) => {
+        const s = JSON.parse(v);
+        return (s.entries?.length > 0) || s.open !== null;
+      },
+      // teleprompter-speed always holds a default value once the page has
+      // been opened, so it never counts as "data" on its own — only the
+      // script text does.
+      "teleprompter-speed": () => false,
     };
 
     function appsWithData() {
@@ -172,10 +180,10 @@
         const appId = hrefToAppId(card.getAttribute("href"));
         const keys = appId && APP_STORAGE_KEYS[appId];
         if (!keys) return false;
-        const override = APP_DATA_OVERRIDES[appId];
         return keys.some(k => {
           const raw = localStorage.getItem(k);
           if (raw === null) return false;
+          const override = APP_DATA_OVERRIDES[k] || APP_DATA_OVERRIDES[appId];
           if (override) {
             try { return override(raw); } catch (e) { return hasMeaningfulData(raw); }
           }
