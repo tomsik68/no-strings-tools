@@ -380,17 +380,89 @@ document.getElementById('adjust-balance-btn').addEventListener('click', () => {
   save(); render();
 });
 
+function populateMonthYearSelect(monthId, yearId) {
+  const monthSel = document.getElementById(monthId);
+  const yearSel = document.getElementById(yearId);
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  monthSel.innerHTML = '<option value="">(none)</option>' +
+    monthNames.map((n, i) => `<option value="${String(i + 1).padStart(2, '0')}">${n}</option>`).join('');
+  const thisYear = new Date().getFullYear();
+  const years = [];
+  for (let y = thisYear - 10; y <= thisYear + 10; y++) years.push(y);
+  yearSel.innerHTML = years.map(y => `<option value="${y}">${y}</option>`).join('');
+  yearSel.value = String(thisYear);
+}
+
+function monthYearValue(monthId, yearId) {
+  const m = document.getElementById(monthId).value;
+  if (!m) return '';
+  return `${document.getElementById(yearId).value}-${m}`;
+}
+
+populateMonthYearSelect('export-from-month', 'export-from-year');
+populateMonthYearSelect('export-to-month', 'export-to-year');
+
+document.getElementById('backup-toggle-btn').addEventListener('click', () => {
+  const panel = document.getElementById('backup-panel');
+  panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+});
+
 document.getElementById('export-btn').addEventListener('click', () => {
-  const data = JSON.stringify(state, null, 2);
+  const from = monthYearValue('export-from-month', 'export-from-year');
+  const to = monthYearValue('export-to-month', 'export-to-year');
+  const months = {};
+  Object.keys(state.months).forEach(key => {
+    if (from && key < from) return;
+    if (to && key > to) return;
+    months[key] = state.months[key];
+  });
+  const exportState = { savingsBalance: state.savingsBalance, recurring: state.recurring, months };
+  const data = JSON.stringify(exportState, null, 2);
   const blob = new Blob([data], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `financial-planner-export-${thisMonthKey()}.json`;
+  const suffix = from || to ? `${from || 'start'}_to_${to || 'end'}` : thisMonthKey();
+  a.download = `financial-planner-export-${suffix}.json`;
   document.body.appendChild(a);
   a.click();
   a.remove();
   URL.revokeObjectURL(url);
+});
+
+document.getElementById('import-input').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    let imported;
+    try {
+      imported = JSON.parse(reader.result);
+    } catch (err) {
+      alert('That file is not valid JSON.');
+      e.target.value = '';
+      return;
+    }
+    if (!imported || typeof imported !== 'object' || !imported.months) {
+      alert('That file doesn\'t look like a Financial Planner export.');
+      e.target.value = '';
+      return;
+    }
+    if (!confirm('Import will replace all current data. Continue?')) {
+      e.target.value = '';
+      return;
+    }
+    state = { ...defaultState(), ...imported };
+    if (!state.months) state.months = {};
+    if (!state.recurring) state.recurring = [];
+    if (typeof state.savingsBalance !== 'number') state.savingsBalance = 0;
+    viewingKey = thisMonthKey();
+    save();
+    getOrCreateMonth(viewingKey);
+    render();
+    e.target.value = '';
+  };
+  reader.readAsText(file);
 });
 
 getOrCreateMonth(viewingKey);

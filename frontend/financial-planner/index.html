@@ -34,7 +34,20 @@
   <div class="w3-container w3-padding-large card w3-card w3-margin-top" style="background:white;">
     <div style="display:flex;justify-content:space-between;align-items:center;">
       <a href="../index.html" class="w3-text-blue" style="text-decoration: none;">← Back</a>
-      <button id="export-btn" class="w3-button w3-small w3-border w3-round">Export JSON</button>
+      <button id="backup-toggle-btn" class="w3-button w3-small w3-border w3-round">Backup</button>
+    </div>
+
+    <div id="backup-panel" class="w3-panel w3-leftbar w3-border-blue w3-pale-blue" style="display:none;padding:10px 14px;">
+      <div class="w3-small w3-margin-bottom"><strong>Export</strong> — leave months blank to export everything.</div>
+      <div class="form-row">
+        <label class="w3-small">From <select id="export-from-month"></select><select id="export-from-year"></select></label>
+        <label class="w3-small">To <select id="export-to-month"></select><select id="export-to-year"></select></label>
+        <button id="export-btn" class="w3-button w3-small w3-round" style="background:#4CAF50;color:white;">Export JSON</button>
+      </div>
+      <div class="w3-small w3-margin-top"><strong>Import</strong> — replaces all current data.</div>
+      <div class="form-row">
+        <input id="import-input" type="file" accept="application/json" class="w3-small" />
+      </div>
     </div>
     <h1>Financial Planner</h1>
     <p class="w3-text-grey w3-small">Plan monthly payments against income and savings, with a rolling balance and money-flow diagram. Works offline.</p>
