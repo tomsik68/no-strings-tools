@@ -3,7 +3,7 @@
     "id": "ascii-table",
     "title": "ASCII Table",
     "emoji": "📝",
-    "description": "Full ASCII table online with decimal, hex, octal, binary and character codes. Search and copy ASCII codes — works offline."
+    "description": "Full ASCII table with decimal, hex, octal, binary and character codes. Search and copy instantly."
   },
   {
     "id": "aspect-ratio",
@@ -21,25 +21,25 @@
     "id": "barcode-generator",
     "title": "Barcode Generator",
     "emoji": "🏷️",
-    "description": "Free barcode generator for EAN, UPC, Code 128, Code 39 and IMEI. Create and download barcodes instantly in your browser."
+    "description": "Generate EAN, UPC, Code 128, Code 39 and IMEI barcodes instantly. Download as image or print."
   },
   {
     "id": "barcode-scanner",
     "title": "Barcode Scanner",
     "emoji": "🔖",
-    "description": "EAN, UPC, Code 128 & more."
+    "description": "Scan EAN, UPC, Code 128 and more with your camera. Works in your browser, no app needed."
   },
   {
     "id": "base-converter",
     "title": "Base Converter",
     "emoji": "🔢",
-    "description": "Binary, hex, octal, decimal."
+    "description": "Convert between binary, hex, octal, decimal instantly. Works offline."
   },
   {
     "id": "base64",
     "title": "Base64",
     "emoji": "📝",
-    "description": "Encode & decode base64."
+    "description": "Encode or decode Base64 strings instantly. Paste or type, no upload, no server involved."
   },
   {
     "id": "bet-tracker",
@@ -57,7 +57,7 @@
     "id": "bill-splitter",
     "title": "Bill Splitter",
     "emoji": "💵",
-    "description": "Split multiple bills across a group and settle up."
+    "description": "Add expenses and people, then see who owes whom. Settle up fairly in seconds."
   },
   {
     "id": "birthday-tracker",
@@ -135,13 +135,13 @@
     "id": "chord-transposer",
     "title": "Chord Transposer",
     "emoji": "🎸",
-    "description": "Shift a chord sheet to a new key."
+    "description": "Transpose chords up or down. Perfect for adapting songs to your vocal range or instrument key."
   },
   {
     "id": "color-converter",
     "title": "Color Converter",
     "emoji": "🎨",
-    "description": "HEX ↔ RGB ↔ HSL."
+    "description": "Convert colors between HEX, RGB, HSL and more. Pick a color or paste any format — instant conversion."
   },
   {
     "id": "color-palette",
@@ -177,13 +177,13 @@
     "id": "countdown",
     "title": "Countdown",
     "emoji": "⏲️",
-    "description": "Count down to zero."
+    "description": "Set a date and time, watch the countdown to your event. Adjustable colors and fonts."
   },
   {
     "id": "cron-explainer",
     "title": "Cron Explainer",
     "emoji": "⏰",
-    "description": "Decode cron expressions and decode cron schedules into plain English. Free cron explainer — works offline in your browser."
+    "description": "Paste a cron expression and see it decoded into plain English. Perfect for debugging schedules."
   },
   {
     "id": "crop-factor",
@@ -213,7 +213,7 @@
     "id": "day-counter",
     "title": "Day Counter",
     "emoji": "📆",
-    "description": "Days since & until saved dates."
+    "description": "Count days between dates or count down to a future date. See total and remaining days instantly."
   },
   {
     "id": "dead-pixel",
@@ -277,9 +277,9 @@
   },
   {
     "id": "encrypt",
-    "title": "Encrypt/Decrypt",
+    "title": "Encrypt & Decrypt Text",
     "emoji": "🔐",
-    "description": "Encrypt and decrypt text online with AES-256-GCM in your browser. Free word encryption tool — works offline, no signup."
+    "description": "Encrypt text with AES-256-GCM in your browser. Paste text, set a password, copy encrypted result. Offline, reversible."
   },
   {
     "id": "entropy-calculator",
@@ -295,9 +295,9 @@
   },
   {
     "id": "exif-stripper",
-    "title": "EXIF Stripper",
+    "title": "EXIF Remover",
     "emoji": "🧹",
-    "description": "Remove photo metadata & GPS."
+    "description": "Remove EXIF metadata and GPS location from photos. Files stay on your device, no upload, no tracking."
   },
   {
     "id": "expense-log",
@@ -367,9 +367,9 @@
   },
   {
     "id": "gzip",
-    "title": "Gzip",
+    "title": "Gzip Compress & Decompress",
     "emoji": "🗜️",
-    "description": "Gzip compress and decompress text or files online. Free gzip tool that runs locally in your browser — nothing is uploaded."
+    "description": "Compress or decompress text and files with gzip. Paste or upload, instant results. No size limits."
   },
   {
     "id": "habit-tracker",
@@ -381,7 +381,7 @@
     "id": "hash-generator",
     "title": "Hash Generator",
     "emoji": "#️⃣",
-    "description": "SHA hashes as you type."
+    "description": "Compute SHA-256, MD5 and other hashes. Paste text or upload a file — everything stays in your browser."
   },
   {
     "id": "headache-log",
@@ -417,7 +417,7 @@
     "id": "image-resizer",
     "title": "Image Resizer",
     "emoji": "🖼️",
-    "description": "Shrink images, all on-device."
+    "description": "Resize images instantly in your browser. Download as JPEG, PNG or WebP, nothing uploaded to any server."
   },
   {
     "id": "image-to-base64",
@@ -457,15 +457,15 @@
   },
   {
     "id": "json-beautifier",
-    "title": "} JSON",
+    "title": "JSON Formatter",
     "emoji": "{",
-    "description": "Format and validate JSON."
+    "description": "Paste messy JSON, get it formatted with syntax highlighting. Errors highlighted in red. Copy formatted result instantly."
   },
   {
     "id": "jwt-decoder",
     "title": "JWT Decoder",
     "emoji": "🔐",
-    "description": "Decode JWT tokens."
+    "description": "Decode JWT tokens locally. The token never leaves your browser — inspect headers and payloads safely."
   },
   {
     "id": "keep-awake",
@@ -477,7 +477,7 @@
     "id": "keystroke-test",
     "title": "Keystroke Test",
     "emoji": "⌨️",
-    "description": "Test keyboard typing speed, keys per second and detect ghosting."
+    "description": "Test keyboard speed and ghosting. Measure keys per second and per minute. Instant results, no calibration needed."
   },
   {
     "id": "keycode-viewer",
@@ -549,7 +549,7 @@
     "id": "meditation-timer",
     "title": "Meditation Timer",
     "emoji": "🧘",
-    "description": "Mindfulness timer."
+    "description": "Set a meditation duration with optional breathing cues. Timer rings softly at the end."
   },
   {
     "id": "meeting-cost",
@@ -565,9 +565,9 @@
   },
   {
     "id": "metronome",
-    "title": "Metronome",
+    "title": "Tap Tempo & Metronome",
     "emoji": "🎵",
-    "description": "Web Audio rhythm keeper."
+    "description": "Tap to find your BPM or use the metronome. Real-time tempo detection as you tap — adjust the speed instantly. Works offline."
   },
   {
     "id": "mileage-log",
@@ -607,15 +607,15 @@
   },
   {
     "id": "noise-generator",
-    "title": "Noise Generator",
+    "title": "Tone Generator",
     "emoji": "🌊",
-    "description": "White, brown, pink noise."
+    "description": "Generate sine wave tones or white noise online. Adjust frequency and volume, play instantly. Useful for hearing tests, audio work, meditation."
   },
   {
     "id": "note-taker",
     "title": "Note Taker",
     "emoji": "📝",
-    "description": "Markdown notes with live preview, saved locally."
+    "description": "Write Markdown notes with live preview. Your notes stay on your device, no server, no signup."
   },
   {
     "id": "number-to-words",
@@ -633,7 +633,7 @@
     "id": "p2p-chat",
     "title": "P2P Chat",
     "emoji": "💬",
-    "description": "Private peer-to-peer chat and send files P2P over WebRTC."
+    "description": "Chat privately peer-to-peer with files. No server, no account — everything stays between you and them."
   },
   {
     "id": "p2p-file-transfer",
@@ -675,7 +675,7 @@
     "id": "password-generator",
     "title": "Password Generator",
     "emoji": "🔑",
-    "description": "Stateless password generation."
+    "description": "Generate strong random passwords. Choose length and character sets instantly. Copy with one click."
   },
   {
     "id": "pdf-merger",
@@ -715,9 +715,9 @@
   },
   {
     "id": "phonetic-alphabet",
-    "title": "Phonetic Alphabet",
+    "title": "NATO Phonetic Alphabet",
     "emoji": "🎤",
-    "description": "NATO phonetic alphabet reference and letter-to-code converter. Look up Alpha, Bravo, Charlie and convert text to ICAO phonetic codes."
+    "description": "Reference and converter: Alpha, Bravo, Charlie … Zulu. Look up codes or convert any text to phonetic spelling instantly."
   },
   {
     "id": "plant-watering",
@@ -729,19 +729,19 @@
     "id": "pomodoro",
     "title": "Pomodoro",
     "emoji": "🍅",
-    "description": "25 min work + 5 min break."
+    "description": "25 minutes of focus, then 5 minutes rest. Build sessions to keep going longer."
   },
   {
     "id": "qr-code",
-    "title": "QR Code",
+    "title": "QR Code Generator",
     "emoji": "⬜",
-    "description": "Generate QR codes instantly."
+    "description": "Create QR codes for text, URLs, Wi-Fi and more. No signup, no tracking — download instantly."
   },
   {
     "id": "qr-scanner",
-    "title": "QR Scanner",
+    "title": "QR Code Scanner",
     "emoji": "📷",
-    "description": "Free online QR scanner and live QR code reader for your webcam or camera. Scan QR codes and barcodes instantly — no signup."
+    "description": "Scan QR codes and barcodes with your webcam. Point and decode instantly, no app needed."
   },
   {
     "id": "random-picker",
@@ -783,7 +783,7 @@
     "id": "regex-tester",
     "title": "Regex Tester",
     "emoji": "🔍",
-    "description": "Free JavaScript regex tester online. Test regular expressions against sample text with live match highlighting — no signup, works offline."
+    "description": "Test JavaScript regular expressions with live match highlighting. Test against sample text instantly, see all matches and groups."
   },
   {
     "id": "rent-vs-buy",
@@ -843,7 +843,7 @@
     "id": "shopping-list",
     "title": "Shopping List",
     "emoji": "🛒",
-    "description": "Track what you need to buy."
+    "description": "Add items, check them off as you shop. Saves automatically to your device. Works offline."
   },
   {
     "id": "signal-mirror",
@@ -861,7 +861,7 @@
     "id": "sketch-pad",
     "title": "Sketch Pad",
     "emoji": "✍️",
-    "description": "Draw & sign, save as PNG."
+    "description": "Draw sketches and signatures with mouse, finger or stylus. Download as PNG, no signup, no ads."
   },
   {
     "id": "sleep-calculator",
@@ -903,13 +903,13 @@
     "id": "speech-to-text",
     "title": "Speech to Text",
     "emoji": "🎤",
-    "description": "Browser transcribes your voice."
+    "description": "Speak and let your browser transcribe it to text. Works in most browsers on most devices."
   },
   {
     "id": "speed-reader",
     "title": "Speed Reader",
     "emoji": "👁️",
-    "description": "Free online speed reader and speed reading website. Paste text, set WPM and read one word at a time — works offline."
+    "description": "Paste text, set reading speed (WPM) and watch one word at a time. Practice speed reading offline."
   },
   {
     "id": "ssid-generator",
@@ -933,7 +933,7 @@
     "id": "stopwatch",
     "title": "Stopwatch",
     "emoji": "⏱️",
-    "description": "Simple timer that counts up."
+    "description": "Start, pause and reset. Track and review laps. Perfect for workouts or timing."
   },
   {
     "id": "subnet-calculator",
@@ -969,31 +969,31 @@
     "id": "tap-bpm",
     "title": "Tap BPM",
     "emoji": "🥁",
-    "description": "Tap for BPM or tap tempo to find the beats per minute. Free online tap BPM tool — works in your browser."
+    "description": "Tap the spacebar or screen to find BPM. Real-time tempo display updates instantly as you tap. Works in any browser."
   },
   {
     "id": "teleprompter",
     "title": "Teleprompter",
     "emoji": "📜",
-    "description": "Auto-scrolling script reader."
+    "description": "Paste a script and read along as it scrolls. Adjust speed and text size for your pace."
   },
   {
     "id": "text-diff",
     "title": "Text Diff",
     "emoji": "🔀",
-    "description": "Compare strings and texts online. Free string diff tool that shows line-by-line differences — no signup, works offline."
+    "description": "Paste two texts to see line-by-line differences. Color-coded additions and removals. Instant results."
   },
   {
     "id": "text-to-speech",
     "title": "Text to Speech",
     "emoji": "🔊",
-    "description": "Browser speaks your text."
+    "description": "Paste text and hear it read aloud. Adjust speed and voice. Useful for proofreading or accessibility."
   },
   {
     "id": "timezone",
-    "title": "Timezone",
+    "title": "Timezone Converter",
     "emoji": "⏰",
-    "description": "Convert times across timezones."
+    "description": "Convert meeting times, flight times and deadlines between timezones instantly. See time in both zones side-by-side."
   },
   {
     "id": "tip-tax",
@@ -1029,7 +1029,7 @@
     "id": "typing-test",
     "title": "Typing Test",
     "emoji": "⌨️",
-    "description": "Free online typing test. Measure your typing speed and WPM with a simple, no-signup test that works in your browser."
+    "description": "Measure typing speed (WPM) and accuracy in real-time. Results show your performance — compare sessions to track improvement."
   },
   {
     "id": "unicode-inspector",
@@ -1041,7 +1041,7 @@
     "id": "unit-converter",
     "title": "Unit Converter",
     "emoji": "📏",
-    "description": "Convert units instantly."
+    "description": "Convert length, weight, temperature, volume and more instantly. Switch between metric and imperial, no refresh needed."
   },
   {
     "id": "unit-price",
@@ -1051,9 +1051,9 @@
   },
   {
     "id": "unix-timestamp",
-    "title": "Unix Timestamp",
+    "title": "Unix Timestamp Converter",
     "emoji": "⏱️",
-    "description": "Timestamp ↔️ date converter."
+    "description": "Convert Unix timestamps to human dates and back instantly and offline."
   },
   {
     "id": "url-parser",
@@ -1069,9 +1069,9 @@
   },
   {
     "id": "uuid-generator",
-    "title": "UUID Generator",
+    "title": "Random UUID Generator",
     "emoji": "🔑",
-    "description": "Free random UUID generator. Generate random UUID v4 identifiers instantly — copy with one click, no server, works offline."
+    "description": "Generate random UUIDs (v4) instantly. Copy with one click, no server involved — works in your browser."
   },
   {
     "id": "vcard-qr",
@@ -1111,9 +1111,9 @@
   },
   {
     "id": "wifi-qr",
-    "title": "Wi-Fi QR",
+    "title": "WiFi QR Code Generator",
     "emoji": "📶",
-    "description": "Free Wi-Fi QR code generator. Create a QR code for your Wi-Fi network from SSID and password — guests scan to connect instantly."
+    "description": "Generate a QR code for your Wi-Fi network. Share with guests — they scan to connect instantly. With or without password."
   },
   {
     "id": "wishlist",
@@ -1125,7 +1125,7 @@
     "id": "word-counter",
     "title": "Word Counter",
     "emoji": "🔤",
-    "description": "Words, chars, reading time."
+    "description": "Count words, characters and reading time in real-time. Results update as you type. Fully private."
   },
   {
     "id": "work-hours",
@@ -1143,7 +1143,7 @@
     "id": "world-clock",
     "title": "World Clock",
     "emoji": "🌍",
-    "description": "See time across timezones."
+    "description": "Save timezones and see current time everywhere at once. Stays synced to now."
   },
   {
     "id": "yaml-json",
