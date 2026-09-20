@@ -1294,11 +1294,51 @@
       return m ? m[1] : null;
     }
 
+    // Values that mean "nothing saved here", even though the key exists —
+    // apps often write an empty array/object/zero on first load.
+    const EMPTY_STORAGE_VALUES = new Set(["", "[]", "{}", "0", "null", "false"]);
+
+    function hasMeaningfulData(value) {
+      if (value === null || EMPTY_STORAGE_VALUES.has(value)) return false;
+      try {
+        const parsed = JSON.parse(value);
+        if (Array.isArray(parsed)) return parsed.length > 0;
+        if (parsed && typeof parsed === "object") return Object.keys(parsed).length > 0;
+      } catch (e) {
+        // Not JSON — a non-empty plain string already counts as data.
+      }
+      return true;
+    }
+
+    // Apps whose stored JSON is never a bare empty value even with no real
+    // user data (e.g. an object with empty sub-fields, or settings that are
+    // always present once touched once). Return true if the parsed value
+    // represents real user data.
+    const APP_DATA_OVERRIDES = {
+      "bet-tracker": (v) => {
+        const s = JSON.parse(v);
+        return (s.outcomes?.length > 0) || (s.bets?.length > 0) || s.winner !== null;
+      },
+      "fasting-timer": (v) => {
+        const s = JSON.parse(v);
+        return s.startedAt !== null || (s.history?.length > 0);
+      },
+    };
+
     function appsWithData() {
       return [...mainCards].filter(card => {
         const appId = hrefToAppId(card.getAttribute("href"));
         const keys = appId && APP_STORAGE_KEYS[appId];
-        return keys && keys.some(k => localStorage.getItem(k) !== null);
+        if (!keys) return false;
+        const override = APP_DATA_OVERRIDES[appId];
+        return keys.some(k => {
+          const raw = localStorage.getItem(k);
+          if (raw === null) return false;
+          if (override) {
+            try { return override(raw); } catch (e) { return hasMeaningfulData(raw); }
+          }
+          return hasMeaningfulData(raw);
+        });
       });
     }
 
