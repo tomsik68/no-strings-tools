@@ -451,9 +451,9 @@
   },
   {
     "id": "invoice-generator",
-    "title": "Invoice",
+    "title": "Invoice Generator",
     "emoji": "🧾",
-    "description": "Line items + tax, print-ready."
+    "description": "Line items, VAT, Pay by Square QR, reusable templates. Print-ready and XML-exportable."
   },
   {
     "id": "json-beautifier",
