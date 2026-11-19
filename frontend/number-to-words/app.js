@@ -36,13 +36,29 @@ function integerToWords(digits) {
   return parts.join(" ");
 }
 
+// Indian system: last 3 digits, then groups of 2 (thousand, lakh), the rest counts crores.
+function integerToIndian(digits) {
+  digits = digits.replace(/^0+(?=\d)/, "");
+  if (digits === "0") return "zero";
+  const n = (s) => Number(s || 0);
+  const crore = digits.slice(0, -7), lakh = n(digits.slice(-7, -5)), thousand = n(digits.slice(-5, -3)), rest = n(digits.slice(-3));
+  const parts = [];
+  if (n(crore)) parts.push(integerToIndian(crore) + " crore");
+  if (lakh) parts.push(threeDigits(lakh) + " lakh");
+  if (thousand) parts.push(threeDigits(thousand) + " thousand");
+  if (rest) parts.push(threeDigits(rest));
+  return parts.join(" ");
+}
+
 function toWords(raw) {
-  raw = raw.trim().replace(/[\s,]/g, "");
+  raw = raw.trim();
+  const indian = /^-?\d{1,2}(,\d{2})+,\d{3}(\.\d+)?$/.test(raw); // e.g. 40,37,12,100
+  raw = raw.replace(/[\s,]/g, "");
   if (!raw) return "";
   const m = raw.match(/^(-)?(\d+)(?:\.(\d+))?$/);
   if (!m) return "Enter a plain number, like 1234.56";
   const [, minus, intPart, decPart] = m;
-  const intWords = integerToWords(intPart.replace(/^0+(?=\d)/, ""));
+  const intWords = indian ? integerToIndian(intPart) : integerToWords(intPart.replace(/^0+(?=\d)/, ""));
   if (intWords === null) return "That's too big — up to 999 trillion is supported.";
   let result = (minus ? "minus " : "") + intWords;
   if (decPart) result += " point " + [...decPart].map((d) => ONES[d] || "zero").join(" ");

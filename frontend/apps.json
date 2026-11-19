@@ -357,7 +357,7 @@
     "id": "flashlight",
     "title": "Flashlight",
     "emoji": "🔦",
-    "description": "Camera flash or bright screen."
+    "description": "Free online flashlight: turn your phone or computer screen into a bright light. Adjust brightness and color; the screen stays awake. Works offline."
   },
   {
     "id": "fridge-expiry",
@@ -529,9 +529,9 @@
   },
   {
     "id": "light-detector",
-    "title": "Light Detector",
+    "title": "Light Meter (Lux)",
     "emoji": "💡",
-    "description": "Ambient light sensor."
+    "description": "Free online light meter: measure ambient light in lux with your device's light sensor. Useful for photography, plants, lighting design and accessibility."
   },
   {
     "id": "line-tools",
@@ -603,7 +603,7 @@
     "id": "mirror",
     "title": "Mirror",
     "emoji": "🪞",
-    "description": "Free online mirror: use your front camera or webcam as a mirror in the browser. Nothing is recorded or uploaded."
+    "description": "Free online mirror: use your front camera or webcam as a mirror. Switch to a true (non-reversing) mirror to see yourself as others do. Nothing is recorded or uploaded."
   },
   {
     "id": "mood-tracker",
@@ -645,7 +645,7 @@
     "id": "number-to-words",
     "title": "Number to Words",
     "emoji": "🔟",
-    "description": "Convert numbers to words in English. Type 1234 and see it written out — numbers in words instantly, no signup."
+    "description": "Write any number in words instantly: 114 is one hundred fourteen. Handles decimals, thousands separators and Indian lakh/crore grouping like 40,37,12,100."
   },
   {
     "id": "one-rep-max",
@@ -685,9 +685,9 @@
   },
   {
     "id": "parking-meter",
-    "title": "Parking Meter",
+    "title": "Parking Cost Calculator",
     "emoji": "🅿️",
-    "description": "Calculate parking cost and track time with a simple parking lot cost calculator. Free parking meter — works offline."
+    "description": "Parking cost calculator and parking meter timer: enter the rate and time to see what your parking will cost, or how long your budget lasts. Free, works offline."
   },
   {
     "id": "parking-spot",
@@ -829,9 +829,9 @@
   },
   {
     "id": "schengen",
-    "title": "Schengen 90/180",
+    "title": "Schengen 90/180 Calculator",
     "emoji": "✈️",
-    "description": "Track Schengen days under the 90/180 rule."
+    "description": "Schengen 90/180 day calculator: log your trips and see days used and days left in the rolling 180-day window. Covers the 90-day rule for Spain, France, Italy and every Schengen country."
   },
   {
     "id": "scoreboard",
@@ -909,7 +909,7 @@
     "id": "sound-meter",
     "title": "Sound Meter",
     "emoji": "🎚️",
-    "description": "Measure sound level in decibels with your microphone. Free online mic dB meter and sound level meter — works in your browser."
+    "description": "Free online sound level meter: measure decibels (dB) with your microphone. Live VU-style level bar with peak and average dB. Works offline."
   },
   {
     "id": "speaker-test",
@@ -957,7 +957,7 @@
     "id": "stopwatch",
     "title": "Stopwatch",
     "emoji": "⏱️",
-    "description": "Start, pause and reset. Track and review laps. Perfect for workouts or timing."
+    "description": "Free online stopwatch with lap times. Start, pause, reset and review laps. Keeps working offline, perfect for workouts and timing."
   },
   {
     "id": "subnet-calculator",
@@ -1021,15 +1021,15 @@
   },
   {
     "id": "tip-tax",
-    "title": "Tip & Tax",
+    "title": "Tip & Tax Calculator",
     "emoji": "💵",
-    "description": "Bill → tip → VAT → split."
+    "description": "Tip calculator with tax: add tip and sales tax to a bill and split it per person instantly. Free, works offline."
   },
   {
     "id": "tone-generator",
     "title": "Tone Generator",
     "emoji": "🎼",
-    "description": "Pure tones, any frequency."
+    "description": "Free online tone generator: play a sine, square, triangle or sawtooth wave at any frequency in Hz. Use it as a test tone, pitch or signal generator. Works offline."
   },
   {
     "id": "totp",
