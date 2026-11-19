@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Entropy Calculator Online | nostrings.tools</title>
-  <meta name="description" content="Calculate Shannon entropy of text or files. See how random or compressible your data is." />
+  <title>Entropy Calculator – Shannon &amp; Password Entropy | nostrings.tools</title>
+  <meta name="description" content="Calculate the Shannon entropy of any text (bits per character and total) and the entropy and crack time of a password. Works offline in your browser." />
   <link rel="canonical" href="https://nostrings.tools/entropy-calculator/" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
-  <meta property="og:title" content="Entropy Calculator — Free, Offline &amp; No Signup | nostrings.tools" />
-  <meta property="og:description" content="Calculate Shannon entropy of text or files. See how random or compressible your data is." />
+  <meta property="og:title" content="Entropy Calculator – Shannon &amp; Password Entropy | nostrings.tools" />
+  <meta property="og:description" content="Calculate the Shannon entropy of any text (bits per character and total) and the entropy and crack time of a password. Works offline in your browser." />
   <meta property="og:url" content="https://nostrings.tools/entropy-calculator/" />
   <meta property="og:image" content="https://nostrings.tools/og-image.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Entropy Calculator", "url": "https://nostrings.tools/entropy-calculator/", "description": "Calculate Shannon entropy of text or files. See how random or compressible your data is.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Entropy Calculator", "url": "https://nostrings.tools/entropy-calculator/", "description": "Calculate the Shannon entropy of any text (bits per character and total) and the entropy and crack time of a password. Works offline in your browser.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <style>
     textarea { width: 100%; height: 100px; font-family: monospace; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
@@ -29,11 +29,20 @@
 <body class="w3-light-grey">
   <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
-    <h1>Entropy Calculator</h1>
+    <h1>Entropy Calculator (Shannon &amp; Password)</h1>
     <p class="w3-text-grey w3-small">Calculate with this free entropy calculator directly in your browser. No signup, no ads, no tracking — works offline.</p>
-    <textarea id="password-input" placeholder="Enter password..."></textarea>
+    <textarea id="password-input" placeholder="Type a password or paste any text…" aria-label="Password or text"></textarea>
     <div class="meter"><div class="meter-fill" id="strength-meter" style="width: 0%; background: #f44336;">Weak</div></div>
     <div class="result" id="result"></div>
+
+    <section style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #ddd;">
+      <h2 class="w3-medium">Related tools</h2>
+      <p class="w3-small w3-text-grey">
+        <a href="../hash-generator/" class="w3-text-blue" style="text-decoration: none;">Hash Generator</a> ·
+        <a href="../password-generator/" class="w3-text-blue" style="text-decoration: none;">Password Generator</a> ·
+        <a href="../encrypt/" class="w3-text-blue" style="text-decoration: none;">Encrypt &amp; Decrypt Text</a>
+      </p>
+    </section>
   </div>
   <script src="app.js"></script>
 </body>

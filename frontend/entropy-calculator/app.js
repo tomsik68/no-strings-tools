@@ -37,6 +37,14 @@ function calculateEntropy(password) {
   return { entropy: entropy.toFixed(1), strength, color, percent, crackTime };
 }
 
+// Shannon entropy from the actual character frequencies in the text.
+function shannon(text) {
+  const chars = [...text], counts = {};
+  chars.forEach((c) => (counts[c] = (counts[c] || 0) + 1));
+  const perChar = -Object.values(counts).reduce((h, n) => h + (n / chars.length) * Math.log2(n / chars.length), 0);
+  return { perChar: perChar.toFixed(3), total: (perChar * chars.length).toFixed(1) };
+}
+
 passwordInput.addEventListener("input", (e) => {
   if (!e.target.value) {
     strengthMeter.style.width = "0%";
@@ -52,6 +60,7 @@ passwordInput.addEventListener("input", (e) => {
   strengthMeter.textContent = strength;
   strengthMeter.style.background = color;
 
+  const sh = shannon(e.target.value);
   const crackTimeStr = crackTime > 1e9 ? "~forever" : crackTime.toFixed(0) + " years";
 
   result.innerHTML = `
@@ -59,5 +68,7 @@ passwordInput.addEventListener("input", (e) => {
     <div class="result-row"><span>Length</span><span>${e.target.value.length} chars</span></div>
     <div class="result-row"><span>Strength</span><span>${strength}</span></div>
     <div class="result-row"><span>Crack Time</span><span>${crackTimeStr}</span></div>
+    <div class="result-row"><span>Shannon entropy</span><span>${sh.perChar} bits/char</span></div>
+    <div class="result-row"><span>Shannon total</span><span>${sh.total} bits</span></div>
   `;
 });

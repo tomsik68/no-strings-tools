@@ -303,7 +303,7 @@
     "id": "entropy-calculator",
     "title": "Entropy Calculator",
     "emoji": "🔐",
-    "description": "Measure password strength."
+    "description": "Calculate the Shannon entropy of any text (bits per character and total) and the entropy and crack time of a password. Works offline in your browser."
   },
   {
     "id": "event-qr",
@@ -493,9 +493,9 @@
   },
   {
     "id": "keep-awake",
-    "title": "Keep Awake",
+    "title": "Keep Screen Awake",
     "emoji": "☕",
-    "description": "Stop screen from sleeping."
+    "description": "Keep your screen awake without installing anything: one tap stops your phone or computer from sleeping or dimming. Free, works offline."
   },
   {
     "id": "keystroke-test",
@@ -933,7 +933,7 @@
     "id": "speed-reader",
     "title": "Speed Reader",
     "emoji": "👁️",
-    "description": "Paste text, set reading speed (WPM) and watch one word at a time. Practice speed reading offline."
+    "description": "Speed reading website: paste text, set your reading speed (WPM) and read one word at a time. Practice speed reading for free, offline."
   },
   {
     "id": "ssid-generator",
@@ -1113,7 +1113,7 @@
     "id": "voice-recorder",
     "title": "Voice Recorder",
     "emoji": "🎙️",
-    "description": "Record audio, download it."
+    "description": "Free online voice and audio recorder: record from your microphone and download the clip. No sign-up, no limits, nothing uploaded."
   },
   {
     "id": "voltage-divider",

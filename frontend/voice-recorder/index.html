@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voice Recorder Online | nostrings.tools</title>
-  <meta name="description" content="Record audio with your microphone. Trim clips and download. No limits, no file size caps." />
+  <title>Voice Recorder Online – Free Audio Recorder | nostrings.tools</title>
+  <meta name="description" content="Free online voice and audio recorder: record from your microphone and download the clip. No sign-up, no limits, nothing uploaded." />
   <link rel="canonical" href="https://nostrings.tools/voice-recorder/" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
-  <meta property="og:title" content="Voice Recorder — Free, Offline &amp; No Signup | nostrings.tools" />
-  <meta property="og:description" content="Record audio with your microphone. Trim clips and download. No limits, no file size caps." />
+  <meta property="og:title" content="Voice Recorder Online – Free Audio Recorder | nostrings.tools" />
+  <meta property="og:description" content="Free online voice and audio recorder: record from your microphone and download the clip. No sign-up, no limits, nothing uploaded." />
   <meta property="og:url" content="https://nostrings.tools/voice-recorder/" />
   <meta property="og:image" content="https://nostrings.tools/og-image.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Voice Recorder", "url": "https://nostrings.tools/voice-recorder/", "description": "Record audio with your microphone. Trim clips and download. No limits, no file size caps.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Voice Recorder", "url": "https://nostrings.tools/voice-recorder/", "description": "Free online voice and audio recorder: record from your microphone and download the clip. No sign-up, no limits, nothing uploaded.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <style>
     .record-btn { width: 100%; padding: 20px; font-size: 20px; margin-top: 16px; }
@@ -31,7 +31,7 @@
   <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
-    <h1>Voice Recorder</h1>
+    <h1>Online Voice Recorder</h1>
     <p class="w3-text-grey w3-small">Use this free voice recorder directly in your browser. No signup, no ads, no tracking — works offline.</p>
 
     <div class="timer" id="timer">00:00</div>
@@ -42,6 +42,15 @@
       <audio id="playback" controls></audio>
       <a id="download-link" class="w3-button w3-green w3-round download-btn">⬇️ Download recording</a>
     </div>
+
+    <section style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #ddd;">
+      <h2 class="w3-medium">Related tools</h2>
+      <p class="w3-small w3-text-grey">
+        <a href="../text-to-speech/" class="w3-text-blue" style="text-decoration: none;">Text to Speech</a> ·
+        <a href="../speech-to-text/" class="w3-text-blue" style="text-decoration: none;">Speech to Text</a> ·
+        <a href="../teleprompter/" class="w3-text-blue" style="text-decoration: none;">Teleprompter</a>
+      </p>
+    </section>
   </div>
 
   <script src="app.js"></script>
