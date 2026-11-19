@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document Scanner Online – Scan to PDF with Webcam or Phone | nostrings.tools</title>
+  <meta name="description" content="Free online document scanner: photograph pages with your webcam or phone camera, straighten and clean them up, and save as one PDF. Nothing is uploaded." />
+  <link rel="canonical" href="https://nostrings.tools/doc-scanner/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Document Scanner Online – Scan to PDF with Webcam or Phone | nostrings.tools" />
+  <meta property="og:description" content="Free online document scanner: photograph pages with your webcam or phone camera, straighten and clean them up, and save as one PDF. Nothing is uploaded." />
+  <meta property="og:url" content="https://nostrings.tools/doc-scanner/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Document Scanner","url":"https://nostrings.tools/doc-scanner/","description":"Free online document scanner: photograph pages with your webcam or phone camera, straighten and clean them up, and save as one PDF. Nothing is uploaded.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    video, #crop { width: 100%; border-radius: 8px; background: #000; display: block; }
+    #crop { touch-action: none; cursor: crosshair; }
+    #pages { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .page { position: relative; width: 72px; }
+    .page img { width: 72px; border: 1px solid #ccc; display: block; cursor: grab; touch-action: none; user-select: none; }
+    .page.dragging { opacity: .4; }
+    .page.drop img { outline: 3px solid #2196F3; }
+    .page button { position: absolute; top: 2px; right: 2px; padding: 0 6px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <main class="w3-container w3-padding-large w3-card w3-margin-top w3-white" style="max-width: 560px; margin-left: auto; margin-right: auto;">
+    <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>Document Scanner</h1>
+    <p class="w3-text-grey" style="margin-top: 0;">Snap pages, drag the corners onto the paper, save as PDF. Nothing leaves your device.</p>
+
+    <section id="camera-step">
+      <video id="video" autoplay playsinline muted></video>
+      <p id="cam-err" class="w3-text-red w3-small" role="alert" hidden>Camera not available. Upload a photo instead.</p>
+      <div class="w3-margin-top">
+        <button id="snap" class="w3-button w3-blue w3-round w3-large">📷 Capture</button>
+        <label class="w3-button w3-border w3-round">Upload photo
+          <input id="file" type="file" accept="image/*" capture="environment" hidden />
+        </label>
+      </div>
+    </section>
+
+    <section id="crop-step" hidden>
+      <p class="w3-small w3-text-grey">Drag the blue corners onto the corners of the page.</p>
+      <canvas id="crop" aria-label="Photo with draggable page corners"></canvas>
+      <div class="w3-margin-top">
+        <button id="add" class="w3-button w3-blue w3-round w3-large">Add page</button>
+        <button id="retake" class="w3-button w3-border w3-round">Retake</button>
+      </div>
+    </section>
+
+    <section class="w3-margin-top">
+      <h2 class="w3-large">Pages <span id="count">(0)</span></h2>
+      <p class="w3-small w3-text-grey" style="margin: 0;">Drag thumbnails to reorder (or focus one and use ← →).</p>
+      <div id="pages"></div>
+      <button id="pdf" class="w3-button w3-green w3-round w3-large w3-margin-top" disabled>Download PDF</button>
+      <p id="status" class="w3-small w3-text-grey" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

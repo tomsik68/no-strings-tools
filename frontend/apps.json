@@ -252,6 +252,12 @@
     "description": "Can't decide? Let fate pick from your list."
   },
   {
+    "id": "doc-scanner",
+    "title": "Document Scanner",
+    "emoji": "📄",
+    "description": "Scan pages with your webcam or phone camera, straighten them and save as a PDF."
+  },
+  {
     "id": "doctor-visits",
     "title": "Doctor Visits",
     "emoji": "🩺",
