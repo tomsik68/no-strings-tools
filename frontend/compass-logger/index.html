@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compass Logger – Record Compass Bearings to CSV | nostrings.tools</title>
+  <meta name="description" content="Compass data logger for your phone: log bearings with notes or record your heading every second, then export to CSV. Works offline, nothing uploaded." />
+  <link rel="canonical" href="https://nostrings.tools/compass-logger/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Compass Logger – Record Compass Bearings to CSV | nostrings.tools" />
+  <meta property="og:description" content="Compass data logger for your phone: log bearings with notes or record your heading every second, then export to CSV. Works offline, nothing uploaded." />
+  <meta property="og:url" content="https://nostrings.tools/compass-logger/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Compass Logger","url":"https://nostrings.tools/compass-logger/","description":"Compass data logger for your phone: log bearings with notes or record your heading every second, then export to CSV. Works offline, nothing uploaded.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript and a device with a compass","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    #heading { font-size: 64px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
+    #log td { font-variant-numeric: tabular-nums; }
+    .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <main class="w3-container w3-padding-large w3-card w3-margin-top w3-white" style="max-width: 480px; margin-left: auto; margin-right: auto;">
+    <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>Compass Logger</h1>
+    <p class="w3-text-grey" style="margin-top: 0;">Log compass bearings or record your heading, then export to CSV.</p>
+
+    <div class="w3-panel w3-light-grey w3-round w3-center" style="padding: 20px 16px;">
+      <div id="heading" aria-live="off">—°</div>
+      <div id="dir" class="w3-large">&nbsp;</div>
+      <p id="msg" class="w3-small w3-text-grey" role="status" style="margin-bottom: 0;">Waiting for compass…</p>
+      <button id="enable" class="w3-button w3-blue w3-round w3-margin-top" hidden>Enable compass</button>
+    </div>
+
+    <label for="note">Note (optional)</label>
+    <input id="note" class="w3-input w3-border w3-round" placeholder="e.g. church tower" autocomplete="off" />
+    <div class="btn-row w3-margin-top">
+      <button id="log-btn" class="w3-button w3-blue w3-round w3-large" disabled>📍 Log bearing</button>
+      <button id="rec-btn" class="w3-button w3-red w3-round w3-large" disabled>⏺ Record</button>
+    </div>
+
+    <div class="btn-row w3-margin-top" style="align-items: center;">
+      <h2 class="w3-large" style="margin: 0; flex: 1;">Log <span id="count">(0)</span></h2>
+      <button id="csv" class="w3-button w3-border w3-round w3-small">Export CSV</button>
+      <button id="clear" class="w3-button w3-border w3-round w3-small">Clear</button>
+    </div>
+    <table id="log" class="w3-table w3-bordered w3-small"></table>
+    <p id="more" class="w3-small w3-text-grey"></p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

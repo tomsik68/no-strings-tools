@@ -162,6 +162,12 @@
     "description": "Device magnetometer."
   },
   {
+    "id": "compass-logger",
+    "title": "Compass Logger",
+    "emoji": "🧭",
+    "description": "Log compass bearings with notes or record your heading every second. Export to CSV."
+  },
+  {
     "id": "contact-notes",
     "title": "Contact Notes",
     "emoji": "👤",
