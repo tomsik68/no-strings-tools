@@ -4,6 +4,7 @@ const directionDisplay = document.getElementById("direction-display");
 const permissionMessage = document.getElementById("permission-message");
 const enableBtn = document.getElementById("enable-btn");
 let gotReading = false;
+let rotation = 0; // unwrapped rose angle, so crossing north doesn't spin it the long way
 
 function getDirection(degrees) {
   const directions = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
@@ -20,7 +21,9 @@ function handleOrientation(event) {
   permissionMessage.textContent = "";
 
   // Rotate the rose opposite to the heading so its N keeps pointing north.
-  compassInner.style.transform = `rotate(${-heading}deg)`;
+  const delta = ((-heading - rotation) % 360 + 540) % 360 - 180; // shortest turn, -180..180
+  rotation += delta;
+  compassInner.style.transform = `rotate(${rotation}deg)`;
   degreeDisplay.textContent = (Math.round(heading) % 360) + "°";
   directionDisplay.textContent = getDirection(heading);
 }
