@@ -112,7 +112,7 @@
 
     <footer class="w3-center w3-padding w3-small w3-text-grey">
       Free, offline-first, no tracking.
-      <a href="./about/index.html" class="w3-text-blue" style="text-decoration: none;">About</a> ·
+      <a href="./about/" class="w3-text-blue" style="text-decoration: none;">About</a> ·
       <a href="https://github.com/tomsik68/no-strings-tools" class="w3-text-blue" style="text-decoration: none;">⑂ Fork me on GitHub</a> ·
       <a href="https://github.com/sponsors/tomsik68" class="w3-text-blue" style="text-decoration: none;">❤️ Sponsor this project</a>
       <br />
@@ -121,6 +121,18 @@
   </div>
 
   <script>
+    // Links point at clean "./app/" URLs (one URL per page for search engines);
+    // file:/// can't resolve directories, so append index.html when opened locally.
+    if (location.protocol === "file:") {
+      document.addEventListener("click", e => {
+        const a = e.target.closest("a[href]");
+        const h = a && a.getAttribute("href");
+        if (!h || !/^\.\/.*\/$/.test(h) || e.target.closest("button")) return;
+        e.preventDefault();
+        if (e.ctrlKey || e.metaKey || e.button === 1) window.open(h + "index.html");
+        else location.href = h + "index.html";
+      }, true);
+    }
     const searchInput = document.getElementById("search-input");
     const favSection = document.getElementById("fav-section");
     const favGrid = document.getElementById("fav-grid");
@@ -212,7 +224,7 @@
     }
 
     const FAVS_KEY = "nostrings-favs";
-    let favs = new Set(JSON.parse(localStorage.getItem(FAVS_KEY) || "[]"));
+    let favs = new Set(JSON.parse(localStorage.getItem(FAVS_KEY) || "[]").map(h => h.replace(/index\.html$/, "")));
 
     function saveFavs() {
       localStorage.setItem(FAVS_KEY, JSON.stringify([...favs]));

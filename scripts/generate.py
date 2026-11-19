@@ -58,7 +58,7 @@ def scan_storage_keys(apps):
 
 
 def render_card(app):
-    href = f"./{app['id']}/index.html"
+    href = f"./{app['id']}/"
     title = app["title"]
     emoji = app.get("emoji", "")
     desc = app["description"]

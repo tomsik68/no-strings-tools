@@ -27,7 +27,7 @@
     "id": "barcode-scanner",
     "title": "Barcode Scanner",
     "emoji": "🔖",
-    "description": "Scan EAN, UPC, Code 128 and more with your camera. Works in your browser, no app needed."
+    "description": "Scan barcodes online with your camera: EAN, UPC, Code 128 and more. Works in your browser, no app needed."
   },
   {
     "id": "base-converter",
@@ -121,9 +121,9 @@
   },
   {
     "id": "chess-clock",
-    "title": "Chess Clock",
+    "title": "Chess Clock / Timer",
     "emoji": "♟️",
-    "description": "Two-player game timer."
+    "description": "Online chess clock and chess timer for two players. Tap to end your move and start the opponent's clock. Works offline on phone or desktop."
   },
   {
     "id": "chmod-calculator",
@@ -279,7 +279,7 @@
     "id": "encrypt",
     "title": "Encrypt & Decrypt Text",
     "emoji": "🔐",
-    "description": "Encrypt text with AES-256-GCM in your browser. Paste text, set a password, copy encrypted result. Offline, reversible."
+    "description": "Encrypt and decrypt text online with a password (AES-256-GCM). Everything runs in your browser and works offline."
   },
   {
     "id": "entropy-calculator",
@@ -309,7 +309,7 @@
     "id": "eyedropper",
     "title": "Eyedropper",
     "emoji": "🎨",
-    "description": "Free online eyedropper tool and color picker. Pick colors from any part of your screen and copy HEX values."
+    "description": "Free online eye dropper tool: pick a color from anywhere on your screen and copy the HEX value."
   },
   {
     "id": "fasting-timer",
@@ -375,7 +375,7 @@
     "id": "gzip",
     "title": "Gzip Compress & Decompress",
     "emoji": "🗜️",
-    "description": "Compress or decompress text and files with gzip. Paste or upload, instant results. No size limits."
+    "description": "Gzip compress or decompress text and files online, right in your browser. Paste or upload for instant results; nothing is uploaded."
   },
   {
     "id": "habit-tracker",
@@ -435,7 +435,7 @@
     "id": "imei-barcode",
     "title": "IMEI Barcode",
     "emoji": "📱",
-    "description": "Generate a barcode from a valid IMEI number. Validate IMEI and create a Code 128 barcode instantly."
+    "description": "Turn an IMEI into a barcode: validate the IMEI number and generate a scannable Code 128 barcode instantly. Works offline."
   },
   {
     "id": "instrument-tuner",
@@ -555,7 +555,7 @@
     "id": "meditation-timer",
     "title": "Meditation Timer",
     "emoji": "🧘",
-    "description": "Set a meditation duration with optional breathing cues. Timer rings softly at the end."
+    "description": "Free online meditation timer with optional breathing cues and a soft bell at the end."
   },
   {
     "id": "meeting-cost",
@@ -571,9 +571,9 @@
   },
   {
     "id": "metronome",
-    "title": "Tap Tempo & Metronome",
+    "title": "Metronome",
     "emoji": "🎵",
-    "description": "Tap to find your BPM or use the metronome. Real-time tempo detection as you tap — adjust the speed instantly. Works offline."
+    "description": "Free online metronome with adjustable BPM and tap tempo. No ads, no sign-up, works offline."
   },
   {
     "id": "mileage-log",
@@ -585,7 +585,7 @@
     "id": "mirror",
     "title": "Mirror",
     "emoji": "🪞",
-    "description": "Front camera as a mirror."
+    "description": "Free online mirror: use your front camera or webcam as a mirror in the browser. Nothing is recorded or uploaded."
   },
   {
     "id": "mood-tracker",
@@ -631,9 +631,9 @@
   },
   {
     "id": "one-rep-max",
-    "title": "One-Rep Max",
+    "title": "One Rep Max (1RM)",
     "emoji": "🏋️",
-    "description": "Weight × reps → estimated 1RM."
+    "description": "One rep max calculator: enter the weight and reps you lifted to estimate your 1RM."
   },
   {
     "id": "p2p-chat",
@@ -721,9 +721,9 @@
   },
   {
     "id": "phonetic-alphabet",
-    "title": "NATO Phonetic Alphabet",
+    "title": "Phonetic Alphabet (Alpha Bravo Charlie)",
     "emoji": "🎤",
-    "description": "Reference and converter: Alpha, Bravo, Charlie … Zulu. Look up codes or convert any text to phonetic spelling instantly."
+    "description": "The NATO phonetic (spelling/telephone) alphabet: A for Alpha, B for Bravo, C for Charlie … Z for Zulu. Look up any letter or convert text to code words."
   },
   {
     "id": "plant-watering",
@@ -747,7 +747,7 @@
     "id": "qr-scanner",
     "title": "QR Code Scanner",
     "emoji": "📷",
-    "description": "Scan QR codes and barcodes with your webcam. Point and decode instantly, no app needed."
+    "description": "Scan QR codes online with your webcam or phone camera. Point and decode instantly, no app needed."
   },
   {
     "id": "random-picker",
@@ -763,9 +763,9 @@
   },
   {
     "id": "readability",
-    "title": "Readability",
+    "title": "Readability Checker",
     "emoji": "📖",
-    "description": "Flesch score & grade level."
+    "description": "Free readability checker: paste text to get the Flesch reading ease score and grade (reading) level instantly."
   },
   {
     "id": "reading-log",
@@ -973,9 +973,9 @@
   },
   {
     "id": "tap-bpm",
-    "title": "Tap BPM",
+    "title": "Tap Tempo / BPM",
     "emoji": "🥁",
-    "description": "Tap the spacebar or screen to find BPM. Real-time tempo display updates instantly as you tap. Works in any browser."
+    "description": "Tap tempo online: tap the spacebar or screen to find the BPM (beats per minute) of any song. The tempo updates live as you tap."
   },
   {
     "id": "teleprompter",
@@ -987,7 +987,7 @@
     "id": "text-diff",
     "title": "Text Diff",
     "emoji": "🔀",
-    "description": "Paste two texts to see line-by-line differences. Color-coded additions and removals. Instant results."
+    "description": "Compare two texts or strings online and see the differences line by line, with color-coded additions and removals."
   },
   {
     "id": "text-to-speech",
@@ -1027,9 +1027,9 @@
   },
   {
     "id": "transfer-time",
-    "title": "Transfer Time",
+    "title": "Transfer Time Calculator",
     "emoji": "📡",
-    "description": "File size + speed → ETA."
+    "description": "Data transfer time calculator: enter a file size and your connection speed to see how long an upload, download or file copy will take."
   },
   {
     "id": "typing-test",
@@ -1041,7 +1041,7 @@
     "id": "unicode-inspector",
     "title": "Unicode Inspector",
     "emoji": "🕵️",
-    "description": "Detect invisible characters, zero-width spaces, non-ASCII and hidden symbols. Paste text to inspect every Unicode code point."
+    "description": "Find illegal, invisible and non-printable characters in text: zero-width spaces, non-ASCII and hidden Unicode. Paste text to see every code point."
   },
   {
     "id": "unit-converter",
@@ -1077,7 +1077,7 @@
     "id": "uuid-generator",
     "title": "Random UUID Generator",
     "emoji": "🔑",
-    "description": "Generate random UUIDs (v4) instantly. Copy with one click, no server involved — works in your browser."
+    "description": "Generate random UUIDs (v4) instantly and copy them with one click. Generated in your browser, nothing sent to a server."
   },
   {
     "id": "vaccination-tracker",
@@ -1107,7 +1107,7 @@
     "id": "warranty-tracker",
     "title": "Warranty Tracker",
     "emoji": "🛡️",
-    "description": "Item + purchase date + expiry countdown."
+    "description": "Warranty tracking without a spreadsheet: list items with purchase dates and see which warranties expire soon. Free, no account, works offline."
   },
   {
     "id": "water-reminder",
