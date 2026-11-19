@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cost Per Minute Calculator – Salary & Hourly Rate Converter | nostrings.tools</title>
+  <meta name="description" content="Convert a salary or hourly rate into cost per minute, per hour, per day, per month and per year instantly. Based on 40-hour work weeks. Works offline." />
+  <link rel="canonical" href="https://nostrings.tools/cost-per-minute/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Cost Per Minute Calculator – Salary & Hourly Rate Converter | nostrings.tools" />
+  <meta property="og:description" content="Convert a salary or hourly rate into cost per minute, per hour, per day, per month and per year instantly. Based on 40-hour work weeks. Works offline." />
+  <meta property="og:url" content="https://nostrings.tools/cost-per-minute/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cost Per Minute Calculator","url":"https://nostrings.tools/cost-per-minute/","description":"Convert a salary or hourly rate into cost per minute, per hour, per day, per month and per year instantly. Based on 40-hour work weeks. Works offline.","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <style>
+    #out td { font-variant-numeric: tabular-nums; }
+    #out td:last-child { text-align: right; font-weight: 600; }
+    #out tr.hl { background: #e3f2fd; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <main class="w3-container w3-padding-large w3-card w3-margin-top w3-white" style="max-width: 440px; margin-left: auto; margin-right: auto;">
+    <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+    <h1>Cost Per Minute Calculator</h1>
+    <p class="w3-text-grey" style="margin-top: 0;">Salary or rate → what it costs per minute, hour, day, month and year.</p>
+
+    <div class="w3-row-padding" style="margin: 0 -8px;">
+      <div class="w3-half">
+        <label for="amount">Amount</label>
+        <input id="amount" type="number" inputmode="decimal" min="0" step="any" value="60" class="w3-input w3-border w3-round" autofocus />
+      </div>
+      <div class="w3-half">
+        <label for="per">Per</label>
+        <select id="per" class="w3-select w3-border w3-round">
+          <option value="minute">minute</option>
+          <option value="hour" selected>hour</option>
+          <option value="day">day</option>
+          <option value="week">week</option>
+          <option value="month">month</option>
+          <option value="year">year</option>
+        </select>
+      </div>
+    </div>
+    <p id="err" class="w3-text-red w3-small" role="alert" hidden>Enter a positive number.</p>
+
+    <table id="out" class="w3-table w3-bordered w3-margin-top" aria-live="polite"></table>
+
+    <p class="w3-text-grey w3-small">Working time: 8 h day · 5-day week · 52 weeks (2,080 h/year). Month = year ÷ 12.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
