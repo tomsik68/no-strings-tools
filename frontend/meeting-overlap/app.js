@@ -29,20 +29,20 @@ function renderPeople() {
       <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: end;">
         <div style="flex: 1; min-width: 100px;">
           <label class="w3-small w3-text-grey">Name</label>
-          <input class="w3-input w3-border w3-round name-in" value="${esc(p.name)}" data-id="${p.id}" />
+          <input class="w3-input w3-border w3-round name-in" aria-label="Person name" value="${esc(p.name)}" data-id="${p.id}" />
         </div>
         <div style="flex: 2; min-width: 160px;">
           <label class="w3-small w3-text-grey">Timezone</label>
-          <select class="w3-select w3-border w3-round tz-in" data-id="${p.id}">
+          <select class="w3-select w3-border w3-round tz-in" aria-label="Time zone" data-id="${p.id}">
             ${ZONES.map((z) => `<option value="${z}" ${z === p.tz ? "selected" : ""}>${z}</option>`).join("")}
           </select>
         </div>
         <div>
           <label class="w3-small w3-text-grey">Awake</label>
           <div style="display: flex; gap: 4px; align-items: center;">
-            <input type="number" min="0" max="23" class="w3-input w3-border w3-round start-in" value="${p.start}" data-id="${p.id}" style="width: 56px;" />
+            <input type="number" min="0" max="23" class="w3-input w3-border w3-round start-in" aria-label="Work starts (hour)" value="${p.start}" data-id="${p.id}" style="width: 56px;" />
             <span>–</span>
-            <input type="number" min="0" max="23" class="w3-input w3-border w3-round end-in" value="${p.end}" data-id="${p.id}" style="width: 56px;" />
+            <input type="number" min="0" max="23" class="w3-input w3-border w3-round end-in" aria-label="Work ends (hour)" value="${p.end}" data-id="${p.id}" style="width: 56px;" />
           </div>
         </div>
         ${people.length > 2 ? `<button class="w3-button w3-small del" data-id="${p.id}" aria-label="Remove">×</button>` : ""}

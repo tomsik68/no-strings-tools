@@ -17,8 +17,25 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "No Strings Tools", "url": "https://nostrings.tools/", "description": "Fast, free tools that work offline in your browser: converters, generators, calculators, testers and more. No accounts, no ads, no tracking. No strings attached.", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <style>
+    /* The few W3.CSS rules this page uses, inlined so the dashboard renders without waiting on the CDN */
+    html { box-sizing: border-box; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+    *, *::before, *::after { box-sizing: inherit; }
+    html, body { margin: 0; font-family: Verdana, sans-serif; font-size: 15px; line-height: 1.5; }
+    h1, h2, h3 { font-family: "Segoe UI", Arial, sans-serif; font-weight: 400; margin: 10px 0; }
+    h1 { font-size: 36px; }
+    a { color: inherit; }
+    input { font: inherit; margin: 0; }
+    .w3-container { padding: 0.01em 16px; }
+    .w3-padding-large { padding: 12px 24px !important; }
+    .w3-padding { padding: 8px 16px !important; }
+    .w3-input { padding: 8px; display: block; width: 100%; }
+    .w3-border { border: 1px solid #ccc !important; }
+    .w3-round { border-radius: 4px; }
+    .w3-center { text-align: center !important; }
+    .w3-small { font-size: 12px !important; }
+    .w3-text-grey { color: #757575 !important; }
+    .w3-text-blue { color: #2196F3 !important; }
     body {
       background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
       min-height: 100vh;
@@ -54,9 +71,17 @@
       position: absolute; top: 5px; right: 5px;
       background: none; border: none;
       font-size: 15px; cursor: pointer;
-      color: #e0e0e0; line-height: 1; padding: 3px;
+      color: #e0e0e0; line-height: 1; padding: 0;
+      width: 44px; height: 44px; top: 0; right: 0;
+      display: grid; place-items: center;
       z-index: 1; transition: color 0.1s;
     }
+    .app-card h3 a { color: inherit; text-decoration: none; }
+    .app-card h3 a::after { content: ""; position: absolute; inset: 0; }
+    .app-card h3 { padding-right: 28px; }
+    .app-card:focus-within { outline: 2px solid #2196f3; outline-offset: 2px; }
+    .app-card h3 a:focus { outline: none; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
     .app-card:hover .star-btn { color: #bbb; }
     .star-btn.active { color: #ffc107 !important; }
     #fav-section { margin-top: 16px; }
@@ -69,6 +94,7 @@
       margin: 0 0 4px 0;
       font-size: 14px;
       font-weight: 600;
+      line-height: 1.3;
     }
     .app-card p {
       margin: 0;
@@ -81,6 +107,7 @@
 </head>
 <body>
   <div class="w3-container w3-padding-large" style="max-width: 900px; margin: 0 auto;">
+    <main>
     <h1 style="margin-bottom: 4px;">No Strings Tools</h1>
     <p class="w3-text-grey" style="margin-top: 0;">Simple tools that solve one problem well. No strings attached.</p>
 
@@ -95,1202 +122,810 @@
     />
 
     <div id="fav-section" hidden>
-      <div class="fav-title" style="margin-top:20px;">⭐ Favourites</div>
+      <h2 class="fav-title" style="margin-top:20px;">⭐ Favourites</h2>
       <div class="app-grid" id="fav-grid"></div>
       <hr style="border:none; border-top:1px solid #ddd; margin:16px 0 0;" />
     </div>
 
     <div id="data-section" hidden>
-      <div class="fav-title" style="margin-top:20px;">🗂️ Your Data</div>
+      <h2 class="fav-title" style="margin-top:20px;">🗂️ Your Data</h2>
       <div class="app-grid" id="data-grid"></div>
       <hr style="border:none; border-top:1px solid #ddd; margin:16px 0 0;" />
     </div>
 
+    <h2 class="sr-only">All tools</h2>
     <div class="app-grid" id="main-grid">
-      <a href="./ascii-table/" class="app-card">
-        <div>
-          <h3>📝 ASCII Table</h3>
-          <p>Full ASCII table with decimal, hex, octal, binary and character codes. Search and copy instantly.</p>
-        </div>
-      </a>
-      <a href="./aspect-ratio/" class="app-card">
-        <div>
-          <h3>📐 Aspect Ratio</h3>
-          <p>Scale dimensions proportionally.</p>
-        </div>
-      </a>
-      <a href="./backup/" class="app-card">
-        <div>
-          <h3>💾 Backup</h3>
-          <p>Export & restore all app data.</p>
-        </div>
-      </a>
-      <a href="./barcode-generator/" class="app-card">
-        <div>
-          <h3>🏷️ Barcode Generator</h3>
-          <p>Generate EAN, UPC, Code 128, Code 39 and IMEI barcodes instantly. Download as image or print.</p>
-        </div>
-      </a>
-      <a href="./barcode-scanner/" class="app-card">
-        <div>
-          <h3>🔖 Barcode Scanner</h3>
-          <p>Scan barcodes online with your camera: EAN, UPC, Code 128 and more. Works in your browser, no app needed.</p>
-        </div>
-      </a>
-      <a href="./base-converter/" class="app-card">
-        <div>
-          <h3>🔢 Base Converter</h3>
-          <p>Convert between binary, hex, octal, decimal instantly. Works offline.</p>
-        </div>
-      </a>
-      <a href="./base64/" class="app-card">
-        <div>
-          <h3>📝 Base64</h3>
-          <p>Encode or decode Base64 strings instantly. Paste or type, no upload, no server involved.</p>
-        </div>
-      </a>
-      <a href="./bet-tracker/" class="app-card">
-        <div>
-          <h3>🏇 Bet Tracker</h3>
-          <p>Parimutuel pool betting.</p>
-        </div>
-      </a>
-      <a href="./big-text/" class="app-card">
-        <div>
-          <h3>📢 Big Text</h3>
-          <p>Huge message across the room.</p>
-        </div>
-      </a>
-      <a href="./bill-splitter/" class="app-card">
-        <div>
-          <h3>💵 Bill Splitter</h3>
-          <p>Add expenses and people, then see who owes whom. Settle up fairly in seconds.</p>
-        </div>
-      </a>
-      <a href="./birthday-tracker/" class="app-card">
-        <div>
-          <h3>🎂 Birthday Tracker</h3>
-          <p>Upcoming birthdays with days-until countdown.</p>
-        </div>
-      </a>
-      <a href="./blood-pressure/" class="app-card">
-        <div>
-          <h3>🩸 Blood Pressure Log</h3>
-          <p>Log readings with automatic classification.</p>
-        </div>
-      </a>
-      <a href="./bmr-tdee/" class="app-card">
-        <div>
-          <h3>🔥 BMR / TDEE</h3>
-          <p>Daily calorie estimate from stats.</p>
-        </div>
-      </a>
-      <a href="./body-weight/" class="app-card">
-        <div>
-          <h3>⚖️ Body Weight Log</h3>
-          <p>Log your weight and track the trend.</p>
-        </div>
-      </a>
-      <a href="./breathing-pacer/" class="app-card">
-        <div>
-          <h3>🫁 Breathing Pacer</h3>
-          <p>Box breathing to calm down.</p>
-        </div>
-      </a>
-      <a href="./business-days/" class="app-card">
-        <div>
-          <h3>📅 Business Days</h3>
-          <p>Add or count working days.</p>
-        </div>
-      </a>
-      <a href="./capacitor-decoder/" class="app-card">
-        <div>
-          <h3>🔩 Capacitor Decoder</h3>
-          <p>Decode capacitor color bands.</p>
-        </div>
-      </a>
-      <a href="./car-maintenance/" class="app-card">
-        <div>
-          <h3>🚗 Car Maintenance</h3>
-          <p>Track oil changes, tyres & more. Never miss a service.</p>
-        </div>
-      </a>
-      <a href="./case-converter/" class="app-card">
-        <div>
-          <h3>🔡 Case Converter</h3>
-          <p>camelCase, snake_case & more.</p>
-        </div>
-      </a>
-      <a href="./char-picker/" class="app-card">
-        <div>
-          <h3>± Character Picker</h3>
-          <p>Copy em dashes, arrows & more.</p>
-        </div>
-      </a>
-      <a href="./chess-clock/" class="app-card">
-        <div>
-          <h3>♟️ Chess Clock / Timer</h3>
-          <p>Online chess clock and chess timer for two players. Tap to end your move and start the opponent's clock. Works offline on phone or desktop.</p>
-        </div>
-      </a>
-      <a href="./chmod-calculator/" class="app-card">
-        <div>
-          <h3>🔒 Chmod Calculator</h3>
-          <p>Unix permissions decoder.</p>
-        </div>
-      </a>
-      <a href="./chord-transposer/" class="app-card">
-        <div>
-          <h3>🎸 Chord Transposer</h3>
-          <p>Transpose chords up or down. Perfect for adapting songs to your vocal range or instrument key.</p>
-        </div>
-      </a>
-      <a href="./color-converter/" class="app-card">
-        <div>
-          <h3>🎨 Color Converter</h3>
-          <p>Convert colors between HEX, RGB, HSL and more. Pick a color or paste any format — instant conversion.</p>
-        </div>
-      </a>
-      <a href="./color-palette/" class="app-card">
-        <div>
-          <h3>🎨 Color Palette</h3>
-          <p>Generate random colors.</p>
-        </div>
-      </a>
-      <a href="./colorblind-simulator/" class="app-card">
-        <div>
-          <h3>👓 Colorblind Simulator</h3>
-          <p>See images as colorblind users do.</p>
-        </div>
-      </a>
-      <a href="./compass/" class="app-card">
-        <div>
-          <h3>🧭 Compass</h3>
-          <p>Device magnetometer.</p>
-        </div>
-      </a>
-      <a href="./compass-logger/" class="app-card">
-        <div>
-          <h3>🧭 Compass Logger</h3>
-          <p>Log compass bearings with notes or record your heading every second. Export to CSV.</p>
-        </div>
-      </a>
-      <a href="./contact-notes/" class="app-card">
-        <div>
-          <h3>👤 Contact Notes</h3>
-          <p>Notes &amp; gift ideas, one card per person.</p>
-        </div>
-      </a>
-      <a href="./contrast-checker/" class="app-card">
-        <div>
-          <h3>🌓 Contrast Checker</h3>
-          <p>WCAG color contrast ratios.</p>
-        </div>
-      </a>
-      <a href="./cost-per-minute/" class="app-card">
-        <div>
-          <h3>⏱️ Cost Per Minute</h3>
-          <p>Convert a salary or hourly rate into cost per minute, hour, day, month and year.</p>
-        </div>
-      </a>
-      <a href="./countdown/" class="app-card">
-        <div>
-          <h3>⏲️ Countdown</h3>
-          <p>Set a date and time, watch the countdown to your event. Adjustable colors and fonts.</p>
-        </div>
-      </a>
-      <a href="./cron-explainer/" class="app-card">
-        <div>
-          <h3>⏰ Cron Explainer</h3>
-          <p>Paste a cron expression and see it decoded into plain English. Perfect for debugging schedules.</p>
-        </div>
-      </a>
-      <a href="./crop-factor/" class="app-card">
-        <div>
-          <h3>📷 Crop Factor</h3>
-          <p>Lens mm → full-frame equivalent.</p>
-        </div>
-      </a>
-      <a href="./csv-json/" class="app-card">
-        <div>
-          <h3>📊 CSV ↔ JSON</h3>
-          <p>Convert both directions.</p>
-        </div>
-      </a>
-      <a href="./data-sync/" class="app-card">
-        <div>
-          <h3>🔄 Data Sync</h3>
-          <p>Sync your tools data between devices, peer-to-peer.</p>
-        </div>
-      </a>
-      <a href="./date-difference/" class="app-card">
-        <div>
-          <h3>📅 Date Difference</h3>
-          <p>Days between dates, ages.</p>
-        </div>
-      </a>
-      <a href="./day-counter/" class="app-card">
-        <div>
-          <h3>📆 Day Counter</h3>
-          <p>Count days between dates or count down to a future date. See total and remaining days instantly.</p>
-        </div>
-      </a>
-      <a href="./dead-pixel/" class="app-card">
-        <div>
-          <h3>🔲 Dead Pixel</h3>
-          <p>Fullscreen display check.</p>
-        </div>
-      </a>
-      <a href="./debt-payoff/" class="app-card">
-        <div>
-          <h3>💰 Debt Payoff Calculator</h3>
-          <p>Payoff date, total interest, extra payments.</p>
-        </div>
-      </a>
-      <a href="./device-status/" class="app-card">
-        <div>
-          <h3>📱 Device Status</h3>
-          <p>Battery, network, hardware.</p>
-        </div>
-      </a>
-      <a href="./dice-roller/" class="app-card">
-        <div>
-          <h3>🎲 Dice Roller</h3>
-          <p>Roll D&D dice with history.</p>
-        </div>
-      </a>
-      <a href="./dinner-picker/" class="app-card">
-        <div>
-          <h3>🍽️ Dinner Picker</h3>
-          <p>Can't decide? Let fate pick from your list.</p>
-        </div>
-      </a>
-      <a href="./doc-scanner/" class="app-card">
-        <div>
-          <h3>📄 Document Scanner</h3>
-          <p>Scan pages with your webcam or phone camera, straighten them and save as a PDF.</p>
-        </div>
-      </a>
-      <a href="./doctor-visits/" class="app-card">
-        <div>
-          <h3>🩺 Doctor Visits</h3>
-          <p>Track regular check-ups and see what's overdue.</p>
-        </div>
-      </a>
-      <a href="./dof-calculator/" class="app-card">
-        <div>
-          <h3>📷 Depth of Field</h3>
-          <p>Near/far focus limits.</p>
-        </div>
-      </a>
-      <a href="./dpi-print/" class="app-card">
-        <div>
-          <h3>🖨️ DPI / Print Size</h3>
-          <p>Pixels + DPI → inches &amp; cm.</p>
-        </div>
-      </a>
-      <a href="./duration-adder/" class="app-card">
-        <div>
-          <h3>⏱️ Duration Adder</h3>
-          <p>Sum up hours and minutes.</p>
-        </div>
-      </a>
-      <a href="./electricity-cost/" class="app-card">
-        <div>
-          <h3>🔌 Electricity Cost</h3>
-          <p>What a device costs to run.</p>
-        </div>
-      </a>
-      <a href="./encrypt/" class="app-card">
-        <div>
-          <h3>🔐 Encrypt & Decrypt Text</h3>
-          <p>Encrypt and decrypt text online with a password (AES-256-GCM). Everything runs in your browser and works offline.</p>
-        </div>
-      </a>
-      <a href="./entropy-calculator/" class="app-card">
-        <div>
-          <h3>🔐 Entropy Calculator</h3>
-          <p>Calculate the Shannon entropy of any text (bits per character and total) and the entropy and crack time of a password. Works offline in your browser.</p>
-        </div>
-      </a>
-      <a href="./event-qr/" class="app-card">
-        <div>
-          <h3>📅 Event QR</h3>
-          <p>Calendar event as QR &amp; .ics file.</p>
-        </div>
-      </a>
-      <a href="./exif-stripper/" class="app-card">
-        <div>
-          <h3>🧹 EXIF Remover</h3>
-          <p>Remove EXIF metadata and GPS location from photos. Files stay on your device, no upload, no tracking.</p>
-        </div>
-      </a>
-      <a href="./expense-log/" class="app-card">
-        <div>
-          <h3>💸 Expense Log</h3>
-          <p>Simple spending logbook with monthly total.</p>
-        </div>
-      </a>
-      <a href="./eyedropper/" class="app-card">
-        <div>
-          <h3>🎨 Eyedropper</h3>
-          <p>Free online eye dropper tool: pick a color from anywhere on your screen and copy the HEX value.</p>
-        </div>
-      </a>
-      <a href="./fasting-timer/" class="app-card">
-        <div>
-          <h3>⏳ Fasting Timer</h3>
-          <p>Start a fast, track elapsed vs goal.</p>
-        </div>
-      </a>
-      <a href="./favicon-generator/" class="app-card">
-        <div>
-          <h3>⭐ Favicon Generator</h3>
-          <p>All favicon sizes from one image.</p>
-        </div>
-      </a>
-      <a href="./financial-planner/" class="app-card">
-        <div>
-          <h3>🏦 Financial Planner</h3>
-          <p>Month-by-month payments, income, and savings with a rolling balance.</p>
-        </div>
-      </a>
-      <a href="./flashcards/" class="app-card">
-        <div>
-          <h3>🃏 Flashcards</h3>
-          <p>Local Q&A decks. Flip, know, again.</p>
-        </div>
-      </a>
-      <a href="./flashlight/" class="app-card">
-        <div>
-          <h3>🔦 Flashlight</h3>
-          <p>Free online flashlight: turn your phone or computer screen into a bright light. Adjust brightness and color; the screen stays awake. Works offline.</p>
-        </div>
-      </a>
-      <a href="./fridge-expiry/" class="app-card">
-        <div>
-          <h3>🧊 Fridge Expiry</h3>
-          <p>Use-by dates, sorted by urgency.</p>
-        </div>
-      </a>
-      <a href="./fuel-log/" class="app-card">
-        <div>
-          <h3>⛽ Fuel Log</h3>
-          <p>Track fill-ups, L/100km and spend.</p>
-        </div>
-      </a>
-      <a href="./gamepad-tester/" class="app-card">
-        <div>
-          <h3>🎮 Gamepad Tester</h3>
-          <p>Test controller buttons & sticks.</p>
-        </div>
-      </a>
-      <a href="./gps-speedometer/" class="app-card">
-        <div>
-          <h3>🚗 GPS Speedometer</h3>
-          <p>Speed from GPS.</p>
-        </div>
-      </a>
-      <a href="./gratitude-journal/" class="app-card">
-        <div>
-          <h3>🙏 Gratitude Journal</h3>
-          <p>Three things you're grateful for today. Daily practice.</p>
-        </div>
-      </a>
-      <a href="./gzip/" class="app-card">
-        <div>
-          <h3>🗜️ Gzip Compress & Decompress</h3>
-          <p>Gzip compress or decompress text and files online, right in your browser. Paste or upload for instant results; nothing is uploaded.</p>
-        </div>
-      </a>
-      <a href="./habit-tracker/" class="app-card">
-        <div>
-          <h3>✅ Habit Tracker</h3>
-          <p>Build daily streaks, one checkbox at a time.</p>
-        </div>
-      </a>
-      <a href="./hash-generator/" class="app-card">
-        <div>
-          <h3>#️⃣ Hash Generator</h3>
-          <p>Compute SHA-256, MD5 and other hashes. Paste text or upload a file — everything stays in your browser.</p>
-        </div>
-      </a>
-      <a href="./headache-log/" class="app-card">
-        <div>
-          <h3>🤕 Headache Log</h3>
-          <p>Track migraines & headaches. Severity, triggers, patterns.</p>
-        </div>
-      </a>
-      <a href="./home-maintenance/" class="app-card">
-        <div>
-          <h3>🏠 Home Maintenance</h3>
-          <p>Track HVAC filter, smoke alarm battery & more.</p>
-        </div>
-      </a>
-      <a href="./html-entities/" class="app-card">
-        <div>
-          <h3>🔣 HTML Entities</h3>
-          <p>Encode & decode &amp;amp; friends.</p>
-        </div>
-      </a>
-      <a href="./iban-validator/" class="app-card">
-        <div>
-          <h3>🏦 IBAN Validator</h3>
-          <p>Check account numbers offline.</p>
-        </div>
-      </a>
-      <a href="./id-expiry/" class="app-card">
-        <div>
-          <h3>🪪 ID Expiry</h3>
-          <p>Passport & licence renewals.</p>
-        </div>
-      </a>
-      <a href="./image-resizer/" class="app-card">
-        <div>
-          <h3>🖼️ Image Resizer</h3>
-          <p>Resize images instantly in your browser. Download as JPEG, PNG or WebP, nothing uploaded to any server.</p>
-        </div>
-      </a>
-      <a href="./image-to-base64/" class="app-card">
-        <div>
-          <h3>🖼️ Image to Base64</h3>
-          <p>Data URIs from any image.</p>
-        </div>
-      </a>
-      <a href="./imei-barcode/" class="app-card">
-        <div>
-          <h3>📱 IMEI Barcode</h3>
-          <p>Turn an IMEI into a barcode: validate the IMEI number and generate a scannable Code 128 barcode instantly. Works offline.</p>
-        </div>
-      </a>
-      <a href="./instrument-tuner/" class="app-card">
-        <div>
-          <h3>🎸 Instrument Tuner</h3>
-          <p>Mic pitch detection.</p>
-        </div>
-      </a>
-      <a href="./interval-timer/" class="app-card">
-        <div>
-          <h3>🏋️ Interval Timer</h3>
-          <p>Work/rest rounds with beeps.</p>
-        </div>
-      </a>
-      <a href="./investment-calculator/" class="app-card">
-        <div>
-          <h3>📈 Investment Calculator</h3>
-          <p>Project investment growth.</p>
-        </div>
-      </a>
-      <a href="./invoice-generator/" class="app-card">
-        <div>
-          <h3>🧾 Invoice Generator</h3>
-          <p>Line items, VAT, Pay by Square QR, reusable templates. Print-ready and XML-exportable.</p>
-        </div>
-      </a>
-      <a href="./json-beautifier/" class="app-card">
-        <div>
-          <h3>{ JSON Formatter</h3>
-          <p>Paste messy JSON, get it formatted with syntax highlighting. Errors highlighted in red. Copy formatted result instantly.</p>
-        </div>
-      </a>
-      <a href="./jwt-decoder/" class="app-card">
-        <div>
-          <h3>🔐 JWT Decoder</h3>
-          <p>Decode JWT tokens locally. The token never leaves your browser — inspect headers and payloads safely.</p>
-        </div>
-      </a>
-      <a href="./keep-awake/" class="app-card">
-        <div>
-          <h3>☕ Keep Screen Awake</h3>
-          <p>Keep your screen awake without installing anything: one tap stops your phone or computer from sleeping or dimming. Free, works offline.</p>
-        </div>
-      </a>
-      <a href="./keycode-viewer/" class="app-card">
-        <div>
-          <h3>⌨️ Keycode Viewer</h3>
-          <p>See JavaScript key event values, keycodes and key code tester. Press any key to view keycode, code and which values.</p>
-        </div>
-      </a>
-      <a href="./keystroke-test/" class="app-card">
-        <div>
-          <h3>⌨️ Keystroke Test</h3>
-          <p>Test keyboard speed and ghosting. Measure keys per second and per minute. Instant results, no calibration needed.</p>
-        </div>
-      </a>
-      <a href="./kitchen-timer/" class="app-card">
-        <div>
-          <h3>🍲 Kitchen Timer</h3>
-          <p>Up to 4 named countdowns.</p>
-        </div>
-      </a>
-      <a href="./knot-guide/" class="app-card">
-        <div>
-          <h3>🪢 Knot Guide</h3>
-          <p>Essential knot reference.</p>
-        </div>
-      </a>
-      <a href="./led-resistor/" class="app-card">
-        <div>
-          <h3>💡 LED Resistor</h3>
-          <p>Calculate resistor value for LED circuits. Free LED resistor calculator — works offline in your browser.</p>
-        </div>
-      </a>
-      <a href="./light-detector/" class="app-card">
-        <div>
-          <h3>💡 Light Meter (Lux)</h3>
-          <p>Free online light meter: measure ambient light in lux with your device's light sensor. Useful for photography, plants, lighting design and accessibility.</p>
-        </div>
-      </a>
-      <a href="./line-tools/" class="app-card">
-        <div>
-          <h3>📑 Line Tools</h3>
-          <p>Sort, dedupe & shuffle lines.</p>
-        </div>
-      </a>
-      <a href="./live-pad/" class="app-card">
-        <div>
-          <h3>📝 Live Pad</h3>
-          <p>Shared real-time scratchpad. Both can type. Vanishes when you close the tab.</p>
-        </div>
-      </a>
-      <a href="./loan-calculator/" class="app-card">
-        <div>
-          <h3>💳 Loan Calculator</h3>
-          <p>Calculate loan payments.</p>
-        </div>
-      </a>
-      <a href="./lorem-ipsum/" class="app-card">
-        <div>
-          <h3>📃 Lorem Ipsum</h3>
-          <p>Placeholder text on demand.</p>
-        </div>
-      </a>
-      <a href="./maidenhead/" class="app-card">
-        <div>
-          <h3>📡 Maidenhead / QTH</h3>
-          <p>Lat/lon ⇄ grid square.</p>
-        </div>
-      </a>
-      <a href="./medicine-tracker/" class="app-card">
-        <div>
-          <h3>💊 Medicine Tracker</h3>
-          <p>Did I take my pills? One tap — records the time.</p>
-        </div>
-      </a>
-      <a href="./meditation-timer/" class="app-card">
-        <div>
-          <h3>🧘 Meditation Timer</h3>
-          <p>Free online meditation timer with optional breathing cues and a soft bell at the end.</p>
-        </div>
-      </a>
-      <a href="./meeting-cost/" class="app-card">
-        <div>
-          <h3>💸 Meeting Cost</h3>
-          <p>Live ticking cost of a meeting.</p>
-        </div>
-      </a>
-      <a href="./meeting-overlap/" class="app-card">
-        <div>
-          <h3>🌍 Meeting Overlap</h3>
-          <p>When can everyone talk?</p>
-        </div>
-      </a>
-      <a href="./metronome/" class="app-card">
-        <div>
-          <h3>🎵 Metronome</h3>
-          <p>Free online metronome with adjustable BPM and tap tempo. No ads, no sign-up, works offline.</p>
-        </div>
-      </a>
-      <a href="./mileage-log/" class="app-card">
-        <div>
-          <h3>🚗 Mileage Log</h3>
-          <p>Trips for tax or expenses.</p>
-        </div>
-      </a>
-      <a href="./mirror/" class="app-card">
-        <div>
-          <h3>🪞 Mirror</h3>
-          <p>Free online mirror: use your front camera or webcam as a mirror. Switch to a true (non-reversing) mirror to see yourself as others do. Nothing is recorded or uploaded.</p>
-        </div>
-      </a>
-      <a href="./mood-tracker/" class="app-card">
-        <div>
-          <h3>😊 Mood Tracker</h3>
-          <p>Daily mood check-in with 30-day history.</p>
-        </div>
-      </a>
-      <a href="./moon-phase/" class="app-card">
-        <div>
-          <h3>🌙 Moon Phase</h3>
-          <p>Today's moon and what's next.</p>
-        </div>
-      </a>
-      <a href="./morse-code/" class="app-card">
-        <div>
-          <h3>📡 Morse Code</h3>
-          <p>Encode/decode morse.</p>
-        </div>
-      </a>
-      <a href="./nfc-tags/" class="app-card">
-        <div>
-          <h3>🏷️ NFC Tags</h3>
-          <p>Read and write NFC tags (NDEF) from your browser with Web NFC.</p>
-        </div>
-      </a>
-      <a href="./noise-generator/" class="app-card">
-        <div>
-          <h3>🌊 Tone Generator</h3>
-          <p>Generate sine wave tones or white noise online. Adjust frequency and volume, play instantly. Useful for hearing tests, audio work, meditation.</p>
-        </div>
-      </a>
-      <a href="./note-taker/" class="app-card">
-        <div>
-          <h3>📝 Note Taker</h3>
-          <p>Write Markdown notes with live preview. Your notes stay on your device, no server, no signup.</p>
-        </div>
-      </a>
-      <a href="./number-to-words/" class="app-card">
-        <div>
-          <h3>🔟 Number to Words</h3>
-          <p>Write any number in words instantly: 114 is one hundred fourteen. Handles decimals, thousands separators and Indian lakh/crore grouping like 40,37,12,100.</p>
-        </div>
-      </a>
-      <a href="./one-rep-max/" class="app-card">
-        <div>
-          <h3>🏋️ One Rep Max (1RM)</h3>
-          <p>One rep max calculator: enter the weight and reps you lifted to estimate your 1RM.</p>
-        </div>
-      </a>
-      <a href="./p2p-chat/" class="app-card">
-        <div>
-          <h3>💬 P2P Chat</h3>
-          <p>Chat privately peer-to-peer with files. No server, no account — everything stays between you and them.</p>
-        </div>
-      </a>
-      <a href="./p2p-file-transfer/" class="app-card">
-        <div>
-          <h3>📁 P2P File Transfer</h3>
-          <p>Send files device to device. No server, no account, no size limit.</p>
-        </div>
-      </a>
-      <a href="./pace-calculator/" class="app-card">
-        <div>
-          <h3>🏃 Pace Calculator</h3>
-          <p>Distance, time & running pace.</p>
-        </div>
-      </a>
-      <a href="./packing-list/" class="app-card">
-        <div>
-          <h3>🧳 Packing List</h3>
-          <p>Trip checklist with presets for camping, beach & more.</p>
-        </div>
-      </a>
-      <a href="./paint-estimator/" class="app-card">
-        <div>
-          <h3>🎨 Paint / Flooring</h3>
-          <p>Room size → materials to buy.</p>
-        </div>
-      </a>
-      <a href="./parking-meter/" class="app-card">
-        <div>
-          <h3>🅿️ Parking Cost Calculator</h3>
-          <p>Parking cost calculator and parking meter timer: enter the rate and time to see what your parking will cost, or how long your budget lasts. Free, works offline.</p>
-        </div>
-      </a>
-      <a href="./parking-spot/" class="app-card">
-        <div>
-          <h3>🚗 Parking Spot</h3>
-          <p>Remember where you parked with label, GPS & photos.</p>
-        </div>
-      </a>
-      <a href="./password-generator/" class="app-card">
-        <div>
-          <h3>🔑 Password Generator</h3>
-          <p>Generate strong random passwords. Choose length and character sets instantly. Copy with one click.</p>
-        </div>
-      </a>
-      <a href="./pdf-merger/" class="app-card">
-        <div>
-          <h3>📄 PDF Merger</h3>
-          <p>Combine PDFs, fully offline.</p>
-        </div>
-      </a>
-      <a href="./pdf-tiler/" class="app-card">
-        <div>
-          <h3>🔲 PDF Tiler</h3>
-          <p>Tile a PDF page for printing — auto-crops and fits as many copies as possible on A4.</p>
-        </div>
-      </a>
-      <a href="./pedometer/" class="app-card">
-        <div>
-          <h3>👟 Pedometer</h3>
-          <p>Step counter.</p>
-        </div>
-      </a>
-      <a href="./percentage-calculator/" class="app-card">
-        <div>
-          <h3>％ Percentage</h3>
-          <p>The three % questions.</p>
-        </div>
-      </a>
-      <a href="./period-tracker/" class="app-card">
-        <div>
-          <h3>🌸 Period Tracker</h3>
-          <p>Private cycle tracking — data stays on your device.</p>
-        </div>
-      </a>
-      <a href="./pet-care/" class="app-card">
-        <div>
-          <h3>🐾 Pet Care</h3>
-          <p>Vaccines, flea, deworming &amp; weight.</p>
-        </div>
-      </a>
-      <a href="./phonetic-alphabet/" class="app-card">
-        <div>
-          <h3>🎤 Phonetic Alphabet (Alpha Bravo Charlie)</h3>
-          <p>The NATO phonetic (spelling/telephone) alphabet: A for Alpha, B for Bravo, C for Charlie … Z for Zulu. Look up any letter or convert text to code words.</p>
-        </div>
-      </a>
-      <a href="./plant-watering/" class="app-card">
-        <div>
-          <h3>🪴 Plant Watering</h3>
-          <p>Track when plants need water, log with one tap.</p>
-        </div>
-      </a>
-      <a href="./pomodoro/" class="app-card">
-        <div>
-          <h3>🍅 Pomodoro</h3>
-          <p>25 minutes of focus, then 5 minutes rest. Build sessions to keep going longer.</p>
-        </div>
-      </a>
-      <a href="./qr-code/" class="app-card">
-        <div>
-          <h3>⬜ QR Code Generator</h3>
-          <p>Create QR codes for text, URLs, Wi-Fi and more. No signup, no tracking — download instantly.</p>
-        </div>
-      </a>
-      <a href="./qr-scanner/" class="app-card">
-        <div>
-          <h3>📷 QR Code Scanner</h3>
-          <p>Scan QR codes online with your webcam or phone camera. Point and decode instantly, no app needed.</p>
-        </div>
-      </a>
-      <a href="./random-picker/" class="app-card">
-        <div>
-          <h3>🎯 Random Picker</h3>
-          <p>Pick a name from a list.</p>
-        </div>
-      </a>
-      <a href="./reaction-time/" class="app-card">
-        <div>
-          <h3>⚡ Reaction Time</h3>
-          <p>Test your reflexes.</p>
-        </div>
-      </a>
-      <a href="./readability/" class="app-card">
-        <div>
-          <h3>📖 Readability Checker</h3>
-          <p>Free readability checker: paste text to get the Flesch reading ease score and grade (reading) level instantly.</p>
-        </div>
-      </a>
-      <a href="./reading-log/" class="app-card">
-        <div>
-          <h3>📚 Reading Log</h3>
-          <p>Track books you've read, are reading, or want to read.</p>
-        </div>
-      </a>
-      <a href="./recipe-box/" class="app-card">
-        <div>
-          <h3>🍳 Recipe Box</h3>
-          <p>Save your favourite recipes. No clutter, no ads.</p>
-        </div>
-      </a>
-      <a href="./recipe-scaler/" class="app-card">
-        <div>
-          <h3>👨‍🍳 Recipe Scaler</h3>
-          <p>Scale recipe ingredients by servings or weight.</p>
-        </div>
-      </a>
-      <a href="./regex-tester/" class="app-card">
-        <div>
-          <h3>🔍 Regex Tester</h3>
-          <p>Test JavaScript regular expressions with live match highlighting. Test against sample text instantly, see all matches and groups.</p>
-        </div>
-      </a>
-      <a href="./rent-vs-buy/" class="app-card">
-        <div>
-          <h3>🏠 Rent vs Buy</h3>
-          <p>Rough break-even over N years.</p>
-        </div>
-      </a>
-      <a href="./resistor-decoder/" class="app-card">
-        <div>
-          <h3>⚡ Resistor Decoder</h3>
-          <p>Decode resistor color bands.</p>
-        </div>
-      </a>
-      <a href="./roman-numerals/" class="app-card">
-        <div>
-          <h3>🏛️ Roman Numerals</h3>
-          <p>MCMXC ⇄ 1990.</p>
-        </div>
-      </a>
-      <a href="./schengen/" class="app-card">
-        <div>
-          <h3>✈️ Schengen 90/180 Calculator</h3>
-          <p>Schengen 90/180 day calculator: log your trips and see days used and days left in the rolling 180-day window. Covers the 90-day rule for Spain, France, Italy and every Schengen country.</p>
-        </div>
-      </a>
-      <a href="./scoreboard/" class="app-card">
-        <div>
-          <h3>🏆 Scoreboard</h3>
-          <p>Keep score on game night.</p>
-        </div>
-      </a>
-      <a href="./screen-recorder/" class="app-card">
-        <div>
-          <h3>🎥 Screen Recorder</h3>
-          <p>Screencasts: screen, voice & webcam.</p>
-        </div>
-      </a>
-      <a href="./seismometer/" class="app-card">
-        <div>
-          <h3>📈 Seismometer</h3>
-          <p>Vibration trace from sensors.</p>
-        </div>
-      </a>
-      <a href="./shared-sketchpad/" class="app-card">
-        <div>
-          <h3>✍️ Shared Sketchpad</h3>
-          <p>Draw together over WebRTC — everyone sees the same sketch in real-time.</p>
-        </div>
-      </a>
-      <a href="./shared-timer/" class="app-card">
-        <div>
-          <h3>⏱️ Shared Timer</h3>
-          <p>Start a countdown and share it — everyone sees the same timer in real-time.</p>
-        </div>
-      </a>
-      <a href="./shopping-list/" class="app-card">
-        <div>
-          <h3>🛒 Shopping List</h3>
-          <p>Add items, check them off as you shop. Saves automatically to your device. Works offline.</p>
-        </div>
-      </a>
-      <a href="./signal-mirror/" class="app-card">
-        <div>
-          <h3>🪞 Signal Mirror</h3>
-          <p>Emergency signaling.</p>
-        </div>
-      </a>
-      <a href="./size-converter/" class="app-card">
-        <div>
-          <h3>👕 Size Converter</h3>
-          <p>EU, US & UK clothing sizes.</p>
-        </div>
-      </a>
-      <a href="./sketch-pad/" class="app-card">
-        <div>
-          <h3>✍️ Sketch Pad</h3>
-          <p>Draw sketches and signatures with mouse, finger or stylus. Download as PNG, no signup, no ads.</p>
-        </div>
-      </a>
-      <a href="./sleep-calculator/" class="app-card">
-        <div>
-          <h3>😴 Sleep Calculator</h3>
-          <p>Bedtimes by sleep cycles.</p>
-        </div>
-      </a>
-      <a href="./sleep-log/" class="app-card">
-        <div>
-          <h3>🛌 Sleep Log</h3>
-          <p>Log each night, track your weekly average.</p>
-        </div>
-      </a>
-      <a href="./slug-cleaner/" class="app-card">
-        <div>
-          <h3>🔗 Slug Cleaner</h3>
-          <p>Title → url-friendly-slug.</p>
-        </div>
-      </a>
-      <a href="./sound-meter/" class="app-card">
-        <div>
-          <h3>🎚️ Sound Meter</h3>
-          <p>Free online sound level meter: measure decibels (dB) with your microphone. Live VU-style level bar with peak and average dB. Works offline.</p>
-        </div>
-      </a>
-      <a href="./speaker-test/" class="app-card">
-        <div>
-          <h3>🔊 Speaker Test</h3>
-          <p>Left, right & sweep.</p>
-        </div>
-      </a>
-      <a href="./speaking-clock/" class="app-card">
-        <div>
-          <h3>⏰ Speaking Clock</h3>
-          <p>Browser announces time.</p>
-        </div>
-      </a>
-      <a href="./speech-to-text/" class="app-card">
-        <div>
-          <h3>🎤 Speech to Text</h3>
-          <p>Speak and let your browser transcribe it to text. Works in most browsers on most devices.</p>
-        </div>
-      </a>
-      <a href="./speed-reader/" class="app-card">
-        <div>
-          <h3>👁️ Speed Reader</h3>
-          <p>Speed reading website: paste text, set your reading speed (WPM) and read one word at a time. Practice speed reading for free, offline.</p>
-        </div>
-      </a>
-      <a href="./spirit-level/" class="app-card">
-        <div>
-          <h3>⚖️ Spirit Level</h3>
-          <p>Check if surface is level.</p>
-        </div>
-      </a>
-      <a href="./sql-formatter/" class="app-card">
-        <div>
-          <h3>🗃️ SQL Formatter</h3>
-          <p>Pretty-print SQL as you paste.</p>
-        </div>
-      </a>
-      <a href="./ssid-generator/" class="app-card">
-        <div>
-          <h3>📶 SSID Generator</h3>
-          <p>Generate random SSID names for your Wi-Fi network.</p>
-        </div>
-      </a>
-      <a href="./stopwatch/" class="app-card">
-        <div>
-          <h3>⏱️ Stopwatch</h3>
-          <p>Free online stopwatch with lap times. Start, pause, reset and review laps. Keeps working offline, perfect for workouts and timing.</p>
-        </div>
-      </a>
-      <a href="./subnet-calculator/" class="app-card">
-        <div>
-          <h3>🌐 Subnet Calculator</h3>
-          <p>CIDR to ranges & masks.</p>
-        </div>
-      </a>
-      <a href="./subscription-tracker/" class="app-card">
-        <div>
-          <h3>💳 Subscription Tracker</h3>
-          <p>Know what you're paying for. Monthly total, renewal dates.</p>
-        </div>
-      </a>
-      <a href="./sunrise-sunset/" class="app-card">
-        <div>
-          <h3>🌅 Sunrise & Sunset</h3>
-          <p>Sun times and golden hour.</p>
-        </div>
-      </a>
-      <a href="./swim-bike-pace/" class="app-card">
-        <div>
-          <h3>🏊 Swim & Bike Pace</h3>
-          <p>Pace /100m or km/h.</p>
-        </div>
-      </a>
-      <a href="./tally-counter/" class="app-card">
-        <div>
-          <h3>🔢 Tally Counter</h3>
-          <p>Count anything, one tap at a time.</p>
-        </div>
-      </a>
-      <a href="./tap-bpm/" class="app-card">
-        <div>
-          <h3>🥁 Tap Tempo / BPM</h3>
-          <p>Tap tempo online: tap the spacebar or screen to find the BPM (beats per minute) of any song. The tempo updates live as you tap.</p>
-        </div>
-      </a>
-      <a href="./teleprompter/" class="app-card">
-        <div>
-          <h3>📜 Teleprompter</h3>
-          <p>Paste a script and read along as it scrolls. Adjust speed and text size for your pace.</p>
-        </div>
-      </a>
-      <a href="./text-diff/" class="app-card">
-        <div>
-          <h3>🔀 Text Diff</h3>
-          <p>Compare two texts or strings online and see the differences line by line, with color-coded additions and removals.</p>
-        </div>
-      </a>
-      <a href="./text-to-speech/" class="app-card">
-        <div>
-          <h3>🔊 Text to Speech</h3>
-          <p>Paste text and hear it read aloud. Adjust speed and voice. Useful for proofreading or accessibility.</p>
-        </div>
-      </a>
-      <a href="./timezone/" class="app-card">
-        <div>
-          <h3>⏰ Timezone Converter</h3>
-          <p>Convert meeting times, flight times and deadlines between timezones instantly. See time in both zones side-by-side.</p>
-        </div>
-      </a>
-      <a href="./tip-tax/" class="app-card">
-        <div>
-          <h3>💵 Tip & Tax Calculator</h3>
-          <p>Tip calculator with tax: add tip and sales tax to a bill and split it per person instantly. Free, works offline.</p>
-        </div>
-      </a>
-      <a href="./tone-generator/" class="app-card">
-        <div>
-          <h3>🎼 Tone Generator</h3>
-          <p>Free online tone generator: play a sine, square, triangle or sawtooth wave at any frequency in Hz. Use it as a test tone, pitch or signal generator. Works offline.</p>
-        </div>
-      </a>
-      <a href="./totp/" class="app-card">
-        <div>
-          <h3>🔐 TOTP Codes</h3>
-          <p>2FA codes from a secret, offline.</p>
-        </div>
-      </a>
-      <a href="./touch-tester/" class="app-card">
-        <div>
-          <h3>👆 Touch Tester</h3>
-          <p>Multi-touch visualizer.</p>
-        </div>
-      </a>
-      <a href="./transfer-time/" class="app-card">
-        <div>
-          <h3>📡 Transfer Time Calculator</h3>
-          <p>Data transfer time calculator: enter a file size and your connection speed to see how long an upload, download or file copy will take.</p>
-        </div>
-      </a>
-      <a href="./typing-test/" class="app-card">
-        <div>
-          <h3>⌨️ Typing Test</h3>
-          <p>Measure typing speed (WPM) and accuracy in real-time. Results show your performance — compare sessions to track improvement.</p>
-        </div>
-      </a>
-      <a href="./unicode-inspector/" class="app-card">
-        <div>
-          <h3>🕵️ Unicode Inspector</h3>
-          <p>Find illegal, invisible and non-printable characters in text: zero-width spaces, non-ASCII and hidden Unicode. Paste text to see every code point.</p>
-        </div>
-      </a>
-      <a href="./unit-converter/" class="app-card">
-        <div>
-          <h3>📏 Unit Converter</h3>
-          <p>Convert length, weight, temperature, volume and more instantly. Switch between metric and imperial, no refresh needed.</p>
-        </div>
-      </a>
-      <a href="./unit-price/" class="app-card">
-        <div>
-          <h3>⚖️ Unit Price</h3>
-          <p>Which package is the better deal?</p>
-        </div>
-      </a>
-      <a href="./unix-timestamp/" class="app-card">
-        <div>
-          <h3>⏱️ Unix Timestamp Converter</h3>
-          <p>Convert Unix timestamps to human dates and back instantly and offline.</p>
-        </div>
-      </a>
-      <a href="./url-parser/" class="app-card">
-        <div>
-          <h3>🔗 URL Parser</h3>
-          <p>Break URLs into parts.</p>
-        </div>
-      </a>
-      <a href="./user-agent-parser/" class="app-card">
-        <div>
-          <h3>🌐 User-Agent Parser</h3>
-          <p>Browser, OS &amp; device from a UA string.</p>
-        </div>
-      </a>
-      <a href="./uuid-generator/" class="app-card">
-        <div>
-          <h3>🔑 Random UUID Generator</h3>
-          <p>Generate random UUIDs (v4) instantly and copy them with one click. Generated in your browser, nothing sent to a server.</p>
-        </div>
-      </a>
-      <a href="./vaccination-tracker/" class="app-card">
-        <div>
-          <h3>💉 Vaccination Tracker</h3>
-          <p>Track all your vaccinations with flexible time intervals. Set reminders in days, months or years — completely private, works offline.</p>
-        </div>
-      </a>
-      <a href="./vcard-qr/" class="app-card">
-        <div>
-          <h3>👤 Contact QR</h3>
-          <p>Share contact details as a QR.</p>
-        </div>
-      </a>
-      <a href="./voice-recorder/" class="app-card">
-        <div>
-          <h3>🎙️ Voice Recorder</h3>
-          <p>Free online voice and audio recorder: record from your microphone and download the clip. No sign-up, no limits, nothing uploaded.</p>
-        </div>
-      </a>
-      <a href="./voltage-divider/" class="app-card">
-        <div>
-          <h3>⚡ Voltage Divider</h3>
-          <p>Calculate output voltage.</p>
-        </div>
-      </a>
-      <a href="./warranty-tracker/" class="app-card">
-        <div>
-          <h3>🛡️ Warranty Tracker</h3>
-          <p>Warranty tracking without a spreadsheet: list items with purchase dates and see which warranties expire soon. Free, no account, works offline.</p>
-        </div>
-      </a>
-      <a href="./water-reminder/" class="app-card">
-        <div>
-          <h3>💧 Water Reminder</h3>
-          <p>Track daily glasses of water, resets at midnight.</p>
-        </div>
-      </a>
-      <a href="./where-am-i/" class="app-card">
-        <div>
-          <h3>📍 Where Am I</h3>
-          <p>Find your GPS coordinates and current location. Get my coordinates and see where am I — free, no signup, works in browser.</p>
-        </div>
-      </a>
-      <a href="./wifi-qr/" class="app-card">
-        <div>
-          <h3>📶 WiFi QR Code Generator</h3>
-          <p>Generate a QR code for your Wi-Fi network. Share with guests — they scan to connect instantly. With or without password.</p>
-        </div>
-      </a>
-      <a href="./wishlist/" class="app-card">
-        <div>
-          <h3>✨ Wishlist</h3>
-          <p>Things you want, optional prices.</p>
-        </div>
-      </a>
-      <a href="./word-counter/" class="app-card">
-        <div>
-          <h3>🔤 Word Counter</h3>
-          <p>Count words, characters and reading time in real-time. Results update as you type. Fully private.</p>
-        </div>
-      </a>
-      <a href="./work-hours/" class="app-card">
-        <div>
-          <h3>⏱️ Work Hours</h3>
-          <p>Clock in/out, weekly total.</p>
-        </div>
-      </a>
-      <a href="./workout-log/" class="app-card">
-        <div>
-          <h3>🏋️ Workout Log</h3>
-          <p>Log exercises, sets & reps. No coaching, no plans.</p>
-        </div>
-      </a>
-      <a href="./world-clock/" class="app-card">
-        <div>
-          <h3>🌍 World Clock</h3>
-          <p>Save timezones and see current time everywhere at once. Stays synced to now.</p>
-        </div>
-      </a>
-      <a href="./yaml-json/" class="app-card">
-        <div>
-          <h3>🔄 YAML ⇄ JSON</h3>
-          <p>Convert either way, instantly.</p>
-        </div>
-      </a>
+      <div class="app-card" data-href="./ascii-table/">
+        <h3><a href="./ascii-table/">📝 ASCII Table</a></h3>
+        <p>Full ASCII table with decimal, hex, octal, binary and character codes. Search and copy instantly.</p>
+      </div>
+      <div class="app-card" data-href="./aspect-ratio/">
+        <h3><a href="./aspect-ratio/">📐 Aspect Ratio</a></h3>
+        <p>Scale dimensions proportionally.</p>
+      </div>
+      <div class="app-card" data-href="./backup/">
+        <h3><a href="./backup/">💾 Backup</a></h3>
+        <p>Export & restore all app data.</p>
+      </div>
+      <div class="app-card" data-href="./barcode-generator/">
+        <h3><a href="./barcode-generator/">🏷️ Barcode Generator</a></h3>
+        <p>Generate EAN, UPC, Code 128, Code 39 and IMEI barcodes instantly. Download as image or print.</p>
+      </div>
+      <div class="app-card" data-href="./barcode-scanner/">
+        <h3><a href="./barcode-scanner/">🔖 Barcode Scanner</a></h3>
+        <p>Scan barcodes online with your camera: EAN, UPC, Code 128 and more. Works in your browser, no app needed.</p>
+      </div>
+      <div class="app-card" data-href="./base-converter/">
+        <h3><a href="./base-converter/">🔢 Base Converter</a></h3>
+        <p>Convert between binary, hex, octal, decimal instantly. Works offline.</p>
+      </div>
+      <div class="app-card" data-href="./base64/">
+        <h3><a href="./base64/">📝 Base64</a></h3>
+        <p>Encode or decode Base64 strings instantly. Paste or type, no upload, no server involved.</p>
+      </div>
+      <div class="app-card" data-href="./bet-tracker/">
+        <h3><a href="./bet-tracker/">🏇 Bet Tracker</a></h3>
+        <p>Parimutuel pool betting.</p>
+      </div>
+      <div class="app-card" data-href="./big-text/">
+        <h3><a href="./big-text/">📢 Big Text</a></h3>
+        <p>Huge message across the room.</p>
+      </div>
+      <div class="app-card" data-href="./bill-splitter/">
+        <h3><a href="./bill-splitter/">💵 Bill Splitter</a></h3>
+        <p>Add expenses and people, then see who owes whom. Settle up fairly in seconds.</p>
+      </div>
+      <div class="app-card" data-href="./birthday-tracker/">
+        <h3><a href="./birthday-tracker/">🎂 Birthday Tracker</a></h3>
+        <p>Upcoming birthdays with days-until countdown.</p>
+      </div>
+      <div class="app-card" data-href="./blood-pressure/">
+        <h3><a href="./blood-pressure/">🩸 Blood Pressure Log</a></h3>
+        <p>Log readings with automatic classification.</p>
+      </div>
+      <div class="app-card" data-href="./bmr-tdee/">
+        <h3><a href="./bmr-tdee/">🔥 BMR / TDEE</a></h3>
+        <p>Daily calorie estimate from stats.</p>
+      </div>
+      <div class="app-card" data-href="./body-weight/">
+        <h3><a href="./body-weight/">⚖️ Body Weight Log</a></h3>
+        <p>Log your weight and track the trend.</p>
+      </div>
+      <div class="app-card" data-href="./breathing-pacer/">
+        <h3><a href="./breathing-pacer/">🫁 Breathing Pacer</a></h3>
+        <p>Box breathing to calm down.</p>
+      </div>
+      <div class="app-card" data-href="./business-days/">
+        <h3><a href="./business-days/">📅 Business Days</a></h3>
+        <p>Add or count working days.</p>
+      </div>
+      <div class="app-card" data-href="./capacitor-decoder/">
+        <h3><a href="./capacitor-decoder/">🔩 Capacitor Decoder</a></h3>
+        <p>Decode capacitor color bands.</p>
+      </div>
+      <div class="app-card" data-href="./car-maintenance/">
+        <h3><a href="./car-maintenance/">🚗 Car Maintenance</a></h3>
+        <p>Track oil changes, tyres & more. Never miss a service.</p>
+      </div>
+      <div class="app-card" data-href="./case-converter/">
+        <h3><a href="./case-converter/">🔡 Case Converter</a></h3>
+        <p>camelCase, snake_case & more.</p>
+      </div>
+      <div class="app-card" data-href="./char-picker/">
+        <h3><a href="./char-picker/">± Character Picker</a></h3>
+        <p>Copy em dashes, arrows & more.</p>
+      </div>
+      <div class="app-card" data-href="./chess-clock/">
+        <h3><a href="./chess-clock/">♟️ Chess Clock / Timer</a></h3>
+        <p>Online chess clock and chess timer for two players. Tap to end your move and start the opponent's clock. Works offline on phone or desktop.</p>
+      </div>
+      <div class="app-card" data-href="./chmod-calculator/">
+        <h3><a href="./chmod-calculator/">🔒 Chmod Calculator</a></h3>
+        <p>Unix permissions decoder.</p>
+      </div>
+      <div class="app-card" data-href="./chord-transposer/">
+        <h3><a href="./chord-transposer/">🎸 Chord Transposer</a></h3>
+        <p>Transpose chords up or down. Perfect for adapting songs to your vocal range or instrument key.</p>
+      </div>
+      <div class="app-card" data-href="./color-converter/">
+        <h3><a href="./color-converter/">🎨 Color Converter</a></h3>
+        <p>Convert colors between HEX, RGB, HSL and more. Pick a color or paste any format — instant conversion.</p>
+      </div>
+      <div class="app-card" data-href="./color-palette/">
+        <h3><a href="./color-palette/">🎨 Color Palette</a></h3>
+        <p>Generate random colors.</p>
+      </div>
+      <div class="app-card" data-href="./colorblind-simulator/">
+        <h3><a href="./colorblind-simulator/">👓 Colorblind Simulator</a></h3>
+        <p>See images as colorblind users do.</p>
+      </div>
+      <div class="app-card" data-href="./compass/">
+        <h3><a href="./compass/">🧭 Compass</a></h3>
+        <p>Device magnetometer.</p>
+      </div>
+      <div class="app-card" data-href="./compass-logger/">
+        <h3><a href="./compass-logger/">🧭 Compass Logger</a></h3>
+        <p>Log compass bearings with notes or record your heading every second. Export to CSV.</p>
+      </div>
+      <div class="app-card" data-href="./contact-notes/">
+        <h3><a href="./contact-notes/">👤 Contact Notes</a></h3>
+        <p>Notes &amp; gift ideas, one card per person.</p>
+      </div>
+      <div class="app-card" data-href="./contrast-checker/">
+        <h3><a href="./contrast-checker/">🌓 Contrast Checker</a></h3>
+        <p>WCAG color contrast ratios.</p>
+      </div>
+      <div class="app-card" data-href="./cost-per-minute/">
+        <h3><a href="./cost-per-minute/">⏱️ Cost Per Minute</a></h3>
+        <p>Convert a salary or hourly rate into cost per minute, hour, day, month and year.</p>
+      </div>
+      <div class="app-card" data-href="./countdown/">
+        <h3><a href="./countdown/">⏲️ Countdown</a></h3>
+        <p>Set a date and time, watch the countdown to your event. Adjustable colors and fonts.</p>
+      </div>
+      <div class="app-card" data-href="./cron-explainer/">
+        <h3><a href="./cron-explainer/">⏰ Cron Explainer</a></h3>
+        <p>Paste a cron expression and see it decoded into plain English. Perfect for debugging schedules.</p>
+      </div>
+      <div class="app-card" data-href="./crop-factor/">
+        <h3><a href="./crop-factor/">📷 Crop Factor</a></h3>
+        <p>Lens mm → full-frame equivalent.</p>
+      </div>
+      <div class="app-card" data-href="./csv-json/">
+        <h3><a href="./csv-json/">📊 CSV ↔ JSON</a></h3>
+        <p>Convert both directions.</p>
+      </div>
+      <div class="app-card" data-href="./data-sync/">
+        <h3><a href="./data-sync/">🔄 Data Sync</a></h3>
+        <p>Sync your tools data between devices, peer-to-peer.</p>
+      </div>
+      <div class="app-card" data-href="./date-difference/">
+        <h3><a href="./date-difference/">📅 Date Difference</a></h3>
+        <p>Days between dates, ages.</p>
+      </div>
+      <div class="app-card" data-href="./day-counter/">
+        <h3><a href="./day-counter/">📆 Day Counter</a></h3>
+        <p>Count days between dates or count down to a future date. See total and remaining days instantly.</p>
+      </div>
+      <div class="app-card" data-href="./dead-pixel/">
+        <h3><a href="./dead-pixel/">🔲 Dead Pixel</a></h3>
+        <p>Fullscreen display check.</p>
+      </div>
+      <div class="app-card" data-href="./debt-payoff/">
+        <h3><a href="./debt-payoff/">💰 Debt Payoff Calculator</a></h3>
+        <p>Payoff date, total interest, extra payments.</p>
+      </div>
+      <div class="app-card" data-href="./device-status/">
+        <h3><a href="./device-status/">📱 Device Status</a></h3>
+        <p>Battery, network, hardware.</p>
+      </div>
+      <div class="app-card" data-href="./dice-roller/">
+        <h3><a href="./dice-roller/">🎲 Dice Roller</a></h3>
+        <p>Roll D&D dice with history.</p>
+      </div>
+      <div class="app-card" data-href="./dinner-picker/">
+        <h3><a href="./dinner-picker/">🍽️ Dinner Picker</a></h3>
+        <p>Can't decide? Let fate pick from your list.</p>
+      </div>
+      <div class="app-card" data-href="./doc-scanner/">
+        <h3><a href="./doc-scanner/">📄 Document Scanner</a></h3>
+        <p>Scan pages with your webcam or phone camera, straighten them and save as a PDF.</p>
+      </div>
+      <div class="app-card" data-href="./doctor-visits/">
+        <h3><a href="./doctor-visits/">🩺 Doctor Visits</a></h3>
+        <p>Track regular check-ups and see what's overdue.</p>
+      </div>
+      <div class="app-card" data-href="./dof-calculator/">
+        <h3><a href="./dof-calculator/">📷 Depth of Field</a></h3>
+        <p>Near/far focus limits.</p>
+      </div>
+      <div class="app-card" data-href="./dpi-print/">
+        <h3><a href="./dpi-print/">🖨️ DPI / Print Size</a></h3>
+        <p>Pixels + DPI → inches &amp; cm.</p>
+      </div>
+      <div class="app-card" data-href="./duration-adder/">
+        <h3><a href="./duration-adder/">⏱️ Duration Adder</a></h3>
+        <p>Sum up hours and minutes.</p>
+      </div>
+      <div class="app-card" data-href="./electricity-cost/">
+        <h3><a href="./electricity-cost/">🔌 Electricity Cost</a></h3>
+        <p>What a device costs to run.</p>
+      </div>
+      <div class="app-card" data-href="./encrypt/">
+        <h3><a href="./encrypt/">🔐 Encrypt & Decrypt Text</a></h3>
+        <p>Encrypt and decrypt text online with a password (AES-256-GCM). Everything runs in your browser and works offline.</p>
+      </div>
+      <div class="app-card" data-href="./entropy-calculator/">
+        <h3><a href="./entropy-calculator/">🔐 Entropy Calculator</a></h3>
+        <p>Calculate the Shannon entropy of any text (bits per character and total) and the entropy and crack time of a password. Works offline in your browser.</p>
+      </div>
+      <div class="app-card" data-href="./event-qr/">
+        <h3><a href="./event-qr/">📅 Event QR</a></h3>
+        <p>Calendar event as QR &amp; .ics file.</p>
+      </div>
+      <div class="app-card" data-href="./exif-stripper/">
+        <h3><a href="./exif-stripper/">🧹 EXIF Remover</a></h3>
+        <p>Remove EXIF metadata and GPS location from photos. Files stay on your device, no upload, no tracking.</p>
+      </div>
+      <div class="app-card" data-href="./expense-log/">
+        <h3><a href="./expense-log/">💸 Expense Log</a></h3>
+        <p>Simple spending logbook with monthly total.</p>
+      </div>
+      <div class="app-card" data-href="./eyedropper/">
+        <h3><a href="./eyedropper/">🎨 Eyedropper</a></h3>
+        <p>Free online eye dropper tool: pick a color from anywhere on your screen and copy the HEX value.</p>
+      </div>
+      <div class="app-card" data-href="./fasting-timer/">
+        <h3><a href="./fasting-timer/">⏳ Fasting Timer</a></h3>
+        <p>Start a fast, track elapsed vs goal.</p>
+      </div>
+      <div class="app-card" data-href="./favicon-generator/">
+        <h3><a href="./favicon-generator/">⭐ Favicon Generator</a></h3>
+        <p>All favicon sizes from one image.</p>
+      </div>
+      <div class="app-card" data-href="./financial-planner/">
+        <h3><a href="./financial-planner/">🏦 Financial Planner</a></h3>
+        <p>Month-by-month payments, income, and savings with a rolling balance.</p>
+      </div>
+      <div class="app-card" data-href="./flashcards/">
+        <h3><a href="./flashcards/">🃏 Flashcards</a></h3>
+        <p>Local Q&A decks. Flip, know, again.</p>
+      </div>
+      <div class="app-card" data-href="./flashlight/">
+        <h3><a href="./flashlight/">🔦 Flashlight</a></h3>
+        <p>Free online flashlight: turn your phone or computer screen into a bright light. Adjust brightness and color; the screen stays awake. Works offline.</p>
+      </div>
+      <div class="app-card" data-href="./fridge-expiry/">
+        <h3><a href="./fridge-expiry/">🧊 Fridge Expiry</a></h3>
+        <p>Use-by dates, sorted by urgency.</p>
+      </div>
+      <div class="app-card" data-href="./fuel-log/">
+        <h3><a href="./fuel-log/">⛽ Fuel Log</a></h3>
+        <p>Track fill-ups, L/100km and spend.</p>
+      </div>
+      <div class="app-card" data-href="./gamepad-tester/">
+        <h3><a href="./gamepad-tester/">🎮 Gamepad Tester</a></h3>
+        <p>Test controller buttons & sticks.</p>
+      </div>
+      <div class="app-card" data-href="./gps-speedometer/">
+        <h3><a href="./gps-speedometer/">🚗 GPS Speedometer</a></h3>
+        <p>Speed from GPS.</p>
+      </div>
+      <div class="app-card" data-href="./gratitude-journal/">
+        <h3><a href="./gratitude-journal/">🙏 Gratitude Journal</a></h3>
+        <p>Three things you're grateful for today. Daily practice.</p>
+      </div>
+      <div class="app-card" data-href="./gzip/">
+        <h3><a href="./gzip/">🗜️ Gzip Compress & Decompress</a></h3>
+        <p>Gzip compress or decompress text and files online, right in your browser. Paste or upload for instant results; nothing is uploaded.</p>
+      </div>
+      <div class="app-card" data-href="./habit-tracker/">
+        <h3><a href="./habit-tracker/">✅ Habit Tracker</a></h3>
+        <p>Build daily streaks, one checkbox at a time.</p>
+      </div>
+      <div class="app-card" data-href="./hash-generator/">
+        <h3><a href="./hash-generator/">#️⃣ Hash Generator</a></h3>
+        <p>Compute SHA-256, MD5 and other hashes. Paste text or upload a file — everything stays in your browser.</p>
+      </div>
+      <div class="app-card" data-href="./headache-log/">
+        <h3><a href="./headache-log/">🤕 Headache Log</a></h3>
+        <p>Track migraines & headaches. Severity, triggers, patterns.</p>
+      </div>
+      <div class="app-card" data-href="./home-maintenance/">
+        <h3><a href="./home-maintenance/">🏠 Home Maintenance</a></h3>
+        <p>Track HVAC filter, smoke alarm battery & more.</p>
+      </div>
+      <div class="app-card" data-href="./html-entities/">
+        <h3><a href="./html-entities/">🔣 HTML Entities</a></h3>
+        <p>Encode & decode &amp;amp; friends.</p>
+      </div>
+      <div class="app-card" data-href="./iban-validator/">
+        <h3><a href="./iban-validator/">🏦 IBAN Validator</a></h3>
+        <p>Check account numbers offline.</p>
+      </div>
+      <div class="app-card" data-href="./id-expiry/">
+        <h3><a href="./id-expiry/">🪪 ID Expiry</a></h3>
+        <p>Passport & licence renewals.</p>
+      </div>
+      <div class="app-card" data-href="./image-resizer/">
+        <h3><a href="./image-resizer/">🖼️ Image Resizer</a></h3>
+        <p>Resize images instantly in your browser. Download as JPEG, PNG or WebP, nothing uploaded to any server.</p>
+      </div>
+      <div class="app-card" data-href="./image-to-base64/">
+        <h3><a href="./image-to-base64/">🖼️ Image to Base64</a></h3>
+        <p>Data URIs from any image.</p>
+      </div>
+      <div class="app-card" data-href="./imei-barcode/">
+        <h3><a href="./imei-barcode/">📱 IMEI Barcode</a></h3>
+        <p>Turn an IMEI into a barcode: validate the IMEI number and generate a scannable Code 128 barcode instantly. Works offline.</p>
+      </div>
+      <div class="app-card" data-href="./instrument-tuner/">
+        <h3><a href="./instrument-tuner/">🎸 Instrument Tuner</a></h3>
+        <p>Mic pitch detection.</p>
+      </div>
+      <div class="app-card" data-href="./interval-timer/">
+        <h3><a href="./interval-timer/">🏋️ Interval Timer</a></h3>
+        <p>Work/rest rounds with beeps.</p>
+      </div>
+      <div class="app-card" data-href="./investment-calculator/">
+        <h3><a href="./investment-calculator/">📈 Investment Calculator</a></h3>
+        <p>Project investment growth.</p>
+      </div>
+      <div class="app-card" data-href="./invoice-generator/">
+        <h3><a href="./invoice-generator/">🧾 Invoice Generator</a></h3>
+        <p>Line items, VAT, Pay by Square QR, reusable templates. Print-ready and XML-exportable.</p>
+      </div>
+      <div class="app-card" data-href="./json-beautifier/">
+        <h3><a href="./json-beautifier/">{ JSON Formatter</a></h3>
+        <p>Paste messy JSON, get it formatted with syntax highlighting. Errors highlighted in red. Copy formatted result instantly.</p>
+      </div>
+      <div class="app-card" data-href="./jwt-decoder/">
+        <h3><a href="./jwt-decoder/">🔐 JWT Decoder</a></h3>
+        <p>Decode JWT tokens locally. The token never leaves your browser — inspect headers and payloads safely.</p>
+      </div>
+      <div class="app-card" data-href="./keep-awake/">
+        <h3><a href="./keep-awake/">☕ Keep Screen Awake</a></h3>
+        <p>Keep your screen awake without installing anything: one tap stops your phone or computer from sleeping or dimming. Free, works offline.</p>
+      </div>
+      <div class="app-card" data-href="./keycode-viewer/">
+        <h3><a href="./keycode-viewer/">⌨️ Keycode Viewer</a></h3>
+        <p>See JavaScript key event values, keycodes and key code tester. Press any key to view keycode, code and which values.</p>
+      </div>
+      <div class="app-card" data-href="./keystroke-test/">
+        <h3><a href="./keystroke-test/">⌨️ Keystroke Test</a></h3>
+        <p>Test keyboard speed and ghosting. Measure keys per second and per minute. Instant results, no calibration needed.</p>
+      </div>
+      <div class="app-card" data-href="./kitchen-timer/">
+        <h3><a href="./kitchen-timer/">🍲 Kitchen Timer</a></h3>
+        <p>Up to 4 named countdowns.</p>
+      </div>
+      <div class="app-card" data-href="./knot-guide/">
+        <h3><a href="./knot-guide/">🪢 Knot Guide</a></h3>
+        <p>Essential knot reference.</p>
+      </div>
+      <div class="app-card" data-href="./led-resistor/">
+        <h3><a href="./led-resistor/">💡 LED Resistor</a></h3>
+        <p>Calculate resistor value for LED circuits. Free LED resistor calculator — works offline in your browser.</p>
+      </div>
+      <div class="app-card" data-href="./light-detector/">
+        <h3><a href="./light-detector/">💡 Light Meter (Lux)</a></h3>
+        <p>Free online light meter: measure ambient light in lux with your device's light sensor. Useful for photography, plants, lighting design and accessibility.</p>
+      </div>
+      <div class="app-card" data-href="./line-tools/">
+        <h3><a href="./line-tools/">📑 Line Tools</a></h3>
+        <p>Sort, dedupe & shuffle lines.</p>
+      </div>
+      <div class="app-card" data-href="./live-pad/">
+        <h3><a href="./live-pad/">📝 Live Pad</a></h3>
+        <p>Shared real-time scratchpad. Both can type. Vanishes when you close the tab.</p>
+      </div>
+      <div class="app-card" data-href="./loan-calculator/">
+        <h3><a href="./loan-calculator/">💳 Loan Calculator</a></h3>
+        <p>Calculate loan payments.</p>
+      </div>
+      <div class="app-card" data-href="./lorem-ipsum/">
+        <h3><a href="./lorem-ipsum/">📃 Lorem Ipsum</a></h3>
+        <p>Placeholder text on demand.</p>
+      </div>
+      <div class="app-card" data-href="./maidenhead/">
+        <h3><a href="./maidenhead/">📡 Maidenhead / QTH</a></h3>
+        <p>Lat/lon ⇄ grid square.</p>
+      </div>
+      <div class="app-card" data-href="./medicine-tracker/">
+        <h3><a href="./medicine-tracker/">💊 Medicine Tracker</a></h3>
+        <p>Did I take my pills? One tap — records the time.</p>
+      </div>
+      <div class="app-card" data-href="./meditation-timer/">
+        <h3><a href="./meditation-timer/">🧘 Meditation Timer</a></h3>
+        <p>Free online meditation timer with optional breathing cues and a soft bell at the end.</p>
+      </div>
+      <div class="app-card" data-href="./meeting-cost/">
+        <h3><a href="./meeting-cost/">💸 Meeting Cost</a></h3>
+        <p>Live ticking cost of a meeting.</p>
+      </div>
+      <div class="app-card" data-href="./meeting-overlap/">
+        <h3><a href="./meeting-overlap/">🌍 Meeting Overlap</a></h3>
+        <p>When can everyone talk?</p>
+      </div>
+      <div class="app-card" data-href="./metronome/">
+        <h3><a href="./metronome/">🎵 Metronome</a></h3>
+        <p>Free online metronome with adjustable BPM and tap tempo. No ads, no sign-up, works offline.</p>
+      </div>
+      <div class="app-card" data-href="./mileage-log/">
+        <h3><a href="./mileage-log/">🚗 Mileage Log</a></h3>
+        <p>Trips for tax or expenses.</p>
+      </div>
+      <div class="app-card" data-href="./mirror/">
+        <h3><a href="./mirror/">🪞 Mirror</a></h3>
+        <p>Free online mirror: use your front camera or webcam as a mirror. Switch to a true (non-reversing) mirror to see yourself as others do. Nothing is recorded or uploaded.</p>
+      </div>
+      <div class="app-card" data-href="./mood-tracker/">
+        <h3><a href="./mood-tracker/">😊 Mood Tracker</a></h3>
+        <p>Daily mood check-in with 30-day history.</p>
+      </div>
+      <div class="app-card" data-href="./moon-phase/">
+        <h3><a href="./moon-phase/">🌙 Moon Phase</a></h3>
+        <p>Today's moon and what's next.</p>
+      </div>
+      <div class="app-card" data-href="./morse-code/">
+        <h3><a href="./morse-code/">📡 Morse Code</a></h3>
+        <p>Encode/decode morse.</p>
+      </div>
+      <div class="app-card" data-href="./nfc-tags/">
+        <h3><a href="./nfc-tags/">🏷️ NFC Tags</a></h3>
+        <p>Read and write NFC tags (NDEF) from your browser with Web NFC.</p>
+      </div>
+      <div class="app-card" data-href="./noise-generator/">
+        <h3><a href="./noise-generator/">🌊 Tone Generator</a></h3>
+        <p>Generate sine wave tones or white noise online. Adjust frequency and volume, play instantly. Useful for hearing tests, audio work, meditation.</p>
+      </div>
+      <div class="app-card" data-href="./note-taker/">
+        <h3><a href="./note-taker/">📝 Note Taker</a></h3>
+        <p>Write Markdown notes with live preview. Your notes stay on your device, no server, no signup.</p>
+      </div>
+      <div class="app-card" data-href="./number-to-words/">
+        <h3><a href="./number-to-words/">🔟 Number to Words</a></h3>
+        <p>Write any number in words instantly: 114 is one hundred fourteen. Handles decimals, thousands separators and Indian lakh/crore grouping like 40,37,12,100.</p>
+      </div>
+      <div class="app-card" data-href="./one-rep-max/">
+        <h3><a href="./one-rep-max/">🏋️ One Rep Max (1RM)</a></h3>
+        <p>One rep max calculator: enter the weight and reps you lifted to estimate your 1RM.</p>
+      </div>
+      <div class="app-card" data-href="./p2p-chat/">
+        <h3><a href="./p2p-chat/">💬 P2P Chat</a></h3>
+        <p>Chat privately peer-to-peer with files. No server, no account — everything stays between you and them.</p>
+      </div>
+      <div class="app-card" data-href="./p2p-file-transfer/">
+        <h3><a href="./p2p-file-transfer/">📁 P2P File Transfer</a></h3>
+        <p>Send files device to device. No server, no account, no size limit.</p>
+      </div>
+      <div class="app-card" data-href="./pace-calculator/">
+        <h3><a href="./pace-calculator/">🏃 Pace Calculator</a></h3>
+        <p>Distance, time & running pace.</p>
+      </div>
+      <div class="app-card" data-href="./packing-list/">
+        <h3><a href="./packing-list/">🧳 Packing List</a></h3>
+        <p>Trip checklist with presets for camping, beach & more.</p>
+      </div>
+      <div class="app-card" data-href="./paint-estimator/">
+        <h3><a href="./paint-estimator/">🎨 Paint / Flooring</a></h3>
+        <p>Room size → materials to buy.</p>
+      </div>
+      <div class="app-card" data-href="./parking-meter/">
+        <h3><a href="./parking-meter/">🅿️ Parking Cost Calculator</a></h3>
+        <p>Parking cost calculator and parking meter timer: enter the rate and time to see what your parking will cost, or how long your budget lasts. Free, works offline.</p>
+      </div>
+      <div class="app-card" data-href="./parking-spot/">
+        <h3><a href="./parking-spot/">🚗 Parking Spot</a></h3>
+        <p>Remember where you parked with label, GPS & photos.</p>
+      </div>
+      <div class="app-card" data-href="./password-generator/">
+        <h3><a href="./password-generator/">🔑 Password Generator</a></h3>
+        <p>Generate strong random passwords. Choose length and character sets instantly. Copy with one click.</p>
+      </div>
+      <div class="app-card" data-href="./pdf-merger/">
+        <h3><a href="./pdf-merger/">📄 PDF Merger</a></h3>
+        <p>Combine PDFs, fully offline.</p>
+      </div>
+      <div class="app-card" data-href="./pdf-tiler/">
+        <h3><a href="./pdf-tiler/">🔲 PDF Tiler</a></h3>
+        <p>Tile a PDF page for printing — auto-crops and fits as many copies as possible on A4.</p>
+      </div>
+      <div class="app-card" data-href="./pedometer/">
+        <h3><a href="./pedometer/">👟 Pedometer</a></h3>
+        <p>Step counter.</p>
+      </div>
+      <div class="app-card" data-href="./percentage-calculator/">
+        <h3><a href="./percentage-calculator/">％ Percentage</a></h3>
+        <p>The three % questions.</p>
+      </div>
+      <div class="app-card" data-href="./period-tracker/">
+        <h3><a href="./period-tracker/">🌸 Period Tracker</a></h3>
+        <p>Private cycle tracking — data stays on your device.</p>
+      </div>
+      <div class="app-card" data-href="./pet-care/">
+        <h3><a href="./pet-care/">🐾 Pet Care</a></h3>
+        <p>Vaccines, flea, deworming &amp; weight.</p>
+      </div>
+      <div class="app-card" data-href="./phonetic-alphabet/">
+        <h3><a href="./phonetic-alphabet/">🎤 Phonetic Alphabet (Alpha Bravo Charlie)</a></h3>
+        <p>The NATO phonetic (spelling/telephone) alphabet: A for Alpha, B for Bravo, C for Charlie … Z for Zulu. Look up any letter or convert text to code words.</p>
+      </div>
+      <div class="app-card" data-href="./plant-watering/">
+        <h3><a href="./plant-watering/">🪴 Plant Watering</a></h3>
+        <p>Track when plants need water, log with one tap.</p>
+      </div>
+      <div class="app-card" data-href="./pomodoro/">
+        <h3><a href="./pomodoro/">🍅 Pomodoro</a></h3>
+        <p>25 minutes of focus, then 5 minutes rest. Build sessions to keep going longer.</p>
+      </div>
+      <div class="app-card" data-href="./qr-code/">
+        <h3><a href="./qr-code/">⬜ QR Code Generator</a></h3>
+        <p>Create QR codes for text, URLs, Wi-Fi and more. No signup, no tracking — download instantly.</p>
+      </div>
+      <div class="app-card" data-href="./qr-scanner/">
+        <h3><a href="./qr-scanner/">📷 QR Code Scanner</a></h3>
+        <p>Scan QR codes online with your webcam or phone camera. Point and decode instantly, no app needed.</p>
+      </div>
+      <div class="app-card" data-href="./random-picker/">
+        <h3><a href="./random-picker/">🎯 Random Picker</a></h3>
+        <p>Pick a name from a list.</p>
+      </div>
+      <div class="app-card" data-href="./reaction-time/">
+        <h3><a href="./reaction-time/">⚡ Reaction Time</a></h3>
+        <p>Test your reflexes.</p>
+      </div>
+      <div class="app-card" data-href="./readability/">
+        <h3><a href="./readability/">📖 Readability Checker</a></h3>
+        <p>Free readability checker: paste text to get the Flesch reading ease score and grade (reading) level instantly.</p>
+      </div>
+      <div class="app-card" data-href="./reading-log/">
+        <h3><a href="./reading-log/">📚 Reading Log</a></h3>
+        <p>Track books you've read, are reading, or want to read.</p>
+      </div>
+      <div class="app-card" data-href="./recipe-box/">
+        <h3><a href="./recipe-box/">🍳 Recipe Box</a></h3>
+        <p>Save your favourite recipes. No clutter, no ads.</p>
+      </div>
+      <div class="app-card" data-href="./recipe-scaler/">
+        <h3><a href="./recipe-scaler/">👨‍🍳 Recipe Scaler</a></h3>
+        <p>Scale recipe ingredients by servings or weight.</p>
+      </div>
+      <div class="app-card" data-href="./regex-tester/">
+        <h3><a href="./regex-tester/">🔍 Regex Tester</a></h3>
+        <p>Test JavaScript regular expressions with live match highlighting. Test against sample text instantly, see all matches and groups.</p>
+      </div>
+      <div class="app-card" data-href="./rent-vs-buy/">
+        <h3><a href="./rent-vs-buy/">🏠 Rent vs Buy</a></h3>
+        <p>Rough break-even over N years.</p>
+      </div>
+      <div class="app-card" data-href="./resistor-decoder/">
+        <h3><a href="./resistor-decoder/">⚡ Resistor Decoder</a></h3>
+        <p>Decode resistor color bands.</p>
+      </div>
+      <div class="app-card" data-href="./roman-numerals/">
+        <h3><a href="./roman-numerals/">🏛️ Roman Numerals</a></h3>
+        <p>MCMXC ⇄ 1990.</p>
+      </div>
+      <div class="app-card" data-href="./schengen/">
+        <h3><a href="./schengen/">✈️ Schengen 90/180 Calculator</a></h3>
+        <p>Schengen 90/180 day calculator: log your trips and see days used and days left in the rolling 180-day window. Covers the 90-day rule for Spain, France, Italy and every Schengen country.</p>
+      </div>
+      <div class="app-card" data-href="./scoreboard/">
+        <h3><a href="./scoreboard/">🏆 Scoreboard</a></h3>
+        <p>Keep score on game night.</p>
+      </div>
+      <div class="app-card" data-href="./screen-recorder/">
+        <h3><a href="./screen-recorder/">🎥 Screen Recorder</a></h3>
+        <p>Screencasts: screen, voice & webcam.</p>
+      </div>
+      <div class="app-card" data-href="./seismometer/">
+        <h3><a href="./seismometer/">📈 Seismometer</a></h3>
+        <p>Vibration trace from sensors.</p>
+      </div>
+      <div class="app-card" data-href="./shared-sketchpad/">
+        <h3><a href="./shared-sketchpad/">✍️ Shared Sketchpad</a></h3>
+        <p>Draw together over WebRTC — everyone sees the same sketch in real-time.</p>
+      </div>
+      <div class="app-card" data-href="./shared-timer/">
+        <h3><a href="./shared-timer/">⏱️ Shared Timer</a></h3>
+        <p>Start a countdown and share it — everyone sees the same timer in real-time.</p>
+      </div>
+      <div class="app-card" data-href="./shopping-list/">
+        <h3><a href="./shopping-list/">🛒 Shopping List</a></h3>
+        <p>Add items, check them off as you shop. Saves automatically to your device. Works offline.</p>
+      </div>
+      <div class="app-card" data-href="./signal-mirror/">
+        <h3><a href="./signal-mirror/">🪞 Signal Mirror</a></h3>
+        <p>Emergency signaling.</p>
+      </div>
+      <div class="app-card" data-href="./size-converter/">
+        <h3><a href="./size-converter/">👕 Size Converter</a></h3>
+        <p>EU, US & UK clothing sizes.</p>
+      </div>
+      <div class="app-card" data-href="./sketch-pad/">
+        <h3><a href="./sketch-pad/">✍️ Sketch Pad</a></h3>
+        <p>Draw sketches and signatures with mouse, finger or stylus. Download as PNG, no signup, no ads.</p>
+      </div>
+      <div class="app-card" data-href="./sleep-calculator/">
+        <h3><a href="./sleep-calculator/">😴 Sleep Calculator</a></h3>
+        <p>Bedtimes by sleep cycles.</p>
+      </div>
+      <div class="app-card" data-href="./sleep-log/">
+        <h3><a href="./sleep-log/">🛌 Sleep Log</a></h3>
+        <p>Log each night, track your weekly average.</p>
+      </div>
+      <div class="app-card" data-href="./slug-cleaner/">
+        <h3><a href="./slug-cleaner/">🔗 Slug Cleaner</a></h3>
+        <p>Title → url-friendly-slug.</p>
+      </div>
+      <div class="app-card" data-href="./sound-meter/">
+        <h3><a href="./sound-meter/">🎚️ Sound Meter</a></h3>
+        <p>Free online sound level meter: measure decibels (dB) with your microphone. Live VU-style level bar with peak and average dB. Works offline.</p>
+      </div>
+      <div class="app-card" data-href="./speaker-test/">
+        <h3><a href="./speaker-test/">🔊 Speaker Test</a></h3>
+        <p>Left, right & sweep.</p>
+      </div>
+      <div class="app-card" data-href="./speaking-clock/">
+        <h3><a href="./speaking-clock/">⏰ Speaking Clock</a></h3>
+        <p>Browser announces time.</p>
+      </div>
+      <div class="app-card" data-href="./speech-to-text/">
+        <h3><a href="./speech-to-text/">🎤 Speech to Text</a></h3>
+        <p>Speak and let your browser transcribe it to text. Works in most browsers on most devices.</p>
+      </div>
+      <div class="app-card" data-href="./speed-reader/">
+        <h3><a href="./speed-reader/">👁️ Speed Reader</a></h3>
+        <p>Speed reading website: paste text, set your reading speed (WPM) and read one word at a time. Practice speed reading for free, offline.</p>
+      </div>
+      <div class="app-card" data-href="./spirit-level/">
+        <h3><a href="./spirit-level/">⚖️ Spirit Level</a></h3>
+        <p>Check if surface is level.</p>
+      </div>
+      <div class="app-card" data-href="./sql-formatter/">
+        <h3><a href="./sql-formatter/">🗃️ SQL Formatter</a></h3>
+        <p>Pretty-print SQL as you paste.</p>
+      </div>
+      <div class="app-card" data-href="./ssid-generator/">
+        <h3><a href="./ssid-generator/">📶 SSID Generator</a></h3>
+        <p>Generate random SSID names for your Wi-Fi network.</p>
+      </div>
+      <div class="app-card" data-href="./stopwatch/">
+        <h3><a href="./stopwatch/">⏱️ Stopwatch</a></h3>
+        <p>Free online stopwatch with lap times. Start, pause, reset and review laps. Keeps working offline, perfect for workouts and timing.</p>
+      </div>
+      <div class="app-card" data-href="./subnet-calculator/">
+        <h3><a href="./subnet-calculator/">🌐 Subnet Calculator</a></h3>
+        <p>CIDR to ranges & masks.</p>
+      </div>
+      <div class="app-card" data-href="./subscription-tracker/">
+        <h3><a href="./subscription-tracker/">💳 Subscription Tracker</a></h3>
+        <p>Know what you're paying for. Monthly total, renewal dates.</p>
+      </div>
+      <div class="app-card" data-href="./sunrise-sunset/">
+        <h3><a href="./sunrise-sunset/">🌅 Sunrise & Sunset</a></h3>
+        <p>Sun times and golden hour.</p>
+      </div>
+      <div class="app-card" data-href="./swim-bike-pace/">
+        <h3><a href="./swim-bike-pace/">🏊 Swim & Bike Pace</a></h3>
+        <p>Pace /100m or km/h.</p>
+      </div>
+      <div class="app-card" data-href="./tally-counter/">
+        <h3><a href="./tally-counter/">🔢 Tally Counter</a></h3>
+        <p>Count anything, one tap at a time.</p>
+      </div>
+      <div class="app-card" data-href="./tap-bpm/">
+        <h3><a href="./tap-bpm/">🥁 Tap Tempo / BPM</a></h3>
+        <p>Tap tempo online: tap the spacebar or screen to find the BPM (beats per minute) of any song. The tempo updates live as you tap.</p>
+      </div>
+      <div class="app-card" data-href="./teleprompter/">
+        <h3><a href="./teleprompter/">📜 Teleprompter</a></h3>
+        <p>Paste a script and read along as it scrolls. Adjust speed and text size for your pace.</p>
+      </div>
+      <div class="app-card" data-href="./text-diff/">
+        <h3><a href="./text-diff/">🔀 Text Diff</a></h3>
+        <p>Compare two texts or strings online and see the differences line by line, with color-coded additions and removals.</p>
+      </div>
+      <div class="app-card" data-href="./text-to-speech/">
+        <h3><a href="./text-to-speech/">🔊 Text to Speech</a></h3>
+        <p>Paste text and hear it read aloud. Adjust speed and voice. Useful for proofreading or accessibility.</p>
+      </div>
+      <div class="app-card" data-href="./timezone/">
+        <h3><a href="./timezone/">⏰ Timezone Converter</a></h3>
+        <p>Convert meeting times, flight times and deadlines between timezones instantly. See time in both zones side-by-side.</p>
+      </div>
+      <div class="app-card" data-href="./tip-tax/">
+        <h3><a href="./tip-tax/">💵 Tip & Tax Calculator</a></h3>
+        <p>Tip calculator with tax: add tip and sales tax to a bill and split it per person instantly. Free, works offline.</p>
+      </div>
+      <div class="app-card" data-href="./tone-generator/">
+        <h3><a href="./tone-generator/">🎼 Tone Generator</a></h3>
+        <p>Free online tone generator: play a sine, square, triangle or sawtooth wave at any frequency in Hz. Use it as a test tone, pitch or signal generator. Works offline.</p>
+      </div>
+      <div class="app-card" data-href="./totp/">
+        <h3><a href="./totp/">🔐 TOTP Codes</a></h3>
+        <p>2FA codes from a secret, offline.</p>
+      </div>
+      <div class="app-card" data-href="./touch-tester/">
+        <h3><a href="./touch-tester/">👆 Touch Tester</a></h3>
+        <p>Multi-touch visualizer.</p>
+      </div>
+      <div class="app-card" data-href="./transfer-time/">
+        <h3><a href="./transfer-time/">📡 Transfer Time Calculator</a></h3>
+        <p>Data transfer time calculator: enter a file size and your connection speed to see how long an upload, download or file copy will take.</p>
+      </div>
+      <div class="app-card" data-href="./typing-test/">
+        <h3><a href="./typing-test/">⌨️ Typing Test</a></h3>
+        <p>Measure typing speed (WPM) and accuracy in real-time. Results show your performance — compare sessions to track improvement.</p>
+      </div>
+      <div class="app-card" data-href="./unicode-inspector/">
+        <h3><a href="./unicode-inspector/">🕵️ Unicode Inspector</a></h3>
+        <p>Find illegal, invisible and non-printable characters in text: zero-width spaces, non-ASCII and hidden Unicode. Paste text to see every code point.</p>
+      </div>
+      <div class="app-card" data-href="./unit-converter/">
+        <h3><a href="./unit-converter/">📏 Unit Converter</a></h3>
+        <p>Convert length, weight, temperature, volume and more instantly. Switch between metric and imperial, no refresh needed.</p>
+      </div>
+      <div class="app-card" data-href="./unit-price/">
+        <h3><a href="./unit-price/">⚖️ Unit Price</a></h3>
+        <p>Which package is the better deal?</p>
+      </div>
+      <div class="app-card" data-href="./unix-timestamp/">
+        <h3><a href="./unix-timestamp/">⏱️ Unix Timestamp Converter</a></h3>
+        <p>Convert Unix timestamps to human dates and back instantly and offline.</p>
+      </div>
+      <div class="app-card" data-href="./url-parser/">
+        <h3><a href="./url-parser/">🔗 URL Parser</a></h3>
+        <p>Break URLs into parts.</p>
+      </div>
+      <div class="app-card" data-href="./user-agent-parser/">
+        <h3><a href="./user-agent-parser/">🌐 User-Agent Parser</a></h3>
+        <p>Browser, OS &amp; device from a UA string.</p>
+      </div>
+      <div class="app-card" data-href="./uuid-generator/">
+        <h3><a href="./uuid-generator/">🔑 Random UUID Generator</a></h3>
+        <p>Generate random UUIDs (v4) instantly and copy them with one click. Generated in your browser, nothing sent to a server.</p>
+      </div>
+      <div class="app-card" data-href="./vaccination-tracker/">
+        <h3><a href="./vaccination-tracker/">💉 Vaccination Tracker</a></h3>
+        <p>Track all your vaccinations with flexible time intervals. Set reminders in days, months or years — completely private, works offline.</p>
+      </div>
+      <div class="app-card" data-href="./vcard-qr/">
+        <h3><a href="./vcard-qr/">👤 Contact QR</a></h3>
+        <p>Share contact details as a QR.</p>
+      </div>
+      <div class="app-card" data-href="./voice-recorder/">
+        <h3><a href="./voice-recorder/">🎙️ Voice Recorder</a></h3>
+        <p>Free online voice and audio recorder: record from your microphone and download the clip. No sign-up, no limits, nothing uploaded.</p>
+      </div>
+      <div class="app-card" data-href="./voltage-divider/">
+        <h3><a href="./voltage-divider/">⚡ Voltage Divider</a></h3>
+        <p>Calculate output voltage.</p>
+      </div>
+      <div class="app-card" data-href="./warranty-tracker/">
+        <h3><a href="./warranty-tracker/">🛡️ Warranty Tracker</a></h3>
+        <p>Warranty tracking without a spreadsheet: list items with purchase dates and see which warranties expire soon. Free, no account, works offline.</p>
+      </div>
+      <div class="app-card" data-href="./water-reminder/">
+        <h3><a href="./water-reminder/">💧 Water Reminder</a></h3>
+        <p>Track daily glasses of water, resets at midnight.</p>
+      </div>
+      <div class="app-card" data-href="./where-am-i/">
+        <h3><a href="./where-am-i/">📍 Where Am I</a></h3>
+        <p>Find your GPS coordinates and current location. Get my coordinates and see where am I — free, no signup, works in browser.</p>
+      </div>
+      <div class="app-card" data-href="./wifi-qr/">
+        <h3><a href="./wifi-qr/">📶 WiFi QR Code Generator</a></h3>
+        <p>Generate a QR code for your Wi-Fi network. Share with guests — they scan to connect instantly. With or without password.</p>
+      </div>
+      <div class="app-card" data-href="./wishlist/">
+        <h3><a href="./wishlist/">✨ Wishlist</a></h3>
+        <p>Things you want, optional prices.</p>
+      </div>
+      <div class="app-card" data-href="./word-counter/">
+        <h3><a href="./word-counter/">🔤 Word Counter</a></h3>
+        <p>Count words, characters and reading time in real-time. Results update as you type. Fully private.</p>
+      </div>
+      <div class="app-card" data-href="./work-hours/">
+        <h3><a href="./work-hours/">⏱️ Work Hours</a></h3>
+        <p>Clock in/out, weekly total.</p>
+      </div>
+      <div class="app-card" data-href="./workout-log/">
+        <h3><a href="./workout-log/">🏋️ Workout Log</a></h3>
+        <p>Log exercises, sets & reps. No coaching, no plans.</p>
+      </div>
+      <div class="app-card" data-href="./world-clock/">
+        <h3><a href="./world-clock/">🌍 World Clock</a></h3>
+        <p>Save timezones and see current time everywhere at once. Stays synced to now.</p>
+      </div>
+      <div class="app-card" data-href="./yaml-json/">
+        <h3><a href="./yaml-json/">🔄 YAML ⇄ JSON</a></h3>
+        <p>Convert either way, instantly.</p>
+      </div>
 
     </div>
+    </main>
 
     <footer class="w3-center w3-padding w3-small w3-text-grey">
       Free, offline-first, no tracking.
@@ -1309,7 +944,7 @@
       document.addEventListener("click", e => {
         const a = e.target.closest("a[href]");
         const h = a && a.getAttribute("href");
-        if (!h || !/^\.\/.*\/$/.test(h) || e.target.closest("button")) return;
+        if (!h || !/^\.\/.*\/$/.test(h)) return;
         e.preventDefault();
         if (e.ctrlKey || e.metaKey || e.button === 1) window.open(h + "index.html");
         else location.href = h + "index.html";
@@ -1377,7 +1012,7 @@
 
     function appsWithData() {
       return [...mainCards].filter(card => {
-        const appId = hrefToAppId(card.getAttribute("href"));
+        const appId = hrefToAppId(card.dataset.href);
         const keys = appId && APP_STORAGE_KEYS[appId];
         if (!keys) return false;
         return keys.some(k => {
@@ -1398,10 +1033,7 @@
       if (cards.length === 0 || searching) { dataSection.hidden = true; return; }
       dataSection.hidden = false;
       dataGrid.innerHTML = cards.map(c => {
-        const href = c.getAttribute("href");
-        const h3 = c.querySelector("h3").outerHTML;
-        const p = c.querySelector("p").outerHTML;
-        return `<a href="${href}" class="app-card"><div>${h3}${p}</div></a>`;
+        return `<div class="app-card">${c.querySelector("h3").outerHTML}${c.querySelector("p").outerHTML}</div>`;
       }).join("");
     }
 
@@ -1414,26 +1046,25 @@
 
     function renderFavSection() {
       const searching = !!searchInput.value.trim();
-      const favCards = [...mainCards].filter(c => favs.has(c.getAttribute("href")));
+      const favCards = [...mainCards].filter(c => favs.has(c.dataset.href));
       if (favCards.length === 0 || searching) { favSection.hidden = true; return; }
       favSection.hidden = false;
       favGrid.innerHTML = favCards.map(c => {
-        const href = c.getAttribute("href");
-        const h3 = c.querySelector("h3").outerHTML;
-        const p = c.querySelector("p").outerHTML;
-        return `<a href="${href}" class="app-card"><div>${h3}${p}</div><button class="star-btn active" data-href="${href}" title="Remove from favourites" aria-label="Remove from favourites">★</button></a>`;
+        const href = c.dataset.href;
+        return `<div class="app-card">${c.querySelector("h3").outerHTML}${c.querySelector("p").outerHTML}<button class="star-btn active" data-href="${href}" title="Remove from favourites" aria-label="Remove from favourites" aria-pressed="true">★</button></div>`;
       }).join("");
     }
 
     function updateStars() {
       mainCards.forEach(card => {
-        const href = card.getAttribute("href");
+        const href = card.dataset.href;
         const btn = card.querySelector(".star-btn");
         if (!btn) return;
         const active = favs.has(href);
         btn.textContent = active ? "★" : "☆";
         btn.classList.toggle("active", active);
         btn.title = active ? "Remove from favourites" : "Add to favourites";
+        btn.setAttribute("aria-pressed", active);
       });
     }
 
@@ -1446,20 +1077,21 @@
 
     // Add star buttons to all main grid cards
     mainCards.forEach(card => {
-      const href = card.getAttribute("href");
+      const href = card.dataset.href;
       const btn = document.createElement("button");
       btn.className = "star-btn" + (favs.has(href) ? " active" : "");
       btn.textContent = favs.has(href) ? "★" : "☆";
       btn.title = favs.has(href) ? "Remove from favourites" : "Add to favourites";
-      btn.setAttribute("aria-label", "Toggle favourite");
-      btn.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); toggleFav(href); });
+      btn.setAttribute("aria-label", "Favourite " + card.querySelector("h3").textContent.trim());
+      btn.setAttribute("aria-pressed", favs.has(href));
+      btn.addEventListener("click", () => toggleFav(href));
       card.appendChild(btn);
     });
 
     // Handle star clicks in the fav panel (event delegation)
     favGrid.addEventListener("click", e => {
       const btn = e.target.closest(".star-btn");
-      if (btn) { e.preventDefault(); e.stopPropagation(); toggleFav(btn.dataset.href); }
+      if (btn) toggleFav(btn.dataset.href);
     });
 
     // Search
@@ -1474,9 +1106,9 @@
       dataSection.hidden = !!query || appsWithData().length === 0;
     });
 
-    searchInput.focus();
     renderFavSection();
     renderDataSection();
+    searchInput.focus();
   </script>
 </body>
 </html>

@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Countdown", "url": "https://nostrings.tools/countdown/", "description": "Set a date and time, watch the countdown to your event. Adjustable colors and fonts.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .input-group {
       display: flex;
@@ -41,7 +42,7 @@
       color: #333;
     }
     .timer-display.warning {
-      color: #f44336;
+      color: #c62828;
     }
     .controls {
       display: flex;
@@ -59,7 +60,7 @@
       transition: all 0.2s ease;
     }
     .start-btn {
-      background-color: #4caf50;
+      background-color: #2e7d32;
       color: white;
     }
     .start-btn:hover:not(:disabled) {
@@ -70,14 +71,14 @@
       cursor: not-allowed;
     }
     .stop-btn {
-      background-color: #f44336;
+      background-color: #d32f2f;
       color: white;
     }
     .stop-btn:hover {
       background-color: #da190b;
     }
     .reset-btn {
-      background-color: #2196f3;
+      background-color: #1976d2;
       color: white;
     }
     .reset-btn:hover {
@@ -86,15 +87,15 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>Countdown</h1>
 
     <p class="w3-text-grey w3-small">Use this free countdown directly in your browser. No signup, no ads, no tracking — works offline.</p><div class="input-group">
-      <label>Minutes:</label>
+      <label for="minutes-input">Minutes:</label>
       <input id="minutes-input" type="number" min="0" value="1" />
-      <label>Seconds:</label>
+      <label for="seconds-input">Seconds:</label>
       <input id="seconds-input" type="number" min="0" max="59" value="0" />
     </div>
 
@@ -108,7 +109,7 @@
   </div>
 
     <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #ddd;">
-      <h3 class="w3-medium">Related tools</h3>
+      <h2 class="w3-medium">Related tools</h2>
       <p class="w3-small w3-text-grey">
         <a href="../stopwatch/" class="w3-text-blue" style="text-decoration: none;">Stopwatch</a> ·
         <a href="../kitchen-timer/" class="w3-text-blue" style="text-decoration: none;">Kitchen Timer</a> ·

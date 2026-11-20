@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Noise Generator", "url": "https://nostrings.tools/noise-generator/", "description": "Generate sine wave tones or white noise online. Adjust frequency and volume, play instantly. Useful for hearing tests, audio work, meditation.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .noise-types {
       display: grid;
@@ -38,7 +39,7 @@
       border-color: #2196f3;
     }
     .noise-btn.active {
-      background-color: #2196f3;
+      background-color: #1976d2;
       color: white;
       border-color: #2196f3;
     }
@@ -78,18 +79,18 @@
       color: #666;
     }
     .status.playing {
-      color: #4caf50;
+      color: #2e7d32;
       font-weight: bold;
     }
     .play-btn {
-      background-color: #4caf50;
+      background-color: #2e7d32;
       color: white;
     }
     .play-btn:hover {
       background-color: #45a049;
     }
     .stop-btn {
-      background-color: #f44336;
+      background-color: #d32f2f;
       color: white;
     }
     .stop-btn:hover {
@@ -98,7 +99,7 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>Noise Generator</h1>
@@ -113,7 +114,7 @@
 
     <div class="controls">
       <div class="control-row">
-        <label>Volume:</label>
+        <label for="volume-slider">Volume:</label>
         <input id="volume-slider" type="range" min="0" max="1" step="0.1" value="0.3" />
         <span class="value-display" id="volume-value">30%</span>
       </div>

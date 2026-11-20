@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Capacitor Decoder", "url": "https://nostrings.tools/capacitor-decoder/", "description": "Decode capacitor markings to find their value. Supports ceramic, film and other types.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .color-bands {
       display: flex;
@@ -80,7 +81,7 @@
       border-color: #333;
     }
     .color-option.light-text { color: white; }
-    .color-option.dark-text { color: #333; }
+    .color-option.dark-text { color: #000; }
     .result {
       margin-top: 24px;
       padding: 20px;
@@ -100,7 +101,7 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>Capacitor Decoder</h1>
@@ -113,7 +114,7 @@
       <div class="band" id="band-4"><div class="band-label">Tolerance</div></div>
     </div>
 
-    <h3>Select Colors</h3>
+    <h2 class="w3-xlarge">Select Colors</h2>
     <div class="color-grid" id="color-grid"></div>
 
     <div class="result" id="result"></div>

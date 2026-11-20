@@ -79,8 +79,10 @@ function getTextColor(hex) {
   const r = (rgb >> 16) & 0xff;
   const g = (rgb >> 8) & 0xff;
   const b = (rgb >> 0) & 0xff;
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return luminance > 0.5 ? "dark-text" : "light-text";
+  // WCAG relative luminance: pick whichever of black/white text contrasts more
+  const lin = (c) => { c /= 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
+  const luminance = 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+  return luminance > 0.179 ? "dark-text" : "light-text";
 }
 
 function renderResistor() {

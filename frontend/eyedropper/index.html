@@ -17,22 +17,23 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Eyedropper", "url": "https://nostrings.tools/eyedropper/", "description": "Free online eye dropper tool: pick a color from anywhere on your screen and copy the HEX value.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .pick-btn { width: 100%; padding: 20px; font-size: 20px; margin-top: 16px; }
     .swatch { width: 100%; height: 120px; border-radius: 8px; border: 1px solid #ddd; margin-top: 16px; }
     .values { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
     .value-box { background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #2196f3; cursor: pointer; }
-    .value-label { font-size: 11px; color: #999; font-weight: 600; }
+    .value-label { font-size: 11px; color: #666; font-weight: 600; }
     .value-text { font-family: monospace; font-size: 16px; }
     .history { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
     .history-swatch { width: 36px; height: 36px; border-radius: 6px; border: 1px solid #ddd; cursor: pointer; }
     .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
-    .hint { font-size: 12px; color: #999; margin-top: 8px; }
+    .hint { font-size: 12px; color: #666; margin-top: 8px; }
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>Eye Dropper Tool</h1>
@@ -53,7 +54,7 @@
   </div>
 
     <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #ddd;">
-      <h3 class="w3-medium">Related tools</h3>
+      <h2 class="w3-medium">Related tools</h2>
       <p class="w3-small w3-text-grey">
         <a href="../color-converter/" class="w3-text-blue" style="text-decoration: none;">Color Converter</a> ·
         <a href="../contrast-checker/" class="w3-text-blue" style="text-decoration: none;">Contrast Checker</a> ·

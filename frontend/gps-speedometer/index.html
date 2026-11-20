@@ -17,21 +17,22 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "GPS Speedometer", "url": "https://nostrings.tools/gps-speedometer/", "description": "Track speed using GPS. See current, average and top speed. Perfect for athletics, driving or testing.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .speed { text-align: center; font-size: 110px; font-weight: bold; font-family: monospace; margin: 20px 0 0; color: #333; line-height: 1; }
-    .unit { text-align: center; font-size: 18px; color: #999; margin-bottom: 4px; }
-    .mph { text-align: center; font-size: 15px; color: #bbb; font-family: monospace; }
+    .unit { text-align: center; font-size: 18px; color: #666; margin-bottom: 4px; }
+    .mph { text-align: center; font-size: 15px; color: #666; font-family: monospace; }
     .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
     .stat-box { background: white; padding: 12px; border-radius: 8px; border-left: 4px solid #2196f3; text-align: center; }
-    .stat-label { font-size: 11px; color: #999; font-weight: 600; }
+    .stat-label { font-size: 11px; color: #666; font-weight: 600; }
     .stat-value { font-family: monospace; font-size: 18px; }
     .start-btn { width: 100%; padding: 14px; font-size: 16px; margin-top: 16px; }
     .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 500px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>GPS Speedometer</h1>

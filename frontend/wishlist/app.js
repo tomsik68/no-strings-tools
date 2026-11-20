@@ -27,7 +27,7 @@ function render() {
     <div class="w3-panel w3-white w3-round w3-border" style="padding: 10px 14px; margin: 0 0 8px; display: flex; align-items: center; gap: 10px;">
       <input type="checkbox" class="done-cb" data-id="${it.id}" ${it.done ? "checked" : ""} style="width: 18px; height: 18px; cursor: pointer;" aria-label="Got it" />
       <div style="flex: 1; min-width: 0;">
-        <div style="font-weight: 600; ${it.done ? "text-decoration: line-through; color: #999;" : ""}">${esc(it.name)}</div>
+        <div style="font-weight: 600; ${it.done ? "text-decoration: line-through; color: #666;" : ""}">${esc(it.name)}</div>
         <div class="w3-text-grey w3-small">
           ${it.price != null ? esc(it.price.toFixed(2)) : ""}
           ${it.price != null && it.url ? " · " : ""}

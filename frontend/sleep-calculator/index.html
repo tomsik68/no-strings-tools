@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Sleep Calculator", "url": "https://nostrings.tools/sleep-calculator/", "description": "Calculate with this free sleep calculator directly in your browser. No signup, no ads, no tracking — works offline.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .wake-row { display: flex; align-items: center; gap: 12px; margin: 16px 0; }
     .wake-row input { font-size: 20px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
@@ -25,13 +26,13 @@
     .time-box { background: white; padding: 16px 12px; border-radius: 8px; border-left: 4px solid #2196f3; text-align: center; }
     .time-box.best { border-left-color: #4caf50; }
     .time-value { font-size: 24px; font-weight: bold; font-family: monospace; color: #333; }
-    .time-label { font-size: 11px; color: #999; margin-top: 4px; }
+    .time-label { font-size: 11px; color: #666; margin-top: 4px; }
     h2 { font-size: 18px; margin-top: 28px; }
-    .note { font-size: 12px; color: #999; margin-top: 20px; }
+    .note { font-size: 12px; color: #666; margin-top: 20px; }
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>Sleep Calculator</h1>

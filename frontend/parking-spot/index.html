@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Parking Spot","url":"https://nostrings.tools/parking-spot/","description": "Use this free 🚗 parking spot directly in your browser. No signup, no ads, no tracking — works offline.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .card { max-width: 480px; margin: 0 auto; }
 
@@ -28,7 +29,7 @@
     /* GPS button */
     #gps-btn { font-size: 14px; }
     #gps-status { font-size: 12px; margin-top: 5px; min-height: 16px; }
-    .ok { color: #388e3c; }
+    .ok { color: #2e7d32; }
     .err { color: #d32f2f; }
 
     /* Photo slots */
@@ -46,7 +47,7 @@
     }
     .photo-slot:hover { border-color: #2196f3; }
     .photo-slot.filled { border: 2px solid #2196f3; min-height: 0; }
-    .slot-empty { text-align: center; color: #aaa; padding: 20px; font-size: 14px; pointer-events: none; }
+    .slot-empty { text-align: center; color: #666; padding: 20px; font-size: 14px; pointer-events: none; }
     .slot-img { width: 100%; display: block; max-height: 220px; object-fit: cover; border-radius: 5px; }
     .photo-remove {
       position: absolute; top: 6px; right: 6px;
@@ -62,8 +63,8 @@
     /* Display state */
     .big-label { font-size: 26px; font-weight: 700; color: #222; line-height: 1.35; word-break: break-word; }
     .display-thumb { width: 100%; border-radius: 8px; cursor: zoom-in; display: block; max-height: 260px; object-fit: cover; }
-    .section-label { font-size: 11px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
-    .saved-ago { font-size: 12px; color: #bbb; margin-top: 14px; }
+    .section-label { font-size: 11px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+    .saved-ago { font-size: 12px; color: #666; margin-top: 14px; }
     .nav-btn { font-size: 14px !important; }
 
     /* Lightbox */
@@ -84,7 +85,7 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large card w3-card w3-margin-top">
+  <div role="main" class="w3-container w3-padding-large card w3-card w3-margin-top">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
     <h1>Parking Spot</h1>
 
@@ -124,7 +125,7 @@
         <div class="photo-slot" id="spot-slot"
              onclick="if(!this.classList.contains('filled')) document.getElementById('spot-file').click()">
           <div class="slot-empty" id="spot-empty">📷 Tap to add photo</div>
-          <img class="slot-img" id="spot-img" hidden
+          <img class="slot-img" id="spot-img" alt="Photo of parking spot" hidden
                onclick="event.stopPropagation(); document.getElementById('spot-file').click()" />
           <button class="photo-remove" id="spot-remove" hidden
                   onclick="event.stopPropagation(); removePhoto('spot')" title="Remove photo">×</button>
@@ -137,7 +138,7 @@
         <div class="photo-slot" id="ticket-slot"
              onclick="if(!this.classList.contains('filled')) document.getElementById('ticket-file').click()">
           <div class="slot-empty" id="ticket-empty">🎫 Tap to add photo</div>
-          <img class="slot-img" id="ticket-img" hidden
+          <img class="slot-img" id="ticket-img" alt="Photo of parking ticket" hidden
                onclick="event.stopPropagation(); document.getElementById('ticket-file').click()" />
           <button class="photo-remove" id="ticket-remove" hidden
                   onclick="event.stopPropagation(); removePhoto('ticket')" title="Remove photo">×</button>

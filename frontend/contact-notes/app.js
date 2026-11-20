@@ -49,7 +49,7 @@ function render() {
         ${giftsHtml || '<div style="color:#ccc;font-size:13px;padding:4px 0;">No ideas yet.</div>'}
         <div class="gift-add-row">
           <input class="gift-input" data-contact-id="${c.id}" type="text" placeholder="Add a gift idea…" autocomplete="off" />
-          <button class="gift-add-btn w3-button w3-round" data-contact-id="${c.id}" style="background:#009688;color:white;font-size:13px;padding:6px 12px;">Add</button>
+          <button class="gift-add-btn w3-button w3-round" data-contact-id="${c.id}" style="background:#00796b;color:white;font-size:13px;padding:6px 12px;">Add</button>
         </div>
         <button class="contact-del" data-id="${c.id}">Delete contact</button>
       </div>

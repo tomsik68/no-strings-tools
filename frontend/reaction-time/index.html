@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Reaction Time", "url": "https://nostrings.tools/reaction-time/", "description": "Test reaction time with visual or audio cues. See your best, average and millisecond timing.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .arena {
       border: none;
@@ -36,17 +37,17 @@
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
-      background: #2196f3;
+      background: #1976d2;
       margin: 16px 0;
     }
-    .arena.waiting { background: #f44336; }
-    .arena.go { background: #4caf50; }
+    .arena.waiting { background: #d32f2f; }
+    .arena.go { background: #2e7d32; }
     .arena .big { font-size: 64px; font-family: "Courier New", monospace; }
-    .arena .small { font-size: 16px; font-weight: normal; opacity: 0.9; }
+    .arena .small { font-size: 16px; font-weight: normal; }
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>Reaction Time</h1>

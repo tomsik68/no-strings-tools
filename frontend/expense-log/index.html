@@ -17,34 +17,35 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Expense Log","url":"https://nostrings.tools/expense-log/","description": "Log and review with this free 💸 expense log. No signup, no ads, no tracking — works offline.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .card { max-width: 500px; margin: 0 auto; }
     .month-stat { background: white; border-radius: 8px; padding: 14px 18px; margin-bottom: 16px; border: 1px solid #eee; display: flex; align-items: baseline; gap: 8px; }
     .month-val { font-size: 26px; font-weight: 700; color: #222; }
-    .month-lbl { font-size: 13px; color: #999; }
+    .month-lbl { font-size: 13px; color: #666; }
     .expense-row { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: white; border-radius: 8px; margin-bottom: 6px; border: 1px solid #eee; }
     .expense-cat { font-size: 20px; flex-shrink: 0; }
     .expense-info { flex: 1; min-width: 0; }
     .expense-note { font-size: 14px; color: #222; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .expense-date { font-size: 11px; color: #bbb; }
+    .expense-date { font-size: 11px; color: #666; }
     .expense-amount { font-size: 15px; font-weight: 700; color: #222; flex-shrink: 0; }
     .del-btn { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 2px; line-height: 1; flex-shrink: 0; }
-    .del-btn:hover { color: #f44336; }
+    .del-btn:hover { color: #c62828; }
     .add-form { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     @media (max-width: 420px) { .form-row { grid-template-columns: 1fr; } }
     .field { display: flex; flex-direction: column; gap: 4px; }
-    .field label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .field label { font-size: 12px; color: #666; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
     .field input, .field select { padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; background: white; }
     .field input:focus, .field select:focus { outline: none; border-color: #ff9800; }
     .add-row { display: flex; justify-content: space-between; align-items: center; }
-    .clear-btn { font-size: 13px; color: #f44336; background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; }
-    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+    .clear-btn { font-size: 13px; color: #c62828; background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; }
+    .empty { text-align: center; color: #666; padding: 32px 0; font-size: 14px; }
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large card w3-card w3-margin-top">
+  <div role="main" class="w3-container w3-padding-large card w3-card w3-margin-top">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
     <h1>Expense Log</h1>
     <p class="w3-text-grey w3-small">Log and review with this free 💸 expense log. No signup, no ads, no tracking — works offline.</p>
@@ -80,7 +81,7 @@
       </div>
       <div class="add-row">
         <button id="clear-btn" class="clear-btn">Clear all…</button>
-        <button id="add-btn" class="w3-button w3-round" style="background:#ff9800; color:white;">Log Expense</button>
+        <button id="add-btn" class="w3-button w3-round" style="background:#b35300; color:white;">Log Expense</button>
       </div>
     </div>
 

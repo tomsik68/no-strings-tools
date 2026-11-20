@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "LED Resistor", "url": "https://nostrings.tools/led-resistor/", "description": "Calculate the resistor for your LED circuit. Enter supply voltage, LED voltage and current to get the exact resistor value.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     input { width: 100%; padding: 8px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 4px; }
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -27,32 +28,32 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
     <h1>LED Resistor Calculator</h1>
     <p class="w3-text-grey w3-small">Calculate the resistor value for LED circuits. Free LED resistor calculator — works offline in your browser.</p>
     <div class="grid-2">
       <div>
-        <label style="font-size: 12px; color: #666;">Supply Voltage (V)</label>
+        <label for="supply-voltage" style="font-size: 12px; color: #666;">Supply Voltage (V)</label>
         <input id="supply-voltage" type="number" value="5" min="1" step="0.1" />
       </div>
       <div>
-        <label style="font-size: 12px; color: #666;">LED Forward Voltage (V)</label>
+        <label for="led-voltage" style="font-size: 12px; color: #666;">LED Forward Voltage (V)</label>
         <input id="led-voltage" type="number" value="2" min="1" step="0.1" />
       </div>
       <div>
-        <label style="font-size: 12px; color: #666;">Desired Current (mA)</label>
+        <label for="desired-current" style="font-size: 12px; color: #666;">Desired Current (mA)</label>
         <input id="desired-current" type="number" value="20" min="1" step="1" />
       </div>
       <div>
-        <label style="font-size: 12px; color: #666;">Power Rating (W)</label>
+        <label for="power-rating" style="font-size: 12px; color: #666;">Power Rating (W)</label>
         <input id="power-rating" type="number" value="0.25" min="0.1" step="0.1" />
       </div>
     </div>
     <div class="result" id="result"></div>
   </div>
     <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #ddd;">
-      <h3 class="w3-medium">Related tools</h3>
+      <h2 class="w3-medium">Related tools</h2>
       <p class="w3-small w3-text-grey">
         <a href="../resistor-decoder/" class="w3-text-blue" style="text-decoration: none;">Resistor Decoder</a> ·
         <a href="../voltage-divider/" class="w3-text-blue" style="text-decoration: none;">Voltage Divider</a> ·

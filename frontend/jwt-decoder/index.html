@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "JWT Decoder", "url": "https://nostrings.tools/jwt-decoder/", "description": "Decode JWT tokens locally. The token never leaves your browser — inspect headers and payloads safely.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     textarea {
       width: 100%;
@@ -41,7 +42,7 @@
       border-radius: 8px;
       border-left: 4px solid #2196f3;
     }
-    .section h3 {
+    .section h2 {
       margin-top: 0;
       font-size: 13px;
       color: #666;
@@ -83,7 +84,7 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 900px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>JWT Decoder</h1>
@@ -97,18 +98,18 @@
 
     <div class="sections">
       <div class="section">
-        <h3>Header</h3>
+        <h2>Header</h2>
         <div class="json-output" id="header-output">--</div>
       </div>
 
       <div class="section">
-        <h3>Payload</h3>
+        <h2>Payload</h2>
         <div class="json-output" id="payload-output">--</div>
       </div>
     </div>
 
     <div class="section" style="margin-top: 16px;">
-      <h3>Signature</h3>
+      <h2>Signature</h2>
       <div class="json-output" id="signature-output">--</div>
     </div>
 

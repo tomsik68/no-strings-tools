@@ -17,17 +17,18 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Reading Log","url":"https://nostrings.tools/reading-log/","description":"Track books — reading, read, or want to read. Add ratings and notes.","applicationCategory":"LifestyleApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .card { max-width: 540px; margin: 0 auto; }
     .filter-tabs { display: flex; gap: 0; margin-bottom: 14px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
-    .tab { flex: 1; padding: 8px 4px; border: none; background: white; color: #888; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer; text-align: center; }
+    .tab { flex: 1; padding: 8px 4px; border: none; background: white; color: #666; font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer; text-align: center; }
     .tab.active { background: #283593; color: white; }
     .tab:not(:last-child) { border-right: 1px solid #ddd; }
     .book-card { background: white; border-radius: 8px; padding: 13px 16px; margin-bottom: 8px; border: 1px solid #eee; display: flex; gap: 12px; align-items: flex-start; }
     .book-info { flex: 1; min-width: 0; }
     .book-title { font-size: 14px; font-weight: 700; color: #222; }
-    .book-author { font-size: 12px; color: #888; margin-top: 2px; }
+    .book-author { font-size: 12px; color: #666; margin-top: 2px; }
     .book-notes { font-size: 12px; color: #555; margin-top: 5px; font-style: italic; }
     .star-rating { display: flex; gap: 2px; margin-top: 4px; }
     .star { font-size: 15px; cursor: pointer; color: #ddd; line-height: 1; transition: color .1s; }
@@ -35,17 +36,17 @@
     .book-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; flex-shrink: 0; }
     .status-select { font-size: 11px; padding: 3px 6px; border: 1px solid #ddd; border-radius: 5px; background: white; color: #555; font-family: inherit; cursor: pointer; }
     .del-btn { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 2px; line-height: 1; }
-    .del-btn:hover { color: #f44336; }
+    .del-btn:hover { color: #c62828; }
     .add-form { margin-top: 20px; background: white; border-radius: 8px; padding: 16px; border: 1px solid #eee; display: flex; flex-direction: column; gap: 10px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     @media (max-width: 420px) { .form-row { grid-template-columns: 1fr; } }
     .field { display: flex; flex-direction: column; gap: 4px; }
-    .field label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .field label { font-size: 12px; color: #666; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
     .field input, .field select, .field textarea { padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; background: white; }
     .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #283593; }
     .field textarea { resize: vertical; min-height: 52px; }
     .add-row { display: flex; justify-content: flex-end; }
-    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+    .empty { text-align: center; color: #666; padding: 32px 0; font-size: 14px; }
     .status-tag { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 10px; white-space: nowrap; }
     .status-tag.reading { background: #e3f2fd; color: #1565c0; }
     .status-tag.read    { background: #e8f5e9; color: #2e7d32; }
@@ -53,7 +54,7 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large card w3-card w3-margin-top">
+  <div role="main" class="w3-container w3-padding-large card w3-card w3-margin-top">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
     <h1>Reading Log</h1>
     <p class="w3-text-grey w3-small">Books you've read, are reading, or want to read.</p>

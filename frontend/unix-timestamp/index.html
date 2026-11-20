@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Unix Timestamp", "url": "https://nostrings.tools/unix-timestamp/", "description": "Convert Unix timestamps to human dates and back instantly and offline.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .converter {
       background: white;
@@ -52,20 +53,20 @@
     }
     .divider {
       text-align: center;
-      color: #999;
+      color: #666;
       margin: 20px 0;
       font-weight: 600;
     }
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>Unix Timestamp Converter</h1>
 
     <p class="w3-text-grey w3-small">Convert Unix timestamps to human dates and back, instantly and offline. Free, no ads, no tracking.</p><div class="converter">
-      <h3>Unix Timestamp → Date/Time</h3>
+      <h2 class="w3-xlarge">Unix Timestamp → Date/Time</h2>
       <div class="input-group">
         <label>Timestamp (seconds or milliseconds)</label>
         <input id="timestamp-input" type="text" placeholder="1704067200 or 1704067200000" />
@@ -76,13 +77,13 @@
     <div class="divider">↕</div>
 
     <div class="converter">
-      <h3>Date/Time → Unix Timestamp</h3>
+      <h2 class="w3-xlarge">Date/Time → Unix Timestamp</h2>
       <div class="input-group">
-        <label>Date & Time</label>
+        <label for="datetime-input">Date & Time</label>
         <input id="datetime-input" type="datetime-local" />
       </div>
       <div class="input-group">
-        <label>Timezone Offset</label>
+        <label for="timezone-select">Timezone Offset</label>
         <select id="timezone-select" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
           <option value="local">Local Timezone</option>
           <option value="utc">UTC</option>
@@ -92,7 +93,7 @@
     </div>
 
     <div class="converter" style="margin-top: 20px; background: #f0f8ff; border-left: 4px solid #2196f3;">
-      <h4>ℹ️ Now</h4>
+      <h3 style="font-size:20px">ℹ️ Now</h3>
       <div class="result" id="now-timestamp"></div>
     </div>
 

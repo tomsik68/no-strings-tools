@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Keystroke Test", "url": "https://nostrings.tools/keystroke-test/", "description": "Test keyboard speed and ghosting. Measure keys per second and per minute. Instant results, no calibration needed.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .test-area {
       background: white;
@@ -40,20 +41,20 @@
     .stat-label { font-size: 12px; color: #666; }
     .pressed-keys { min-height: 48px; margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
     .key-pill {
-      background: #2196f3; color: white; padding: 6px 12px; border-radius: 4px;
+      background: #1976d2; color: white; padding: 6px 12px; border-radius: 4px;
       font-family: "Courier New", monospace; font-weight: 600; font-size: 13px;
     }
-    .hint { font-size: 12px; color: #888; margin-top: 8px; }
+    .hint { font-size: 12px; color: #666; margin-top: 8px; }
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>Keystroke Test</h1>
     <p class="w3-text-grey w3-small">Test your keyboard speed and rollover. Press keys inside the box — see keys per second, KPM and any detected ghosting.</p>
 
-    <div id="test-area" class="test-area" tabindex="0" role="button" aria-label="Press keys here to test">
+    <div id="test-area" class="test-area" tabindex="0" role="button" aria-description="Press keys here to test">
       <div class="big-num" id="main-display">0.0</div>
       <div class="w3-text-grey w3-small">keys per second</div>
       <div class="hint">Click here, then type as fast as you can</div>

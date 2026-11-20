@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Voltage Divider", "url": "https://nostrings.tools/voltage-divider/", "description": "Calculate voltage divider ratios and output voltage. Enter R1, R2 and Vin to get exact output.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     input { width: 100%; padding: 8px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 4px; }
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -28,21 +29,21 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
     <h1>Voltage Divider Calculator</h1>
     <p class="w3-text-grey w3-small">Calculate with this free voltage divider calculator directly in your browser. No signup, no ads, no tracking — works offline.</p>
     <div class="grid-2">
       <div>
-        <label style="font-size: 12px; color: #666;">Input Voltage (V)</label>
+        <label for="input-voltage" style="font-size: 12px; color: #666;">Input Voltage (V)</label>
         <input id="input-voltage" type="number" value="10" min="0" step="0.1" />
       </div>
       <div>
-        <label style="font-size: 12px; color: #666;">R1 (Ω)</label>
+        <label for="r1" style="font-size: 12px; color: #666;">R1 (Ω)</label>
         <input id="r1" type="number" value="1000" min="1" />
       </div>
       <div>
-        <label style="font-size: 12px; color: #666;">R2 (Ω)</label>
+        <label for="r2" style="font-size: 12px; color: #666;">R2 (Ω)</label>
         <input id="r2" type="number" value="1000" min="1" />
       </div>
     </div>

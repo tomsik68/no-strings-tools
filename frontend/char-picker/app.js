@@ -32,7 +32,8 @@ const SECTIONS = {
 };
 
 for (const [title, chars] of Object.entries(SECTIONS)) {
-  const heading = document.createElement("h4");
+  const heading = document.createElement("h2");
+  heading.className = "cat-h w3-large";
   heading.textContent = title;
   const grid = document.createElement("div");
   grid.className = "char-grid";

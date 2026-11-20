@@ -17,18 +17,19 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Blood Pressure Log","url":"https://nostrings.tools/blood-pressure/","description": "Log and review with this free 🩸 blood pressure log. No signup, no ads, no tracking — works offline.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .card { max-width: 500px; margin: 0 auto; }
     .stats-row { display: flex; gap: 10px; margin-bottom: 16px; }
     .stat { background: white; border-radius: 8px; padding: 12px 14px; flex: 1; text-align: center; border: 1px solid #eee; }
     .stat-val { font-size: 18px; font-weight: 700; color: #222; }
-    .stat-lbl { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: .04em; margin-top: 2px; }
+    .stat-lbl { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: .04em; margin-top: 2px; }
     .reading-row { display: flex; align-items: center; gap: 10px; padding: 11px 14px; background: white; border-radius: 8px; margin-bottom: 8px; border: 1px solid #eee; }
     .reading-bp { font-size: 18px; font-weight: 700; color: #222; flex-shrink: 0; }
     .reading-info { flex: 1; min-width: 0; }
-    .reading-date { font-size: 12px; color: #999; }
-    .reading-pulse { font-size: 12px; color: #bbb; }
+    .reading-date { font-size: 12px; color: #666; }
+    .reading-pulse { font-size: 12px; color: #666; }
     .badge { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; }
     .badge.normal   { background: #e8f5e9; color: #2e7d32; }
     .badge.elevated { background: #fff8e1; color: #f57f17; }
@@ -36,20 +37,20 @@
     .badge.high2    { background: #fde8e8; color: #c62828; }
     .badge.crisis   { background: #b71c1c; color: white; }
     .del-btn { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 2px; line-height: 1; flex-shrink: 0; }
-    .del-btn:hover { color: #f44336; }
+    .del-btn:hover { color: #c62828; }
     .add-form { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
     @media (max-width: 460px) { .form-grid { grid-template-columns: 1fr 1fr; } }
     .field { display: flex; flex-direction: column; gap: 4px; }
-    .field label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .field label { font-size: 12px; color: #666; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
     .field input { padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; }
     .field input:focus { outline: none; border-color: #e53935; }
     .add-row { display: flex; justify-content: flex-end; }
-    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+    .empty { text-align: center; color: #666; padding: 32px 0; font-size: 14px; }
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large card w3-card w3-margin-top">
+  <div role="main" class="w3-container w3-padding-large card w3-card w3-margin-top">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
     <h1>Blood Pressure Log</h1>
     <p class="w3-text-grey w3-small">Log and review with this free 🩸 blood pressure log. No signup, no ads, no tracking — works offline.</p>
@@ -77,7 +78,7 @@
         </div>
       </div>
       <div class="add-row">
-        <button id="add-btn" class="w3-button w3-round" style="background:#e53935; color:white;">Log Reading</button>
+        <button id="add-btn" class="w3-button w3-round" style="background:#c62828; color:white;">Log Reading</button>
       </div>
     </div>
 

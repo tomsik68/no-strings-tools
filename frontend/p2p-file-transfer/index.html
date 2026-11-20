@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"P2P File Transfer","url":"https://nostrings.tools/p2p-file-transfer/","description": "Send files directly between devices with this free P2P file transfer tool. No server, no account, no size limit — your files move peer-to-peer in your browser.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .card { max-width: 520px; margin: 0 auto; }
     .panel { margin-bottom: 12px; }
@@ -47,25 +48,25 @@
     .status.info    { background: #e1f5fe; color: #0277bd; }
     .status.success { background: #e8f5e9; color: #2e7d32; }
     .status.error   { background: #ffebee; color: #c62828; }
-    .field-label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; display: block; }
+    .field-label { font-size: 12px; color: #666; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; display: block; }
     /* Drop zone */
     .drop-zone { border: 2px dashed #ccc; border-radius: 10px; padding: 36px 24px; text-align: center; cursor: pointer; transition: border-color .15s, background .15s; background: #fafafa; }
     .drop-zone:hover, .drop-zone.drag-over { border-color: #0277bd; background: #e1f5fe; }
     .drop-zone.disabled { opacity: .45; pointer-events: none; }
     .drop-icon { font-size: 40px; margin-bottom: 10px; }
     .drop-title { font-size: 15px; font-weight: 700; color: #333; margin: 0 0 6px; }
-    .drop-sub   { font-size: 13px; color: #888; margin: 0 0 16px; }
+    .drop-sub   { font-size: 13px; color: #666; margin: 0 0 16px; }
     .choose-btn { display: inline-block; padding: 9px 22px; background: #0277bd; color: white; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; }
     .choose-btn:hover { background: #01579b; }
     /* Transfer log */
     #transfer-log { margin-top: 12px; }
     .tx-item { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; }
     .tx-name { font-size: 14px; font-weight: 600; margin-bottom: 6px; word-break: break-all; }
-    .tx-size { font-weight: 400; color: #888; }
+    .tx-size { font-weight: 400; color: #666; }
     .tx-bar  { height: 5px; background: #e0e0e0; border-radius: 3px; overflow: hidden; margin-bottom: 5px; }
     .tx-fill { height: 100%; background: #0277bd; border-radius: 3px; width: 0%; transition: width .1s; }
     .tx-fill.done { background: #2e7d32; }
-    .tx-sub  { font-size: 12px; color: #888; }
+    .tx-sub  { font-size: 12px; color: #666; }
     .tx-link { color: #0277bd; text-decoration: none; font-size: 13px; font-weight: 700; }
     .tx-link:hover { text-decoration: underline; }
     /* Disconnect */
@@ -74,7 +75,7 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large card w3-card w3-margin-top">
+  <div role="main" class="w3-container w3-padding-large card w3-card w3-margin-top">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
     <h1>P2P File Transfer</h1>
     <p class="w3-text-grey w3-small">Send files directly between devices — no server, no account, no size limit. Use this P2P file transfer to move files without uploading them anywhere.</p>

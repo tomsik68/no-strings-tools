@@ -17,35 +17,36 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Workout Log","url":"https://nostrings.tools/workout-log/","description": "Log and review with this free 🏋️ workout log. No signup, no ads, no tracking — works offline.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .card { max-width: 520px; margin: 0 auto; }
     .day-block { margin-bottom: 16px; }
-    .day-heading { font-size: 12px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: .05em; padding: 6px 14px; background: #eee; border-radius: 6px 6px 0 0; }
+    .day-heading { font-size: 12px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .05em; padding: 6px 14px; background: #eee; border-radius: 6px 6px 0 0; }
     .exercise-row { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: white; border-bottom: 1px solid #f0f0f0; }
     .exercise-row:last-child { border-bottom: none; border-radius: 0 0 6px 6px; }
     .exercise-name { font-size: 14px; font-weight: 600; color: #222; flex: 1; }
     .exercise-sets { font-size: 13px; color: #666; flex-shrink: 0; }
     .del-entry { background: none; border: none; color: #ddd; cursor: pointer; font-size: 16px; padding: 0 2px; line-height: 1; }
-    .del-entry:hover { color: #f44336; }
+    .del-entry:hover { color: #c62828; }
     .add-form { margin-top: 16px; background: white; border-radius: 8px; padding: 16px; border: 1px solid #eee; }
-    .form-title { font-size: 12px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; }
+    .form-title { font-size: 12px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; }
     .form-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 8px; align-items: end; }
     @media (max-width: 480px) { .form-row { grid-template-columns: 1fr 1fr; } }
     .field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-    .field label { font-size: 11px; color: #aaa; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .field label { font-size: 11px; color: #666; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
     .field input { padding: 8px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; width: 100%; min-width: 0; box-sizing: border-box; }
     .field input:focus { outline: none; border-color: #f57c00; }
     .add-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
     .date-field { display: flex; flex-direction: column; gap: 4px; }
-    .date-field label { font-size: 11px; color: #aaa; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .date-field label { font-size: 11px; color: #666; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
     .date-field input { padding: 7px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; font-family: inherit; }
     .date-field input:focus { outline: none; border-color: #f57c00; }
-    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+    .empty { text-align: center; color: #666; padding: 32px 0; font-size: 14px; }
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large card w3-card w3-margin-top">
+  <div role="main" class="w3-container w3-padding-large card w3-card w3-margin-top">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
     <h1>Workout Log</h1>
     <p class="w3-text-grey w3-small">Log and review with this free 🏋️ workout log. No signup, no ads, no tracking — works offline.</p>
@@ -85,7 +86,7 @@
           <label for="w-date">Date</label>
           <input id="w-date" type="date" />
         </div>
-        <button id="add-btn" class="w3-button w3-round" style="background:#f57c00; color:white;">Log Set</button>
+        <button id="add-btn" class="w3-button w3-round" style="background:#b35300; color:white;">Log Set</button>
       </div>
     </div>
 

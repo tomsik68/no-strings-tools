@@ -25,7 +25,7 @@ function generate() {
 
 function render() {
   if (uuids.length === 0) {
-    uuidList.innerHTML = '<div style="padding: 20px; text-align: center; color: #999;">Click Generate to create UUIDs</div>';
+    uuidList.innerHTML = '<div style="padding: 20px; text-align: center; color: #666;">Click Generate to create UUIDs</div>';
     return;
   }
 

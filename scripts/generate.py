@@ -64,12 +64,10 @@ def render_card(app):
     desc = app["description"]
     heading = f"{emoji} {title}".strip()
     return (
-        f'      <a href="{href}" class="app-card">\n'
-        f"        <div>\n"
-        f"          <h3>{heading}</h3>\n"
-        f"          <p>{desc}</p>\n"
-        f"        </div>\n"
-        f"      </a>\n"
+        f'      <div class="app-card" data-href="{href}">\n'
+        f'        <h3><a href="{href}">{heading}</a></h3>\n'
+        f"        <p>{desc}</p>\n"
+        f"      </div>\n"
     )
 
 

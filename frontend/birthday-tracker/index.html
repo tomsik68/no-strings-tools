@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Birthday Tracker","url":"https://nostrings.tools/birthday-tracker/","description": "Track easily with this free 🎂 birthday tracker. No signup, no ads, no tracking — works offline.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .card { max-width: 500px; margin: 0 auto; }
     .bday-row {
@@ -27,25 +28,25 @@
     }
     .bday-info { flex: 1; min-width: 0; }
     .bday-name { font-size: 15px; font-weight: 600; color: #222; }
-    .bday-date { font-size: 12px; color: #999; margin-top: 1px; }
-    .age-badge { font-size: 11px; color: #bbb; margin-top: 1px; }
+    .bday-date { font-size: 12px; color: #666; margin-top: 1px; }
+    .age-badge { font-size: 11px; color: #666; margin-top: 1px; }
     .bday-countdown { font-size: 13px; font-weight: 700; text-align: right; flex-shrink: 0; white-space: nowrap; }
     .bday-countdown.today { color: #e91e63; }
     .bday-countdown.soon { color: #ff9800; }
-    .bday-countdown.future { color: #888; font-weight: 600; }
+    .bday-countdown.future { color: #666; font-weight: 600; }
     .bday-del { background: none; border: none; color: #ddd; cursor: pointer; font-size: 18px; padding: 0 2px; flex-shrink: 0; line-height: 1; }
-    .bday-del:hover { color: #f44336; }
+    .bday-del:hover { color: #c62828; }
     .add-form { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
     .field { display: flex; flex-direction: column; gap: 4px; }
-    .field label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .field label { font-size: 12px; color: #666; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
     .field input { padding: 9px 11px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: inherit; }
     .field input:focus { outline: none; border-color: #e91e63; }
     .add-row { display: flex; justify-content: flex-end; }
-    .empty { text-align: center; color: #bbb; padding: 32px 0; font-size: 14px; }
+    .empty { text-align: center; color: #666; padding: 32px 0; font-size: 14px; }
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large card w3-card w3-margin-top">
+  <div role="main" class="w3-container w3-padding-large card w3-card w3-margin-top">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
     <h1>Birthday Tracker</h1>
     <p class="w3-text-grey w3-small">Track easily with this free 🎂 birthday tracker. No signup, no ads, no tracking — works offline.</p>
@@ -62,7 +63,7 @@
         <input id="bday-date" type="date" />
       </div>
       <div class="add-row">
-        <button id="add-btn" class="w3-button w3-round" style="background:#e91e63; color:white;">Add Birthday</button>
+        <button id="add-btn" class="w3-button w3-round" style="background:#c2185b; color:white;">Add Birthday</button>
       </div>
     </div>
 

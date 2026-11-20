@@ -41,7 +41,7 @@ function render() {
     const done = t.endAt && rem === 0;
     return `<div class="w3-panel w3-white w3-round w3-border" style="padding:14px;margin:0 0 10px;" data-id="${t.id}">
       <div style="display:flex;gap:8px;align-items:center;">
-        <input class="w3-input w3-border w3-round name" data-id="${t.id}" value="${esc(t.name)}" style="flex:1;" ${running ? "readonly" : ""} />
+        <input class="w3-input w3-border w3-round name" aria-label="Timer name" data-id="${t.id}" value="${esc(t.name)}" style="flex:1;" ${running ? "readonly" : ""} />
         <button class="w3-button w3-small w3-text-grey del" data-id="${t.id}" aria-label="Remove">×</button>
       </div>
       <div style="font-size:40px;font-weight:700;text-align:center;margin:8px 0;font-variant-numeric:tabular-nums;${done ? "color:#c62828;" : ""}">${fmt(rem)}${done ? " ✓" : ""}</div>

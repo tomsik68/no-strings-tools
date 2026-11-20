@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Shared Timer","url":"https://nostrings.tools/shared-timer/","description":"Start a countdown and share it with others. Everyone sees the same timer in real-time. Peer-to-peer, no server, no account.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .card { max-width: 480px; margin: 0 auto; }
     .panel { margin-bottom: 12px; }
@@ -25,7 +26,7 @@
     .status.info { background: #ede7f6; color: #4a148c; }
     .status.success { background: #e8f5e9; color: #2e7d32; }
     .status.error { background: #ffebee; color: #c62828; }
-    .field-label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; display: block; }
+    .field-label { font-size: 12px; color: #666; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; display: block; }
     /* Duration picker */
     .preset-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
     .preset-btn { padding: 10px 16px; border-radius: 8px; border: 2px solid #e0e0e0; background: white; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer; transition: border-color .12s, background .12s; }
@@ -64,7 +65,7 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large card w3-card w3-margin-top">
+  <div role="main" class="w3-container w3-padding-large card w3-card w3-margin-top">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
     <h1>Shared Timer</h1>
     <p class="w3-text-grey w3-small">Start a countdown and share it — everyone sees the same timer.</p>

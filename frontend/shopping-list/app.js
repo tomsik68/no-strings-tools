@@ -33,7 +33,7 @@ function render() {
           <span
             data-index="${index}"
             class="item-text"
-            style="flex: 1; cursor: pointer; ${item.bought ? "text-decoration: line-through; color: #999;" : ""}"
+            style="flex: 1; cursor: pointer; ${item.bought ? "text-decoration: line-through; color: #666;" : ""}"
           >
             ${escapeHtml(item.text)}
           </span>

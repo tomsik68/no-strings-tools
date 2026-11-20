@@ -38,7 +38,7 @@ function render() {
       <table class="w3-table w3-small" style="margin-top: 4px;">
         ${[72, 150, 300, 600].map((d) => {
           const wi = w / d, hi = h / d;
-          return `<tr><td>${d} DPI</td><td><strong>${round(wi)}" × ${round(hi)}"</strong></td><td>${round(wi * 2.54)} × ${round(hi * 2.54)} cm</td></tr>`;
+          return `<tr><th scope="row" style="font-weight:normal">${d} DPI</th><td><strong>${round(wi)}" × ${round(hi)}"</strong></td><td>${round(wi * 2.54)} × ${round(hi * 2.54)} cm</td></tr>`;
         }).join("")}
       </table>
     </div>`;

@@ -17,19 +17,20 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Screen Recorder", "url": "https://nostrings.tools/screen-recorder/", "description": "Record your screen with audio. Perfect for tutorials, screencasts or documentation. Download as video.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .record-btn { width: 100%; padding: 20px; font-size: 20px; margin-top: 16px; }
     .preview-btn { width: 100%; padding: 10px; font-size: 15px; margin-top: 8px; }
     video { width: 100%; border-radius: 8px; background: #000; margin-top: 16px; }
     .download-btn { width: 100%; padding: 14px; font-size: 16px; margin-top: 8px; }
-    .rec-indicator { text-align: center; color: #f44336; font-weight: bold; margin-top: 12px; font-size: 15px; }
+    .rec-indicator { text-align: center; color: #c62828; font-weight: bold; margin-top: 12px; font-size: 15px; }
     .hint { background: #fff3cd; color: #856404; padding: 12px; border-radius: 4px; margin-top: 16px; }
     .error { background: #ffcdd2; color: #c62828; padding: 12px; border-radius: 4px; margin-top: 16px; }
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>Screen Recorder</h1>

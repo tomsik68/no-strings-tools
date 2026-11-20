@@ -15,11 +15,12 @@
   <meta property="og:image" content="https://nostrings.tools/og-image.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="No Strings Tools" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "AboutPage", "name": "About No Strings Tools", "url": "https://nostrings.tools/about/", "description": "About No Strings Tools — a collection of free, offline-first web tools with no accounts, no ads and no tracking.", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>About</h1>
@@ -34,7 +35,7 @@
         devices. Your browser can do these tasks just fine.
     </p>
 
-    <h3>What these apps promise</h3>
+    <h2 class="w3-xlarge">What these apps promise</h2>
     <ul>
       <li><b>No accounts.</b>: no signup, no login </li>
       <li><b>No tracking.</b>: no ads that slow down your browser </li>
@@ -42,7 +43,7 @@
       <li><b>One problem per tool.</b>: tools remain small and uncluttered </li>
     </ul>
 
-    <h3>Who makes this</h3>
+    <h2 class="w3-xlarge">Who makes this</h2>
     <p>
       I'm <a href="https://jasku.xyz" class="w3-text-blue">Tomáš Jašek</a>. I
       make these apps for my own needs and share with everyone. The code is

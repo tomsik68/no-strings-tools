@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "P2P Chat", "url": "https://nostrings.tools/p2p-chat/", "description": "Chat privately peer-to-peer with files. No server, no account — everything stays between you and them.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     body { margin: 0; padding: 0; }
     .card-section { background: white; padding: 24px; border-radius: 8px; margin-bottom: 16px; }
@@ -34,15 +35,15 @@
     .room-code { font-family: monospace; font-size: 18px; font-weight: 700; background: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; padding: 4px 10px; }
     .members { font-size: 13px; color: #666; margin-bottom: 12px; }
     .messages { height: 380px; overflow-y: auto; border: 1px solid #ddd; border-radius: 4px; padding: 12px; background: #fafafa; font-size: 14px; line-height: 1.7; }
-    .messages .msg-time { color: #999; font-size: 11px; margin-right: 6px; }
+    .messages .msg-time { color: #666; font-size: 11px; margin-right: 6px; }
     .messages .msg-name { font-weight: 700; }
-    .messages .msg-system { color: #888; font-style: italic; }
+    .messages .msg-system { color: #666; font-style: italic; }
     .send-row { display: flex; gap: 8px; margin-top: 12px; }
     .send-row input { flex: 1; margin: 0; }
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>P2P Chat</h1>

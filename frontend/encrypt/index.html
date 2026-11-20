@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Encrypt/Decrypt", "url": "https://nostrings.tools/encrypt/", "description": "Encrypt and decrypt text online with a password (AES-256-GCM). Everything runs in your browser and works offline.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
   <style>
     .input-section {
@@ -37,28 +38,28 @@
       flex-wrap: wrap;
     }
     .btn-encrypt {
-      background-color: #4caf50;
+      background-color: #2e7d32;
       color: white;
     }
     .btn-encrypt:hover {
       background-color: #45a049;
     }
     .btn-decrypt {
-      background-color: #2196f3;
+      background-color: #1976d2;
       color: white;
     }
     .btn-decrypt:hover {
       background-color: #0b7dda;
     }
     .btn-copy {
-      background-color: #ff9800;
+      background-color: #b35300;
       color: white;
     }
     .btn-copy:hover {
-      background-color: #e68900;
+      background-color: #8f4200;
     }
     .btn-clear {
-      background-color: #f44336;
+      background-color: #d32f2f;
       color: white;
     }
     .btn-clear:hover {
@@ -72,7 +73,7 @@
     }
     .output-label {
       font-size: 12px;
-      color: #999;
+      color: #666;
       margin-bottom: 8px;
       font-weight: 600;
     }
@@ -90,11 +91,11 @@
       color: #333;
     }
     .empty-output {
-      color: #999;
+      color: #666;
       font-style: italic;
     }
     .feedback {
-      color: #4caf50;
+      color: #2e7d32;
       font-size: 12px;
       margin-top: 8px;
       min-height: 18px;
@@ -102,7 +103,7 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 600px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>Encrypt / Decrypt Text</h1>
@@ -140,7 +141,7 @@
   </div>
 
     <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #ddd;">
-      <h3 class="w3-medium">Related tools</h3>
+      <h2 class="w3-medium">Related tools</h2>
       <p class="w3-small w3-text-grey">
         <a href="../hash-generator/" class="w3-text-blue" style="text-decoration: none;">Hash Generator</a> ·
         <a href="../password-generator/" class="w3-text-blue" style="text-decoration: none;">Password Generator</a> ·

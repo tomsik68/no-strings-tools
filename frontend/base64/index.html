@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Base64", "url": "https://nostrings.tools/base64/", "description": "Encode or decode Base64 strings instantly. Paste or type, no upload, no server involved.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .tabs {
       display: flex;
@@ -34,7 +35,7 @@
     }
     .tab.active {
       border-bottom-color: #2196f3;
-      color: #2196f3;
+      color: #1565c0;
     }
     .tab-content {
       display: none;
@@ -75,7 +76,7 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
 
     <h1>Base64 Encoder/Decoder</h1>
@@ -87,29 +88,29 @@
 
     <!-- Encode Tab -->
     <div id="encode" class="tab-content active">
-      <h3>Text to Base64</h3>
+      <h2 class="w3-xlarge">Text to Base64</h2>
       <textarea id="encode-input" placeholder="Enter text to encode..."></textarea>
       <div class="button-row">
         <button class="w3-button w3-blue w3-round copy-btn" id="copy-encoded">📋 Copy</button>
       </div>
-      <h4>Output</h4>
+      <h3 style="font-size:20px">Output</h3>
       <div class="output-box" id="encode-output">--</div>
     </div>
 
     <!-- Decode Tab -->
     <div id="decode" class="tab-content">
-      <h3>Base64 to Text</h3>
+      <h2 class="w3-xlarge">Base64 to Text</h2>
       <textarea id="decode-input" placeholder="Enter base64 to decode..."></textarea>
       <div class="button-row">
         <button class="w3-button w3-blue w3-round copy-btn" id="copy-decoded">📋 Copy</button>
       </div>
-      <h4>Output</h4>
+      <h3 style="font-size:20px">Output</h3>
       <div class="output-box" id="decode-output">--</div>
     </div>
   </div>
 
     <section style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #ddd;">
-      <h3 class="w3-medium">Related tools</h3>
+      <h2 class="w3-medium">Related tools</h2>
       <p class="w3-small w3-text-grey">
         <a href="../gzip/" class="w3-text-blue" style="text-decoration: none;">Gzip</a> ·
         <a href="../hash-generator/" class="w3-text-blue" style="text-decoration: none;">Hash Generator</a> ·

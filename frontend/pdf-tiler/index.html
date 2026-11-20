@@ -17,7 +17,8 @@
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Tiler","url":"https://nostrings.tools/pdf-tiler/","description":"Auto-crop and tile a PDF page — get multiple copies on one A4 sheet. Runs entirely in your browser.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","author":{"@type":"Person","name":"Tomáš Jašek","url":"https://jasku.xyz"}}</script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
     .card { max-width: 520px; margin: 0 auto; }
     .panel { margin-bottom: 12px; }
@@ -26,8 +27,8 @@
     .drop-zone:hover, .drop-zone.drag-over { border-color: #e65100; background: #fff8f5; }
     .drop-icon { font-size: 52px; margin-bottom: 14px; }
     .drop-title { font-size: 17px; font-weight: 700; color: #333; margin: 0 0 6px; }
-    .drop-sub { font-size: 14px; color: #888; margin: 0 0 22px; }
-    .choose-btn { display: inline-block; padding: 11px 28px; background: #e65100; color: white; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; }
+    .drop-sub { font-size: 14px; color: #666; margin: 0 0 22px; }
+    .choose-btn { display: inline-block; padding: 11px 28px; background: #bf360c; color: white; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; }
     .choose-btn:hover { background: #bf360c; }
     /* Processing spinner */
     @keyframes spin { to { transform: rotate(360deg); } }
@@ -37,15 +38,15 @@
     .grid-info { text-align: center; font-size: 15px; color: #333; margin: 0 0 16px; }
     .grid-info strong { color: #e65100; }
     /* Margin buttons */
-    .field-label { font-size: 12px; color: #888; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; display: block; }
+    .field-label { font-size: 12px; color: #666; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; display: block; }
     .margin-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
     .margin-btn { padding: 9px 16px; border-radius: 8px; border: 2px solid #e0e0e0; background: white; font-size: 13px; font-family: inherit; cursor: pointer; transition: all .12s; }
     .margin-btn:hover { border-color: #e65100; color: #e65100; }
-    .margin-btn.active { border-color: #e65100; background: #e65100; color: white; }
+    .margin-btn.active { border-color: #e65100; background: #bf360c; color: white; }
     /* Action buttons */
     .action-row { display: flex; gap: 10px; }
     .action-row button { flex: 1; padding: 13px; border-radius: 8px; border: none; font-size: 15px; font-weight: 700; font-family: inherit; cursor: pointer; }
-    #download-btn { background: #e65100; color: white; }
+    #download-btn { background: #bf360c; color: white; }
     #download-btn:hover:not(:disabled) { background: #bf360c; }
     #download-btn:disabled { opacity: .5; cursor: default; }
     #reset-btn, #retry-btn { background: #e0e0e0; color: #333; }
@@ -59,7 +60,7 @@
   </style>
 </head>
 <body class="w3-light-grey">
-  <div class="w3-container w3-padding-large card w3-card w3-margin-top">
+  <div role="main" class="w3-container w3-padding-large card w3-card w3-margin-top">
     <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
     <h1>PDF Tiler</h1>
     <p class="w3-text-grey w3-small">Auto-crops the content and tiles as many copies as fit on the output page.</p>
@@ -75,7 +76,7 @@
           <input type="file" id="file-input" accept=".pdf" hidden />
         </label>
       </div>
-      <p style="font-size:12px; color:#aaa; text-align:center; margin-top:12px;">Processed entirely in your browser — file never leaves your device. Requires internet on first use.</p>
+      <p style="font-size:12px; color:#666; text-align:center; margin-top:12px;">Processed entirely in your browser — file never leaves your device. Requires internet on first use.</p>
     </div>
 
     <!-- Processing state -->

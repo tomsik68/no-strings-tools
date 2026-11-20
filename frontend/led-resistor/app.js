@@ -44,7 +44,7 @@ function calculate() {
     <div class="result-row"><span>Nearest Standard</span><span class="result-value">${nearestR} Ω</span></div>
     <div class="result-row"><span>Actual Current</span><span class="result-value">${actualCurrent.toFixed(1)} mA</span></div>
     <div class="result-row"><span>Power Dissipated</span><span class="result-value">${actualPower.toFixed(3)} W</span></div>
-    <div class="result-row"><span>Safety Margin</span><span class="result-value" style="color: ${safetyMargin > 20 ? '#4caf50' : '#ff9800'}">${safetyMargin.toFixed(0)}%</span></div>
+    <div class="result-row"><span>Safety Margin</span><span class="result-value" style="color: ${safetyMargin > 20 ? '#2e7d32' : '#b35300'}">${safetyMargin.toFixed(0)}%</span></div>
   `;
 }
 

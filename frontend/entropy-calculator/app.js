@@ -13,12 +13,12 @@ function calculateEntropy(password) {
   const crackTime = Math.pow(2, entropy) / 1e9 / 3600 / 24 / 365; // years at 1B guesses/sec
 
   let strength = "Weak";
-  let color = "#f44336";
+  let color = "#c62828";
   let percent = 20;
 
   if (entropy >= 80) {
     strength = "Very Strong";
-    color = "#4caf50";
+    color = "#2e7d32";
     percent = 100;
   } else if (entropy >= 60) {
     strength = "Strong";
@@ -49,7 +49,7 @@ passwordInput.addEventListener("input", (e) => {
   if (!e.target.value) {
     strengthMeter.style.width = "0%";
     strengthMeter.textContent = "Weak";
-    strengthMeter.style.background = "#f44336";
+    strengthMeter.style.background = "#d32f2f";
     result.textContent = "";
     return;
   }
