@@ -91,7 +91,7 @@ function renderResistor() {
     .map((color, index) => {
       const labels = mode === "4-band" ? ["1st Digit", "2nd Digit", "Multiplier", "Tolerance"] : ["1st Digit", "2nd Digit", "3rd Digit", "Multiplier", "Tolerance"];
       return `
-        <div style="position: relative;">
+        <div class="band-col">
           <div class="band-label">${labels[index]}</div>
           <div
             class="band"
