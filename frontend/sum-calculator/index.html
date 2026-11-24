@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sum Calculator — Add a Column of Numbers | nostrings.tools</title>
+  <meta name="description" content="Paste a list of numbers, one per line, and see the total instantly. Handles commas, currency signs and negatives." />
+  <link rel="canonical" href="https://nostrings.tools/sum-calculator/" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta property="og:title" content="Sum Calculator — Free, Offline | nostrings.tools" />
+  <meta property="og:description" content="Paste a list of numbers, one per line, and see the total instantly. Handles commas, currency signs and negatives." />
+  <meta property="og:url" content="https://nostrings.tools/sum-calculator/" />
+  <meta property="og:image" content="https://nostrings.tools/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="No Strings Tools" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Sum Calculator", "url": "https://nostrings.tools/sum-calculator/", "description": "Paste a list of numbers, one per line, and see the total instantly. Handles commas, currency signs and negatives.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
+  <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
+  <style>
+    textarea { width: 100%; height: 50vh; min-height: 240px; font: 16px/1.5 monospace; border: 1px solid #ddd; border-radius: 4px; padding: 8px; box-sizing: border-box; margin-top: 16px; }
+    .total { font: bold 32px monospace; word-break: break-all; }
+  </style>
+</head>
+<body class="w3-light-grey">
+  <div role="main" class="w3-container w3-padding-large w3-card w3-margin-top" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <a href="../" onclick="if(location.protocol==='file:'){location.href='../index.html';return false}" class="w3-text-blue" style="text-decoration: none;">← Back</a>
+
+    <h1>Sum Calculator</h1>
+    <p class="w3-text-grey w3-small">Every number separated by spaces or new lines is added up. Words and values with units like "2kg" or "1x" are ignored.</p>
+
+    <label for="input" class="w3-hide">Numbers, one per line</label>
+    <textarea id="input" placeholder="12.50&#10;-3&#10;1,200&#10;€ 7,99" autocomplete="off" spellcheck="false"></textarea>
+
+    <p class="w3-margin-top" aria-live="polite">
+      <span class="w3-text-grey w3-small">SUM</span><br />
+      <span id="total" class="total">0</span>
+      <button id="copy" class="w3-button w3-small w3-border w3-round" aria-label="Copy sum">Copy</button><br />
+      <span id="info" class="w3-text-grey w3-small">0 numbers</span>
+    </p>
+
+    <section style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #ddd;">
+      <h2 class="w3-medium">Related tools</h2>
+      <p class="w3-small w3-text-grey">
+        <a href="../percentage-calculator/" class="w3-text-blue" style="text-decoration: none;">Percentage Calculator</a> ·
+        <a href="../bill-splitter/" class="w3-text-blue" style="text-decoration: none;">Bill Splitter</a> ·
+        <a href="../line-tools/" class="w3-text-blue" style="text-decoration: none;">Line Tools</a>
+      </p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

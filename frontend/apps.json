@@ -972,6 +972,12 @@
     "description": "Know what you're paying for. Monthly total, renewal dates."
   },
   {
+    "id": "sum-calculator",
+    "title": "Sum Calculator",
+    "emoji": "➕",
+    "description": "Paste a list of numbers, one per line, and see the total instantly. Handles commas, currency signs and negatives."
+  },
+  {
     "id": "sunrise-sunset",
     "title": "Sunrise & Sunset",
     "emoji": "🌅",
