@@ -37,7 +37,7 @@ Data a tool saves stays in the browser's localStorage on the user's device; the 
 - [Contact Notes](https://nostrings.tools/contact-notes/): Notes &amp; gift ideas, one card per person.
 - [Contrast Checker](https://nostrings.tools/contrast-checker/): WCAG color contrast ratios.
 - [Cost Per Minute](https://nostrings.tools/cost-per-minute/): Convert a salary or hourly rate into cost per minute, hour, day, month and year.
-- [Countdown](https://nostrings.tools/countdown/): Set a date and time, watch the countdown to your event. Adjustable colors and fonts.
+- [Countdown](https://nostrings.tools/countdown/): Set minutes and seconds, watch the time count down.
 - [Cron Explainer](https://nostrings.tools/cron-explainer/): Paste a cron expression and see it decoded into plain English. Perfect for debugging schedules.
 - [Crop Factor](https://nostrings.tools/crop-factor/): Lens mm → full-frame equivalent.
 - [CSV ↔ JSON](https://nostrings.tools/csv-json/): Convert both directions.
@@ -101,7 +101,7 @@ Data a tool saves stays in the browser's localStorage on the user's device; the 
 - [Lorem Ipsum](https://nostrings.tools/lorem-ipsum/): Placeholder text on demand.
 - [Maidenhead / QTH](https://nostrings.tools/maidenhead/): Lat/lon ⇄ grid square.
 - [Medicine Tracker](https://nostrings.tools/medicine-tracker/): Did I take my pills? One tap — records the time.
-- [Meditation Timer](https://nostrings.tools/meditation-timer/): Free online meditation timer with optional breathing cues and a soft bell at the end.
+- [Meditation Timer](https://nostrings.tools/meditation-timer/): Meditation timer with a soft bell at the end.
 - [Meeting Cost](https://nostrings.tools/meeting-cost/): Live ticking cost of a meeting.
 - [Meeting Overlap](https://nostrings.tools/meeting-overlap/): When can everyone talk?
 - [Metronome](https://nostrings.tools/metronome/): Free online metronome with adjustable BPM and tap tempo. No ads, no sign-up, works offline.
@@ -111,7 +111,7 @@ Data a tool saves stays in the browser's localStorage on the user's device; the 
 - [Moon Phase](https://nostrings.tools/moon-phase/): Today's moon and what's next.
 - [Morse Code](https://nostrings.tools/morse-code/): Encode/decode morse.
 - [NFC Tags](https://nostrings.tools/nfc-tags/): Read and write NFC tags (NDEF) from your browser with Web NFC.
-- [Tone Generator](https://nostrings.tools/noise-generator/): Generate sine wave tones or white noise online. Adjust frequency and volume, play instantly. Useful for hearing tests, audio work, meditation.
+- [Tone Generator](https://nostrings.tools/noise-generator/): White, pink and brown noise for sleep and focus.
 - [Note Taker](https://nostrings.tools/note-taker/): Write Markdown notes with live preview. Your notes stay on your device, no server, no signup.
 - [Number to Words](https://nostrings.tools/number-to-words/): Write any number in words instantly: 114 is one hundred fourteen. Handles decimals, thousands separators and Indian lakh/crore grouping like 40,37,12,100.
 - [One Rep Max (1RM)](https://nostrings.tools/one-rep-max/): One rep max calculator: enter the weight and reps you lifted to estimate your 1RM.
@@ -122,7 +122,7 @@ Data a tool saves stays in the browser's localStorage on the user's device; the 
 - [Paint / Flooring](https://nostrings.tools/paint-estimator/): Room size → materials to buy.
 - [Parking Cost Calculator](https://nostrings.tools/parking-meter/): Parking cost calculator and parking meter timer: enter the rate and time to see what your parking will cost, or how long your budget lasts. Free, works offline.
 - [Parking Spot](https://nostrings.tools/parking-spot/): Remember where you parked with label, GPS & photos.
-- [Password Generator](https://nostrings.tools/password-generator/): Generate strong random passwords. Choose length and character sets instantly. Copy with one click.
+- [Password Generator](https://nostrings.tools/password-generator/): One master password → a unique password per site.
 - [PDF Merger](https://nostrings.tools/pdf-merger/): Combine PDFs, fully offline.
 - [PDF Tiler](https://nostrings.tools/pdf-tiler/): Tile a PDF page for printing — auto-crops and fits as many copies as possible on A4.
 - [Pedometer](https://nostrings.tools/pedometer/): Step counter.

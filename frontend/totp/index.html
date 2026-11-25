@@ -67,6 +67,22 @@
     <p class="w3-center w3-text-grey" id="status"></p>
 
     <section style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #ddd;">
+      <h2 class="w3-medium">Frequently asked questions</h2>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>How do I generate a 2FA code from a secret key?</summary>
+        <p>Paste the Base32 secret to see the current 6-digit code.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>Is it safe?</summary>
+        <p>The secret is never stored or sent. It's meant for testing, though.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>Why doesn't my code match?</summary>
+        <p>Check your device clock. TOTP depends on the exact time.</p>
+      </details>
+    </section>
+
+    <section style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #ddd;">
       <h2 class="w3-medium">Related tools</h2>
       <p class="w3-small w3-text-grey">
         <a href="../entropy-calculator/" class="w3-text-blue" style="text-decoration: none;">Entropy Calculator</a> ·

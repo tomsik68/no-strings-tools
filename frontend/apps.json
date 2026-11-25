@@ -189,7 +189,7 @@
     "id": "countdown",
     "title": "Countdown",
     "emoji": "⏲️",
-    "description": "Set a date and time, watch the countdown to your event. Adjustable colors and fonts."
+    "description": "Set minutes and seconds, watch the time count down."
   },
   {
     "id": "cron-explainer",
@@ -573,7 +573,7 @@
     "id": "meditation-timer",
     "title": "Meditation Timer",
     "emoji": "🧘",
-    "description": "Free online meditation timer with optional breathing cues and a soft bell at the end."
+    "description": "Meditation timer with a soft bell at the end."
   },
   {
     "id": "meeting-cost",
@@ -633,7 +633,7 @@
     "id": "noise-generator",
     "title": "Tone Generator",
     "emoji": "🌊",
-    "description": "Generate sine wave tones or white noise online. Adjust frequency and volume, play instantly. Useful for hearing tests, audio work, meditation."
+    "description": "White, pink and brown noise for sleep and focus."
   },
   {
     "id": "note-taker",
@@ -699,7 +699,7 @@
     "id": "password-generator",
     "title": "Password Generator",
     "emoji": "🔑",
-    "description": "Generate strong random passwords. Choose length and character sets instantly. Copy with one click."
+    "description": "One master password → a unique password per site."
   },
   {
     "id": "pdf-merger",

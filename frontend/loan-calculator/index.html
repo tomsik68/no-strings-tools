@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loan Calculator — Free, Offline &amp; No Signup | nostrings.tools</title>
-  <meta name="description" content="Calculate with this free loan calculator directly in your browser. No signup, no ads, no tracking — works offline." />
+  <meta name="description" content="Loan calculator: enter the amount, interest rate and term to see your monthly payment, total interest and total paid. For mortgages, car and personal loans." />
   <link rel="canonical" href="https://nostrings.tools/loan-calculator/" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
   <meta property="og:title" content="Loan Calculator — Free, Offline &amp; No Signup | nostrings.tools" />
-  <meta property="og:description" content="Calculate with this free loan calculator directly in your browser. No signup, no ads, no tracking — works offline." />
+  <meta property="og:description" content="Loan calculator: enter the amount, interest rate and term to see your monthly payment, total interest and total paid. For mortgages, car and personal loans." />
   <meta property="og:url" content="https://nostrings.tools/loan-calculator/" />
   <meta property="og:image" content="https://nostrings.tools/og-image.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="No Strings Tools" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Loan Calculator", "url": "https://nostrings.tools/loan-calculator/", "description": "Calculate with this free loan calculator directly in your browser. No signup, no ads, no tracking — works offline.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Loan Calculator", "url": "https://nostrings.tools/loan-calculator/", "description": "Loan calculator: enter the amount, interest rate and term to see your monthly payment, total interest and total paid. For mortgages, car and personal loans.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "Requires JavaScript", "author": {"@type": "Person", "name": "Tomáš Jašek", "url": "https://jasku.xyz"}}</script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" />
   <style>/* W3 colours darkened to meet WCAG AA contrast */ .w3-text-blue{color:#1565c0!important} .w3-blue{background-color:#1976d2!important} .w3-text-grey{color:#616161!important} .w3-green{background-color:#2e7d32!important} .w3-red{background-color:#d32f2f!important} .w3-text-red{color:#c62828!important} .w3-text-green{color:#2e7d32!important}</style>
   <style>
@@ -66,7 +66,7 @@
 
     <h1>Loan Calculator</h1>
 
-    <p class="w3-text-grey w3-small">Calculate with this free loan calculator directly in your browser. No signup, no ads, no tracking — works offline.</p><div class="input-row">
+    <p class="w3-text-grey w3-small">Loan calculator: enter the amount, interest rate and term to see your monthly payment, total interest and total paid. For mortgages, car and personal loans.</p><div class="input-row">
       <label for="principal">Loan Amount ($)</label>
       <input id="principal" type="number" class="w3-input w3-border w3-round" value="200000" />
     </div>
@@ -95,6 +95,22 @@
         <span class="result-value" id="total-paid">$0</span>
       </div>
     </div>
+
+    <section style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #ddd;">
+      <h2 class="w3-medium">Frequently asked questions</h2>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>How do I calculate a monthly loan payment?</summary>
+        <p>Enter the amount, annual interest rate and term in years to see the monthly payment and total interest.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>What formula is used?</summary>
+        <p>The standard amortization formula: fixed monthly payments covering interest plus principal.</p>
+      </details>
+      <details class="w3-small w3-text-grey" style="margin-bottom: 8px;">
+        <summary>Can I use it for a mortgage or car loan?</summary>
+        <p>Yes. It works for any fixed-rate loan.</p>
+      </details>
+    </section>
 
     <section style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #ddd;">
       <h2 class="w3-medium">Related tools</h2>
