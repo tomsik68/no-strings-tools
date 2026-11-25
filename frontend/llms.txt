@@ -1,0 +1,211 @@
+# No Strings Tools
+
+> nostrings.tools is a collection of small, single-purpose web tools (converters, calculators, generators, trackers). Every tool runs entirely in the browser: no login, no tracking, no ads, no server, and it works offline.
+
+Data a tool saves stays in the browser's localStorage on the user's device; the Backup tool exports and restores it as a JSON file. Tools are free to use and each page is self-contained.
+
+## Tools
+
+- [ASCII Table](https://nostrings.tools/ascii-table/): Full ASCII table with decimal, hex, octal, binary and character codes. Search and copy instantly.
+- [Aspect Ratio](https://nostrings.tools/aspect-ratio/): Scale dimensions proportionally.
+- [Backup](https://nostrings.tools/backup/): Export & restore all app data.
+- [Barcode Generator](https://nostrings.tools/barcode-generator/): Generate EAN, UPC, Code 128, Code 39 and IMEI barcodes instantly. Download as image or print.
+- [Barcode Scanner](https://nostrings.tools/barcode-scanner/): Scan barcodes online with your camera: EAN, UPC, Code 128 and more. Works in your browser, no app needed.
+- [Base Converter](https://nostrings.tools/base-converter/): Convert between binary, hex, octal, decimal instantly. Works offline.
+- [Base64](https://nostrings.tools/base64/): Encode or decode Base64 strings instantly. Paste or type, no upload, no server involved.
+- [Bet Tracker](https://nostrings.tools/bet-tracker/): Parimutuel pool betting.
+- [Big Text](https://nostrings.tools/big-text/): Huge message across the room.
+- [Bill Splitter](https://nostrings.tools/bill-splitter/): Add expenses and people, then see who owes whom. Settle up fairly in seconds.
+- [Birthday Tracker](https://nostrings.tools/birthday-tracker/): Upcoming birthdays with days-until countdown.
+- [Blood Pressure Log](https://nostrings.tools/blood-pressure/): Log readings with automatic classification.
+- [BMR / TDEE](https://nostrings.tools/bmr-tdee/): Daily calorie estimate from stats.
+- [Body Weight Log](https://nostrings.tools/body-weight/): Log your weight and track the trend.
+- [Breathing Pacer](https://nostrings.tools/breathing-pacer/): Box breathing to calm down.
+- [Business Days](https://nostrings.tools/business-days/): Add or count working days.
+- [Capacitor Decoder](https://nostrings.tools/capacitor-decoder/): Decode capacitor color bands.
+- [Car Maintenance](https://nostrings.tools/car-maintenance/): Track oil changes, tyres & more. Never miss a service.
+- [Case Converter](https://nostrings.tools/case-converter/): camelCase, snake_case & more.
+- [Character Picker](https://nostrings.tools/char-picker/): Copy em dashes, arrows & more.
+- [Chess Clock / Timer](https://nostrings.tools/chess-clock/): Online chess clock and chess timer for two players. Tap to end your move and start the opponent's clock. Works offline on phone or desktop.
+- [Chmod Calculator](https://nostrings.tools/chmod-calculator/): Unix permissions decoder.
+- [Chord Transposer](https://nostrings.tools/chord-transposer/): Transpose chords up or down. Perfect for adapting songs to your vocal range or instrument key.
+- [Color Converter](https://nostrings.tools/color-converter/): Convert colors between HEX, RGB, HSL and more. Pick a color or paste any format — instant conversion.
+- [Color Palette](https://nostrings.tools/color-palette/): Generate random colors.
+- [Colorblind Simulator](https://nostrings.tools/colorblind-simulator/): See images as colorblind users do.
+- [Compass](https://nostrings.tools/compass/): Device magnetometer.
+- [Compass Logger](https://nostrings.tools/compass-logger/): Log compass bearings with notes or record your heading every second. Export to CSV.
+- [Contact Notes](https://nostrings.tools/contact-notes/): Notes &amp; gift ideas, one card per person.
+- [Contrast Checker](https://nostrings.tools/contrast-checker/): WCAG color contrast ratios.
+- [Cost Per Minute](https://nostrings.tools/cost-per-minute/): Convert a salary or hourly rate into cost per minute, hour, day, month and year.
+- [Countdown](https://nostrings.tools/countdown/): Set a date and time, watch the countdown to your event. Adjustable colors and fonts.
+- [Cron Explainer](https://nostrings.tools/cron-explainer/): Paste a cron expression and see it decoded into plain English. Perfect for debugging schedules.
+- [Crop Factor](https://nostrings.tools/crop-factor/): Lens mm → full-frame equivalent.
+- [CSV ↔ JSON](https://nostrings.tools/csv-json/): Convert both directions.
+- [Data Sync](https://nostrings.tools/data-sync/): Sync your tools data between devices, peer-to-peer.
+- [Date Difference](https://nostrings.tools/date-difference/): Days between dates, ages.
+- [Day Counter](https://nostrings.tools/day-counter/): Count days between dates or count down to a future date. See total and remaining days instantly.
+- [Dead Pixel](https://nostrings.tools/dead-pixel/): Fullscreen display check.
+- [Debt Payoff Calculator](https://nostrings.tools/debt-payoff/): Payoff date, total interest, extra payments.
+- [Device Status](https://nostrings.tools/device-status/): Battery, network, hardware.
+- [Dice Roller](https://nostrings.tools/dice-roller/): Roll D&D dice with history.
+- [Dinner Picker](https://nostrings.tools/dinner-picker/): Can't decide? Let fate pick from your list.
+- [Document Scanner](https://nostrings.tools/doc-scanner/): Scan pages with your webcam or phone camera, straighten them and save as a PDF.
+- [Doctor Visits](https://nostrings.tools/doctor-visits/): Track regular check-ups and see what's overdue.
+- [Depth of Field](https://nostrings.tools/dof-calculator/): Near/far focus limits.
+- [DPI / Print Size](https://nostrings.tools/dpi-print/): Pixels + DPI → inches &amp; cm.
+- [Duration Adder](https://nostrings.tools/duration-adder/): Sum up hours and minutes.
+- [Electricity Cost](https://nostrings.tools/electricity-cost/): What a device costs to run.
+- [Encrypt & Decrypt Text](https://nostrings.tools/encrypt/): Encrypt and decrypt text online with a password (AES-256-GCM). Everything runs in your browser and works offline.
+- [Entropy Calculator](https://nostrings.tools/entropy-calculator/): Calculate the Shannon entropy of any text (bits per character and total) and the entropy and crack time of a password. Works offline in your browser.
+- [Event QR](https://nostrings.tools/event-qr/): Calendar event as QR &amp; .ics file.
+- [EXIF Remover](https://nostrings.tools/exif-stripper/): Remove EXIF metadata and GPS location from photos. Files stay on your device, no upload, no tracking.
+- [Expense Log](https://nostrings.tools/expense-log/): Simple spending logbook with monthly total.
+- [Eyedropper](https://nostrings.tools/eyedropper/): Free online eye dropper tool: pick a color from anywhere on your screen and copy the HEX value.
+- [Fasting Timer](https://nostrings.tools/fasting-timer/): Start a fast, track elapsed vs goal.
+- [Favicon Generator](https://nostrings.tools/favicon-generator/): All favicon sizes from one image.
+- [Financial Planner](https://nostrings.tools/financial-planner/): Month-by-month payments, income, and savings with a rolling balance.
+- [Flashcards](https://nostrings.tools/flashcards/): Local Q&A decks. Flip, know, again.
+- [Flashlight](https://nostrings.tools/flashlight/): Free online flashlight: turn your phone or computer screen into a bright light. Adjust brightness and color; the screen stays awake. Works offline.
+- [Fridge Expiry](https://nostrings.tools/fridge-expiry/): Use-by dates, sorted by urgency.
+- [Fuel Log](https://nostrings.tools/fuel-log/): Track fill-ups, L/100km and spend.
+- [Gamepad Tester](https://nostrings.tools/gamepad-tester/): Test controller buttons & sticks.
+- [GPS Speedometer](https://nostrings.tools/gps-speedometer/): Speed from GPS.
+- [Gratitude Journal](https://nostrings.tools/gratitude-journal/): Three things you're grateful for today. Daily practice.
+- [Gzip Compress & Decompress](https://nostrings.tools/gzip/): Gzip compress or decompress text and files online, right in your browser. Paste or upload for instant results; nothing is uploaded.
+- [Habit Tracker](https://nostrings.tools/habit-tracker/): Build daily streaks, one checkbox at a time.
+- [Hash Generator](https://nostrings.tools/hash-generator/): Compute SHA-256, MD5 and other hashes. Paste text or upload a file — everything stays in your browser.
+- [Headache Log](https://nostrings.tools/headache-log/): Track migraines & headaches. Severity, triggers, patterns.
+- [Home Maintenance](https://nostrings.tools/home-maintenance/): Track HVAC filter, smoke alarm battery & more.
+- [HTML Entities](https://nostrings.tools/html-entities/): Encode & decode &amp;amp; friends.
+- [IBAN Validator](https://nostrings.tools/iban-validator/): Check account numbers offline.
+- [ID Expiry](https://nostrings.tools/id-expiry/): Passport & licence renewals.
+- [Image Resizer](https://nostrings.tools/image-resizer/): Resize images instantly in your browser. Download as JPEG, PNG or WebP, nothing uploaded to any server.
+- [Image to Base64](https://nostrings.tools/image-to-base64/): Data URIs from any image.
+- [IMEI Barcode](https://nostrings.tools/imei-barcode/): Turn an IMEI into a barcode: validate the IMEI number and generate a scannable Code 128 barcode instantly. Works offline.
+- [Instrument Tuner](https://nostrings.tools/instrument-tuner/): Mic pitch detection.
+- [Interval Timer](https://nostrings.tools/interval-timer/): Work/rest rounds with beeps.
+- [Investment Calculator](https://nostrings.tools/investment-calculator/): Project investment growth.
+- [Invoice Generator](https://nostrings.tools/invoice-generator/): Line items, VAT, Pay by Square QR, reusable templates. Print-ready and XML-exportable.
+- [JSON Formatter](https://nostrings.tools/json-beautifier/): Paste messy JSON, get it formatted with syntax highlighting. Errors highlighted in red. Copy formatted result instantly.
+- [JWT Decoder](https://nostrings.tools/jwt-decoder/): Decode JWT tokens locally. The token never leaves your browser — inspect headers and payloads safely.
+- [Keep Screen Awake](https://nostrings.tools/keep-awake/): Keep your screen awake without installing anything: one tap stops your phone or computer from sleeping or dimming. Free, works offline.
+- [Keycode Viewer](https://nostrings.tools/keycode-viewer/): See JavaScript key event values, keycodes and key code tester. Press any key to view keycode, code and which values.
+- [Keystroke Test](https://nostrings.tools/keystroke-test/): Test keyboard speed and ghosting. Measure keys per second and per minute. Instant results, no calibration needed.
+- [Kitchen Timer](https://nostrings.tools/kitchen-timer/): Up to 4 named countdowns.
+- [Knot Guide](https://nostrings.tools/knot-guide/): Essential knot reference.
+- [LED Resistor](https://nostrings.tools/led-resistor/): Calculate resistor value for LED circuits. Free LED resistor calculator — works offline in your browser.
+- [Light Meter (Lux)](https://nostrings.tools/light-detector/): Free online light meter: measure ambient light in lux with your device's light sensor. Useful for photography, plants, lighting design and accessibility.
+- [Line Tools](https://nostrings.tools/line-tools/): Sort, dedupe & shuffle lines.
+- [Live Pad](https://nostrings.tools/live-pad/): Shared real-time scratchpad. Both can type. Vanishes when you close the tab.
+- [Loan Calculator](https://nostrings.tools/loan-calculator/): Calculate loan payments.
+- [Lorem Ipsum](https://nostrings.tools/lorem-ipsum/): Placeholder text on demand.
+- [Maidenhead / QTH](https://nostrings.tools/maidenhead/): Lat/lon ⇄ grid square.
+- [Medicine Tracker](https://nostrings.tools/medicine-tracker/): Did I take my pills? One tap — records the time.
+- [Meditation Timer](https://nostrings.tools/meditation-timer/): Free online meditation timer with optional breathing cues and a soft bell at the end.
+- [Meeting Cost](https://nostrings.tools/meeting-cost/): Live ticking cost of a meeting.
+- [Meeting Overlap](https://nostrings.tools/meeting-overlap/): When can everyone talk?
+- [Metronome](https://nostrings.tools/metronome/): Free online metronome with adjustable BPM and tap tempo. No ads, no sign-up, works offline.
+- [Mileage Log](https://nostrings.tools/mileage-log/): Trips for tax or expenses.
+- [Mirror](https://nostrings.tools/mirror/): Free online mirror: use your front camera or webcam as a mirror. Switch to a true (non-reversing) mirror to see yourself as others do. Nothing is recorded or uploaded.
+- [Mood Tracker](https://nostrings.tools/mood-tracker/): Daily mood check-in with 30-day history.
+- [Moon Phase](https://nostrings.tools/moon-phase/): Today's moon and what's next.
+- [Morse Code](https://nostrings.tools/morse-code/): Encode/decode morse.
+- [NFC Tags](https://nostrings.tools/nfc-tags/): Read and write NFC tags (NDEF) from your browser with Web NFC.
+- [Tone Generator](https://nostrings.tools/noise-generator/): Generate sine wave tones or white noise online. Adjust frequency and volume, play instantly. Useful for hearing tests, audio work, meditation.
+- [Note Taker](https://nostrings.tools/note-taker/): Write Markdown notes with live preview. Your notes stay on your device, no server, no signup.
+- [Number to Words](https://nostrings.tools/number-to-words/): Write any number in words instantly: 114 is one hundred fourteen. Handles decimals, thousands separators and Indian lakh/crore grouping like 40,37,12,100.
+- [One Rep Max (1RM)](https://nostrings.tools/one-rep-max/): One rep max calculator: enter the weight and reps you lifted to estimate your 1RM.
+- [P2P Chat](https://nostrings.tools/p2p-chat/): Chat privately peer-to-peer with files. No server, no account — everything stays between you and them.
+- [P2P File Transfer](https://nostrings.tools/p2p-file-transfer/): Send files device to device. No server, no account, no size limit.
+- [Pace Calculator](https://nostrings.tools/pace-calculator/): Distance, time & running pace.
+- [Packing List](https://nostrings.tools/packing-list/): Trip checklist with presets for camping, beach & more.
+- [Paint / Flooring](https://nostrings.tools/paint-estimator/): Room size → materials to buy.
+- [Parking Cost Calculator](https://nostrings.tools/parking-meter/): Parking cost calculator and parking meter timer: enter the rate and time to see what your parking will cost, or how long your budget lasts. Free, works offline.
+- [Parking Spot](https://nostrings.tools/parking-spot/): Remember where you parked with label, GPS & photos.
+- [Password Generator](https://nostrings.tools/password-generator/): Generate strong random passwords. Choose length and character sets instantly. Copy with one click.
+- [PDF Merger](https://nostrings.tools/pdf-merger/): Combine PDFs, fully offline.
+- [PDF Tiler](https://nostrings.tools/pdf-tiler/): Tile a PDF page for printing — auto-crops and fits as many copies as possible on A4.
+- [Pedometer](https://nostrings.tools/pedometer/): Step counter.
+- [Percentage](https://nostrings.tools/percentage-calculator/): The three % questions.
+- [Period Tracker](https://nostrings.tools/period-tracker/): Private cycle tracking — data stays on your device.
+- [Pet Care](https://nostrings.tools/pet-care/): Vaccines, flea, deworming &amp; weight.
+- [Phonetic Alphabet (Alpha Bravo Charlie)](https://nostrings.tools/phonetic-alphabet/): The NATO phonetic (spelling/telephone) alphabet: A for Alpha, B for Bravo, C for Charlie … Z for Zulu. Look up any letter or convert text to code words.
+- [Plant Watering](https://nostrings.tools/plant-watering/): Track when plants need water, log with one tap.
+- [Pomodoro](https://nostrings.tools/pomodoro/): 25 minutes of focus, then 5 minutes rest. Build sessions to keep going longer.
+- [QR Code Generator](https://nostrings.tools/qr-code/): Create QR codes for text, URLs, Wi-Fi and more. No signup, no tracking — download instantly.
+- [QR Code Scanner](https://nostrings.tools/qr-scanner/): Scan QR codes online with your webcam or phone camera. Point and decode instantly, no app needed.
+- [Random Picker](https://nostrings.tools/random-picker/): Pick a name from a list.
+- [Reaction Time](https://nostrings.tools/reaction-time/): Test your reflexes.
+- [Readability Checker](https://nostrings.tools/readability/): Free readability checker: paste text to get the Flesch reading ease score and grade (reading) level instantly.
+- [Reading Log](https://nostrings.tools/reading-log/): Track books you've read, are reading, or want to read.
+- [Recipe Box](https://nostrings.tools/recipe-box/): Save your favourite recipes. No clutter, no ads.
+- [Recipe Scaler](https://nostrings.tools/recipe-scaler/): Scale recipe ingredients by servings or weight.
+- [Regex Tester](https://nostrings.tools/regex-tester/): Test JavaScript regular expressions with live match highlighting. Test against sample text instantly, see all matches and groups.
+- [Rent vs Buy](https://nostrings.tools/rent-vs-buy/): Rough break-even over N years.
+- [Resistor Decoder](https://nostrings.tools/resistor-decoder/): Decode resistor color bands.
+- [Roman Numerals](https://nostrings.tools/roman-numerals/): MCMXC ⇄ 1990.
+- [Schengen 90/180 Calculator](https://nostrings.tools/schengen/): Schengen 90/180 day calculator: log your trips and see days used and days left in the rolling 180-day window. Covers the 90-day rule for Spain, France, Italy and every Schengen country.
+- [Scoreboard](https://nostrings.tools/scoreboard/): Keep score on game night.
+- [Screen Recorder](https://nostrings.tools/screen-recorder/): Screencasts: screen, voice & webcam.
+- [Seismometer](https://nostrings.tools/seismometer/): Vibration trace from sensors.
+- [Shared Sketchpad](https://nostrings.tools/shared-sketchpad/): Draw together over WebRTC — everyone sees the same sketch in real-time.
+- [Shared Timer](https://nostrings.tools/shared-timer/): Start a countdown and share it — everyone sees the same timer in real-time.
+- [Shopping List](https://nostrings.tools/shopping-list/): Add items, check them off as you shop. Saves automatically to your device. Works offline.
+- [Signal Mirror](https://nostrings.tools/signal-mirror/): Emergency signaling.
+- [Size Converter](https://nostrings.tools/size-converter/): EU, US & UK clothing sizes.
+- [Sketch Pad](https://nostrings.tools/sketch-pad/): Draw sketches and signatures with mouse, finger or stylus. Download as PNG, no signup, no ads.
+- [Sleep Calculator](https://nostrings.tools/sleep-calculator/): Bedtimes by sleep cycles.
+- [Sleep Log](https://nostrings.tools/sleep-log/): Log each night, track your weekly average.
+- [Slug Cleaner](https://nostrings.tools/slug-cleaner/): Title → url-friendly-slug.
+- [Sound Meter](https://nostrings.tools/sound-meter/): Free online sound level meter: measure decibels (dB) with your microphone. Live VU-style level bar with peak and average dB. Works offline.
+- [Speaker Test](https://nostrings.tools/speaker-test/): Left, right & sweep.
+- [Speaking Clock](https://nostrings.tools/speaking-clock/): Browser announces time.
+- [Speech to Text](https://nostrings.tools/speech-to-text/): Speak and let your browser transcribe it to text. Works in most browsers on most devices.
+- [Speed Reader](https://nostrings.tools/speed-reader/): Speed reading website: paste text, set your reading speed (WPM) and read one word at a time. Practice speed reading for free, offline.
+- [Spirit Level](https://nostrings.tools/spirit-level/): Check if surface is level.
+- [SQL Formatter](https://nostrings.tools/sql-formatter/): Pretty-print SQL as you paste.
+- [SSID Generator](https://nostrings.tools/ssid-generator/): Generate random SSID names for your Wi-Fi network.
+- [Stopwatch](https://nostrings.tools/stopwatch/): Free online stopwatch with lap times. Start, pause, reset and review laps. Keeps working offline, perfect for workouts and timing.
+- [Subnet Calculator](https://nostrings.tools/subnet-calculator/): CIDR to ranges & masks.
+- [Subscription Tracker](https://nostrings.tools/subscription-tracker/): Know what you're paying for. Monthly total, renewal dates.
+- [Sum Calculator](https://nostrings.tools/sum-calculator/): Paste a list of numbers, one per line, and see the total instantly. Handles commas, currency signs and negatives.
+- [Sunrise & Sunset](https://nostrings.tools/sunrise-sunset/): Sun times and golden hour.
+- [Swim & Bike Pace](https://nostrings.tools/swim-bike-pace/): Pace /100m or km/h.
+- [Tally Counter](https://nostrings.tools/tally-counter/): Count anything, one tap at a time.
+- [Tap Tempo / BPM](https://nostrings.tools/tap-bpm/): Tap tempo online: tap the spacebar or screen to find the BPM (beats per minute) of any song. The tempo updates live as you tap.
+- [Teleprompter](https://nostrings.tools/teleprompter/): Paste a script and read along as it scrolls. Adjust speed and text size for your pace.
+- [Text Diff](https://nostrings.tools/text-diff/): Compare two texts or strings online and see the differences line by line, with color-coded additions and removals.
+- [Text to Speech](https://nostrings.tools/text-to-speech/): Paste text and hear it read aloud. Adjust speed and voice. Useful for proofreading or accessibility.
+- [Timezone Converter](https://nostrings.tools/timezone/): Convert meeting times, flight times and deadlines between timezones instantly. See time in both zones side-by-side.
+- [Tip & Tax Calculator](https://nostrings.tools/tip-tax/): Tip calculator with tax: add tip and sales tax to a bill and split it per person instantly. Free, works offline.
+- [Tone Generator](https://nostrings.tools/tone-generator/): Free online tone generator: play a sine, square, triangle or sawtooth wave at any frequency in Hz. Use it as a test tone, pitch or signal generator. Works offline.
+- [TOTP Codes](https://nostrings.tools/totp/): 2FA codes from a secret, offline.
+- [Touch Tester](https://nostrings.tools/touch-tester/): Multi-touch visualizer.
+- [Transfer Time Calculator](https://nostrings.tools/transfer-time/): Data transfer time calculator: enter a file size and your connection speed to see how long an upload, download or file copy will take.
+- [Typing Test](https://nostrings.tools/typing-test/): Measure typing speed (WPM) and accuracy in real-time. Results show your performance — compare sessions to track improvement.
+- [Unicode Inspector](https://nostrings.tools/unicode-inspector/): Find illegal, invisible and non-printable characters in text: zero-width spaces, non-ASCII and hidden Unicode. Paste text to see every code point.
+- [Unit Converter](https://nostrings.tools/unit-converter/): Convert length, weight, temperature, volume and more instantly. Switch between metric and imperial, no refresh needed.
+- [Unit Price](https://nostrings.tools/unit-price/): Which package is the better deal?
+- [Unix Timestamp Converter](https://nostrings.tools/unix-timestamp/): Convert Unix timestamps to human dates and back instantly and offline.
+- [URL Parser](https://nostrings.tools/url-parser/): Break URLs into parts.
+- [User-Agent Parser](https://nostrings.tools/user-agent-parser/): Browser, OS &amp; device from a UA string.
+- [Random UUID Generator](https://nostrings.tools/uuid-generator/): Generate random UUIDs (v4) instantly and copy them with one click. Generated in your browser, nothing sent to a server.
+- [Vaccination Tracker](https://nostrings.tools/vaccination-tracker/): Track all your vaccinations with flexible time intervals. Set reminders in days, months or years — completely private, works offline.
+- [Contact QR](https://nostrings.tools/vcard-qr/): Share contact details as a QR.
+- [Voice Recorder](https://nostrings.tools/voice-recorder/): Free online voice and audio recorder: record from your microphone and download the clip. No sign-up, no limits, nothing uploaded.
+- [Voltage Divider](https://nostrings.tools/voltage-divider/): Calculate output voltage.
+- [Warranty Tracker](https://nostrings.tools/warranty-tracker/): Warranty tracking without a spreadsheet: list items with purchase dates and see which warranties expire soon. Free, no account, works offline.
+- [Water Reminder](https://nostrings.tools/water-reminder/): Track daily glasses of water, resets at midnight.
+- [Where Am I](https://nostrings.tools/where-am-i/): Find your GPS coordinates and current location. Get my coordinates and see where am I — free, no signup, works in browser.
+- [WiFi QR Code Generator](https://nostrings.tools/wifi-qr/): Generate a QR code for your Wi-Fi network. Share with guests — they scan to connect instantly. With or without password.
+- [Wishlist](https://nostrings.tools/wishlist/): Things you want, optional prices.
+- [Word Counter](https://nostrings.tools/word-counter/): Count words, characters and reading time in real-time. Results update as you type. Fully private.
+- [Work Hours](https://nostrings.tools/work-hours/): Clock in/out, weekly total.
+- [Workout Log](https://nostrings.tools/workout-log/): Log exercises, sets & reps. No coaching, no plans.
+- [World Clock](https://nostrings.tools/world-clock/): Save timezones and see current time everywhere at once. Stays synced to now.
+- [YAML ⇄ JSON](https://nostrings.tools/yaml-json/): Convert either way, instantly.
+
+## Optional
+
+- [About](https://nostrings.tools/about/): The philosophy behind the project
+- [Source code](https://github.com/tomsik68/no-strings-tools): All tools, plain HTML and JavaScript

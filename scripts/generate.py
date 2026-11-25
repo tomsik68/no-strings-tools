@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Generate frontend/index.html and frontend/sitemap.xml from frontend/apps.json.
+"""Generate frontend/index.html, frontend/sitemap.xml and frontend/llms.txt
+from frontend/apps.json.
 
 Run this after editing apps.json or before deploying:
     python3 scripts/generate.py
@@ -13,6 +14,7 @@ APPS_JSON = ROOT / "apps.json"
 TEMPLATE = ROOT / "index.template.html"
 DASHBOARD = ROOT / "index.html"
 SITEMAP = ROOT / "sitemap.xml"
+LLMS_TXT = ROOT / "llms.txt"
 
 # Apps whose app.js declares localStorage keys that don't represent the
 # user's own saved data (e.g. generic import/export helpers), so they should
@@ -96,11 +98,40 @@ def generate_sitemap(apps):
     SITEMAP.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def generate_llms_txt(apps):
+    """Write llms.txt (https://llmstxt.org): a Markdown map of the site for LLMs."""
+    lines = [
+        "# No Strings Tools",
+        "",
+        "> nostrings.tools is a collection of small, single-purpose web tools "
+        "(converters, calculators, generators, trackers). Every tool runs entirely "
+        "in the browser: no login, no tracking, no ads, no server, and it works offline.",
+        "",
+        "Data a tool saves stays in the browser's localStorage on the user's device; "
+        "the Backup tool exports and restores it as a JSON file. Tools are free to use "
+        "and each page is self-contained.",
+        "",
+        "## Tools",
+        "",
+    ]
+    for app in apps:
+        lines.append(f"- [{app['title']}](https://nostrings.tools/{app['id']}/): {app['description']}")
+    lines += [
+        "",
+        "## Optional",
+        "",
+        "- [About](https://nostrings.tools/about/): The philosophy behind the project",
+        "- [Source code](https://github.com/tomsik68/no-strings-tools): All tools, plain HTML and JavaScript",
+    ]
+    LLMS_TXT.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def main():
     apps = load_apps()
     generate_dashboard(apps)
     generate_sitemap(apps)
-    print(f"Generated dashboard and sitemap for {len(apps)} apps.")
+    generate_llms_txt(apps)
+    print(f"Generated dashboard, sitemap and llms.txt for {len(apps)} apps.")
 
 
 if __name__ == "__main__":
